@@ -6,16 +6,11 @@ node_modules/
 # testing
 coverage/
 
-# next.js
+# next.js & build outputs
 .next/
 out/
 build/
 dist/
-
-# backend outputs
-backend/node_modules/
-backend/dist/
-backend/build/
 
 # misc
 .DS_Store
