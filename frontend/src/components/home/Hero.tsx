@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Globe, Shield, Sparkles, ChevronRight } from "lucide-react";
+import { ArrowRight, Globe, ShieldCheck, Sparkles, ChevronRight, MapPin } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -18,12 +18,25 @@ export default function Hero() {
           {/* Left Column: Heading & Positioning */}
           <div className="lg:col-span-7 space-y-6">
             
-            {/* Top Corporate Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-amber-500/20 text-amber-700 text-xs font-bold tracking-wide shadow-sm">
-              <Shield className="w-4 h-4 text-amber-600" />
-              <span>100+ YEARS GERMAN ENGINEERING HERITAGE</span>
-              <span className="text-slate-300">•</span>
-              <span className="text-sky-700">Hessen, Germany</span>
+            {/* Top Badges Row: Hessen Heritage & 190+ Countries */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
+              {/* Hessen Heritage Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-800 text-xs font-bold tracking-wide shadow-sm backdrop-blur-sm">
+                <ShieldCheck className="w-4 h-4 text-amber-600 shrink-0" />
+                <span>Hessen Heritage</span>
+                <span className="text-slate-300">•</span>
+                <span className="text-amber-700 font-medium">Hesse, Germany</span>
+              </div>
+
+              {/* 190+ Countries Global Network Badge */}
+              <Link
+                href="/global-network"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-500/10 hover:bg-sky-500/20 border border-sky-500/30 text-sky-800 text-xs font-bold tracking-wide shadow-sm backdrop-blur-sm transition-all hover:scale-105"
+              >
+                <Globe className="w-4 h-4 text-sky-600 shrink-0 animate-pulse" />
+                <span>190+ Countries & Territories</span>
+                <ChevronRight className="w-3.5 h-3.5 text-sky-600" />
+              </Link>
             </div>
 
             {/* Main Headline */}
@@ -41,7 +54,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
               <Link
                 href="/divisions"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold rounded-xl bg-gradient-to-r from-sky-600 via-sky-500 to-blue-600 hover:from-sky-500 hover:to-blue-500 text-white shadow-xl shadow-sky-600/10 hover:scale-105 transition-all group"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 text-base font-bold rounded-xl bg-gradient-to-r from-sky-600 via-sky-500 to-blue-600 hover:from-sky-500 hover:to-blue-500 text-white shadow-xl shadow-sky-600/20 hover:scale-105 transition-all group"
               >
                 <span>Our Business Divisions</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -58,12 +71,12 @@ export default function Hero() {
             {/* Key Quick Stats */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-slate-200">
               <div className="text-center lg:text-left">
-                <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-mono">190+</div>
+                <div className="text-2xl sm:text-3xl font-extrabold text-sky-600 font-mono">190+</div>
                 <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Countries & Territories</div>
               </div>
               <div className="text-center lg:text-left">
-                <div className="text-2xl sm:text-3xl font-extrabold text-amber-700 font-mono">29</div>
-                <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Regional HQs</div>
+                <div className="text-2xl sm:text-3xl font-extrabold text-amber-600 font-mono">100+</div>
+                <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Years Hessen Heritage</div>
               </div>
               <div className="text-center lg:text-left">
                 <div className="text-2xl sm:text-3xl font-extrabold text-sky-700 font-mono">7</div>
@@ -82,7 +95,7 @@ export default function Hero() {
             <div className="relative glass-panel rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-2xl space-y-6">
               
               {/* Official Logo Banner Showcase */}
-              <div className="relative w-full h-24 sm:h-28 bg-slate-100 rounded-2xl p-4 flex items-center justify-center border border-slate-200 shadow-inner">
+              <div className="relative w-full h-24 sm:h-28 bg-slate-50 rounded-2xl p-4 flex items-center justify-center border border-slate-200 shadow-inner">
                 <Image
                   src="/brand/logo.svg"
                   alt="TAKNISER ONE GLOBE Official Brand"
@@ -95,11 +108,17 @@ export default function Hero() {
               {/* Conglomerate Vision Brief */}
               <div className="space-y-4 text-left">
                 <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-slate-500 border-b border-slate-200 pb-2">
-                  <span>German Engineering Heritage</span>
-                  <span className="text-amber-700">Qualität vor Quantität</span>
+                  <span className="flex items-center gap-1.5 text-amber-700">
+                    <ShieldCheck className="w-4 h-4 text-amber-600" />
+                    <span>Hessen Heritage</span>
+                  </span>
+                  <span className="text-sky-700 flex items-center gap-1">
+                    <MapPin className="w-3.5 h-3.5" />
+                    <span>190+ Countries</span>
+                  </span>
                 </div>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Originating in Hesse, Germany over a century ago, TAKNISER has grown from specialized power system engineering into an integrated global industrial conglomerate.
+                  Originating in Hesse, Germany over a century ago, TAKNISER has grown from specialized power system engineering into an integrated global industrial conglomerate operating across more than 190 countries and territories.
                 </p>
               </div>
 
