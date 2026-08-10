@@ -94,14 +94,14 @@ export default function Hero() {
           <div className="lg:col-span-5 relative">
             <div className="relative glass-panel rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-2xl space-y-6">
               
-              {/* Official Logo Banner Showcase */}
-              <div className="relative w-full h-24 sm:h-28 bg-slate-50 rounded-2xl p-4 flex items-center justify-center border border-slate-200 shadow-inner">
+              {/* Official Clean Logo Display */}
+              <div className="relative w-full h-20 sm:h-24 flex items-center justify-center py-2">
                 <Image
                   src="/brand/logo.svg"
                   alt="TAKNISER ONE GLOBE Official Brand"
-                  width={360}
-                  height={120}
-                  className="object-contain"
+                  width={340}
+                  height={100}
+                  className="object-contain drop-shadow-sm"
                 />
               </div>
 
