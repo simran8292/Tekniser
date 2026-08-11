@@ -25,7 +25,7 @@ const colorMap = [
 
 export default function DivisionsPage() {
   return (
-    <div className="pt-24 min-h-screen">
+    <div className="pt-24 min-h-screen bg-[#070b14] text-slate-100">
       {/* Hero */}
       <section className="relative py-20 bg-grid-pattern overflow-hidden">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-sky-600/8 rounded-full blur-[120px] pointer-events-none" />
@@ -53,7 +53,7 @@ export default function DivisionsPage() {
               return (
                 <div
                   key={division.id}
-                  className={`glass-panel rounded-3xl border ${colors.border} overflow-hidden`}
+                  className={`glass-panel-dark rounded-3xl border ${colors.border} overflow-hidden`}
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                     {/* Left: Division Identity */}

@@ -6,48 +6,28 @@ import { ArrowRight, Globe, ShieldCheck, Sparkles, ChevronRight, MapPin } from "
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden bg-grid-pattern">
+    <section className="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden bg-[#070b14] bg-grid-pattern">
       {/* Dynamic Background Glow Elements */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-sky-500/5 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-1/3 right-10 w-96 h-96 bg-amber-500/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-96 h-96 bg-blue-600/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-sky-500/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 right-10 w-96 h-96 bg-amber-500/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center lg:text-left">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
+
           {/* Left Column: Heading & Positioning */}
           <div className="lg:col-span-7 space-y-6">
-            
-            {/* Top Badges Row: Hessen Heritage & 190+ Countries */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
-              {/* Hessen Heritage Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-800 text-xs font-bold tracking-wide shadow-sm backdrop-blur-sm">
-                <ShieldCheck className="w-4 h-4 text-amber-600 shrink-0" />
-                <span>Hessen Heritage</span>
-                <span className="text-slate-300">•</span>
-                <span className="text-amber-700 font-medium">Hesse, Germany</span>
-              </div>
 
-              {/* 190+ Countries Global Network Badge */}
-              <Link
-                href="/global-network"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-500/10 hover:bg-sky-500/20 border border-sky-500/30 text-sky-800 text-xs font-bold tracking-wide shadow-sm backdrop-blur-sm transition-all hover:scale-105"
-              >
-                <Globe className="w-4 h-4 text-sky-600 shrink-0 animate-pulse" />
-                <span>190+ Countries & Territories</span>
-                <ChevronRight className="w-3.5 h-3.5 text-sky-600" />
-              </Link>
-            </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.1]">
               Building the Future of <br className="hidden sm:inline" />
               <span className="gradient-text-blue">Global Industry</span>
             </h1>
 
             {/* Sub-headline & Description */}
-            <p className="text-lg sm:text-xl text-slate-600 max-w-2xl font-light leading-relaxed">
-              Operating under the vision of <strong className="text-slate-900 font-semibold">TAKNISER ONE GLOBE</strong>, our worldwide conglomerate connects industrial manufacturing, space economy, strategic mining, AgTech, LifeCare, robotics, and international trade across more than <span className="text-sky-600 font-semibold">190 countries and territories</span>.
+            <p className="text-lg sm:text-xl text-slate-300 max-w-2xl font-light leading-relaxed">
+              Operating under the vision of <strong className="text-white font-semibold">TAKNISER ONE GLOBE</strong>, our worldwide conglomerate connects industrial manufacturing, space economy, strategic mining, AgTech, LifeCare, robotics, and international trade across more than <span className="text-sky-400 font-semibold">190 countries and territories</span>.
             </p>
 
             {/* Action CTAs */}
@@ -61,30 +41,30 @@ export default function Hero() {
               </Link>
               <Link
                 href="/global-network"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 text-base font-semibold rounded-xl glass-panel glass-panel-hover text-slate-700 hover:text-slate-900 border border-slate-200"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 text-base font-semibold rounded-xl glass-panel-dark glass-panel-dark-hover text-slate-200 hover:text-white border border-white/10"
               >
-                <Globe className="w-5 h-5 text-sky-600" />
+                <Globe className="w-5 h-5 text-sky-400" />
                 <span>Explore Global Network</span>
               </Link>
             </div>
 
             {/* Key Quick Stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-slate-200">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-white/10">
               <div className="text-center lg:text-left">
-                <div className="text-2xl sm:text-3xl font-extrabold text-sky-600 font-mono">190+</div>
-                <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Countries & Territories</div>
+                <div className="text-2xl sm:text-3xl font-extrabold text-sky-400 font-mono">190+</div>
+                <div className="text-xs text-slate-400 uppercase tracking-wider font-semibold">Countries & Territories</div>
               </div>
               <div className="text-center lg:text-left">
-                <div className="text-2xl sm:text-3xl font-extrabold text-amber-600 font-mono">100+</div>
-                <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Years Hessen Heritage</div>
+                <div className="text-2xl sm:text-3xl font-extrabold text-amber-400 font-mono">100+</div>
+                <div className="text-xs text-slate-400 uppercase tracking-wider font-semibold">Years Hessen Heritage</div>
               </div>
               <div className="text-center lg:text-left">
-                <div className="text-2xl sm:text-3xl font-extrabold text-sky-700 font-mono">7</div>
-                <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Core Divisions</div>
+                <div className="text-2xl sm:text-3xl font-extrabold text-sky-400 font-mono">7</div>
+                <div className="text-xs text-slate-400 uppercase tracking-wider font-semibold">Core Divisions</div>
               </div>
               <div className="text-center lg:text-left">
-                <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-mono">2046</div>
-                <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold">Vision Milestone</div>
+                <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono">2046</div>
+                <div className="text-xs text-slate-400 uppercase tracking-wider font-semibold">Vision Milestone</div>
               </div>
             </div>
 
@@ -92,52 +72,52 @@ export default function Hero() {
 
           {/* Right Column: Visual Showcase Card */}
           <div className="lg:col-span-5 relative">
-            <div className="relative glass-panel rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-2xl space-y-6">
-              
-              {/* Official Clean Logo Display */}
-              <div className="relative w-full h-20 sm:h-24 flex items-center justify-center py-2">
+            <div className="relative glass-panel-dark rounded-3xl p-6 sm:p-8 border border-white/10 shadow-2xl space-y-6">
+
+              {/* Official Logo Banner Showcase */}
+              <div className="relative w-full h-24 sm:h-28 bg-slate-900/60 rounded-2xl p-4 flex items-center justify-center border border-white/10 shadow-inner">
                 <Image
                   src="/brand/logo.svg"
                   alt="TAKNISER ONE GLOBE Official Brand"
-                  width={340}
-                  height={100}
-                  className="object-contain drop-shadow-sm"
+                  width={360}
+                  height={120}
+                  className="object-contain"
                 />
               </div>
 
               {/* Conglomerate Vision Brief */}
               <div className="space-y-4 text-left">
-                <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-slate-500 border-b border-slate-200 pb-2">
-                  <span className="flex items-center gap-1.5 text-amber-700">
-                    <ShieldCheck className="w-4 h-4 text-amber-600" />
+                <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-slate-400 border-b border-white/10 pb-2">
+                  <span className="flex items-center gap-1.5 text-amber-400 font-bold">
+                    <ShieldCheck className="w-4 h-4 text-amber-500" />
                     <span>Hessen Heritage</span>
                   </span>
-                  <span className="text-sky-700 flex items-center gap-1">
-                    <MapPin className="w-3.5 h-3.5" />
+                  <span className="text-sky-400 flex items-center gap-1 font-bold">
+                    <MapPin className="w-3.5 h-3.5 text-sky-500" />
                     <span>190+ Countries</span>
                   </span>
                 </div>
-                <p className="text-sm text-slate-600 leading-relaxed">
+                <p className="text-sm text-slate-300 leading-relaxed">
                   Originating in Hesse, Germany over a century ago, TAKNISER has grown from specialized power system engineering into an integrated global industrial conglomerate operating across more than 190 countries and territories.
                 </p>
               </div>
 
               {/* Values Pills */}
               <div className="grid grid-cols-2 gap-2 text-left text-xs font-medium">
-                <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-700 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-amber-600" />
+                <div className="p-2.5 rounded-lg bg-slate-900/50 border border-white/5 text-slate-300 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
                   <span>Präzision (Precision)</span>
                 </div>
-                <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-700 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-sky-600" />
+                <div className="p-2.5 rounded-lg bg-slate-900/50 border border-white/5 text-slate-300 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
                   <span>Qualität (Quality)</span>
                 </div>
-                <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-700 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-600" />
+                <div className="p-2.5 rounded-lg bg-slate-900/50 border border-white/5 text-slate-300 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                   <span>Zuverlässigkeit</span>
                 </div>
-                <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-700 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-indigo-600" />
+                <div className="p-2.5 rounded-lg bg-slate-900/50 border border-white/5 text-slate-300 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
                   <span>Ingenieurskunst</span>
                 </div>
               </div>
@@ -145,16 +125,16 @@ export default function Hero() {
               {/* Vision 2046 Banner */}
               <Link
                 href="/vision-2046"
-                className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-amber-500/5 via-slate-50 to-sky-500/5 border border-slate-200 hover:border-amber-500/20 transition-all group"
+                className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-amber-500/10 via-slate-900/40 to-sky-500/10 border border-white/10 hover:border-amber-500/30 transition-all group"
               >
                 <div className="flex items-center gap-3 text-left">
-                  <Sparkles className="w-5 h-5 text-amber-600 shrink-0" />
+                  <Sparkles className="w-5 h-5 text-amber-400 shrink-0" />
                   <div>
-                    <div className="text-xs font-bold text-amber-700 uppercase tracking-wider">Vision 2046 Roadmap</div>
-                    <div className="text-xs text-slate-600">Discover our 100-Year Century Vision</div>
+                    <div className="text-xs font-bold text-amber-400 uppercase tracking-wider">Vision 2046 Roadmap</div>
+                    <div className="text-xs text-slate-400">Discover our 100-Year Century Vision</div>
                   </div>
                 </div>
-                <ChevronRight className="w-5 h-5 text-amber-600 group-hover:translate-x-1 transition-transform" />
+                <ChevronRight className="w-5 h-5 text-amber-400 group-hover:translate-x-1 transition-transform" />
               </Link>
 
             </div>

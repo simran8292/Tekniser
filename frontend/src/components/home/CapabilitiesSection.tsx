@@ -11,19 +11,19 @@ const iconMap: Record<string, React.ElementType> = {
 
 export default function CapabilitiesSection() {
   return (
-    <section className="py-24 bg-slate-50 relative overflow-hidden">
+    <section className="py-24 bg-[#0a101f] relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-pattern opacity-40" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-amber-750 text-xs font-bold tracking-wider uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-amber-400 text-xs font-bold tracking-wider uppercase">
             <span>End-to-End Industrial Value Chain</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             Complete <span className="gradient-text-gold">Capabilities</span>
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg">
+          <p className="text-slate-400 text-base sm:text-lg">
             From engineering and manufacturing through to logistics, digital transformation, and after-sales services — TAKNISER delivers across the full industrial value chain.
           </p>
         </div>
@@ -35,18 +35,18 @@ export default function CapabilitiesSection() {
             return (
               <div
                 key={cap.title}
-                className="glass-panel glass-panel-hover rounded-2xl p-5 border border-slate-200/80 flex flex-col gap-3"
+                className="glass-panel-dark glass-panel-dark-hover rounded-2xl p-5 border border-white/10 flex flex-col gap-3"
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-amber-50 border border-amber-100">
-                    <IconComponent className="w-5 h-5 text-amber-700" />
+                  <div className="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/20">
+                    <IconComponent className="w-5 h-5 text-amber-400" />
                   </div>
                   <span className="text-xs font-mono font-bold text-slate-400">
                     {String(idx + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <h3 className="text-sm font-bold text-slate-900 leading-tight">{cap.title}</h3>
-                <p className="text-xs text-slate-600 leading-relaxed">{cap.description}</p>
+                <h3 className="text-sm font-bold text-white leading-tight">{cap.title}</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">{cap.description}</p>
               </div>
             );
           })}

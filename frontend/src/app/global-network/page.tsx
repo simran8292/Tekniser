@@ -24,7 +24,7 @@ const REGION_SUMMARY: Record<string, { count: number; highlight: string }> = {
 
 export default function GlobalNetworkPage() {
   return (
-    <div className="pt-24 min-h-screen">
+    <div className="pt-24 min-h-screen bg-[#070b14] text-slate-100">
       {/* Hero */}
       <section className="relative py-20 bg-grid-pattern overflow-hidden">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-sky-600/8 rounded-full blur-[120px] pointer-events-none" />
@@ -62,7 +62,7 @@ export default function GlobalNetworkPage() {
               const locations = GLOBAL_NETWORK_LOCATIONS.filter((l) => l.region === region);
               const summary = REGION_SUMMARY[region];
               return (
-                <div key={region} className="glass-panel rounded-2xl border border-white/10 overflow-hidden">
+                <div key={region} className="glass-panel-dark rounded-2xl border border-white/10 overflow-hidden">
                   <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between">
                     <div>
                       <h3 className="text-base font-bold text-white">{region}</h3>
@@ -118,7 +118,7 @@ export default function GlobalNetworkPage() {
               { emoji: "🤝", label: "Global Business Partners", value: "Growing" },
               { emoji: "🌱", label: "Sustainable Growth Strategy", value: "Vision 2046" },
             ].map((item) => (
-              <div key={item.label} className="glass-panel rounded-xl p-4 border border-white/10 text-center space-y-1">
+              <div key={item.label} className="glass-panel-dark rounded-xl p-4 border border-white/10 text-center space-y-1">
                 <div className="text-2xl">{item.emoji}</div>
                 <div className="text-lg font-extrabold text-sky-400 font-mono">{item.value}</div>
                 <div className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider leading-tight">{item.label}</div>

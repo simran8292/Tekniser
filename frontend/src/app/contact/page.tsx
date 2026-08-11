@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="pt-24 min-h-screen">
+    <div className="pt-24 min-h-screen bg-[#070b14] text-slate-100">
       {/* Hero */}
       <section className="relative py-20 bg-grid-pattern overflow-hidden">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-sky-600/8 rounded-full blur-[120px] pointer-events-none" />
@@ -34,7 +34,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             {/* Sidebar: Quick Info */}
             <div className="space-y-6">
-              <div className="glass-panel rounded-2xl p-6 border border-white/10 space-y-5">
+              <div className="glass-panel-dark rounded-2xl p-6 border border-white/10 space-y-5">
                 <h2 className="text-base font-bold text-white">Corporate Contact Information</h2>
                 <div className="space-y-4 text-sm">
                   <div className="flex items-start gap-3">
@@ -63,7 +63,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="glass-panel rounded-2xl p-6 border border-amber-500/20 bg-amber-500/5 space-y-3">
+              <div className="glass-panel-dark rounded-2xl p-6 border border-amber-500/20 bg-amber-500/5 space-y-3">
                 <h3 className="text-sm font-bold text-amber-400">Inquiry Areas</h3>
                 <ul className="space-y-2">
                   {[
@@ -78,7 +78,7 @@ export default function ContactPage() {
                 </ul>
               </div>
 
-              <div className="glass-panel rounded-2xl p-6 border border-white/10 space-y-3">
+              <div className="glass-panel-dark rounded-2xl p-6 border border-white/10 space-y-3">
                 <h3 className="text-sm font-bold text-white">Global Logistics Hub</h3>
                 <div className="text-xs text-slate-400 leading-relaxed">
                   Our JAFZA Logistics Hub in UAE serves as the primary global distribution & free zone logistics center for Middle East, Africa, and Asia operations.
@@ -88,7 +88,7 @@ export default function ContactPage() {
 
             {/* Main Form */}
             <div className="lg:col-span-2">
-              <div className="glass-panel rounded-3xl p-7 sm:p-9 border border-white/10">
+              <div className="glass-panel-dark rounded-3xl p-7 sm:p-9 border border-white/10">
                 <div className="mb-7">
                   <h2 className="text-xl font-bold text-white">Submit Your Corporate Inquiry</h2>
                   <p className="text-sm text-slate-400 mt-1.5">

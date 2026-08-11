@@ -20,7 +20,7 @@ const STRATEGIC_PILLARS = [
 
 export default function Vision2046Page() {
   return (
-    <div className="pt-24 min-h-screen">
+    <div className="pt-24 min-h-screen bg-[#070b14] text-slate-100">
       {/* Hero */}
       <section className="relative py-20 bg-grid-pattern overflow-hidden">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-amber-600/8 rounded-full blur-[120px] pointer-events-none" />
@@ -41,7 +41,7 @@ export default function Vision2046Page() {
       {/* Vision Statement */}
       <section className="py-20 bg-[#090d16]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="glass-panel rounded-3xl p-8 sm:p-12 border border-amber-500/20 relative overflow-hidden">
+          <div className="glass-panel-dark rounded-3xl p-8 sm:p-12 border border-amber-500/20 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent pointer-events-none" />
             <div className="relative z-10 text-center space-y-6">
               <div className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-4">The Official Vision Statement</div>
@@ -84,7 +84,7 @@ export default function Vision2046Page() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {CORPORATE_INFO.missionPillars.map((pillar, idx) => (
-              <div key={idx} className="glass-panel glass-panel-hover rounded-2xl p-5 border border-white/10 flex gap-4">
+              <div key={idx} className="glass-panel-dark glass-panel-dark-hover rounded-2xl p-5 border border-white/10 flex gap-4">
                 <div className="shrink-0 w-8 h-8 rounded-lg bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 font-mono text-sm font-bold">
                   {String(idx + 1).padStart(2, "0")}
                 </div>
@@ -108,7 +108,7 @@ export default function Vision2046Page() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {STRATEGIC_PILLARS.map((pillar) => (
-              <div key={pillar.title} className={`glass-panel glass-panel-hover rounded-2xl p-6 border ${pillar.border} flex flex-col gap-4`}>
+              <div key={pillar.title} className={`glass-panel-dark glass-panel-dark-hover rounded-2xl p-6 border ${pillar.border} flex flex-col gap-4`}>
                 <div className={`p-3 rounded-xl ${pillar.bg} border ${pillar.border} w-fit`}>
                   <pillar.icon className={`w-6 h-6 ${pillar.color}`} />
                 </div>

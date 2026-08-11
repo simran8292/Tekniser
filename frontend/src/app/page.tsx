@@ -49,7 +49,7 @@ export default function HomePage() {
               { label: "Global Expansion", desc: "190+ countries and growing" },
               { label: "Trusted Partnerships", desc: "Long-term value creation" },
             ].map((pillar) => (
-              <div key={pillar.label} className="glass-panel rounded-xl p-4 border border-white/10 text-center">
+              <div key={pillar.label} className="glass-panel-dark rounded-xl p-4 border border-white/10 text-center">
                 <div className="text-sm font-bold text-amber-400 mb-1">{pillar.label}</div>
                 <div className="text-xs text-slate-400 leading-snug">{pillar.desc}</div>
               </div>
@@ -66,7 +66,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold rounded-xl glass-panel glass-panel-hover text-slate-200 hover:text-white border border-white/10"
+              className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold rounded-xl glass-panel-dark glass-panel-dark-hover text-slate-200 hover:text-white border border-white/10"
             >
               Our History & Heritage
             </Link>

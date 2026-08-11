@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Shield, Globe, Landmark, ChevronRight } from "lucide-react";
+import { ArrowRight, Shield, Globe, Landmark } from "lucide-react";
 import { CORPORATE_INFO } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ const TIMELINE = [
 
 export default function AboutPage() {
   return (
-    <div className="pt-24 min-h-screen">
+    <div className="pt-24 min-h-screen bg-[#070b14] text-slate-100">
       {/* Page Hero */}
       <section className="relative py-20 overflow-hidden bg-grid-pattern">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-sky-600/8 rounded-full blur-[120px] pointer-events-none" />
@@ -63,7 +63,7 @@ export default function AboutPage() {
             </div>
 
             <div className="space-y-4">
-              <div className="glass-panel rounded-2xl p-6 border border-white/10">
+              <div className="glass-panel-dark rounded-2xl p-6 border border-white/10">
                 <blockquote className="text-xl font-semibold text-white italic leading-relaxed border-l-4 border-amber-400 pl-5">
                   &ldquo;These values became more than engineering principles — they became the DNA of the TAKNISER brand.&rdquo;
                 </blockquote>
@@ -75,7 +75,7 @@ export default function AboutPage() {
                   { label: "Territories", value: "190+" },
                   { label: "Regional HQs", value: "29" },
                 ].map((stat) => (
-                  <div key={stat.label} className="glass-panel rounded-xl p-4 border border-white/10 text-center">
+                  <div key={stat.label} className="glass-panel-dark rounded-xl p-4 border border-white/10 text-center">
                     <div className="text-2xl font-extrabold text-sky-400 font-mono">{stat.value}</div>
                     <div className="text-xs text-slate-400 font-semibold uppercase tracking-wider mt-1">{stat.label}</div>
                   </div>
@@ -107,7 +107,7 @@ export default function AboutPage() {
                   {/* Dot */}
                   <div className="absolute left-4 top-2 w-5 h-5 rounded-full bg-slate-900 border-2 border-amber-400 shadow-lg shadow-amber-400/30 shrink-0" />
                   
-                  <div className="glass-panel rounded-2xl p-6 border border-white/10 flex-1">
+                  <div className="glass-panel-dark rounded-2xl p-6 border border-white/10 flex-1">
                     <div className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-1">{item.period}</div>
                     <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
                     <p className="text-sm text-slate-400 leading-relaxed">{item.description}</p>

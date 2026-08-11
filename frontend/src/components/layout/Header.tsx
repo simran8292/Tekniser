@@ -22,7 +22,6 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "/" },
     { name: "About TAKNISER", href: "/about" },
     { name: "Vision 2046", href: "/vision-2046" },
     { name: "Business Divisions", href: "/divisions", hasDropdown: true },

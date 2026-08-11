@@ -15,7 +15,7 @@ const iconMap: Record<string, React.ElementType> = {
 
 export default function CapabilitiesPage() {
   return (
-    <div className="pt-24 min-h-screen">
+    <div className="pt-24 min-h-screen bg-[#070b14] text-slate-100">
       {/* Hero */}
       <section className="relative py-20 bg-grid-pattern overflow-hidden">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-amber-600/8 rounded-full blur-[120px] pointer-events-none" />
@@ -39,7 +39,7 @@ export default function CapabilitiesPage() {
             {CAPABILITIES.map((cap, idx) => {
               const IconComponent = iconMap[cap.icon] || Compass;
               return (
-                <div key={cap.title} className="glass-panel glass-panel-hover rounded-2xl p-6 border border-white/10 flex flex-col gap-4">
+                <div key={cap.title} className="glass-panel-dark glass-panel-dark-hover rounded-2xl p-6 border border-white/10 flex flex-col gap-4">
                   <div className="flex items-center justify-between">
                     <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20">
                       <IconComponent className="w-6 h-6 text-amber-400" />
@@ -67,7 +67,7 @@ export default function CapabilitiesPage() {
           <div className="flex flex-wrap justify-center items-center gap-2">
             {["Engineering", "Manufacturing", "Sourcing", "Procurement", "EPC Supply", "Supply Chain", "Logistics", "Distribution", "Technology", "Digital", "Infrastructure", "After-Sales"].map((step, idx, arr) => (
               <div key={step} className="flex items-center gap-2">
-                <div className="glass-panel rounded-xl px-3 py-2 border border-white/10 text-xs font-bold text-slate-200 whitespace-nowrap">
+                <div className="glass-panel-dark rounded-xl px-3 py-2 border border-white/10 text-xs font-bold text-slate-200 whitespace-nowrap">
                   {step}
                 </div>
                 {idx < arr.length - 1 && (

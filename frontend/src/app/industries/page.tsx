@@ -32,7 +32,7 @@ const colorPalette = [
 
 export default function IndustriesPage() {
   return (
-    <div className="pt-24 min-h-screen">
+    <div className="pt-24 min-h-screen bg-[#070b14] text-slate-100">
       {/* Hero */}
       <section className="relative py-20 bg-grid-pattern overflow-hidden">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-sky-600/8 rounded-full blur-[120px] pointer-events-none" />
@@ -59,7 +59,7 @@ export default function IndustriesPage() {
               const colorClass = colorPalette[idx % colorPalette.length];
               const [textColor, bgColor, borderColor] = colorClass.split(" ");
               return (
-                <div key={industry.title} className="glass-panel glass-panel-hover rounded-2xl p-6 border border-white/10 flex flex-col gap-4">
+                <div key={industry.title} className="glass-panel-dark glass-panel-dark-hover rounded-2xl p-6 border border-white/10 flex flex-col gap-4">
                   <div className={`p-3 rounded-xl ${bgColor} border ${borderColor} w-fit`}>
                     <IconComponent className={`w-6 h-6 ${textColor}`} />
                   </div>
@@ -86,7 +86,7 @@ export default function IndustriesPage() {
               "Infrastructure Developers", "Industrial Enterprises", "Distributors",
               "System Integrators", "Institutional Buyers", "Multinational Corporations"
             ].map((audience) => (
-              <div key={audience} className="glass-panel rounded-xl px-4 py-2.5 border border-white/10 text-sm font-semibold text-slate-200">
+              <div key={audience} className="glass-panel-dark rounded-xl px-4 py-2.5 border border-white/10 text-sm font-semibold text-slate-200">
                 {audience}
               </div>
             ))}
