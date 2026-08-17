@@ -7,15 +7,17 @@ import { ArrowRight, Globe, ShieldCheck, Sparkles, ChevronRight, MapPin } from "
 export default function Hero() {
   return (
     <section className="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden bg-[#001822]">
-      {/* Background Image with Siemens Gradient Overlay */}
+      {/* Background Video with Siemens Gradient Overlay */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/hero_industrial_bg.png"
-          alt="TAKNISER Industrial Background"
-          fill
-          className="object-cover"
-          priority
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/hero_video.mp4" type="video/mp4" />
+        </video>
         {/* Left-to-right dark blue gradient cover */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#002d3b] via-[#002d3b]/90 to-transparent z-1" />
         {/* Mobile bottom-up dark gradient cover */}
