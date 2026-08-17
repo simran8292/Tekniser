@@ -79,18 +79,18 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="glass-panel rounded-3xl border border-emerald-500/30 bg-emerald-500/5 p-10 text-center space-y-5">
+      <div className="border border-emerald-250 bg-emerald-50/50 p-10 text-center space-y-5 rounded-none shadow-none text-slate-800">
         <div className="flex justify-center">
-          <div className="p-4 rounded-full bg-emerald-500/20 border border-emerald-500/40">
-            <CheckCircle2 className="w-10 h-10 text-emerald-400" />
+          <div className="p-4 rounded-none bg-emerald-100 border border-emerald-200">
+            <CheckCircle2 className="w-10 h-10 text-emerald-600" />
           </div>
         </div>
-        <h2 className="text-2xl font-bold text-white">Inquiry Submitted</h2>
-        <p className="text-slate-300 max-w-md mx-auto">{serverMessage}</p>
-        <p className="text-sm text-slate-400">Our corporate representative will review your inquiry and respond shortly. Reference your submitted email for follow-up.</p>
+        <h2 className="text-2xl font-bold text-[#002d3b]">Inquiry Submitted</h2>
+        <p className="text-slate-750 max-w-md mx-auto">{serverMessage}</p>
+        <p className="text-sm text-slate-500">Our corporate representative will review your inquiry and respond shortly. Reference your submitted email for follow-up.</p>
         <button
           onClick={() => { setStatus("idle"); setFormData({ fullName: "", company: "", email: "", phone: "", country: "", subject: "", message: "", consent: false }); }}
-          className="px-6 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-200 text-sm font-semibold hover:bg-slate-700 transition-colors"
+          className="btn-siemens btn-siemens-secondary"
         >
           Submit Another Inquiry
         </button>
@@ -101,7 +101,7 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-5">
       {status === "error" && (
-        <div className="flex items-start gap-3 p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm">
+        <div className="flex items-start gap-3 p-4 bg-red-50 border border-red-200 text-red-700 text-sm rounded-none">
           <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
           <span>{serverMessage}</span>
         </div>
@@ -110,50 +110,50 @@ export default function ContactForm() {
       {/* Name + Company Row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="fullName" className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">
-            Full Name <span className="text-red-400">*</span>
+          <label htmlFor="fullName" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Full Name <span className="text-red-500">*</span>
           </label>
           <input
             id="fullName" name="fullName" type="text" value={formData.fullName} onChange={handleChange}
             placeholder="Dr. John Smith"
-            className={`w-full px-4 py-3 rounded-xl bg-slate-800/70 border text-slate-100 text-sm placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition-all ${errors.fullName ? "border-red-500/60 bg-red-500/5" : "border-slate-700 focus:border-sky-500/60"}`}
+            className={`w-full px-4 py-3 bg-slate-50 border text-slate-800 text-sm placeholder-slate-400 focus:outline-none focus:border-[#009999] rounded-none transition-all ${errors.fullName ? "border-red-500 bg-red-50/50" : "border-slate-300"}`}
           />
-          {errors.fullName && <p className="text-red-400 text-xs mt-1">{errors.fullName}</p>}
+          {errors.fullName && <p className="text-red-650 text-xs mt-1">{errors.fullName}</p>}
         </div>
         <div>
-          <label htmlFor="company" className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">
-            Company / Organization <span className="text-red-400">*</span>
+          <label htmlFor="company" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Company / Organization <span className="text-red-500">*</span>
           </label>
           <input
             id="company" name="company" type="text" value={formData.company} onChange={handleChange}
             placeholder="Global Energy Holdings GmbH"
-            className={`w-full px-4 py-3 rounded-xl bg-slate-800/70 border text-slate-100 text-sm placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition-all ${errors.company ? "border-red-500/60 bg-red-500/5" : "border-slate-700 focus:border-sky-500/60"}`}
+            className={`w-full px-4 py-3 bg-slate-50 border text-slate-800 text-sm placeholder-slate-400 focus:outline-none focus:border-[#009999] rounded-none transition-all ${errors.company ? "border-red-500 bg-red-50/50" : "border-slate-300"}`}
           />
-          {errors.company && <p className="text-red-400 text-xs mt-1">{errors.company}</p>}
+          {errors.company && <p className="text-red-655 text-xs mt-1">{errors.company}</p>}
         </div>
       </div>
 
       {/* Email + Phone Row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="email" className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">
-            Business Email <span className="text-red-400">*</span>
+          <label htmlFor="email" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Business Email <span className="text-red-500">*</span>
           </label>
           <input
             id="email" name="email" type="email" value={formData.email} onChange={handleChange}
             placeholder="j.smith@company.com"
-            className={`w-full px-4 py-3 rounded-xl bg-slate-800/70 border text-slate-100 text-sm placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition-all ${errors.email ? "border-red-500/60 bg-red-500/5" : "border-slate-700 focus:border-sky-500/60"}`}
+            className={`w-full px-4 py-3 bg-slate-50 border text-slate-800 text-sm placeholder-slate-400 focus:outline-none focus:border-[#009999] rounded-none transition-all ${errors.email ? "border-red-500 bg-red-50/50" : "border-slate-300"}`}
           />
-          {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
+          {errors.email && <p className="text-red-650 text-xs mt-1">{errors.email}</p>}
         </div>
         <div>
-          <label htmlFor="phone" className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">
-            Phone Number <span className="text-slate-500">(Optional)</span>
+          <label htmlFor="phone" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Phone Number <span className="text-slate-400">(Optional)</span>
           </label>
           <input
             id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange}
             placeholder="+49 69 98765432"
-            className="w-full px-4 py-3 rounded-xl bg-slate-800/70 border border-slate-700 text-slate-100 text-sm placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500/50 focus:border-sky-500/60 transition-all"
+            className="w-full px-4 py-3 bg-slate-50 border border-slate-300 text-slate-800 text-sm placeholder-slate-400 focus:outline-none focus:border-[#009999] rounded-none transition-all"
           />
         </div>
       </div>
@@ -161,78 +161,78 @@ export default function ContactForm() {
       {/* Country + Subject Row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="country" className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">
-            Country <span className="text-red-400">*</span>
+          <label htmlFor="country" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Country <span className="text-red-500">*</span>
           </label>
           <select
             id="country" name="country" value={formData.country} onChange={handleChange}
-            className={`w-full px-4 py-3 rounded-xl bg-slate-800/70 border text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition-all appearance-none ${errors.country ? "border-red-500/60 bg-red-500/5" : "border-slate-700 focus:border-sky-500/60"}`}
+            className={`w-full px-4 py-3 bg-slate-50 border text-slate-800 text-sm focus:outline-none focus:border-[#009999] rounded-none transition-all appearance-none ${errors.country ? "border-red-500 bg-red-50/50" : "border-slate-300"}`}
           >
-            <option value="" className="bg-slate-900">Select your country</option>
-            {COUNTRIES.map((c) => <option key={c} value={c} className="bg-slate-900">{c}</option>)}
+            <option value="">Select your country</option>
+            {COUNTRIES.map((c) => <option key={c} value={c}>{c}</option>)}
           </select>
-          {errors.country && <p className="text-red-400 text-xs mt-1">{errors.country}</p>}
+          {errors.country && <p className="text-red-650 text-xs mt-1">{errors.country}</p>}
         </div>
         <div>
-          <label htmlFor="subject" className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">
-            Subject / Inquiry Type <span className="text-red-400">*</span>
+          <label htmlFor="subject" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+            Subject / Inquiry Type <span className="text-red-500">*</span>
           </label>
           <select
             id="subject" name="subject" value={formData.subject} onChange={handleChange}
-            className={`w-full px-4 py-3 rounded-xl bg-slate-800/70 border text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition-all appearance-none ${errors.subject ? "border-red-500/60 bg-red-500/5" : "border-slate-700 focus:border-sky-500/60"}`}
+            className={`w-full px-4 py-3 bg-slate-50 border text-slate-800 text-sm focus:outline-none focus:border-[#009999] rounded-none transition-all appearance-none ${errors.subject ? "border-red-500 bg-red-50/50" : "border-slate-300"}`}
           >
-            <option value="" className="bg-slate-900">Select inquiry type</option>
-            {SUBJECTS.map((s) => <option key={s} value={s} className="bg-slate-900">{s}</option>)}
+            <option value="">Select inquiry type</option>
+            {SUBJECTS.map((s) => <option key={s} value={s}>{s}</option>)}
           </select>
-          {errors.subject && <p className="text-red-400 text-xs mt-1">{errors.subject}</p>}
+          {errors.subject && <p className="text-red-650 text-xs mt-1">{errors.subject}</p>}
         </div>
       </div>
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">
-          Message <span className="text-red-400">*</span>
+        <label htmlFor="message" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+          Message <span className="text-red-500">*</span>
         </label>
         <textarea
           id="message" name="message" rows={5} value={formData.message} onChange={handleChange}
           placeholder="Please describe your requirements, project scope, or inquiry in detail..."
-          className={`w-full px-4 py-3 rounded-xl bg-slate-800/70 border text-slate-100 text-sm placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition-all resize-none ${errors.message ? "border-red-500/60 bg-red-500/5" : "border-slate-700 focus:border-sky-500/60"}`}
+          className={`w-full px-4 py-3 bg-slate-50 border text-slate-800 text-sm placeholder-slate-400 focus:outline-none focus:border-[#009999] rounded-none transition-all resize-none ${errors.message ? "border-red-500 bg-red-50/50" : "border-slate-300"}`}
         />
         <div className="flex justify-between mt-1">
-          {errors.message ? <p className="text-red-400 text-xs">{errors.message}</p> : <span />}
-          <span className="text-xs text-slate-500">{formData.message.length}/3000</span>
+          {errors.message ? <p className="text-red-650 text-xs">{errors.message}</p> : <span />}
+          <span className="text-xs text-slate-400">{formData.message.length}/3000</span>
         </div>
       </div>
 
       {/* Consent Checkbox */}
       <div>
-        <label className={`flex items-start gap-3 cursor-pointer group ${errors.consent ? "text-red-400" : "text-slate-300"}`}>
+        <label className={`flex items-start gap-3 cursor-pointer group ${errors.consent ? "text-red-550" : "text-slate-700"}`}>
           <input
             type="checkbox" name="consent" checked={formData.consent} onChange={handleChange}
-            className="mt-1 w-4 h-4 rounded border-slate-600 bg-slate-800 text-sky-500 focus:ring-sky-500/50 cursor-pointer"
+            className="mt-1 w-4 h-4 border-slate-300 bg-white text-[#009999] focus:ring-[#009999]/30 rounded-none cursor-pointer"
           />
-          <span className="text-xs leading-relaxed">
+          <span className="text-xs leading-relaxed font-medium">
             I consent to TAKNISER ONE GLOBE storing and processing my personal data submitted above for the purpose of responding to this business inquiry, in accordance with our{" "}
-            <a href="/privacy" className="text-sky-400 hover:underline">Privacy Policy</a>.
+            <a href="/privacy" className="text-[#009999] hover:underline font-bold">Privacy Policy</a>.
           </span>
         </label>
-        {errors.consent && <p className="text-red-400 text-xs mt-1">{errors.consent}</p>}
+        {errors.consent && <p className="text-red-650 text-xs mt-1">{errors.consent}</p>}
       </div>
 
       {/* Submit Button */}
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full flex items-center justify-center gap-3 px-8 py-4 text-base font-bold rounded-xl bg-gradient-to-r from-sky-600 to-sky-500 hover:from-sky-500 hover:to-blue-500 text-white shadow-xl shadow-sky-600/30 hover:scale-[1.02] transition-all disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
+        className="w-full btn-siemens btn-siemens-primary flex items-center justify-center gap-3 py-4 text-base font-bold uppercase tracking-wider rounded-none disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {status === "loading" ? (
           <>
-            <Loader2 className="w-5 h-5 animate-spin" />
+            <Loader2 className="w-5 h-5 animate-spin text-white" />
             <span>Submitting Inquiry...</span>
           </>
         ) : (
           <>
-            <Send className="w-5 h-5" />
+            <Send className="w-5 h-5 text-white" />
             <span>Submit Corporate Inquiry</span>
           </>
         )}

@@ -5,13 +5,13 @@ import Image from "next/image";
 import { GLOBAL_NETWORK_LOCATIONS } from "@/lib/data";
 
 const REGION_COLORS: Record<string, string> = {
-  Europe: "#0284c7",
-  "North America": "#0ea5e9",
+  Europe: "#009999",
+  "North America": "#00cccc",
   "Latin America": "#10b981",
   Africa: "#d97706",
-  "Middle East": "#b45309",
-  Asia: "#6d28d9",
-  Oceania: "#0891b2",
+  "Middle East": "#009999",
+  Asia: "#8b5cf6",
+  Oceania: "#06b6d4",
 };
 
 export default function GlobalMapPreview() {
@@ -24,31 +24,30 @@ export default function GlobalMapPreview() {
     : GLOBAL_NETWORK_LOCATIONS;
 
   return (
-    <section className="py-24 bg-[#0a101f] relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-sky-600/10 rounded-full blur-[120px] pointer-events-none" />
-
+    <section className="py-24 bg-[#002d3b] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-xs font-bold tracking-wider uppercase text-sky-400">
+          <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#009999] text-[#009999] text-xs font-bold tracking-wider uppercase rounded-none bg-transparent">
             <span>Global Operational Presence</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            One Globe. <span className="gradient-text-blue">One Network.</span>
+          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
+            One Globe. <span className="text-[#009999]">One Network.</span>
           </h2>
-          <p className="text-slate-400 text-base">
+          <p className="text-slate-200 text-base">
             TAKNISER ONE GLOBE operates through 29 Regional Headquarters, strategic logistics hubs, and business offices across 190+ countries and 6 continents.
           </p>
         </div>
 
-        {/* Region Filter Tabs */}
+        {/* Region Filter Tabs - Siemens Square Buttons */}
         <div className="flex flex-wrap justify-center gap-2 mb-10">
           <button
             onClick={() => setActiveRegion(null)}
-            className={`px-3 py-1.5 text-xs font-bold rounded-full border transition-all ${
+            className={`px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all rounded-none border ${
               !activeRegion
-                ? "bg-sky-600 border-sky-600 text-white shadow-md shadow-sky-600/20"
-                : "border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-200"
+                ? "bg-[#009999] border-[#009999] text-white"
+                : "border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white bg-transparent"
             }`}
           >
             All Regions
@@ -57,11 +56,11 @@ export default function GlobalMapPreview() {
             <button
               key={region}
               onClick={() => setActiveRegion(activeRegion === region ? null : region)}
-              className={`px-3 py-1.5 text-xs font-bold rounded-full border transition-all`}
+              className="px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all rounded-none border"
               style={
                 activeRegion === region
-                  ? { backgroundColor: REGION_COLORS[region] + "22", borderColor: REGION_COLORS[region], color: REGION_COLORS[region] }
-                  : { borderColor: "rgba(255,255,255,0.12)", color: "#94a3b8" }
+                  ? { backgroundColor: "#009999", borderColor: "#009999", color: "#ffffff" }
+                  : { borderColor: "rgba(255,255,255,0.15)", color: "#cbd5e1", backgroundColor: "transparent" }
               }
             >
               {region}
@@ -69,9 +68,9 @@ export default function GlobalMapPreview() {
           ))}
         </div>
 
-        {/* SVG World Map */}
-        <div className="relative glass-panel-dark rounded-3xl border border-white/10 overflow-hidden p-2 sm:p-4 shadow-2xl bg-[#090d16]/90">
-          <div className="relative w-full aspect-[2/1] bg-[#070b14] rounded-2xl overflow-hidden">
+        {/* SVG World Map Wrapper - Flat Rectangular */}
+        <div className="relative bg-[#001822] border border-slate-800 overflow-hidden p-2 sm:p-4 rounded-none shadow-none">
+          <div className="relative w-full aspect-[2/1] bg-[#001b24] rounded-none overflow-hidden">
             {/* Real world map background image */}
             <Image
               src="/world_map_dark.png"
@@ -91,7 +90,7 @@ export default function GlobalMapPreview() {
               {filteredLocations.map((loc, idx) => {
                 const cx = (loc.coordinates.x / 100) * 1000;
                 const cy = (loc.coordinates.y / 100) * 500;
-                const color = REGION_COLORS[loc.region] || "#0284c7";
+                const color = REGION_COLORS[loc.region] || "#009999";
                 const isHQ = loc.type === "HQ";
                 const isLogistics = loc.type === "LOGISTICS_HUB";
                 return (
@@ -108,7 +107,7 @@ export default function GlobalMapPreview() {
                       cy={cy}
                       r={isHQ ? 5 : isLogistics ? 4 : 3}
                       fill={color}
-                      stroke="rgba(15,23,42,0.3)"
+                      stroke="rgba(0,45,59,0.5)"
                       strokeWidth={isHQ ? 1.5 : 1}
                       className="cursor-pointer"
                       onMouseEnter={(e) => {
@@ -127,7 +126,7 @@ export default function GlobalMapPreview() {
             {/* Tooltip */}
             {tooltip && (
               <div
-                className="absolute z-20 glass-panel-dark border border-white/10 rounded-lg px-3 py-2 text-xs shadow-lg pointer-events-none"
+                className="absolute z-20 bg-[#001b24] border border-slate-800 rounded-none px-3 py-2 text-xs shadow-xl pointer-events-none"
                 style={{
                   left: `${Math.min(tooltip.x, 80)}%`,
                   top: `${Math.max(tooltip.y - 10, 5)}%`,
@@ -136,7 +135,7 @@ export default function GlobalMapPreview() {
                 }}
               >
                 <div className="font-bold text-white text-xs mb-0.5">{tooltip.title}</div>
-                <div className="text-slate-400 font-medium" style={{ color: REGION_COLORS[tooltip.region] }}>
+                <div className="font-medium" style={{ color: REGION_COLORS[tooltip.region] }}>
                   {tooltip.region}
                 </div>
               </div>
@@ -144,38 +143,38 @@ export default function GlobalMapPreview() {
           </div>
         </div>
 
-        {/* Stats Row */}
+        {/* Stats Row - Flat rectangular containers */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-10">
           {[
-            { label: "Global HQ", value: "1", color: "text-amber-400" },
-            { label: "Regional HQs", value: "29", color: "text-sky-400" },
-            { label: "Countries & Territories", value: "190+", color: "text-emerald-400" },
-            { label: "Continents", value: "6", color: "text-violet-400" },
-            { label: "Logistics Hubs", value: "3+", color: "text-cyan-400" },
+            { label: "Global HQ", value: "1", color: "text-white" },
+            { label: "Regional HQs", value: "29", color: "text-[#009999]" },
+            { label: "Countries & Territories", value: "190+", color: "text-[#009999]" },
+            { label: "Continents", value: "6", color: "text-white" },
+            { label: "Logistics Hubs", value: "3+", color: "text-[#009999]" },
           ].map((stat) => (
-            <div key={stat.label} className="glass-panel-dark rounded-xl p-4 text-center border border-white/10">
-              <div className={`text-2xl sm:text-3xl font-extrabold ${stat.color} font-mono`}>
+            <div key={stat.label} className="bg-[#001822] border border-slate-800 rounded-none p-4 text-center shadow-none">
+              <div className={`text-2xl sm:text-3xl font-bold ${stat.color} font-mono`}>
                 {stat.value}
               </div>
-              <div className="text-xs text-slate-400 font-semibold uppercase tracking-wider mt-1">
+              <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-1">
                 {stat.label}
               </div>
             </div>
           ))}
         </div>
 
-        {/* Mobile Location List (fallback / accessibility) */}
+        {/* Mobile Location List */}
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:hidden">
           {filteredLocations.slice(0, 9).map((loc, idx) => (
-            <div key={idx} className="glass-panel-dark rounded-xl p-3 border border-white/10">
+            <div key={idx} className="bg-[#001822] border border-slate-800 rounded-none p-3 shadow-none">
               <div className="flex items-center gap-2">
                 <div
-                  className="w-2.5 h-2.5 rounded-full shrink-0"
-                  style={{ backgroundColor: REGION_COLORS[loc.region] || "#0284c7" }}
+                  className="w-2 h-2 shrink-0"
+                  style={{ backgroundColor: REGION_COLORS[loc.region] || "#009999" }}
                 />
                 <div>
                   <div className="text-xs font-bold text-white leading-tight">{loc.title}</div>
-                  <div className="text-xs text-slate-400">{loc.region} • {loc.type}</div>
+                  <div className="text-[11px] text-slate-400">{loc.region} • {loc.type}</div>
                 </div>
               </div>
             </div>
