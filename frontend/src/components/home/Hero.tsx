@@ -6,8 +6,8 @@ import { ArrowRight, Globe, ShieldCheck, Sparkles, ChevronRight, MapPin } from "
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden bg-[#001822]">
-      {/* Background Video with Siemens Gradient Overlay */}
+    <section className="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden bg-transparent">
+      {/* Background Video with Neutral Gradient Overlay */}
       <div className="absolute inset-0 z-0">
         <video
           autoPlay
@@ -18,10 +18,10 @@ export default function Hero() {
         >
           <source src="/hero_video.mp4" type="video/mp4" />
         </video>
-        {/* Left-to-right dark blue gradient cover */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#002d3b] via-[#002d3b]/90 to-transparent z-1" />
+        {/* Left-to-right neutral gradient cover to ensure text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-1" />
         {/* Mobile bottom-up dark gradient cover */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#002d3b] via-[#002d3b]/50 to-transparent z-1 lg:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-1 lg:hidden" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center lg:text-left">
