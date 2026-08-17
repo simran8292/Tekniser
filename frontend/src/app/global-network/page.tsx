@@ -24,35 +24,34 @@ const REGION_SUMMARY: Record<string, { count: number; highlight: string }> = {
 
 export default function GlobalNetworkPage() {
   return (
-    <div className="pt-24 min-h-screen bg-[#070b14] text-slate-100">
-      {/* Hero */}
-      <section className="relative py-20 bg-grid-pattern overflow-hidden">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-sky-600/8 rounded-full blur-[120px] pointer-events-none" />
+    <div className="pt-24 min-h-screen bg-[#f4f5f6] text-slate-800 font-sans">
+      {/* Hero - Siemens Dark Blue panel */}
+      <section className="relative py-20 overflow-hidden bg-[#002d3b]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-sky-400 text-xs font-bold tracking-wider uppercase mb-6">
-            <Globe className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#009999] text-[#009999] text-xs font-bold tracking-wider uppercase mb-6 rounded-none bg-transparent">
+            <Globe className="w-3.5 h-3.5 text-[#009999]" />
             <span>Global Operational Presence</span>
           </div>
-          <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight mb-6">
-            Global <span className="gradient-text-blue">Network</span>
+          <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tight mb-6 uppercase">
+            Global <span className="text-[#009999]">Network</span>
           </h1>
-          <p className="text-slate-400 text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="text-slate-200 text-lg max-w-3xl mx-auto leading-relaxed">
             One Globe. One Network. One Future. — TAKNISER operates through a strategically positioned global network of 29 Regional Headquarters, logistics hubs, engineering centers, and business offices across 190+ countries.
           </p>
         </div>
       </section>
 
-      {/* Interactive World Map */}
+      {/* Interactive World Map (contains its own Dark Blue background) */}
       <GlobalMapPreview />
 
-      {/* Region-by-Region Breakdown */}
-      <section className="py-20 bg-[#090d16]">
+      {/* Region-by-Region Breakdown - Flat White Cards on Gray Background */}
+      <section className="py-20 bg-[#f4f5f6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-white">
-              Regional <span className="gradient-text-gold">Headquarters Network</span>
+            <h2 className="text-2xl sm:text-4xl font-black text-[#002d3b] uppercase">
+              Regional <span className="text-[#009999]">Headquarters Network</span>
             </h2>
-            <p className="text-slate-400 mt-3">
+            <p className="text-slate-600 mt-3 font-medium">
               Click any location below to learn more about our regional operations.
             </p>
           </div>
@@ -62,30 +61,26 @@ export default function GlobalNetworkPage() {
               const locations = GLOBAL_NETWORK_LOCATIONS.filter((l) => l.region === region);
               const summary = REGION_SUMMARY[region];
               return (
-                <div key={region} className="glass-panel-dark rounded-2xl border border-white/10 overflow-hidden">
-                  <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between">
+                <div key={region} className="glass-panel bg-white border border-slate-200 overflow-hidden rounded-none shadow-none text-slate-800">
+                  <div className="px-6 py-4 border-b border-slate-250 flex items-center justify-between bg-slate-50">
                     <div>
-                      <h3 className="text-base font-bold text-white">{region}</h3>
-                      <p className="text-xs text-slate-400 mt-0.5">{summary?.highlight}</p>
+                      <h3 className="text-base font-bold text-[#002d3b]">{region}</h3>
+                      <p className="text-xs text-slate-500 mt-0.5">{summary?.highlight}</p>
                     </div>
-                    <div className="text-2xl font-extrabold text-sky-400 font-mono">{summary?.count}</div>
+                    <div className="text-2xl font-bold text-[#009999] font-mono">{summary?.count}</div>
                   </div>
-                  <div className="divide-y divide-white/5">
+                  <div className="divide-y divide-slate-100">
                     {locations.map((loc) => (
-                      <div key={loc.title} className="px-6 py-3.5 flex items-start gap-3 hover:bg-white/3 transition-colors">
+                      <div key={loc.title} className="px-6 py-3.5 flex items-start gap-3 hover:bg-slate-50 transition-colors">
                         <div className="mt-0.5">
-                          <MapPin className="w-4 h-4 text-slate-500 shrink-0" />
+                          <MapPin className="w-4 h-4 text-[#009999] shrink-0" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="text-sm font-semibold text-slate-200 truncate">{loc.title}</div>
-                          <div className="text-xs text-slate-400 mt-0.5">{loc.description}</div>
+                          <div className="text-sm font-semibold text-[#002d3b] truncate">{loc.title}</div>
+                          <div className="text-xs text-slate-500 mt-0.5">{loc.description}</div>
                         </div>
                         <div className="shrink-0">
-                          <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
-                            loc.type === "HQ" ? "text-amber-400 border-amber-500/40 bg-amber-500/10" :
-                            loc.type === "LOGISTICS_HUB" ? "text-cyan-400 border-cyan-500/40 bg-cyan-500/10" :
-                            "text-sky-400 border-sky-500/40 bg-sky-500/10"
-                          }`}>
+                          <span className="text-[10px] font-bold px-2 py-0.5 rounded-none border border-[#009999] text-[#009999] bg-transparent">
                             {loc.type.replace("_", " ")}
                           </span>
                         </div>
@@ -99,11 +94,11 @@ export default function GlobalNetworkPage() {
         </div>
       </section>
 
-      {/* Global Footprint Stats */}
-      <section className="py-16 bg-[#0b1120] border-t border-white/10">
+      {/* Global Footprint Stats - Solid White */}
+      <section className="py-16 bg-white border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white text-center mb-10">
-            Global <span className="gradient-text-blue">Footprint</span>
+          <h2 className="text-2xl sm:text-3xl font-black text-[#002d3b] text-center mb-10 uppercase">
+            Global <span className="text-[#009999]">Footprint</span>
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {[
@@ -118,26 +113,29 @@ export default function GlobalNetworkPage() {
               { emoji: "🤝", label: "Global Business Partners", value: "Growing" },
               { emoji: "🌱", label: "Sustainable Growth Strategy", value: "Vision 2046" },
             ].map((item) => (
-              <div key={item.label} className="glass-panel-dark rounded-xl p-4 border border-white/10 text-center space-y-1">
+              <div key={item.label} className="bg-[#f4f5f6] border border-slate-200 rounded-none p-4 text-center space-y-1 shadow-none text-slate-800">
                 <div className="text-2xl">{item.emoji}</div>
-                <div className="text-lg font-extrabold text-sky-400 font-mono">{item.value}</div>
-                <div className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider leading-tight">{item.label}</div>
+                <div className="text-lg font-bold text-[#009999] font-mono">{item.value}</div>
+                <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider leading-tight">{item.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-[#090d16] border-t border-white/10">
+      {/* CTA - Siemens Dark Blue panel */}
+      <section className="py-16 bg-[#002d3b] border-t border-slate-800">
         <div className="max-w-3xl mx-auto px-4 text-center space-y-6">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-            Connect with Your <span className="gradient-text-blue">Nearest TAKNISER Hub</span>
+          <h2 className="text-2xl sm:text-3xl font-black text-white uppercase">
+            Connect with Your <span className="text-[#009999]">Nearest TAKNISER Hub</span>
           </h2>
-          <p className="text-slate-400">Our regional offices are ready to support you with engineering, sourcing, logistics, and trade solutions tailored to your market.</p>
-          <Link href="/contact" className="inline-flex items-center gap-3 px-8 py-4 text-base font-bold rounded-xl bg-gradient-to-r from-sky-600 to-sky-500 text-white hover:scale-105 transition-all shadow-xl shadow-sky-600/30 group">
+          <p className="text-slate-200">Our regional offices are ready to support you with engineering, sourcing, logistics, and trade solutions tailored to your market.</p>
+          <Link
+            href="/contact"
+            className="btn-siemens btn-siemens-primary flex items-center justify-center gap-2 max-w-fit mx-auto"
+          >
             <span>Contact a Regional Office</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>

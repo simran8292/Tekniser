@@ -8,16 +8,6 @@ const iconMap: Record<string, React.ElementType> = {
   Rocket, Pickaxe, Sprout, HeartPulse, Home, Bot, Globe,
 };
 
-const colorMap: Record<string, { bg: string; border: string; icon: string }> = {
-  "space-economy": { bg: "bg-sky-500/10", border: "border-sky-500/30", icon: "text-sky-400" },
-  "mining-minerals": { bg: "bg-amber-500/10", border: "border-amber-500/30", icon: "text-amber-400" },
-  agtech: { bg: "bg-emerald-500/10", border: "border-emerald-500/30", icon: "text-emerald-400" },
-  lifecare: { bg: "bg-rose-500/10", border: "border-rose-500/30", icon: "text-rose-400" },
-  lifestyle: { bg: "bg-violet-500/10", border: "border-violet-500/30", icon: "text-violet-400" },
-  robotics: { bg: "bg-cyan-500/10", border: "border-cyan-500/30", icon: "text-cyan-400" },
-  "global-trading": { bg: "bg-blue-500/10", border: "border-blue-500/30", icon: "text-blue-400" },
-};
-
 interface Props {
   params: Promise<{ slug: string }>;
 }
@@ -41,7 +31,6 @@ export default async function DivisionDetailPage({ params }: Props) {
   const division = BUSINESS_DIVISIONS.find((d) => d.slug === slug);
   if (!division) notFound();
 
-  const colors = colorMap[slug] || colorMap["global-trading"];
   const IconComponent = iconMap[division.icon] || Globe;
 
   const divIdx = BUSINESS_DIVISIONS.findIndex((d) => d.slug === slug);
@@ -49,55 +38,54 @@ export default async function DivisionDetailPage({ params }: Props) {
   const nextDiv = divIdx < BUSINESS_DIVISIONS.length - 1 ? BUSINESS_DIVISIONS[divIdx + 1] : null;
 
   return (
-    <div className="pt-24 min-h-screen">
+    <div className="pt-24 min-h-screen bg-[#f4f5f6] text-slate-800">
       {/* Back Navigation */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 bg-[#f4f5f6]">
         <Link
           href="/divisions"
-          className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-sky-400 transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-[#009999] transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>All Business Divisions</span>
         </Link>
       </div>
 
-      {/* Division Hero */}
-      <section className={`relative py-20 bg-grid-pattern overflow-hidden`}>
-        <div className={`absolute top-1/3 left-1/4 w-[500px] h-[300px] ${colors.bg} rounded-full blur-[150px] pointer-events-none opacity-30`} />
+      {/* Division Hero - Flat White Background */}
+      <section className="relative py-20 bg-white overflow-hidden mt-4 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <div className="flex items-center gap-3">
-                <div className={`p-4 rounded-2xl ${colors.bg} border ${colors.border}`}>
-                  <IconComponent className={`w-10 h-10 ${colors.icon}`} />
+                <div className="p-3 bg-slate-50 border border-slate-200 rounded-none">
+                  <IconComponent className="w-8 h-8 text-[#009999]" />
                 </div>
-                <span className={`font-mono font-bold text-lg ${colors.icon}`}>Division {division.code}</span>
+                <span className="font-mono font-bold text-lg text-[#009999]">Division 0{division.code}</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight">
+              <h1 className="text-4xl sm:text-5xl font-black text-[#002d3b] leading-tight uppercase">
                 {division.title}
               </h1>
-              <p className="text-lg text-slate-300 leading-relaxed">{division.tagline}</p>
+              <p className="text-base sm:text-lg text-slate-650 leading-relaxed">{division.tagline}</p>
               <Link
                 href="/contact"
-                className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl ${colors.bg} border ${colors.border} ${colors.icon} font-bold text-sm hover:opacity-80 transition-opacity group`}
+                className="btn-siemens btn-siemens-primary flex items-center justify-center gap-2 max-w-fit rounded-none font-bold text-sm uppercase tracking-wider"
               >
                 <span>Request Division Inquiry</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
-            {/* Division Info Card */}
-            <div className={`glass-panel rounded-3xl p-7 border ${colors.border} space-y-5`}>
-              <div className="text-xs font-bold uppercase tracking-wider text-slate-400 border-b border-white/10 pb-3">
+            {/* Division Info Card - Flat Slate-50 panel */}
+            <div className="bg-slate-50 p-7 border border-slate-200 rounded-none space-y-5 text-slate-800 shadow-none">
+              <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 border-b border-slate-200 pb-3">
                 Division Overview
               </div>
-              <p className="text-slate-300 text-sm leading-relaxed">{division.description}</p>
+              <p className="text-slate-650 text-sm leading-relaxed">{division.description}</p>
               <div>
-                <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Products & Services</div>
+                <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-3">Products & Services</div>
                 <ul className="space-y-2">
                   {division.categories.map((cat) => (
-                    <li key={cat} className="flex items-center gap-2.5 text-sm text-slate-200">
-                      <CheckCircle2 className={`w-4 h-4 ${colors.icon} shrink-0`} />
+                    <li key={cat} className="flex items-center gap-2.5 text-sm text-slate-700">
+                      <CheckCircle2 className="w-4 h-4 text-[#009999] shrink-0" />
                       <span>{cat}</span>
                     </li>
                   ))}
@@ -108,39 +96,39 @@ export default async function DivisionDetailPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Global Relevance */}
-      <section className="py-16 bg-[#090d16]">
+      {/* Global Relevance - Flat Gray Background */}
+      <section className="py-16 bg-[#f4f5f6] border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="glass-panel rounded-2xl p-6 border border-white/10 text-center">
-              <Globe className="w-8 h-8 text-sky-400 mx-auto mb-3" />
-              <div className="text-2xl font-extrabold text-white font-mono">190+</div>
-              <div className="text-xs text-slate-400 uppercase tracking-wider mt-1">Countries Served</div>
+            <div className="bg-white border border-slate-200 rounded-none p-6 text-center shadow-none text-slate-800">
+              <Globe className="w-8 h-8 text-[#009999] mx-auto mb-3" />
+              <div className="text-2xl font-bold text-[#002d3b] font-mono">190+</div>
+              <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold mt-1">Countries Served</div>
             </div>
-            <div className="glass-panel rounded-2xl p-6 border border-white/10 text-center">
-              <div className={`mx-auto mb-3 p-2 rounded-xl ${colors.bg} border ${colors.border} w-fit`}>
-                <IconComponent className={`w-6 h-6 ${colors.icon}`} />
+            <div className="bg-white border border-slate-200 rounded-none p-6 text-center shadow-none text-slate-800">
+              <div className="mx-auto mb-3 p-2 bg-slate-50 border border-slate-200 rounded-none w-fit">
+                <IconComponent className="w-6 h-6 text-[#009999]" />
               </div>
-              <div className="text-2xl font-extrabold text-white font-mono">{division.categories.length}</div>
-              <div className="text-xs text-slate-400 uppercase tracking-wider mt-1">Product Categories</div>
+              <div className="text-2xl font-bold text-[#002d3b] font-mono">{division.categories.length}</div>
+              <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold mt-1">Product Categories</div>
             </div>
-            <div className="glass-panel rounded-2xl p-6 border border-white/10 text-center">
-              <CheckCircle2 className="w-8 h-8 text-emerald-400 mx-auto mb-3" />
-              <div className="text-2xl font-extrabold text-white font-mono">100+</div>
-              <div className="text-xs text-slate-400 uppercase tracking-wider mt-1">Years of Engineering Heritage</div>
+            <div className="bg-white border border-slate-200 rounded-none p-6 text-center shadow-none text-slate-800">
+              <CheckCircle2 className="w-8 h-8 text-[#009999] mx-auto mb-3" />
+              <div className="text-2xl font-bold text-[#002d3b] font-mono">100+</div>
+              <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold mt-1">Years Heritage</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Navigation between Divisions */}
-      <section className="py-8 bg-[#0b1120] border-t border-white/10">
+      {/* Navigation between Divisions - White Background panel */}
+      <section className="py-8 bg-white border-t border-slate-200 text-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             {prevDiv ? (
               <Link
                 href={`/divisions/${prevDiv.slug}`}
-                className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-sky-400 transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-[#009999] transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
                 <span>{prevDiv.title}</span>
@@ -148,14 +136,14 @@ export default async function DivisionDetailPage({ params }: Props) {
             ) : <div />}
             <Link
               href="/divisions"
-              className="text-xs font-bold text-slate-500 hover:text-slate-300 transition-colors uppercase tracking-wider"
+              className="text-[10px] font-bold text-slate-400 hover:text-[#009999] transition-colors uppercase tracking-wider"
             >
               All Divisions
             </Link>
             {nextDiv ? (
               <Link
                 href={`/divisions/${nextDiv.slug}`}
-                className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-sky-400 transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-[#009999] transition-colors"
               >
                 <span>{nextDiv.title}</span>
                 <ArrowRight className="w-4 h-4" />
