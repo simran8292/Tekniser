@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, Globe, ShoppingCart, User, Search } from "lucide-react";
+import { Menu, X, ChevronDown, Globe, User, Search } from "lucide-react";
 import { BUSINESS_DIVISIONS } from "@/lib/data";
 
 export default function Header() {
@@ -99,16 +99,6 @@ export default function Header() {
               </div>
 
               <div className="h-3.5 w-px bg-slate-800" />
-
-              {/* Cart / Briefcase */}
-              <Link
-                href="/contact"
-                className="flex items-center gap-1.5 hover:text-[#36b39c] transition-colors"
-                title="Inquiry Basket"
-              >
-                <ShoppingCart className="w-3.5 h-3.5 text-[#36b39c]" />
-                <span className="hidden xl:inline">Inquiries</span>
-              </Link>
 
               {/* Admin login */}
               <Link
@@ -229,13 +219,6 @@ export default function Header() {
 
           {/* Action & Toggle Controls */}
           <div className="flex items-center gap-3">
-            <Link
-              href="/contact"
-              className="text-[10px] font-bold uppercase tracking-wider text-white bg-[#36b39c] hover:bg-[#2d9683] px-3.5 py-2 transition-colors rounded-none"
-            >
-              Inquire
-            </Link>
-
             {/* Mobile Hamburger Toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
