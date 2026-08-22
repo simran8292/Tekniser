@@ -30,7 +30,6 @@ export default function Header() {
     { name: "Capabilities", href: "/capabilities" },
     { name: "Industries", href: "/industries" },
     { name: "RESPONSIBILITY", href: "/responsibility", hasDropdown: true, dropdownType: "responsibility" },
-    { name: "Global Network", href: "/global-network" },
   ];
 
   return (
@@ -42,7 +41,7 @@ export default function Header() {
         <div className="hidden lg:block">
           {/* Top Deck: Brand Logo & Utility Links */}
           <div
-            className={`flex items-center justify-between transition-all duration-300 border-b border-slate-800/50 ${
+            className={`flex items-center justify-between transition-all duration-300 ${
               isScrolled ? "py-1.5" : "py-3"
             }`}
           >
@@ -100,7 +99,7 @@ export default function Header() {
                 </div>
               </div>
 
-              <div className="h-3.5 w-px bg-slate-800" />
+
 
               {/* Admin login */}
               <Link
