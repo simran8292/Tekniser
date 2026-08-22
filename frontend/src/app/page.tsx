@@ -34,8 +34,8 @@ export default function HomePage() {
             <span>Our Strategic Ambition</span>
           </div>
           
-          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight uppercase">
-            Vision <span className="text-[#009999]">2046</span>
+          <h2 className="text-3xl sm:text-5xl font-light text-white tracking-wide leading-tight uppercase">
+            Vision <span className="font-bold text-[#009999]">2046</span>
           </h2>
 
           <blockquote className="text-lg sm:text-xl text-slate-200 leading-relaxed max-w-4xl mx-auto font-normal border-l-4 border-[#009999] pl-6 text-left italic">

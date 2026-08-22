@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-const montserrat = Montserrat({
+const outfit = Outfit({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-montserrat",
+  variable: "--font-outfit",
 });
 
 export const metadata: Metadata = {
@@ -55,7 +55,7 @@ const jsonLd = {
   name: "TAKNISER ONE GLOBE",
   legalName: "TAKNISER GmbH",
   url: "https://takniser.com",
-  logo: "https://takniser.com/brand/logo.svg",
+  logo: "https://takniser.com/logo123.png",
   description:
     "Global Industrial, Technology & Trading Conglomerate with 100+ years of German engineering heritage.",
   foundingLocation: { "@type": "Place", name: "Hesse (Hessen), Germany" },
@@ -65,14 +65,14 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={montserrat.variable}>
+    <html lang="en" className={outfit.variable}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${montserrat.className} antialiased`}>
+      <body className={`${outfit.variable} font-sans antialiased`}>
         <Header />
         <main>{children}</main>
         <Footer />

@@ -32,8 +32,8 @@ export default function GlobalMapPreview() {
           <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#009999] text-[#009999] text-xs font-bold tracking-wider uppercase rounded-none bg-transparent">
             <span>Global Operational Presence</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase">
-            One Globe. <span className="text-[#009999]">One Network.</span>
+          <h2 className="text-3xl sm:text-5xl font-light text-white tracking-wide uppercase">
+            One Globe. <span className="font-bold text-[#009999]">One Network.</span>
           </h2>
           <p className="text-slate-200 text-base">
             TAKNISER ONE GLOBE operates through 29 Regional Headquarters, strategic logistics hubs, and business offices across 190+ countries and 6 continents.

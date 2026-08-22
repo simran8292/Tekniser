@@ -89,9 +89,9 @@ export default function Header() {
           
           {/* Logo Section - Enlarged */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="relative h-12 w-52 sm:w-64">
+            <div className="relative h-10 w-48 sm:h-12 sm:w-56">
               <Image
-                src="/brand/logo.svg"
+                src="/logo123.png"
                 alt="TAKNISER ONE GLOBE - Logo"
                 fill
                 priority

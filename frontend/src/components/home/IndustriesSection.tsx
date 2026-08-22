@@ -13,8 +13,8 @@ export default function IndustriesSection() {
     <section className="py-20 bg-slate-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl sm:text-4xl font-black text-[#002d3b] uppercase tracking-tight">
-            Industries We Serve
+          <h2 className="text-3xl sm:text-5xl font-light text-[#002d3b] tracking-wide">
+            Industries <span className="font-bold text-[#009999]">We Serve</span>
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto">
             Providing specialized, high-performance solutions across diverse industrial sectors worldwide.
@@ -25,9 +25,11 @@ export default function IndustriesSection() {
           {INDUSTRIES.map((industry) => {
             const IconComponent = iconMap[industry.icon] || Settings;
             return (
-              <div key={industry.title} className="bg-white p-6 border border-slate-200 hover:border-[#009999] hover:shadow-lg transition-all group rounded-none text-left">
-                <IconComponent className="w-8 h-8 text-[#009999] mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wide mb-2">{industry.title}</h3>
+              <div key={industry.title} className="bg-white p-8 border border-slate-200 hover:border-[#009999]/50 hover:shadow-xl transition-all duration-300 group rounded-2xl text-left">
+                <div className="w-14 h-14 bg-slate-50 border border-slate-100 flex items-center justify-center mb-6 rounded-xl group-hover:border-[#009999]/30 group-hover:bg-[#009999]/5 transition-colors">
+                  <IconComponent className="w-7 h-7 text-[#009999]" strokeWidth={1.25} />
+                </div>
+                <h3 className="text-sm font-semibold text-slate-800 tracking-wide mb-3">{industry.title}</h3>
                 <p className="text-xs text-slate-500 leading-relaxed">{industry.description}</p>
               </div>
             );

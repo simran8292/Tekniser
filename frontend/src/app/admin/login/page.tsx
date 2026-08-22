@@ -36,12 +36,12 @@ export default function AdminLoginPage() {
       <div className="w-full max-w-md relative z-10">
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="relative h-14 w-52 mx-auto mb-6">
-            <Image src="/brand/logo.svg" alt="TAKNISER ONE GLOBE" fill className="object-contain" />
+          <div className="relative h-20 w-72 mx-auto mb-6 bg-white rounded-xl flex items-center justify-center p-3 shadow-lg shadow-black/20">
+            <Image src="/logo123.png" alt="TAKNISER ONE GLOBE" fill className="object-contain p-1.5" />
           </div>
           <div className="flex items-center justify-center gap-2 text-slate-400 text-sm mb-2">
-            <Lock className="w-4 h-4 text-sky-400" />
-            <span>Secure Administrative Portal</span>
+            <Lock className="w-4 h-4 text-sky-400 -mt-0.5" />
+            <span className="leading-none">Secure Administrative Portal</span>
           </div>
           <h1 className="text-2xl font-extrabold text-white">Admin Access</h1>
         </div>
@@ -82,7 +82,7 @@ export default function AdminLoginPage() {
             type="submit" disabled={loading}
             className="w-full flex items-center justify-center gap-3 px-6 py-3.5 text-sm font-bold rounded-xl bg-gradient-to-r from-sky-600 to-sky-500 hover:from-sky-500 hover:to-blue-500 text-white shadow-lg shadow-sky-600/20 transition-all disabled:opacity-60 disabled:cursor-not-allowed hover:scale-[1.02]"
           >
-            {loading ? <><Loader2 className="w-4 h-4 animate-spin" /><span>Authenticating...</span></> : <><Lock className="w-4 h-4" /><span>Sign In to Admin Portal</span></>}
+            {loading ? <><Loader2 className="w-4 h-4 animate-spin -mt-0.5" /><span className="leading-none">Authenticating...</span></> : <><Lock className="w-4 h-4 -mt-0.5" /><span className="leading-none">Sign In to Admin Portal</span></>}
           </button>
 
           <p className="text-center text-xs text-slate-500">

@@ -19,8 +19,8 @@ export default function CapabilitiesSection() {
           <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#009999] text-[#009999] text-xs font-bold tracking-wider uppercase rounded-none bg-transparent">
             <span>End-to-End Industrial Value Chain</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black text-[#002d3b] tracking-tight uppercase">
-            Complete <span className="text-[#009999]">Capabilities</span>
+          <h2 className="text-3xl sm:text-5xl font-light text-[#002d3b] tracking-wide leading-tight">
+            Complete <span className="font-bold text-[#009999]">Capabilities</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
             From engineering and manufacturing through to logistics, digital transformation, and after-sales services — TAKNISER delivers across the full industrial value chain.
@@ -34,18 +34,18 @@ export default function CapabilitiesSection() {
             return (
               <div
                 key={cap.title}
-                className="glass-panel glass-panel-hover bg-white p-5 border border-slate-200 flex flex-col gap-3 rounded-none shadow-none"
+                className="bg-white p-6 border border-slate-200 flex flex-col gap-4 rounded-2xl shadow-sm hover:shadow-lg hover:border-[#009999]/30 transition-all duration-300"
               >
                 <div className="flex items-center justify-between">
-                  <div className="p-2.5 bg-slate-50 border border-slate-200 rounded-none">
-                    <IconComponent className="w-5 h-5 text-[#009999]" />
+                  <div className="w-10 h-10 bg-slate-50 border border-slate-100 rounded-lg flex items-center justify-center group-hover:bg-[#009999]/5 transition-colors">
+                    <IconComponent className="w-5 h-5 text-[#009999]" strokeWidth={1.5} />
                   </div>
-                  <span className="text-xs font-mono font-bold text-slate-500">
+                  <span className="text-[10px] font-mono font-semibold text-slate-400 tracking-widest">
                     {String(idx + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <h3 className="text-sm font-bold text-[#002d3b] leading-tight">{cap.title}</h3>
-                <p className="text-xs text-slate-600 leading-relaxed">{cap.description}</p>
+                <h3 className="text-sm font-semibold tracking-wide text-[#002d3b] leading-tight">{cap.title}</h3>
+                <p className="text-xs text-slate-500 font-light leading-relaxed">{cap.description}</p>
               </div>
             );
           })}
