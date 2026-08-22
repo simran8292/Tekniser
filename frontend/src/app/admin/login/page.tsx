@@ -14,7 +14,10 @@ export default function AdminLoginPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
-    if (!form.email || !form.password) { setError("Email and password are required."); return; }
+    if (!form.email || !form.password) {
+      setError("Email and password are required.");
+      return;
+    }
     setLoading(true);
     try {
       const res = await fetch("/api/auth/login", {
@@ -23,69 +26,117 @@ export default function AdminLoginPage() {
         body: JSON.stringify(form),
       });
       const data = await res.json();
-      if (!res.ok) { setError(data.error || "Invalid credentials."); }
-      else { router.push("/admin"); router.refresh(); }
+      if (!res.ok) {
+        setError(data.error || "Invalid credentials.");
+      } else {
+        router.push("/admin");
+        router.refresh();
+      }
     } catch {
       setError("Network error. Please try again.");
-    } finally { setLoading(false); }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#090d16] bg-grid-pattern px-4">
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-sky-600/8 rounded-full blur-[100px] pointer-events-none" />
+    <div className="min-h-screen flex items-center justify-center bg-[#000e1a] px-4 relative overflow-hidden">
+      {/* Decorative Brand Glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-[#36b39c]/5 rounded-full blur-[100px] pointer-events-none" />
+      
       <div className="w-full max-w-md relative z-10">
-        {/* Logo */}
+        {/* Logo Section */}
         <div className="text-center mb-8">
-          <div className="relative h-14 w-52 mx-auto mb-6">
-            <Image src="/brand/logo.svg" alt="TAKNISER ONE GLOBE" fill className="object-contain" />
+          <div className="relative h-14 w-56 mx-auto mb-5">
+            <Image
+              src="/brand/logo.svg"
+              alt="TAKNISER ONE GLOBE"
+              fill
+              priority
+              className="object-contain"
+            />
           </div>
-          <div className="flex items-center justify-center gap-2 text-slate-400 text-sm mb-2">
-            <Lock className="w-4 h-4 text-sky-400" />
+          <div className="flex items-center justify-center gap-2 text-slate-400 text-xs uppercase tracking-wider mb-2 font-bold">
+            <Lock className="w-3.5 h-3.5 text-[#36b39c]" />
             <span>Secure Administrative Portal</span>
           </div>
-          <h1 className="text-2xl font-extrabold text-white">Admin Access</h1>
+          <h1 className="text-3xl font-bold font-serif text-white tracking-wide">
+            Admin Access
+          </h1>
         </div>
 
-        <form onSubmit={handleSubmit} className="glass-panel rounded-3xl p-8 border border-white/10 space-y-5">
-          {error && (
-            <div className="flex items-center gap-2 p-3.5 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm">
+        {/* Login Form Panel */}
+        <form
+          onSubmit={handleSubmit}
+          className="bg-[#001822] p-8 border border-slate-800 space-y-6 shadow-2xl rounded-none"
+        >
+          {/* Smoothly animated Error Alert Box */}
+          <div
+            className={`transition-all duration-300 ease-in-out overflow-hidden ${
+              error ? "max-h-20 opacity-100" : "max-h-0 opacity-0"
+            }`}
+          >
+            <div className="flex items-center gap-2.5 p-3.5 bg-red-500/10 border border-red-500/35 text-red-400 text-xs font-semibold rounded-none">
               <AlertCircle className="w-4 h-4 shrink-0" />
               <span>{error}</span>
             </div>
-          )}
+          </div>
 
           <div>
-            <label htmlFor="admin-email" className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">
+            <label
+              htmlFor="admin-email"
+              className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5"
+            >
               Email Address
             </label>
             <input
-              id="admin-email" type="email" value={form.email} autoComplete="email"
+              id="admin-email"
+              type="email"
+              value={form.email}
+              autoComplete="email"
               onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
               placeholder="admin@takniser.de"
-              className="w-full px-4 py-3 rounded-xl bg-slate-800/70 border border-slate-700 text-slate-100 text-sm placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500/50 focus:border-sky-500/60 transition-all"
+              className="w-full px-4 py-3 rounded-none bg-[#00111a] border border-slate-800 text-slate-100 text-sm placeholder-slate-600 focus:outline-none focus:border-[#36b39c] focus:ring-1 focus:ring-[#36b39c]/30 transition-all font-medium"
             />
           </div>
 
           <div>
-            <label htmlFor="admin-password" className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">
+            <label
+              htmlFor="admin-password"
+              className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5"
+            >
               Password
             </label>
             <input
-              id="admin-password" type="password" value={form.password} autoComplete="current-password"
+              id="admin-password"
+              type="password"
+              value={form.password}
+              autoComplete="current-password"
               onChange={(e) => setForm((p) => ({ ...p, password: e.target.value }))}
               placeholder="••••••••••••"
-              className="w-full px-4 py-3 rounded-xl bg-slate-800/70 border border-slate-700 text-slate-100 text-sm placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500/50 focus:border-sky-500/60 transition-all"
+              className="w-full px-4 py-3 rounded-none bg-[#00111a] border border-slate-800 text-slate-100 text-sm placeholder-slate-600 focus:outline-none focus:border-[#36b39c] focus:ring-1 focus:ring-[#36b39c]/30 transition-all font-medium"
             />
           </div>
 
           <button
-            type="submit" disabled={loading}
-            className="w-full flex items-center justify-center gap-3 px-6 py-3.5 text-sm font-bold rounded-xl bg-gradient-to-r from-sky-600 to-sky-500 hover:from-sky-500 hover:to-blue-500 text-white shadow-lg shadow-sky-600/20 transition-all disabled:opacity-60 disabled:cursor-not-allowed hover:scale-[1.02]"
+            type="submit"
+            disabled={loading}
+            className="w-full flex items-center justify-center gap-3 px-6 py-3.5 text-xs font-bold uppercase tracking-widest rounded-none bg-[#36b39c] hover:bg-[#2d9683] text-white shadow-lg shadow-[#36b39c]/10 transition-all disabled:opacity-60 disabled:cursor-not-allowed hover:scale-[1.01] active:scale-[0.99] cursor-pointer"
           >
-            {loading ? <><Loader2 className="w-4 h-4 animate-spin" /><span>Authenticating...</span></> : <><Lock className="w-4 h-4" /><span>Sign In to Admin Portal</span></>}
+            {loading ? (
+              <>
+                <Loader2 className="w-4 h-4 animate-spin" />
+                <span>Authenticating...</span>
+              </>
+            ) : (
+              <>
+                <Lock className="w-3.5 h-3.5" />
+                <span>Sign In to Admin Portal</span>
+              </>
+            )}
           </button>
 
-          <p className="text-center text-xs text-slate-500">
+          <p className="text-center text-[10px] text-slate-500 leading-relaxed uppercase tracking-wider font-semibold">
             This portal is restricted to authorized TAKNISER corporate administrators.
           </p>
         </form>

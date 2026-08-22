@@ -1,3 +1,4 @@
+// Trigger backend server watch reload with updated ENV variables
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
