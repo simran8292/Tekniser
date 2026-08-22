@@ -27,8 +27,8 @@ export default function AboutSection() {
             
             {/* Overlay Stat Box */}
             <div className="absolute -bottom-8 -right-8 bg-[#001822] p-8 border border-[#009999] shadow-2xl hidden md:block rounded-2xl">
-              <div className="text-4xl font-light text-white mb-2">{CORPORATE_INFO.heritageYears}</div>
-              <div className="text-xs font-semibold text-[#009999] uppercase tracking-[0.15em]">Years of Excellence</div>
+              <div className="text-4xl font-black text-white mb-2">{CORPORATE_INFO.heritageYears}</div>
+              <div className="text-xs font-bold text-[#009999] uppercase tracking-widest">Years of Excellence</div>
             </div>
           </div>
 
@@ -39,8 +39,8 @@ export default function AboutSection() {
                 <History className="w-4 h-4" strokeWidth={1.5} />
                 <span>About TAKNISER</span>
               </div>
-              <h2 className="text-3xl sm:text-5xl font-light text-[#002d3b] tracking-wide leading-tight">
-                A Century of <span className="font-bold text-[#009999]">Legacy</span>
+              <h2 className="text-3xl sm:text-5xl font-black text-[#002d3b] uppercase tracking-tight leading-tight">
+                A Century of <span className="text-[#009999]">Legacy</span>
               </h2>
               <p className="text-lg text-slate-500 font-light leading-relaxed tracking-wide">
                 {CORPORATE_INFO.tagline}

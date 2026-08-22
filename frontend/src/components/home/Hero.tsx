@@ -80,16 +80,16 @@ export default function Hero() {
               {slide.kicker}
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-light text-white tracking-wide leading-[1.05] animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] uppercase animate-fade-in-up" style={{ animationDelay: '100ms' }}>
               {slide.title} <br className="hidden sm:inline" />
-              <span className="font-bold text-[#009999]">{slide.highlight}</span>
+              <span className="text-[#009999]">{slide.highlight}</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-300 max-w-2xl font-light tracking-wide leading-relaxed animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+            <p className="text-base sm:text-lg text-slate-200 max-w-2xl font-normal leading-relaxed animate-fade-in-up" style={{ animationDelay: '200ms' }}>
               {slide.description}
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-start gap-4 pt-2 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
+            <div className="flex flex-col sm:flex-row items-center justify-start gap-4 pt-4 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
               <Link href={slide.primaryCta.href} className="w-full sm:w-auto btn-siemens btn-siemens-primary flex items-center justify-center gap-2">
                 <span>{slide.primaryCta.text}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -116,10 +116,8 @@ export default function Hero() {
           {/* Right Column: Visual Showcase Card (Static branding) */}
           <div className="lg:col-span-5 relative hidden lg:block">
             <div className="relative bg-[#001822]/90 p-6 sm:p-8 border border-slate-800 space-y-6 rounded-none backdrop-blur-md">
-              <div className="w-full h-32 sm:h-40 bg-white p-4 border border-slate-200 rounded-xl shadow-sm">
-                <div className="relative w-full h-full">
-                  <Image src="/logo123.png" alt="TAKNISER ONE GLOBE" fill className="object-contain" />
-                </div>
+              <div className="relative w-full h-24 sm:h-28 bg-[#001b24] p-4 flex items-center justify-center border border-slate-800 rounded-none">
+                <Image src="/brand/logo.svg" alt="TAKNISER ONE GLOBE" width={360} height={120} className="object-contain" />
               </div>
               <div className="space-y-4 text-left">
                 <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-slate-400 border-b border-slate-800 pb-2">

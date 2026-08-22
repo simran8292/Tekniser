@@ -38,12 +38,12 @@ export default function Footer() {
           {/* Column 1: Brand & German Heritage */}
           <div className="lg:col-span-2 space-y-5">
             <Link href="/" className="inline-block">
-              <div className="relative h-16 w-64 bg-white rounded-lg px-4 py-2 flex items-center justify-center">
+              <div className="relative h-12 w-56">
                 <Image
-                  src="/logo123.png"
+                  src="/brand/logo.svg"
                   alt="TAKNISER ONE GLOBE Logo"
                   fill
-                  className="object-contain p-1"
+                  className="object-contain object-left brightness-0 invert"
                 />
               </div>
             </Link>

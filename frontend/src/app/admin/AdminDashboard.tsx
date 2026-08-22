@@ -76,8 +76,8 @@ export default function AdminDashboard({ session }: { session: JWTPayload }) {
       {/* Admin Header */}
       <header className="bg-slate-900/80 border-b border-white/10 backdrop-blur-md px-6 py-3.5 flex items-center justify-between sticky top-0 z-30">
         <div className="flex items-center gap-4">
-          <div className="relative h-12 w-48 bg-white rounded flex items-center justify-center px-3 py-1">
-            <Image src="/logo123.png" alt="TAKNISER" fill className="object-contain p-0.5" />
+          <div className="relative h-10 w-44">
+            <Image src="/brand/logo.svg" alt="TAKNISER" fill className="object-contain object-left" />
           </div>
           <div className="h-5 w-px bg-white/20" />
           <div className="flex items-center gap-1.5 text-xs font-bold text-sky-400 uppercase tracking-wider">
