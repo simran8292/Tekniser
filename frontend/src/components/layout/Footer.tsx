@@ -1,12 +1,38 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Globe, Shield, Award, MapPin, Mail, Lock } from "lucide-react";
+import { Globe, Shield, Award, MapPin, Mail, Lock, ArrowRight } from "lucide-react";
 import { BUSINESS_DIVISIONS, CORPORATE_INFO } from "@/lib/data";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#002d3b] border-t border-slate-800 text-slate-300 pt-16 pb-12 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <footer className="bg-[#002d3b] border-t border-slate-800 text-slate-300 relative overflow-hidden">
+      
+      {/* Prominent Contact CTA Section */}
+      <div className="bg-[#009999] py-16 border-y border-[#008080]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="text-center lg:text-left space-y-3">
+              <h2 className="text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
+                Ready to work with TAKNISER?
+              </h2>
+              <p className="text-white max-w-2xl text-base sm:text-lg opacity-90">
+                Our global team of industrial specialists, engineers, and procurement experts are ready to deliver integrated solutions for your business needs.
+              </p>
+            </div>
+            <div className="shrink-0">
+              <Link
+                href="/contact"
+                className="w-full sm:w-auto px-8 py-4 bg-white text-[#002d3b] hover:bg-slate-100 transition-colors font-bold uppercase tracking-wider text-sm rounded-none flex items-center justify-center gap-2 shadow-lg"
+              >
+                <span>Contact Our Team</span>
+                <ArrowRight className="w-4 h-4 text-[#002d3b]" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="pt-16 pb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
           
           {/* Column 1: Brand & German Heritage */}
@@ -40,10 +66,10 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Business Divisions */}
+          {/* Column 2: What We Do */}
           <div>
             <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
-              Business Divisions
+              WHAT WE DO
             </h3>
             <ul className="space-y-2.5 text-sm text-slate-400">
               {BUSINESS_DIVISIONS.map((div) => (
@@ -52,8 +78,7 @@ export default function Footer() {
                     href={`/divisions/${div.slug}`}
                     className="hover:text-[#009999] transition-colors flex items-center gap-1.5"
                   >
-                    <span className="text-[#009999] font-mono text-xs">0{div.code}</span>
-                    <span>{div.title.replace("TAKNISER ", "")}</span>
+                    <span>{div.title}</span>
                   </Link>
                 </li>
               ))}
@@ -66,36 +91,12 @@ export default function Footer() {
               Capabilities
             </h3>
             <ul className="space-y-2.5 text-sm text-slate-400">
-              <li>
-                <Link href="/capabilities" className="hover:text-[#009999] transition-colors">
-                  Engineering & Consulting
-                </Link>
-              </li>
-              <li>
-                <Link href="/capabilities" className="hover:text-[#009999] transition-colors">
-                  Industrial Manufacturing
-                </Link>
-              </li>
-              <li>
-                <Link href="/capabilities" className="hover:text-[#009999] transition-colors">
-                  Global Strategic Sourcing
-                </Link>
-              </li>
-              <li>
-                <Link href="/capabilities" className="hover:text-[#009999] transition-colors">
-                  International Procurement
-                </Link>
-              </li>
-              <li>
-                <Link href="/capabilities" className="hover:text-[#009999] transition-colors">
-                  EPC & Project Supply
-                </Link>
-              </li>
-              <li>
-                <Link href="/capabilities" className="hover:text-[#009999] transition-colors">
-                  JAFZA Logistics Network
-                </Link>
-              </li>
+              <li><Link href="/capabilities" className="hover:text-[#009999] transition-colors">Engineering & Consulting</Link></li>
+              <li><Link href="/capabilities" className="hover:text-[#009999] transition-colors">Industrial Manufacturing</Link></li>
+              <li><Link href="/capabilities" className="hover:text-[#009999] transition-colors">Global Strategic Sourcing</Link></li>
+              <li><Link href="/capabilities" className="hover:text-[#009999] transition-colors">International Procurement</Link></li>
+              <li><Link href="/capabilities" className="hover:text-[#009999] transition-colors">EPC & Project Supply</Link></li>
+              <li><Link href="/capabilities" className="hover:text-[#009999] transition-colors">JAFZA Logistics Network</Link></li>
             </ul>
           </div>
 
@@ -141,15 +142,9 @@ export default function Footer() {
             © {new Date().getFullYear()} TAKNISER ONE GLOBE (TAKNISER GmbH). All rights reserved. Over 100 Years of German Engineering Excellence.
           </div>
           <div className="flex items-center space-x-6">
-            <Link href="/privacy" className="hover:text-white transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="hover:text-white transition-colors">
-              Terms of Use
-            </Link>
-            <Link href="/global-network" className="hover:text-white transition-colors">
-              Global Footprint
-            </Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms of Use</Link>
+            <Link href="/global-network" className="hover:text-white transition-colors">Global Footprint</Link>
           </div>
         </div>
       </div>
