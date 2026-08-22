@@ -11,6 +11,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDivisionsOpen, setIsDivisionsOpen] = useState(false);
+  const [isResponsibilityOpen, setIsResponsibilityOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const pathname = usePathname();
 
@@ -25,9 +26,10 @@ export default function Header() {
   const navLinks = [
     { name: "About TAKNISER", href: "/about" },
     { name: "Vision 2046", href: "/vision-2046" },
-    { name: "Business Divisions", href: "/divisions", hasDropdown: true },
+    { name: "WHAT WE DO", href: "/divisions", hasDropdown: true, dropdownType: "divisions" },
     { name: "Capabilities", href: "/capabilities" },
     { name: "Industries", href: "/industries" },
+    { name: "RESPONSIBILITY", href: "/responsibility", hasDropdown: true, dropdownType: "responsibility" },
     { name: "Global Network", href: "/global-network" },
   ];
 
@@ -123,17 +125,24 @@ export default function Header() {
                 const isActive = pathname === link.href;
 
                 if (link.hasDropdown) {
+                  const isDivisions = link.dropdownType === "divisions";
+                  const isOpen = isDivisions ? isDivisionsOpen : isResponsibilityOpen;
+                  const setIsOpen = isDivisions ? setIsDivisionsOpen : setIsResponsibilityOpen;
+                  const isCurrentActive = isDivisions
+                    ? isActive || pathname.startsWith("/divisions")
+                    : isActive || pathname.startsWith("/responsibility");
+
                   return (
                     <div
                       key={link.name}
                       className="relative"
-                      onMouseEnter={() => setIsDivisionsOpen(true)}
-                      onMouseLeave={() => setIsDivisionsOpen(false)}
+                      onMouseEnter={() => setIsOpen(true)}
+                      onMouseLeave={() => setIsOpen(false)}
                     >
                       <Link
                         href={link.href}
                         className={`relative py-2 text-[11px] font-bold uppercase tracking-widest transition-all flex items-center gap-1 border-b-2 ${
-                          isActive || pathname.startsWith("/divisions")
+                          isCurrentActive
                             ? "border-[#36b39c] text-[#36b39c]"
                             : "border-transparent text-white hover:text-[#36b39c]"
                         }`}
@@ -141,13 +150,13 @@ export default function Header() {
                         <span>{link.name}</span>
                         <ChevronDown
                           className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                            isDivisionsOpen ? "rotate-180" : ""
+                            isOpen ? "rotate-180" : ""
                           }`}
                         />
                       </Link>
 
-                      {/* Business Divisions Dropdown */}
-                      {isDivisionsOpen && (
+                      {/* Dropdowns */}
+                      {isDivisions && isDivisionsOpen && (
                         <div className="absolute top-full left-0 w-80 mt-0 py-2 bg-[#001822] shadow-2xl border border-slate-800 divide-y divide-slate-800/60 rounded-none z-50">
                           <div className="px-4 py-2 text-[9px] font-bold uppercase tracking-wider text-slate-500">
                             7 Core Business Divisions
@@ -165,6 +174,28 @@ export default function Header() {
                                 </span>
                               </Link>
                             ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {!isDivisions && isResponsibilityOpen && (
+                        <div className="absolute top-full left-0 w-72 mt-0 py-2 bg-[#001822] shadow-2xl border border-slate-800 divide-y divide-slate-800/60 rounded-none z-50">
+                          <div className="px-4 py-2 text-[9px] font-bold uppercase tracking-wider text-slate-500">
+                            Corporate Responsibility
+                          </div>
+                          <div className="py-1">
+                            <Link
+                              href="/responsibility/family"
+                              className="block px-4 py-2.5 text-xs text-slate-300 hover:text-[#36b39c] hover:bg-[#002d3b] transition-colors font-semibold"
+                            >
+                              TAKNISER ONE GLOBE FAMILY
+                            </Link>
+                            <Link
+                              href="/responsibility/sustainable-earth"
+                              className="block px-4 py-2.5 text-xs text-slate-300 hover:text-[#36b39c] hover:bg-[#002d3b] transition-colors font-semibold"
+                            >
+                              SUSTAINABLE EARTH
+                            </Link>
                           </div>
                         </div>
                       )}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
-import ValuesSection from "@/components/home/ValuesSection";
+import AboutSection from "@/components/home/AboutSection";
+import IndustriesSection from "@/components/home/IndustriesSection";
 import DivisionsGrid from "@/components/home/DivisionsGrid";
 import GlobalMapPreview from "@/components/home/GlobalMapPreview";
 import CapabilitiesSection from "@/components/home/CapabilitiesSection";
@@ -18,7 +19,8 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <ValuesSection />
+      <IndustriesSection />
+      <AboutSection />
       <DivisionsGrid />
       <CapabilitiesSection />
       <GlobalMapPreview />
@@ -72,30 +74,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Contact CTA Section - Flat Siemens Petrol Background */}
-      <section className="py-20 bg-[#009999] border-y border-[#008080] relative overflow-hidden">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="text-center lg:text-left space-y-3">
-              <h2 className="text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
-                Ready to work with TAKNISER?
-              </h2>
-              <p className="text-white max-w-2xl text-base sm:text-lg opacity-90">
-                Our global team of industrial specialists, engineers, and procurement experts are ready to deliver integrated solutions for your business needs.
-              </p>
-            </div>
-            <div className="shrink-0">
-              <Link
-                href="/contact"
-                className="w-full sm:w-auto btn-siemens bg-white text-[#002d3b] hover:bg-slate-100 transition-colors rounded-none flex items-center justify-center gap-2"
-              >
-                <span>Contact Our Team</span>
-                <ArrowRight className="w-4 h-4 text-[#002d3b]" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Contact CTA Section is moved to Footer as requested, removing it from here. */}
     </>
   );
 }
