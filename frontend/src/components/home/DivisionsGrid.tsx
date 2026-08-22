@@ -17,8 +17,8 @@ export default function DivisionsGrid() {
             <Globe className="w-3.5 h-3.5 text-[#009999]" />
             <span>Integrated Business Conglomerate</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black text-[#002d3b] tracking-tight uppercase">
-            Seven <span className="text-[#009999]">Core Divisions</span>
+          <h2 className="text-3xl sm:text-5xl font-light text-[#002d3b] tracking-wide leading-tight">
+            Seven <span className="font-bold text-[#009999]">Core Divisions</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
             From deep-space technology to sustainable agriculture, TAKNISER ONE GLOBE operates across seven transformative industrial sectors — all connected through one integrated global platform.
@@ -33,21 +33,21 @@ export default function DivisionsGrid() {
               <Link
                 key={division.id}
                 href={`/divisions/${division.slug}`}
-                className="glass-panel glass-panel-hover bg-[#f4f5f6] p-6 border border-slate-200 group flex flex-col justify-between space-y-5 cursor-pointer rounded-none shadow-none"
+                className="bg-white p-6 border border-slate-200 group flex flex-col justify-between space-y-6 cursor-pointer rounded-2xl shadow-sm hover:shadow-xl hover:border-[#009999]/30 transition-all duration-300"
               >
                 {/* Top: Icon + Code */}
                 <div className="flex items-center justify-between">
-                  <div className="p-3 bg-white border border-slate-200 rounded-none">
-                    <IconComponent className="w-6 h-6 text-[#009999]" />
+                  <div className="w-12 h-12 bg-slate-50 border border-slate-100 rounded-xl flex items-center justify-center group-hover:bg-[#009999]/5 transition-colors">
+                    <IconComponent className="w-6 h-6 text-[#009999]" strokeWidth={1.5} />
                   </div>
-                  <span className="font-mono text-sm font-bold text-[#009999]">
+                  <span className="font-mono text-xs font-semibold text-[#009999] tracking-wider">
                     Division {division.code}
                   </span>
                 </div>
 
                 {/* Middle: Title + Tagline */}
                 <div className="flex-grow space-y-2">
-                  <h3 className="text-base font-bold text-[#002d3b] leading-tight group-hover:text-[#009999] transition-colors">
+                  <h3 className="text-lg font-semibold tracking-wide text-[#002d3b] leading-tight group-hover:text-[#009999] transition-colors">
                     {division.title}
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">

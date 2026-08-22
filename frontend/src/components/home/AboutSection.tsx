@@ -13,53 +13,59 @@ export default function AboutSection() {
           
           {/* Left: Visual Representation */}
           <div className="relative">
-            <div className="aspect-[4/3] relative bg-slate-100 border border-slate-200 p-2">
-              <Image 
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200" 
-                alt="Corporate Headquarters" 
-                fill 
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-[#009999]/10" />
+            <div className="aspect-[4/3] relative bg-slate-100 border border-slate-200 p-3 rounded-2xl">
+              <div className="relative w-full h-full rounded-xl overflow-hidden">
+                <Image 
+                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200" 
+                  alt="Corporate Headquarters" 
+                  fill 
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-[#009999]/10" />
+              </div>
             </div>
             
             {/* Overlay Stat Box */}
-            <div className="absolute -bottom-8 -right-8 bg-[#001822] p-8 border border-[#009999] shadow-2xl hidden md:block">
-              <div className="text-4xl font-black text-white mb-2">{CORPORATE_INFO.heritageYears}</div>
-              <div className="text-xs font-bold text-[#009999] uppercase tracking-widest">Years of Excellence</div>
+            <div className="absolute -bottom-8 -right-8 bg-[#001822] p-8 border border-[#009999] shadow-2xl hidden md:block rounded-2xl">
+              <div className="text-4xl font-light text-white mb-2">{CORPORATE_INFO.heritageYears}</div>
+              <div className="text-xs font-semibold text-[#009999] uppercase tracking-[0.15em]">Years of Excellence</div>
             </div>
           </div>
 
           {/* Right: Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#009999] text-[#009999] text-[10px] font-bold tracking-widest uppercase bg-slate-50">
-                <History className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-[#009999]/30 text-[#009999] text-[11px] font-semibold tracking-[0.15em] uppercase bg-slate-50 rounded-full">
+                <History className="w-4 h-4" strokeWidth={1.5} />
                 <span>About TAKNISER</span>
               </div>
-              <h2 className="text-3xl sm:text-5xl font-black text-[#002d3b] uppercase tracking-tight leading-tight">
-                A Century of <span className="text-[#009999]">Legacy</span>
+              <h2 className="text-3xl sm:text-5xl font-light text-[#002d3b] tracking-wide leading-tight">
+                A Century of <span className="font-bold text-[#009999]">Legacy</span>
               </h2>
-              <p className="text-lg text-slate-600 leading-relaxed">
+              <p className="text-lg text-slate-500 font-light leading-relaxed tracking-wide">
                 {CORPORATE_INFO.tagline}
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-6 pt-4">
               <div className="space-y-2">
-                <div className="flex items-center gap-2 text-[#009999]">
-                  <Building2 className="w-5 h-5" />
-                  <h3 className="font-bold uppercase tracking-wider text-sm text-[#002d3b]">Global Hub</h3>
+                <div className="flex items-center gap-3 text-[#009999]">
+                  <div className="p-2 bg-slate-50 rounded-lg">
+                    <Building2 className="w-5 h-5" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-semibold tracking-wide text-sm text-[#002d3b]">Global Hub</h3>
                 </div>
-                <p className="text-sm text-slate-500">{CORPORATE_INFO.foundingState}</p>
+                <p className="text-sm text-slate-500 font-light ml-[52px]">{CORPORATE_INFO.foundingState}</p>
               </div>
               
               <div className="space-y-2">
-                <div className="flex items-center gap-2 text-[#009999]">
-                  <Globe2 className="w-5 h-5" />
-                  <h3 className="font-bold uppercase tracking-wider text-sm text-[#002d3b]">Worldwide Reach</h3>
+                <div className="flex items-center gap-3 text-[#009999]">
+                  <div className="p-2 bg-slate-50 rounded-lg">
+                    <Globe2 className="w-5 h-5" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-semibold tracking-wide text-sm text-[#002d3b]">Worldwide Reach</h3>
                 </div>
-                <p className="text-sm text-slate-500">Operating in {CORPORATE_INFO.countriesServed} Countries</p>
+                <p className="text-sm text-slate-500 font-light ml-[52px]">Operating in {CORPORATE_INFO.countriesServed} Countries</p>
               </div>
             </div>
 
