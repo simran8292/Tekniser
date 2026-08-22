@@ -35,14 +35,14 @@ export default function AboutSection() {
           {/* Right: Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-[#009999]/30 text-[#009999] text-[11px] font-semibold tracking-[0.15em] uppercase bg-slate-50 rounded-full">
-                <History className="w-4 h-4" strokeWidth={1.5} />
-                <span>About TAKNISER</span>
-              </div>
               <h2 className="text-3xl sm:text-5xl font-black text-[#002d3b] uppercase tracking-tight leading-tight">
-                A Century of <span className="text-[#009999]">Legacy</span>
+                About <span className="text-[#009999]">TAKNISER</span>
               </h2>
-              <p className="text-lg text-slate-500 font-light leading-relaxed tracking-wide">
+              <div className="text-[10px] font-bold text-[#009999] uppercase tracking-[0.15em] flex items-center gap-1.5 pt-1">
+                <History className="w-3.5 h-3.5" strokeWidth={2} />
+                <span>A Century of Legacy</span>
+              </div>
+              <p className="text-lg text-slate-500 font-light leading-relaxed tracking-wide pt-2">
                 {CORPORATE_INFO.tagline}
               </p>
             </div>
