@@ -14,7 +14,7 @@ const SLIDES = [
     description: "Pioneering innovation across industrial manufacturing, space economy, and international trade in over 190 countries worldwide.",
     primaryCta: { text: "Our History & Heritage", href: "/about" },
     secondaryCta: { text: "Explore Global Network", href: "/global-network" },
-    bgImage: "/home sec22.png",
+    bgImage: "/home_sec22.png",
   },
   {
     id: "responsibility",
@@ -24,7 +24,7 @@ const SLIDES = [
     description: "Fostering eco-conscious innovations and empowering communities to forge a sustainable legacy for future generations.",
     primaryCta: { text: "Our Responsibility", href: "/responsibility" },
     secondaryCta: { text: "Sustainable Earth", href: "/responsibility/sustainable-earth" },
-    bgImage: "/susta e.png",
+    bgImage: "/susta_e.png",
   },
   {
     id: "what-we-do",
