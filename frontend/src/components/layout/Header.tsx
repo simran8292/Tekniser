@@ -24,7 +24,7 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: "About TAKNISER", href: "/about" },
+    { name: "About Us", href: "/about" },
     { name: "Vision 2046", href: "/vision-2046" },
     { name: "WHAT WE DO", href: "/divisions", hasDropdown: true, dropdownType: "divisions" },
     { name: "Capabilities", href: "/capabilities" },
@@ -166,12 +166,9 @@ export default function Header() {
                               <Link
                                 key={div.id}
                                 href={`/divisions/${div.slug}`}
-                                className="flex items-center justify-between px-4 py-2.5 text-xs text-slate-300 hover:text-[#36b39c] hover:bg-[#002d3b] transition-colors"
+                                className="flex items-center px-4 py-2.5 text-xs text-slate-300 hover:text-[#36b39c] hover:bg-[#002d3b] transition-colors"
                               >
                                 <span className="font-semibold">{div.title}</span>
-                                <span className="text-[9px] text-[#36b39c] font-mono font-bold bg-[#00111a] px-2 py-0.5 border border-slate-800">
-                                  0{div.code}
-                                </span>
                               </Link>
                             ))}
                           </div>
