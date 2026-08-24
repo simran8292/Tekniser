@@ -141,6 +141,16 @@ export default function AboutPage() {
               <Globe className="w-4 h-4 text-[#009999]" />
               <span>Explore Global Network</span>
             </Link>
+            <a
+              href="/TAKNISER_ONE_GLOBE_Website_Content.docx"
+              download
+              className="w-full sm:w-auto btn-siemens btn-siemens-outline-dark flex items-center justify-center gap-2 border-[#009999]"
+            >
+              <svg className="w-4 h-4 text-[#009999]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+              </svg>
+              <span>Download Website DOC</span>
+            </a>
           </div>
         </div>
       </section>

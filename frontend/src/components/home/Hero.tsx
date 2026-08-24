@@ -4,57 +4,59 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Globe, ShieldCheck, Sparkles, ChevronRight, MapPin } from "lucide-react";
-
-const SLIDES = [
-  {
-    id: "legacy",
-    kicker: "German Engineering Excellence",
-    title: "Engineering the Future of",
-    highlight: "Global Enterprise",
-    description: "Pioneering innovation across industrial manufacturing, space economy, and international trade in over 190 countries worldwide.",
-    primaryCta: { text: "Our History & Heritage", href: "/about" },
-    secondaryCta: { text: "Explore Global Network", href: "/global-network" },
-    bgImage: "/home_sec22.webp",
-  },
-  {
-    id: "responsibility",
-    kicker: "Sustainable Earth & Family",
-    title: "Championing Global",
-    highlight: "Responsibility",
-    description: "Fostering eco-conscious innovations and empowering communities to forge a sustainable legacy for future generations.",
-    primaryCta: { text: "Our Responsibility", href: "/responsibility" },
-    secondaryCta: { text: "Sustainable Earth", href: "/responsibility/sustainable-earth" },
-    bgImage: "/susta_e.webp",
-  },
-  {
-    id: "what-we-do",
-    kicker: "7 Core Divisions",
-    title: "Redefining Industry",
-    highlight: "Standards",
-    description: "Delivering integrated solutions from AgTech and Robotics to Space Economy, powering a resilient and advanced global lifestyle.",
-    primaryCta: { text: "Explore Divisions", href: "/divisions" },
-    secondaryCta: { text: "View Capabilities", href: "/capabilities" },
-    bgImage: "/7core.webp",
-  }
-];
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Hero() {
+  const { t, currentLanguage } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slideData = [
+    {
+      id: "legacy",
+      kicker: t("s1-kicker"),
+      title: t("s1-title"),
+      highlight: t("s1-highlight"),
+      description: t("s1-desc"),
+      primaryCta: { text: t("s1-primary"), href: "/about" },
+      secondaryCta: { text: t("s1-secondary"), href: "/global-network" },
+      bgImage: "/home_sec22.webp",
+    },
+    {
+      id: "responsibility",
+      kicker: t("s2-kicker"),
+      title: t("s2-title"),
+      highlight: t("s2-highlight"),
+      description: t("s2-desc"),
+      primaryCta: { text: t("s2-primary"), href: "/responsibility" },
+      secondaryCta: { text: t("s2-secondary"), href: "/responsibility/sustainable-earth" },
+      bgImage: "/susta_e.webp",
+    },
+    {
+      id: "what-we-do",
+      kicker: t("s3-kicker"),
+      title: t("s3-title"),
+      highlight: t("s3-highlight"),
+      description: t("s3-desc"),
+      primaryCta: { text: t("s3-primary"), href: "/divisions" },
+      secondaryCta: { text: t("s3-secondary"), href: "/capabilities" },
+      bgImage: "/7core.webp",
+    }
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
+      setCurrentSlide((prev) => (prev + 1) % slideData.length);
     }, 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [slideData.length]);
 
-  const slide = SLIDES[currentSlide];
+  const slide = slideData[currentSlide];
 
   return (
     <section className="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden bg-transparent">
       {/* Background Images with Crossfade */}
       <div className="absolute inset-0 z-0">
-        {SLIDES.map((s, index) => (
+        {slideData.map((s, index) => (
           <Image
             key={s.id}
             src={s.bgImage}
@@ -102,7 +104,7 @@ export default function Hero() {
 
             {/* Slider Dots */}
             <div className="flex gap-2 pt-8">
-              {SLIDES.map((_, index) => (
+              {slideData.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
@@ -120,23 +122,23 @@ export default function Hero() {
                 <Image src="/brand/logo.svg" alt="TAKNISER ONE GLOBE" width={360} height={120} className="object-contain" />
               </div>
               <div className="space-y-4 text-left">
-                <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-slate-400 border-b border-slate-800 pb-2">
-                  <span className="flex items-center gap-1.5 text-[#009999]"><ShieldCheck className="w-4 h-4 text-[#009999] -mt-0.5" /><span className="leading-none pt-0.5">Hessen Heritage</span></span>
-                  <span className="text-[#009999] flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-[#009999] -mt-0.5" /><span className="leading-none pt-0.5">190+ Countries</span></span>
+                <div className={`flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-slate-400 border-b border-slate-800 pb-2 ${currentLanguage === 'ar' ? 'flex-row-reverse' : ''}`}>
+                  <span className="flex items-center gap-1.5 text-[#009999]"><ShieldCheck className="w-4 h-4 text-[#009999] -mt-0.5" /><span className="leading-none pt-0.5">{t("showcase-heritage")}</span></span>
+                  <span className="text-[#009999] flex items-center gap-1"><MapPin className="w-3.5 h-3.5 text-[#009999] -mt-0.5" /><span className="leading-none pt-0.5">{t("showcase-countries")}</span></span>
                 </div>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  Originating in Hesse, Germany over a century ago, TAKNISER has grown from specialized power system engineering into an integrated global industrial conglomerate.
+                  {t("showcase-desc")}
                 </p>
               </div>
-              <Link href="/vision-2046" className="flex items-center justify-between p-4 bg-[#001b24] border border-slate-800 hover:border-[#009999] transition-all group rounded-none">
-                <div className="flex items-center gap-3 text-left">
+              <Link href="/vision-2046" className={`flex items-center justify-between p-4 bg-[#001b24] border border-slate-800 hover:border-[#009999] transition-all group rounded-none ${currentLanguage === 'ar' ? 'flex-row-reverse' : ''}`}>
+                <div className={`flex items-center gap-3 text-left ${currentLanguage === 'ar' ? 'flex-row-reverse text-right' : ''}`}>
                   <Sparkles className="w-5 h-5 text-[#009999] shrink-0" />
                   <div>
-                    <div className="text-[10px] font-bold text-[#009999] uppercase tracking-wider">Vision 2046 Roadmap</div>
-                    <div className="text-xs text-slate-400">Discover our 100-Year Century Vision</div>
+                    <div className="text-[10px] font-bold text-[#009999] uppercase tracking-wider">{t("showcase-roadmap")}</div>
+                    <div className="text-xs text-slate-400">{t("showcase-vision-desc")}</div>
                   </div>
                 </div>
-                <ChevronRight className="w-5 h-5 text-[#009999] group-hover:translate-x-1 transition-transform -mt-0.5" />
+                <ChevronRight className={`w-5 h-5 text-[#009999] group-hover:translate-x-1 transition-transform -mt-0.5 ${currentLanguage === 'ar' ? 'rotate-180 group-hover:-translate-x-1' : ''}`} />
               </Link>
             </div>
           </div>

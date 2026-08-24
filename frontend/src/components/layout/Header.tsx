@@ -6,13 +6,18 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Globe, User, Search } from "lucide-react";
 import { BUSINESS_DIVISIONS } from "@/lib/data";
+import { useLanguage } from "@/lib/LanguageContext";
+import LanguageDrawer from "./LanguageDrawer";
+import { AnimatePresence } from "framer-motion";
 
 export default function Header() {
+  const { currentLanguage, currentRegion, t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDivisionsOpen, setIsDivisionsOpen] = useState(false);
   const [isResponsibilityOpen, setIsResponsibilityOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isLanguageDrawerOpen, setIsLanguageDrawerOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -24,12 +29,12 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: "About Us", href: "/about" },
-    { name: "Vision 2046", href: "/vision-2046" },
-    { name: "WHAT WE DO", href: "/divisions", hasDropdown: true, dropdownType: "divisions" },
-    { name: "Capabilities", href: "/capabilities" },
-    { name: "Industries", href: "/industries" },
-    { name: "RESPONSIBILITY", href: "/responsibility", hasDropdown: true, dropdownType: "responsibility" },
+    { name: t("about-us"), href: "/about" },
+    { name: t("vision-2046"), href: "/vision-2046" },
+    { name: t("what-we-do"), href: "/divisions", hasDropdown: true, dropdownType: "divisions" },
+    { name: t("capabilities"), href: "/capabilities" },
+    { name: t("industries"), href: "/industries" },
+    { name: t("responsibility"), href: "/responsibility", hasDropdown: true, dropdownType: "responsibility" },
   ];
 
   return (
@@ -64,36 +69,39 @@ export default function Header() {
 
             {/* Utility navigation */}
             <div className="flex items-center gap-6 text-[10.5px] font-bold uppercase tracking-wider text-slate-300">
-              <button className="flex items-center gap-1.5 hover:text-[#36b39c] transition-colors focus:outline-none">
+              <button
+                onClick={() => setIsLanguageDrawerOpen(true)}
+                className="flex items-center gap-1.5 hover:text-[#36b39c] transition-colors focus:outline-none cursor-pointer"
+              >
                 <Globe className="w-3.5 h-3.5 text-[#36b39c]" />
-                <span>Global | EN</span>
+                <span className="capitalize">{currentRegion} | {currentLanguage.toUpperCase()}</span>
               </button>
 
               {/* Support & Community Dropdown */}
               <div className="relative group">
                 <button className="flex items-center gap-1 hover:text-[#36b39c] transition-colors focus:outline-none">
-                  <span>Support & Community</span>
+                  <span>{t("support-community")}</span>
                   <ChevronDown className="w-3.5 h-3.5" />
                 </button>
-                <div className="absolute top-full right-0 w-48 pt-2 hidden group-hover:block z-50">
+                <div className={`absolute top-full w-48 pt-2 hidden group-hover:block z-50 ${currentLanguage === 'ar' ? 'left-0' : 'right-0'}`}>
                   <div className="bg-[#001822] border border-slate-800 py-1.5 text-slate-300 text-xs shadow-xl">
                     <Link
                       href="/contact"
                       className="block px-4 py-2 hover:bg-[#002d3b] hover:text-[#36b39c] transition-colors"
                     >
-                      Contact HQ
+                      {t("contact-hq")}
                     </Link>
                     <Link
                       href="/global-network"
                       className="block px-4 py-2 hover:bg-[#002d3b] hover:text-[#36b39c] transition-colors"
                     >
-                      Global Offices
+                      {t("global-offices")}
                     </Link>
                     <Link
                       href="/about"
                       className="block px-4 py-2 hover:bg-[#002d3b] hover:text-[#36b39c] transition-colors"
                     >
-                      Heritage & About
+                      {t("heritage-about")}
                     </Link>
                   </div>
                 </div>
@@ -107,7 +115,7 @@ export default function Header() {
                 className="flex items-center gap-1.5 hover:text-[#36b39c] transition-colors"
               >
                 <User className="w-3.5 h-3.5" />
-                <span>Log in</span>
+                <span>{t("log-in")}</span>
               </Link>
             </div>
           </div>
@@ -219,7 +227,7 @@ export default function Header() {
             <div className="relative max-w-xs">
               <input
                 type="text"
-                placeholder="Search..."
+                placeholder={t("search-placeholder")}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-44 xl:w-52 bg-[#001822] text-xs text-white placeholder-slate-500 px-3 py-1.5 pl-8 border border-slate-800 focus:outline-none focus:border-[#36b39c] transition-all rounded-none font-medium"
@@ -265,7 +273,7 @@ export default function Header() {
           <div className="relative w-full">
             <input
               type="text"
-              placeholder="Search platform..."
+              placeholder={t("search-platform")}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full bg-[#001822] text-xs text-white placeholder-slate-500 px-3 py-2.5 pl-9 border border-slate-800 focus:outline-none focus:border-[#36b39c] rounded-none font-medium"
@@ -305,9 +313,15 @@ export default function Header() {
 
           {/* Mobile Utilities */}
           <div className="grid grid-cols-2 gap-2 pt-1.5 text-xs text-slate-300 font-semibold uppercase tracking-wider">
-            <button className="flex items-center justify-center gap-1.5 py-3 border border-slate-800 bg-[#001822] hover:text-[#36b39c] transition-colors rounded-none">
+            <button
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                setIsLanguageDrawerOpen(true);
+              }}
+              className="flex items-center justify-center gap-1.5 py-3 border border-slate-800 bg-[#001822] hover:text-[#36b39c] transition-colors rounded-none cursor-pointer"
+            >
               <Globe className="w-4 h-4 text-[#36b39c]" />
-              <span>EN | Global</span>
+              <span className="capitalize">{currentLanguage.toUpperCase()} | {currentRegion}</span>
             </button>
             <Link
               href="/admin/login"
@@ -315,7 +329,7 @@ export default function Header() {
               className="flex items-center justify-center gap-1.5 py-3 border border-slate-800 bg-[#001822] hover:text-[#36b39c] transition-colors rounded-none text-center"
             >
               <User className="w-4 h-4" />
-              <span>Admin Log in</span>
+              <span>{t("admin-login")}</span>
             </Link>
           </div>
 
@@ -325,11 +339,21 @@ export default function Header() {
               onClick={() => setIsMobileMenuOpen(false)}
               className="w-full flex items-center justify-center py-3 text-xs font-bold uppercase tracking-wider text-white bg-[#36b39c] hover:bg-[#2d9683] transition-colors rounded-none"
             >
-              Contact Corporate Platform
+              {t("contact-corporate")}
             </Link>
           </div>
         </div>
       )}
+
+      {/* Language Selection Drawer Overlay */}
+      <AnimatePresence>
+        {isLanguageDrawerOpen && (
+          <LanguageDrawer
+            isOpen={isLanguageDrawerOpen}
+            onClose={() => setIsLanguageDrawerOpen(false)}
+          />
+        )}
+      </AnimatePresence>
     </header>
   );
 }
