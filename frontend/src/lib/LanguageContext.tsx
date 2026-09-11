@@ -140,10 +140,10 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "read-full-story": "Read Full Story",
 
     // Slide 1
-    "s1-kicker": "German Engineering Excellence",
-    "s1-title": "Engineering the Future of",
-    "s1-highlight": "Global Enterprise",
-    "s1-desc": "Pioneering innovation across industrial manufacturing, space economy, and international trade in over 190 countries worldwide.",
+    "s1-kicker": "100+ Years of German Engineering Heritage",
+    "s1-title": "BUILDING THE FUTURE OF GLOBAL INDUSTRY",
+    "s1-highlight": "One Globe. One Ecosystem. One Future.",
+    "s1-desc": "100+ Years of German Engineering Heritage. Operating in 190+ Countries through 29/30+ COMPANIES GLOBALY Regional Headquarters.",
     "s1-primary": "Our History & Heritage",
     "s1-secondary": "Explore Global Network",
 

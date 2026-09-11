@@ -59,7 +59,9 @@ export default async function DivisionDetailPage({ params }: Props) {
                 <div className="p-3 bg-slate-50 border border-slate-200 rounded-none">
                   <IconComponent className="w-8 h-8 text-[#009999]" />
                 </div>
-                <span className="font-mono font-bold text-lg text-[#009999]">Division 0{division.code}</span>
+                <span className="font-mono font-bold text-sm uppercase tracking-widest text-[#009999]">
+                  Strategic Sector
+                </span>
               </div>
               <h1 className="text-4xl sm:text-5xl font-black text-[#002d3b] leading-tight uppercase">
                 {division.title}

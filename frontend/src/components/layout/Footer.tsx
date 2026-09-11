@@ -64,10 +64,13 @@ export default function Footer() {
                 <Globe className="w-3.5 h-3.5 text-[#009999]" />
                 <span>{t("showcase-countries")}</span>
               </div>
-              <div className="flex items-center gap-1.5 px-3 py-1 border border-slate-700 text-slate-300 text-xs font-semibold rounded-none">
+              <Link
+                href="/vision-2046"
+                className="flex items-center gap-1.5 px-3 py-1 border border-slate-700 text-slate-300 hover:text-[#00cccc] hover:border-[#009999] transition-all text-xs font-semibold rounded-none"
+              >
                 <Award className="w-3.5 h-3.5 text-[#009999]" />
                 <span>{t("vision-2046")}</span>
-              </div>
+              </Link>
             </div>
           </div>
 

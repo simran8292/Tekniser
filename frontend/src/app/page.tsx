@@ -38,8 +38,8 @@ export default function HomePage() {
             Vision <span className="text-[#009999]">2046</span>
           </h2>
 
-          <blockquote className="text-lg sm:text-xl text-slate-200 leading-relaxed max-w-4xl mx-auto font-normal border-l-4 border-[#009999] pl-6 text-left italic">
-            &ldquo;{CORPORATE_INFO.vision2046}&rdquo;
+          <blockquote className="text-lg sm:text-xl text-slate-100 font-normal leading-relaxed max-w-4xl mx-auto border-l-4 border-[#009999] pl-6 text-left italic">
+            &ldquo;To create a globally connected TAKNISER ecosystem that drives industrial innovation, sustainable growth, and reliable solutions across markets and communities.&rdquo;
           </blockquote>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
