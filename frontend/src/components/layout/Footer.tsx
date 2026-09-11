@@ -150,16 +150,6 @@ export default function Footer() {
             {t("footer-copyright")}
           </div>
           <div className={`flex items-center space-x-6 ${currentLanguage === 'ar' ? 'flex-row-reverse space-x-reverse' : ''}`}>
-            <a
-              href="/TAKNISER_ONE_GLOBE_Website_Content.docx"
-              download
-              className="text-[#009999] hover:text-white hover:underline transition-colors font-semibold flex items-center gap-1"
-            >
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-              </svg>
-              <span>{t("footer-download-doc")}</span>
-            </a>
             <Link href="/privacy" className="hover:text-white transition-colors">{t("footer-privacy")}</Link>
             <Link href="/terms" className="hover:text-white transition-colors">{t("footer-terms")}</Link>
             <Link href="/global-network" className="hover:text-white transition-colors">{t("footer-global-footprint")}</Link>

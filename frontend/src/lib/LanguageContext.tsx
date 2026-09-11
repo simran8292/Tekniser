@@ -183,7 +183,6 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "footer-inquiries": "Corporate Inquiries Portal",
     "footer-admin-area": "Admin Management Area",
     "footer-copyright": "© 2026 TAKNISER ONE GLOBE (TAKNISER GmbH). All rights reserved. Over 100 Years of German Engineering Excellence.",
-    "footer-download-doc": "Download Website DOC",
     "footer-privacy": "Privacy Policy",
     "footer-terms": "Terms of Use",
     "footer-global-footprint": "Global Footprint",
