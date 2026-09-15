@@ -82,12 +82,12 @@ export default function Hero() {
               {slide.kicker}
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-normal !font-normal text-white tracking-wide leading-[1.2] uppercase animate-fade-in-up" style={{ animationDelay: '100ms', fontWeight: 400 }}>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-white tracking-normal leading-[1.15] uppercase animate-fade-in-up" style={{ animationDelay: '100ms' }}>
               {slide.title} <br className="hidden sm:inline" />
-              <span className="text-[#009999] font-normal" style={{ fontWeight: 400 }}>{slide.highlight}</span>
+              <span className="text-[#009999]">{slide.highlight}</span>
             </h1>
 
-            <p className="text-sm sm:text-base text-slate-200 max-w-2xl font-light leading-relaxed animate-fade-in-up" style={{ animationDelay: '200ms', fontWeight: 300 }}>
+            <p className="text-base sm:text-lg text-slate-200 max-w-2xl font-light leading-relaxed animate-fade-in-up" style={{ animationDelay: '200ms' }}>
               {slide.description}
             </p>
 
