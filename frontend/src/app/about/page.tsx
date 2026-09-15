@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Shield, Globe, Landmark, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Shield, Globe, Landmark, Layers, Building2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About TAKNISER — 100+ Years of German Engineering Heritage",
+  title: "German Engineering Heritage — 100+ Years of Industrial Excellence | TAKNISER",
   description:
     "Discover the century-long heritage of TAKNISER, beginning in Hesse (Hessen), Germany — where Präzision, Qualität, Zuverlässigkeit, Ingenieurskunst, and Vertrauen define who we are.",
 };
@@ -12,6 +13,8 @@ const TIMELINE_PAST = [
   {
     period: "Early 20th Century",
     title: "The German Foundation",
+    image: "/about_hesse_heritage.jpg",
+    imageAlt: "Historic German engineering and precision machinery workshop in Hesse",
     description:
       "The TAKNISER story traces its roots to Hesse (Hessen), Germany, during a defining era of European industrial transformation. Built upon the principles of precision, reliability, and engineering excellence, TAKNISER developed expertise in diesel power generation systems, supporting the continuous operation of factories, transportation networks, public infrastructure, and essential industries.",
     conclusion:
@@ -20,6 +23,8 @@ const TIMELINE_PAST = [
   {
     period: "Mid 20th Century",
     title: "Industrial Manufacturing Expansion",
+    image: "/about_midcentury_factory.jpg",
+    imageAlt: "Mid-20th century industrial manufacturing and heavy machinery plant",
     description:
       "As industries evolved, so did TAKNISER. Guided by the principle of “Qualität vor Quantität” — Quality before Quantity, the organization expanded its industrial capabilities across a broader range of manufacturing and engineering applications.",
     conclusion:
@@ -28,6 +33,8 @@ const TIMELINE_PAST = [
   {
     period: "Late 20th Century",
     title: "International Sourcing & Procurement",
+    image: "/about_logistics_port.jpg",
+    imageAlt: "Global container terminal and international multimodal logistics network",
     description:
       "The changing global economy opened new possibilities beyond traditional engineering and manufacturing. TAKNISER evolved into international sourcing, procurement, supply chain management, technology integration, and global logistics, connecting manufacturers, suppliers, and markets across continents.",
     conclusion:
@@ -36,6 +43,8 @@ const TIMELINE_PAST = [
   {
     period: "Early 21st Century",
     title: "Diversified Global Conglomerate",
+    image: "/about_conglomerate_hq.jpg",
+    imageAlt: "Modern global conglomerate headquarters and technology operations complex",
     description:
       "Entering the new millennium, TAKNISER expanded beyond individual industries and markets to develop a more diversified global operating model. Through strategic partnerships, acquisitions, international sourcing, and market development, TAKNISER established a growing network of regional operations and international relationships — bringing engineering, manufacturing, trade, logistics, technology, and commercial expertise together within one increasingly connected organization.",
     conclusion:
@@ -43,59 +52,39 @@ const TIMELINE_PAST = [
   },
 ];
 
-const VISION_2046_PILLARS = [
-  {
-    code: "01",
-    title: "ONE GLOBAL NETWORK",
-    desc: "A connected network of regional headquarters, operating companies, strategic partners, manufacturers, distributors, and customers — working together as one global ecosystem.",
-  },
-  {
-    code: "02",
-    title: "ONE INDUSTRIAL ECOSYSTEM",
-    desc: "Integrating engineering, manufacturing, sourcing, procurement, logistics, technology, and distribution to create more efficient and resilient global supply chains.",
-  },
-  {
-    code: "03",
-    title: "ONE DIGITAL CONNECTED WORLD",
-    desc: "Using digital technologies, intelligent systems, data, and automation to connect markets, operations, customers, and partners in real time.",
-  },
-  {
-    code: "04",
-    title: "ONE STANDARD OF EXCELLENCE",
-    desc: "Carrying forward the principles that shaped TAKNISER from its earliest roots — Präzision, Qualität, Zuverlässigkeit, Ingenieurskunst, and Vertrauen — while continuously raising the standard for a changing world.",
-  },
-  {
-    code: "05",
-    title: "ONE RESPONSIBLE FUTURE",
-    desc: "Building growth that creates lasting value for people, communities, industries, and the planet — with sustainability and responsible business embedded into the TAKNISER ecosystem.",
-  },
-  {
-    code: "06",
-    title: "ONE GLOBE, SHARED OPPORTUNITY",
-    desc: "Breaking down traditional boundaries between markets and industries to create new opportunities for collaboration, innovation, investment, and sustainable economic development.",
-  },
-];
-
 export default function AboutPage() {
   return (
     <div className="pt-24 min-h-screen bg-[#f4f5f6] text-slate-800">
-      {/* Page Hero - Siemens Dark Blue panel */}
-      <section className="relative py-20 overflow-hidden bg-[#002d3b]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#009999] text-[#009999] text-xs font-bold tracking-wider uppercase mb-6 rounded-none bg-transparent">
+      {/* Page Hero - Siemens Executive Dark with Clear Background Image */}
+      <section className="relative py-24 lg:py-28 overflow-hidden bg-[#001822] text-white border-b border-slate-800">
+        {/* Clear Background Imagery with Legibility Fade */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/about_hesse_heritage.jpg"
+            alt="German Engineering Heritage"
+            fill
+            priority
+            className="object-cover opacity-60 filter contrast-110 brightness-95 scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/80 via-[#001822]/60 to-[#001822]/95" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,24,34,0.7)_90%)]" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-[#009999] text-[#009999] text-xs font-mono font-bold tracking-widest uppercase rounded-none bg-[#002d3b]/70 backdrop-blur-sm">
             <Shield className="w-3.5 h-3.5 text-[#009999]" />
             <span>Corporate Heritage</span>
           </div>
-          <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tight mb-6 uppercase">
-            About <span className="text-[#009999]">TAKNISER</span>
+          <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tight uppercase leading-tight">
+            A CENTURY OF <span className="text-[#009999]">GERMAN HERITAGE</span>
           </h1>
-          <p className="text-slate-200 text-lg sm:text-xl max-w-4xl mx-auto leading-relaxed">
+          <p className="text-slate-200 text-lg sm:text-xl max-w-4xl mx-auto leading-relaxed font-normal">
             For more than a century, TAKNISER has embodied the enduring spirit of German engineering — where Präzision, Qualität, Zuverlässigkeit, Ingenieurskunst, and Vertrauen define not simply how we work, but who we are.
           </p>
         </div>
       </section>
 
-      {/* Heritage Statement - Solid White Background */}
+      {/* Heritage Statement - Solid White Background with Integrated Image */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -121,24 +110,53 @@ export default function AboutPage() {
             </div>
 
             <div className="space-y-6">
-              <div className="bg-[#f4f5f6] border border-slate-200 p-8 rounded-none">
-                <blockquote className="text-lg sm:text-xl font-semibold text-[#002d3b] italic leading-relaxed border-l-4 border-[#009999] pl-5">
+              {/* Heritage Image */}
+              <div className="relative h-64 sm:h-72 w-full border border-slate-200 overflow-hidden shadow-sm">
+                <Image
+                  src="/about_hesse_heritage.jpg"
+                  alt="Historic Hesse German precision engineering workshop"
+                  fill
+                  className="object-cover transition-transform duration-700 hover:scale-105"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#002d3b]/90 via-[#002d3b]/50 to-transparent p-4">
+                  <span className="text-xs font-mono font-bold tracking-widest text-[#009999] uppercase">
+                    Hesse, Germany &bull; Early 20th Century
+                  </span>
+                </div>
+              </div>
+
+              <div className="bg-[#f4f5f6] border border-slate-200 p-6 rounded-none">
+                <blockquote className="text-base sm:text-lg font-semibold text-[#002d3b] italic leading-relaxed border-l-4 border-[#009999] pl-4">
                   &ldquo;These principles were never simply standards of engineering. They became the foundation upon which TAKNISER was built — and the enduring DNA of the brand.&rdquo;
                 </blockquote>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              {/* Rectangular Grids: 30+ RHQ and 7 Core Divisions */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {[
-                  { label: "Heritage", value: "100+ Years" },
-                  { label: "Origin", value: "Hesse, Germany" },
-                  { label: "Territories", value: "190+" },
-                  { label: "Regional HQs", value: "29" },
-                ].map((stat) => (
-                  <div key={stat.label} className="bg-[#f4f5f6] border border-slate-200 rounded-none p-4 text-center shadow-none">
-                    <div className="text-2xl font-bold text-[#009999] font-mono">{stat.value}</div>
-                    <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mt-1">{stat.label}</div>
-                  </div>
-                ))}
+                  { label: "Heritage", value: "100+ Years", icon: Landmark },
+                  { label: "Origin", value: "Hesse, Germany", icon: Shield },
+                  { label: "Territories", value: "190+", icon: Globe },
+                  { label: "Regional HQs", value: "30+ RHQ", icon: Building2 },
+                  { label: "Core Divisions", value: "7 Core Divisions", icon: Layers },
+                ].map((stat, sIdx) => {
+                  const Icon = stat.icon;
+                  return (
+                    <div
+                      key={stat.label}
+                      className={`bg-[#f4f5f6] border border-slate-200 rounded-none p-4 text-center shadow-none ${sIdx === 4 ? "col-span-2 sm:col-span-2" : ""
+                        }`}
+                    >
+                      <div className="flex items-center justify-center gap-1.5 mb-1 text-[#009999]">
+                        <Icon className="w-4 h-4" />
+                        <span className="text-xl sm:text-2xl font-bold font-mono text-[#009999]">{stat.value}</span>
+                      </div>
+                      <div className="text-[10px] text-slate-600 font-bold uppercase tracking-wider">{stat.label}</div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -147,7 +165,7 @@ export default function AboutPage() {
 
       {/* Corporate Timeline Section */}
       <section className="py-20 bg-[#f4f5f6] relative overflow-hidden">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16 space-y-3">
             <h2 className="text-3xl sm:text-5xl font-black text-[#002d3b] uppercase">
               A Century of <span className="text-[#009999]">Industrial Evolution</span>
@@ -157,124 +175,63 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="relative">
-            {/* Timeline vertical bar */}
-            <div className="absolute left-6 top-0 bottom-0 w-px bg-slate-300" />
-
-            <div className="space-y-12">
-              {/* Timeline Items 1 to 4 */}
-              {TIMELINE_PAST.map((item, idx) => (
-                <div key={idx} className="relative flex gap-6 pl-16">
-                  {/* Dot */}
-                  <div className="absolute left-4 top-3 w-5 h-5 bg-[#002d3b] border-2 border-[#009999] rounded-none shrink-0" />
-
-                  <div className="bg-white p-7 sm:p-8 border border-slate-200 flex-1 rounded-none shadow-none text-slate-800 space-y-4">
-                    <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                      <span className="text-xs font-bold text-[#009999] uppercase tracking-widest">{item.period}</span>
-                      <span className="text-xs font-mono font-bold text-slate-400">0{idx + 1}</span>
-                    </div>
-
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#002d3b] mb-1">{item.title}</h3>
-
-                    <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
-                      {item.description}
-                    </p>
-
-                    <p className="pt-2 border-t border-slate-100 text-xs sm:text-sm font-semibold text-[#002d3b] leading-relaxed">
-                      {item.conclusion}
-                    </p>
-                  </div>
-                </div>
-              ))}
-
-              {/* Milestone 5: Vision 2046: TAKNISER ONE GLOBE (Full Verbatim Content) */}
-              <div className="relative flex gap-6 pl-16">
-                {/* Dot */}
-                <div className="absolute left-4 top-3 w-5 h-5 bg-[#009999] border-2 border-white shadow-md rounded-none shrink-0" />
-
-                <div className="bg-white p-8 sm:p-10 border-2 border-[#009999] flex-1 rounded-none shadow-sm text-slate-800 space-y-8">
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                    <span className="text-xs font-bold text-[#009999] uppercase tracking-widest flex items-center gap-1.5">
-                      <Sparkles className="w-4 h-4 text-[#009999]" />
-                      Vision 2046
-                    </span>
-                    <span className="text-xs font-mono font-bold text-[#009999]">05</span>
-                  </div>
-
-                  <div>
-                    <h3 className="text-2xl sm:text-3xl font-black text-[#002d3b] uppercase">
-                      Vision 2046: <span className="text-[#009999]">TAKNISER ONE GLOBE</span>
-                    </h3>
-                    <div className="text-sm font-bold text-[#009999] uppercase tracking-wider mt-1">
-                      One Globe. One Ecosystem. One Future.
+          <div className="space-y-12">
+            {TIMELINE_PAST.map((item, idx) => (
+              <div
+                key={item.period}
+                className="bg-white border border-slate-200 rounded-none shadow-none overflow-hidden transition-all duration-300 hover:border-[#009999]"
+              >
+                <div className={`grid grid-cols-1 lg:grid-cols-12 items-stretch`}>
+                  {/* Integrated Era Image */}
+                  <div
+                    className={`relative min-h-[260px] lg:min-h-full lg:col-span-5 ${idx % 2 === 1 ? "lg:order-2" : "lg:order-1"
+                      }`}
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.imageAlt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 42vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#002d3b]/70 via-transparent to-transparent lg:hidden" />
+                    <div className="absolute bottom-3 left-4 right-4 z-10 lg:hidden">
+                      <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#009999] bg-[#002d3b]/90 px-2.5 py-1">
+                        {item.period}
+                      </span>
                     </div>
                   </div>
 
-                  <div className="space-y-4 text-slate-700 text-base leading-relaxed">
-                    <p>
-                      TAKNISER ONE GLOBE is our long-term vision for 2046 — a globally integrated industrial ecosystem where people, products, technology, capital, knowledge, and opportunity move seamlessly across borders.
-                    </p>
-                    <p>
-                      Our vision extends beyond geographic expansion. It is about creating a connected organization in which every market, capability, and partnership contributes to a greater global network.
-                    </p>
-                    <p>
-                      By 2046, TAKNISER envisions an ecosystem where engineering, manufacturing, sourcing, procurement, logistics, technology, distribution, and international trade operate as interconnected parts of one global platform.
-                    </p>
-                  </div>
-
-                  {/* Our Vision for 2046 (01 to 06 Pillars) */}
-                  <div className="pt-6 border-t border-slate-200 space-y-6">
-                    <div className="border-b border-slate-200 pb-2">
-                      <h4 className="text-xl sm:text-2xl font-black text-[#002d3b] uppercase">
-                        Our Vision for <span className="text-[#009999]">2046</span>
-                      </h4>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {VISION_2046_PILLARS.map((item) => (
-                        <div key={item.code} className="bg-[#f4f5f6] border border-slate-200 p-5 space-y-2 rounded-none">
-                          <div className="text-lg font-mono font-black text-[#009999]">{item.code}</div>
-                          <h5 className="text-sm font-black text-[#002d3b] uppercase">{item.title}</h5>
-                          <p className="text-xs text-slate-650 leading-relaxed font-medium">{item.desc}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* 2046 and Beyond Section */}
-                  <div className="pt-6 border-t border-slate-200 space-y-5">
-                    <h4 className="text-xl sm:text-2xl font-black text-[#002d3b] uppercase">
-                      2046 <span className="text-[#009999]">and Beyond</span>
-                    </h4>
-
-                    <div className="space-y-4 text-slate-700 text-base leading-relaxed">
-                      <p className="font-semibold text-[#002d3b]">
-                        TAKNISER ONE GLOBE is not simply a destination. It is an evolving global platform.
-                      </p>
-                      <p>
-                        By 2046, we aim to create an organization where geographical boundaries no longer define what is possible — where expertise from one part of the world can create opportunity in another, where technology connects capability with demand, and where global partnerships accelerate progress.
-                      </p>
-                      <p>
-                        From our German engineering heritage to our vision of a connected global future, the TAKNISER journey continues with the same fundamental belief:
-                      </p>
-                      <div className="p-4 bg-[#001822] border-l-4 border-[#009999] text-white font-bold text-base sm:text-lg italic uppercase tracking-wide">
-                        Build with precision. Operate with integrity. Connect without boundaries. Create lasting value.
+                  {/* Content (No serial numbers) */}
+                  <div
+                    className={`p-7 sm:p-9 lg:col-span-7 flex flex-col justify-between space-y-5 ${idx % 2 === 1 ? "lg:order-1" : "lg:order-2"
+                      }`}
+                  >
+                    <div className="space-y-3">
+                      <div className="border-b border-slate-100 pb-3">
+                        <span className="text-xs font-bold text-[#009999] uppercase tracking-widest">
+                          {item.period}
+                        </span>
                       </div>
-                      <div className="pt-2 text-center">
-                        <div className="text-xl font-black text-[#002d3b] uppercase tracking-tight">
-                          TAKNISER ONE GLOBE
-                        </div>
-                        <div className="text-sm font-bold text-[#009999] uppercase tracking-widest mt-0.5">
-                          One Heritage. One Global Ecosystem. One Future.
-                        </div>
-                      </div>
+
+                      <h3 className="text-2xl sm:text-3xl font-bold text-[#002d3b]">
+                        {item.title}
+                      </h3>
+
+                      <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
+                        {item.description}
+                      </p>
+                    </div>
+
+                    <div className="pt-4 border-t border-slate-100 bg-[#f8fafc] -mx-7 -mb-7 sm:-mx-9 sm:-mb-9 p-6 border-l-4 border-l-[#009999]">
+                      <p className="text-xs sm:text-sm font-semibold text-[#002d3b] leading-relaxed">
+                        {item.conclusion}
+                      </p>
                     </div>
                   </div>
-
                 </div>
               </div>
-
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -283,17 +240,17 @@ export default function AboutPage() {
       <section className="py-16 bg-[#002d3b] border-t border-slate-800">
         <div className="max-w-4xl mx-auto px-4 text-center space-y-6 text-white">
           <h2 className="text-2xl sm:text-4xl font-black uppercase">
-            Experience TAKNISER ONE GLOBE
+            Discover the TAKNISER Ecosystem
           </h2>
           <p className="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base">
-            Connecting engineering, manufacturing, sourcing, logistics, and technology across 190+ countries.
+            Connecting engineering, manufacturing, sourcing, logistics, and technology across 190+ countries through 30+ Regional Headquarters and 7 Core Divisions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
             <Link
-              href="/vision-2046"
+              href="/divisions"
               className="w-full sm:w-auto btn-siemens btn-siemens-primary flex items-center justify-center gap-2"
             >
-              <span>Explore Vision 2046 Roadmap</span>
+              <span>Explore 7 Core Divisions</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
@@ -301,7 +258,7 @@ export default function AboutPage() {
               className="w-full sm:w-auto btn-siemens btn-siemens-outline-white flex items-center justify-center gap-2"
             >
               <Globe className="w-4 h-4 text-[#009999]" />
-              <span>Explore Global Network</span>
+              <span>Explore Global Network (30+ RHQ)</span>
             </Link>
           </div>
         </div>
@@ -309,3 +266,4 @@ export default function AboutPage() {
     </div>
   );
 }
+

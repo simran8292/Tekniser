@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Globe,
@@ -11,6 +12,8 @@ import {
   Bot,
   Sparkles,
   ShieldCheck,
+  Layers,
+  Cpu,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -19,6 +22,113 @@ export const metadata: Metadata = {
     "Seven transformative sectors, one integrated global platform. Explore Space Economy, Mining & Minerals, AgTech, LifeCare, Lifestyle, Robotics, and Global Trading.",
 };
 
+const SYNERGIES = [
+  {
+    icon: Rocket,
+    text: "Space intelligence can transform agriculture.",
+  },
+  {
+    icon: Layers,
+    text: "Critical minerals enable the technologies of tomorrow.",
+  },
+  {
+    icon: Bot,
+    text: "Robotics can transform industry.",
+  },
+  {
+    icon: Cpu,
+    text: "AI can accelerate scientific discovery.",
+  },
+  {
+    icon: HeartPulse,
+    text: "Life sciences can extend human potential.",
+  },
+  {
+    icon: Globe,
+    text: "Global trade can take breakthrough solutions from one market to the world.",
+  },
+];
+
+const PLATFORMS = [
+  {
+    code: "01",
+    title: "SPACE ECONOMY",
+    tagline: "Explore Beyond Boundaries",
+    icon: Rocket,
+    image: "/platform_space.jpg",
+    lead: "We look beyond Earth to understand, connect and enable the world beneath us.",
+    description:
+      "Satellite intelligence, space technologies, Earth observation, connectivity and emerging space applications can unlock new ways to understand our planet, manage resources and create entirely new opportunities.",
+    footer: "From Earth observation to the next frontier of space-enabled industries.",
+  },
+  {
+    code: "02",
+    title: "MINING & MINERALS",
+    tagline: "Power the Future Responsibly",
+    icon: Layers,
+    image: "/platform_mining.jpg",
+    lead: "The technologies transforming tomorrow require the resources of today.",
+    description:
+      "TAKNISER explores critical minerals, advanced extraction, processing, recycling, resource efficiency and circular models that can help build more resilient global supply chains.",
+    footer: "Turning resources into responsible pathways for progress.",
+  },
+  {
+    code: "03",
+    title: "AGTECH",
+    tagline: "Feed the Future",
+    icon: Sprout,
+    image: "/platform_agtech.jpg",
+    lead: "Food security is one of humanity's defining challenges.",
+    description:
+      "We explore precision agriculture, smart irrigation, regenerative farming, agricultural technology, controlled environments, data-driven cultivation and next-generation food systems.",
+    footer: "Growing more. Wasting less. Restoring more.",
+  },
+  {
+    code: "04",
+    title: "LIFECARE",
+    tagline: "Improve Human Life",
+    icon: HeartPulse,
+    image: "/platform_lifecare.jpg",
+    lead: "The future of healthcare is moving from treatment toward prevention, personalization and human longevity.",
+    description:
+      "TAKNISER explores healthcare technologies, biotechnology, wellness, diagnostics, preventive solutions and emerging life-science opportunities that can improve the quality and potential of human life.",
+    footer: "Technology with one purpose: a better life.",
+  },
+  {
+    code: "05",
+    title: "LIFESTYLE",
+    tagline: "Enable Better Living",
+    icon: Sparkles,
+    image: "/platform_lifestyle.jpg",
+    lead: "Innovation should ultimately improve how people live.",
+    description:
+      "We explore sustainable products, intelligent environments, new experiences, responsible consumption and technologies that make everyday life more connected, efficient, comfortable and meaningful.",
+    footer: "Better products. Better experiences. Better living.",
+  },
+  {
+    code: "06",
+    title: "ROBOTICS",
+    tagline: "Augment Human Potential",
+    icon: Bot,
+    image: "/platform_robotics.jpg",
+    lead: "The next industrial revolution will not simply replace human capability — it will amplify it.",
+    description:
+      "TAKNISER explores intelligent machines, industrial automation, robotics, AI-enabled systems and technologies designed to perform complex, repetitive or hazardous tasks.",
+    footer: "Machines that extend what humanity can achieve.",
+  },
+  {
+    code: "07",
+    title: "GLOBAL TRADING",
+    tagline: "Connect Global Value",
+    icon: Globe,
+    image: "/platform_trading.jpg",
+    lead: "Great innovation has little impact if it cannot reach the world.",
+    description:
+      "TAKNISER's global trading platform connects manufacturers, technologies, resources, markets and customers across borders — creating pathways for innovation to move from discovery to deployment.",
+    footer: "Connecting ideas, products and possibilities with the markets that need them.",
+  },
+];
+
 interface DivisionItem {
   id: string;
   slug: string;
@@ -26,6 +136,7 @@ interface DivisionItem {
   tagline: string;
   description: string;
   icon: React.ElementType;
+  image: string;
   categories: string[];
 }
 
@@ -39,6 +150,7 @@ const DIVISIONS: DivisionItem[] = [
     description:
       "Specialized engineering, satellite components, launch support systems, and orbital electronics empowering next-generation space exploration and communication networks.",
     icon: Rocket,
+    image: "/platform_space.jpg",
     categories: [
       "Satellite Components",
       "Space Communications",
@@ -56,6 +168,7 @@ const DIVISIONS: DivisionItem[] = [
     description:
       "Global strategic sourcing and critical mineral supply chains supplying essential metals and rare earth elements for green transition, electronics, and global heavy industry.",
     icon: Pickaxe,
+    image: "/platform_mining.jpg",
     categories: [
       "Copper",
       "Lithium",
@@ -76,6 +189,7 @@ const DIVISIONS: DivisionItem[] = [
     description:
       "Advanced precision irrigation, high-yield seeds, eco-friendly fertilizers, and automated food processing equipment ensuring global food security.",
     icon: Sprout,
+    image: "/platform_agtech.jpg",
     categories: [
       "Irrigation Systems",
       "Fertilizers",
@@ -93,6 +207,7 @@ const DIVISIONS: DivisionItem[] = [
     description:
       "Precision medical diagnostic systems, hospital infrastructure equipment, biotechnology integration, and high-purity pharmaceutical sourcing.",
     icon: HeartPulse,
+    image: "/platform_lifecare.jpg",
     categories: [
       "Medical Devices",
       "Hospital Equipment",
@@ -110,6 +225,7 @@ const DIVISIONS: DivisionItem[] = [
     description:
       "High-grade consumer appliances, smart home automation hubs, wellness technology, and engineered textiles for premium global markets.",
     icon: Home,
+    image: "/platform_lifestyle.jpg",
     categories: [
       "Consumer Appliances",
       "Smart Home",
@@ -127,6 +243,7 @@ const DIVISIONS: DivisionItem[] = [
     description:
       "State-of-the-art industrial arm robots, Autonomous Mobile Robots (AMRs), smart warehouse automation, and factory-wide cyber-physical integration.",
     icon: Bot,
+    image: "/platform_robotics.jpg",
     categories: [
       "Industrial Robots",
       "Warehouse Automation",
@@ -144,6 +261,7 @@ const DIVISIONS: DivisionItem[] = [
     description:
       "Cross-border multi-commodity supply chains, energy trading, defence & aerospace procurement, and strategic industrial component distribution.",
     icon: Globe,
+    image: "/platform_trading.jpg",
     categories: [
       "Energy",
       "Electrical",
@@ -158,16 +276,26 @@ const DIVISIONS: DivisionItem[] = [
 export default function DivisionsPage() {
   return (
     <div className="pt-24 min-h-screen bg-[#f8fafc] text-slate-800 font-sans antialiased selection:bg-[#009999] selection:text-white">
-      
+
       {/* ─────────────────────────────────────────────────────────────
-          PAGE HERO SECTION (Siemens Modern Executive Dark)
+          PAGE HERO SECTION (Siemens Executive Dark with Themed Faded Background)
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative py-20 lg:py-28 bg-[#001822] text-white overflow-hidden border-b border-slate-800">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_center,rgba(0,153,153,0.15),transparent_70%)] pointer-events-none" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#002d3b12_1px,transparent_1px),linear-gradient(to_bottom,#002d3b12_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none opacity-40" />
+      <section className="relative py-24 lg:py-32 bg-[#001822] text-white overflow-hidden border-b border-slate-800">
+        {/* Clear Background Imagery with Legibility Fade */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/hero_industrial_bg.png"
+            alt="TAKNISER Core Divisions Platform"
+            fill
+            priority
+            className="object-cover opacity-55 filter contrast-110 brightness-95 scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/80 via-[#001822]/60 to-[#001822]/95" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,24,34,0.7)_90%)] pointer-events-none" />
+        </div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-          
+
           {/* Label from verbatim document */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-[#009999] text-[#009999] text-xs font-mono font-bold tracking-widest uppercase bg-[#002d3b]/70 backdrop-blur-sm">
             <Sparkles className="w-3.5 h-3.5 text-[#009999]" />
@@ -201,11 +329,156 @@ export default function DivisionsPage() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
+          THE TAKNISER INNOVATION ECOSYSTEM - SEVEN PLATFORMS
+      ───────────────────────────────────────────────────────────── */}
+      <section className="py-20 lg:py-28 bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+
+          {/* Section Header */}
+          <div className="space-y-4 max-w-3xl">
+            <div className="inline-flex items-center gap-2 text-xs font-bold text-[#009999] tracking-widest uppercase">
+              <span>Interconnected Vision</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#002d3b] uppercase tracking-tight">
+              THE TAKNISER <span className="text-[#009999]">INNOVATION ECOSYSTEM</span>
+            </h2>
+            <div className="text-lg sm:text-xl font-bold text-[#002d3b] uppercase tracking-wide">
+              Seven Platforms. One Connected Vision.
+            </div>
+          </div>
+
+          {/* Interconnected Synergy Nexus */}
+          <div className="bg-[#f4f5f6] border-2 border-slate-200 p-6 sm:p-10 space-y-6">
+            <div className="border-b border-slate-300 pb-4">
+              <h3 className="text-lg sm:text-xl font-black text-[#002d3b]">
+                The world&apos;s greatest opportunities do not exist in isolation.
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {SYNERGIES.map((syn, idx) => {
+                const IconComponent = syn.icon;
+                return (
+                  <div
+                    key={idx}
+                    className="bg-white border border-slate-200 p-4 flex items-start gap-3.5 hover:border-[#009999] transition-all"
+                  >
+                    <div className="p-2 bg-[#002d3b] text-[#009999] shrink-0">
+                      <IconComponent className="w-4 h-4" />
+                    </div>
+                    <p className="text-sm font-semibold text-slate-700 leading-snug">
+                      {syn.text}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="pt-4 border-t border-slate-300">
+              <p className="font-bold text-[#002d3b] text-sm sm:text-base">
+                TAKNISER brings these possibilities together through <span className="text-[#009999]">seven interconnected business platforms</span>.
+              </p>
+            </div>
+          </div>
+
+          {/* The 7 Platforms Grid */}
+          <div className="space-y-8">
+            <div className="border-b-2 border-[#009999] pb-3 flex items-center justify-between">
+              <h3 className="text-xl sm:text-2xl font-black text-[#002d3b] uppercase">
+                The Seven Business Platforms
+              </h3>
+              <span className="text-xs font-mono font-bold text-[#009999] tracking-wider uppercase">
+                Strategic Ecosystems
+              </span>
+            </div>
+
+            <div className="space-y-6">
+              {PLATFORMS.map((plat, idx) => {
+                const IconComp = plat.icon;
+                const isEven = idx % 2 === 1;
+
+                return (
+                  <div
+                    key={plat.code}
+                    className="bg-white border border-slate-200 hover:border-[#009999] hover:shadow-xl transition-all duration-300 overflow-hidden"
+                  >
+                    <div className={`grid grid-cols-1 lg:grid-cols-12 items-stretch ${isEven ? "lg:flex-row-reverse" : ""}`}>
+                      {/* Content Column (7 cols) */}
+                      <div className={`p-6 sm:p-8 lg:p-10 flex flex-col justify-between space-y-6 lg:col-span-7 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
+                        <div className="space-y-4">
+                          {/* Top Tag & Code */}
+                          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-4">
+                            <div className="flex items-center gap-3">
+                              <div className="p-2.5 bg-[#002d3b] text-[#009999]">
+                                <IconComp className="w-5 h-5" />
+                              </div>
+                              <div>
+                                <div className="text-xs font-mono font-bold text-[#009999] tracking-widest uppercase">
+                                  Strategic Platform
+                                </div>
+                                <h4 className="text-xl sm:text-2xl font-black text-[#002d3b] uppercase tracking-tight">
+                                  {plat.title}
+                                </h4>
+                              </div>
+                            </div>
+                            <span className="inline-block px-3 py-1 bg-slate-100 border border-slate-200 text-xs font-bold text-[#009999] uppercase tracking-wider">
+                              {plat.tagline}
+                            </span>
+                          </div>
+
+                          {/* Lead text */}
+                          <p className="text-base sm:text-lg font-bold text-[#002d3b] leading-relaxed">
+                            {plat.lead}
+                          </p>
+
+                          {/* Full detailed description */}
+                          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                            {plat.description}
+                          </p>
+                        </div>
+
+                        {/* Footer Mandate & Action */}
+                        <div className="pt-5 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                          <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#009999]">
+                            <span className="w-2 h-2 bg-[#009999] rounded-full inline-block shrink-0" />
+                            <span>{plat.footer}</span>
+                          </div>
+                          <Link
+                            href="/contact"
+                            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#002d3b] hover:text-[#009999] transition-colors uppercase tracking-wider group"
+                          >
+                            <span>Explore Platform</span>
+                            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                          </Link>
+                        </div>
+                      </div>
+
+                      {/* Image Column (5 cols) */}
+                      <div className={`relative min-h-[260px] sm:min-h-[320px] lg:min-h-full lg:col-span-5 overflow-hidden bg-slate-900 group ${isEven ? "lg:order-1" : "lg:order-2"}`}>
+                        <Image
+                          src={plat.image}
+                          alt={plat.title}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 40vw"
+                          className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────────────────────
           THE BUSINESS DIVISIONS (Clean, High-Readability White Cards)
       ───────────────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-24 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
+
           {/* Section Header (without the red 7) */}
           <div className="border-b border-slate-300 pb-5 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
@@ -232,21 +505,30 @@ export default function DivisionsPage() {
                   className="bg-white border border-slate-200 hover:border-[#009999] hover:shadow-xl transition-all duration-300 rounded-none overflow-hidden"
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-                    
-                    {/* Left Column: Sector Identity */}
+
+                    {/* Left Column: Sector Identity & Visual Representation */}
                     <div className="lg:col-span-5 p-7 sm:p-9 bg-slate-50/80 border-b lg:border-b-0 lg:border-r border-slate-200 flex flex-col justify-between space-y-6">
                       <div className="space-y-4">
-                        {/* Icon & Sector Badge */}
-                        <div className="flex items-center gap-3.5">
-                          <div className="p-3 bg-[#002d3b] text-[#009999]">
-                            <IconComponent className="w-6 h-6" />
+                        {/* Division Image Banner */}
+                        <div className="relative w-full h-44 overflow-hidden border border-slate-200 bg-slate-100 group">
+                          <Image
+                            src={division.image}
+                            alt={division.title}
+                            fill
+                            className="object-cover transition-transform duration-500 hover:scale-105"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#002d3b]/80 via-transparent to-transparent pointer-events-none" />
+                          <div className="absolute bottom-3 left-3 flex items-center gap-2">
+                            <div className="p-2 bg-[#002d3b] text-[#009999]">
+                              <IconComponent className="w-4 h-4" />
+                            </div>
+                            <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-white drop-shadow-sm">
+                              Strategic Sector
+                            </span>
                           </div>
-                          <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#009999]">
-                            Strategic Sector
-                          </span>
                         </div>
 
-                        {/* Title (Only Title, No "Division 001:" red text) */}
+                        {/* Title (Only Title, No serial numbers) */}
                         <h3 className="text-2xl sm:text-3xl font-black text-[#002d3b] uppercase tracking-tight">
                           {division.title}
                         </h3>
@@ -271,7 +553,7 @@ export default function DivisionsPage() {
 
                     {/* Right Column: Description & Product/Service Categories */}
                     <div className="lg:col-span-7 p-7 sm:p-9 flex flex-col justify-between space-y-6 bg-white">
-                      
+
                       {/* Description */}
                       <div className="space-y-2">
                         <div className="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-400">

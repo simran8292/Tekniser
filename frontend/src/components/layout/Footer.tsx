@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Globe, Shield, Award, MapPin, Mail, Lock, ArrowRight } from "lucide-react";
+import { Globe, Shield, Award, MapPin, Mail, Lock, ArrowRight, Briefcase } from "lucide-react";
 import { BUSINESS_DIVISIONS } from "@/lib/data";
 import { useLanguage } from "@/lib/LanguageContext";
 
@@ -132,6 +132,12 @@ export default function Footer() {
                 <Mail className="w-4 h-4 text-[#009999] shrink-0" />
                 <Link href="/contact" className="hover:text-[#009999] transition-colors text-xs">
                   {t("footer-inquiries")}
+                </Link>
+              </div>
+              <div className={`flex items-center gap-2.5 ${currentLanguage === 'ar' ? 'flex-row-reverse' : ''}`}>
+                <Briefcase className="w-4 h-4 text-[#009999] shrink-0" />
+                <Link href="/contact#careers" className="hover:text-[#009999] transition-colors text-xs">
+                  Opportunities &amp; Careers
                 </Link>
               </div>
               <div className={`flex items-center gap-2.5 pt-2 ${currentLanguage === 'ar' ? 'flex-row-reverse' : ''}`}>

@@ -40,8 +40,8 @@ export default function DivisionsGrid() {
                   <div className="w-12 h-12 bg-slate-50 border border-slate-100 rounded-xl flex items-center justify-center group-hover:bg-[#009999]/5 transition-colors">
                     <IconComponent className="w-6 h-6 text-[#009999]" strokeWidth={1.5} />
                   </div>
-                  <span className="font-mono text-xs font-semibold text-[#009999] tracking-wider">
-                    Division {division.code}
+                  <span className="font-mono text-xs font-semibold text-[#009999] tracking-wider uppercase">
+                    Strategic Division
                   </span>
                 </div>
 

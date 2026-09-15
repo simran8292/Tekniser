@@ -1,8 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowRight, ArrowLeft, Globe, Rocket, Pickaxe, Sprout, HeartPulse, Home, Bot, CheckCircle2 } from "lucide-react";
 import { BUSINESS_DIVISIONS } from "@/lib/data";
+
+const divisionImages: Record<string, string> = {
+  "space-economy": "/platform_space.jpg",
+  "mining-minerals": "/platform_mining.jpg",
+  "agtech": "/platform_agtech.jpg",
+  "lifecare": "/platform_lifecare.jpg",
+  "lifestyle": "/platform_lifestyle.jpg",
+  "robotics": "/platform_robotics.jpg",
+  "global-trading": "/platform_trading.jpg",
+};
 
 const iconMap: Record<string, React.ElementType> = {
   Rocket, Pickaxe, Sprout, HeartPulse, Home, Bot, Globe,
@@ -50,23 +61,36 @@ export default async function DivisionDetailPage({ params }: Props) {
         </Link>
       </div>
 
-      {/* Division Hero - Flat White Background */}
-      <section className="relative py-20 bg-white overflow-hidden mt-4 border-t border-slate-200">
+      {/* Division Hero - Siemens Executive Dark with Themed Faded Background */}
+      <section className="relative py-24 lg:py-28 bg-[#001822] text-white overflow-hidden mt-4 border-y border-slate-800">
+        {/* Thematic Clear Background Image with Legibility Fade */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={divisionImages[division.slug] || "/hero_industrial_bg.png"}
+            alt={division.title}
+            fill
+            priority
+            className="object-cover opacity-55 filter contrast-110 brightness-95 scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/80 via-[#001822]/60 to-[#001822]/95" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,24,34,0.7)_90%)] pointer-events-none" />
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <div className="flex items-center gap-3">
-                <div className="p-3 bg-slate-50 border border-slate-200 rounded-none">
+                <div className="p-3 bg-[#002d3b] border border-slate-700 rounded-none text-[#009999]">
                   <IconComponent className="w-8 h-8 text-[#009999]" />
                 </div>
                 <span className="font-mono font-bold text-sm uppercase tracking-widest text-[#009999]">
                   Strategic Sector
                 </span>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-black text-[#002d3b] leading-tight uppercase">
+              <h1 className="text-4xl sm:text-5xl font-black text-white leading-tight uppercase">
                 {division.title}
               </h1>
-              <p className="text-base sm:text-lg text-slate-650 leading-relaxed">{division.tagline}</p>
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">{division.tagline}</p>
               <Link
                 href="/contact"
                 className="btn-siemens btn-siemens-primary flex items-center justify-center gap-2 max-w-fit rounded-none font-bold text-sm uppercase tracking-wider"
@@ -76,22 +100,43 @@ export default async function DivisionDetailPage({ params }: Props) {
               </Link>
             </div>
 
-            {/* Division Info Card - Flat Slate-50 panel */}
-            <div className="bg-slate-50 p-7 border border-slate-200 rounded-none space-y-5 text-slate-800 shadow-none">
-              <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 border-b border-slate-200 pb-3">
-                Division Overview
+            {/* Division Info Card & Visual Representation */}
+            <div className="bg-slate-50 border border-slate-200 rounded-none overflow-hidden space-y-0 text-slate-800 shadow-none">
+              {/* Pictorial Header */}
+              <div className="relative w-full h-56 sm:h-64 overflow-hidden border-b border-slate-200">
+                <Image
+                  src={divisionImages[division.slug] || "/hero_industrial_bg.png"}
+                  alt={division.title}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#002d3b]/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-4 left-5 text-white">
+                  <div className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#00cccc]">
+                    Sector Facility & Operations
+                  </div>
+                  <div className="text-lg font-black uppercase">
+                    {division.title} Platform
+                  </div>
+                </div>
               </div>
-              <p className="text-slate-650 text-sm leading-relaxed">{division.description}</p>
-              <div>
-                <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-3">Products & Services</div>
-                <ul className="space-y-2">
-                  {division.categories.map((cat) => (
-                    <li key={cat} className="flex items-center gap-2.5 text-sm text-slate-700">
-                      <CheckCircle2 className="w-4 h-4 text-[#009999] shrink-0" />
-                      <span>{cat}</span>
-                    </li>
-                  ))}
-                </ul>
+
+              <div className="p-7 space-y-5">
+                <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 border-b border-slate-200 pb-3">
+                  Division Overview
+                </div>
+                <p className="text-slate-650 text-sm leading-relaxed">{division.description}</p>
+                <div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-3">Products & Services</div>
+                  <ul className="space-y-2">
+                    {division.categories.map((cat) => (
+                      <li key={cat} className="flex items-center gap-2.5 text-sm text-slate-700">
+                        <CheckCircle2 className="w-4 h-4 text-[#009999] shrink-0" />
+                        <span>{cat}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

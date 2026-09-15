@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Rocket,
   Globe,
@@ -26,9 +27,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "12 Global Innovation Frontiers — TAKNISER ONE GLOBE",
+  title: "T1G IMPACTS — 12 Global Frontiers | TAKNISER ONE GLOBE",
   description:
-    "Where we believe the next great opportunities will emerge. Explore TAKNISER's 12 Innovation Frontiers, Global Explorer & Research Team, and Signal to Scale engine.",
+    "Where we believe the next great opportunities will emerge. Explore TAKNISER's T1G IMPACTS across 12 Global Frontiers, Global Explorer & Research Team, and Signal to Scale engine.",
 };
 
 const FRONTIERS = [
@@ -120,37 +121,37 @@ const FRONTIERS = [
 
 const EXPLORATION_STAGES = [
   {
-    stage: "01 — EXPLORE",
+    stage: "EXPLORE",
     title: "Scan the horizon.",
     desc: "We continuously monitor emerging technologies, scientific discoveries, markets, resources, companies, patents, regulations and changing societal needs.",
     icon: Compass,
   },
   {
-    stage: "02 — RESEARCH",
+    stage: "RESEARCH",
     title: "Understand the signal.",
     desc: "We investigate technologies, companies, scientific developments, business models, intellectual property and global trends.",
     icon: Search,
   },
   {
-    stage: "03 — DISCOVER",
+    stage: "DISCOVER",
     title: "Find the opportunity.",
     desc: "We identify ideas with the potential to become TAKNISER businesses, products, technologies, partnerships or investments.",
     icon: Lightbulb,
   },
   {
-    stage: "04 — CONNECT",
+    stage: "CONNECT",
     title: "Bring the right minds together.",
     desc: "We build relationships with scientists, universities, entrepreneurs, innovators, governments, institutions, investors and strategic partners.",
     icon: Users,
   },
   {
-    stage: "05 — EXPERIMENT",
+    stage: "EXPERIMENT",
     title: "Turn possibility into evidence.",
     desc: "Promising ideas move into prototypes, pilots, proof-of-concepts, feasibility studies and real-world experiments.",
     icon: FlaskConical,
   },
   {
-    stage: "06 — SCALE",
+    stage: "SCALE",
     title: "Take what works to the world.",
     desc: "Successful innovations are connected to TAKNISER's global capabilities, business platforms, markets and networks.",
     icon: TrendingUp,
@@ -188,57 +189,36 @@ const SIGNAL_STEPS = [
   },
 ];
 
-const PRINCIPLES = [
-  {
-    title: "CURIOUS",
-    desc: "We question what is known and explore what is possible.",
-  },
-  {
-    title: "BOLD",
-    desc: "We pursue opportunities others may overlook.",
-  },
-  {
-    title: "CONNECTED",
-    desc: "We bring together people, knowledge, technology and markets.",
-  },
-  {
-    title: "RESPONSIBLE",
-    desc: "We innovate with consideration for people, society and the planet.",
-  },
-  {
-    title: "EXPERIMENTAL",
-    desc: "We test ideas in the real world and learn quickly.",
-  },
-  {
-    title: "LONG-TERM",
-    desc: "We build for decades—not merely for the next quarter.",
-  },
-  {
-    title: "IMPACT-DRIVEN",
-    desc: "We measure innovation by what it changes.",
-  },
-];
-
 export default function IndustriesPage() {
   return (
     <div className="pt-24 min-h-screen bg-[#f4f5f6] text-slate-800 font-sans antialiased selection:bg-[#009999] selection:text-white">
-      
+
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 1: HERO (Deep Siemens Dark with Subtle Architecture)
+          SECTION 1: HERO (Deep Siemens Dark with Themed Faded Background)
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative py-20 lg:py-24 bg-[#001822] text-white overflow-hidden border-b border-slate-800">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_center,rgba(0,153,153,0.14),transparent_70%)] pointer-events-none" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#002d3b10_1px,transparent_1px),linear-gradient(to_bottom,#002d3b10_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none opacity-40" />
+      <section className="relative py-24 lg:py-32 bg-[#001822] text-white overflow-hidden border-b border-slate-800">
+        {/* Clear Background Imagery with Legibility Fade */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/platform_space.jpg"
+            alt="Space & Global Frontiers"
+            fill
+            priority
+            className="object-cover opacity-55 filter contrast-110 brightness-95 scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/80 via-[#001822]/60 to-[#001822]/95" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,24,34,0.7)_90%)] pointer-events-none" />
+        </div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-[#009999] text-[#009999] text-xs font-mono font-bold tracking-widest uppercase bg-[#002d3b]/70 backdrop-blur-sm">
             <Sparkles className="w-3.5 h-3.5 text-[#009999]" />
-            <span>FUTURE HORIZONS</span>
+            <span>T1G IMPACTS</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-tight">
-            12 GLOBAL <br className="hidden sm:inline" />
-            <span className="text-[#009999]">INNOVATION FRONTIERS</span>
+            T1G IMPACTS: <br className="hidden sm:inline" />
+            <span className="text-[#009999]">12 GLOBAL FRONTIERS</span>
           </h1>
 
           <p className="text-base sm:text-xl text-[#00cccc] font-semibold uppercase tracking-wide">
@@ -246,7 +226,7 @@ export default function IndustriesPage() {
           </p>
 
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            TAKNISER continuously explores twelve interconnected frontiers that have the potential to redefine industries and improve life on Earth.
+            TAKNISER continuously explores twelve interconnected frontiers that have the potential to redefine industries and create transformative global impact on Earth and beyond.
           </p>
         </div>
       </section>
@@ -256,7 +236,7 @@ export default function IndustriesPage() {
       ───────────────────────────────────────────────────────────── */}
       <section className="py-20 bg-[#f4f5f6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          
+
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-300 pb-4">
             <div>
               <span className="text-xs font-mono font-bold text-[#009999] uppercase tracking-wider">
@@ -282,8 +262,8 @@ export default function IndustriesPage() {
                   <div className="space-y-4">
                     {/* Header: Code & Icon */}
                     <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                      <span className="text-xs font-mono font-bold text-[#009999] tracking-widest">
-                        FRONTIER {item.code}
+                      <span className="text-xs font-mono font-bold text-[#009999] tracking-widest uppercase">
+                        IMPACT FRONTIER
                       </span>
                       <div className="p-2.5 bg-[#f4f5f6] text-[#009999] border border-slate-200">
                         <IconComp className="w-4 h-4" />
@@ -323,7 +303,7 @@ export default function IndustriesPage() {
       ───────────────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-24 bg-white border-y border-slate-200">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
+
           <div className="text-center space-y-3">
             <div className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#009999] tracking-widest uppercase">
               <Radio className="w-3.5 h-3.5 text-[#009999]" />
@@ -338,31 +318,58 @@ export default function IndustriesPage() {
             </p>
           </div>
 
-          {/* Clean Editorial Box */}
-          <div className="bg-[#f8fafc] border border-slate-200 p-6 sm:p-10 space-y-6">
-            <div className="space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
-              <p className="text-base sm:text-lg font-bold text-[#002d3b] border-l-4 border-[#009999] pl-3">
-                The future does not arrive all at once.
-              </p>
-              <p>
-                It emerges through thousands of signals—a scientific paper, a patent, a new material, a startup, a breakthrough technology, a changing regulation, a new resource discovery, a shifting consumer need or an entirely new business model.
-              </p>
-              <p>
-                The TAKNISER Global Explorer &amp; Research Team exists to identify these signals before they become obvious.
-              </p>
-              <p>
-                Our global innovation engine continuously explores, researches, discovers, connects, experiments and scales opportunities across industries, technologies and geographies.
-              </p>
-            </div>
+          {/* Clean Editorial Box with Pictorial Visual Representation */}
+          <div className="bg-[#f8fafc] border border-slate-200 overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-12">
+              {/* Pictorial Side Banner */}
+              <div className="lg:col-span-5 relative min-h-[280px] lg:min-h-full border-b lg:border-b-0 lg:border-r border-slate-200">
+                <Image
+                  src="/sustainable_earth_slide.jpg"
+                  alt="Global Explorer & Research Operations"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#001822]/85 via-[#002d3b]/40 to-transparent pointer-events-none" />
+                <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
+                  <div className="text-xs font-mono font-bold uppercase tracking-widest text-[#00cccc]">
+                    Global Research Command
+                  </div>
+                  <div className="text-base font-black uppercase">
+                    Continuous Planetary Intelligence
+                  </div>
+                  <p className="text-xs text-slate-300">
+                    Multidisciplinary laboratory networks and market telemetry scanning worldwide frontiers.
+                  </p>
+                </div>
+              </div>
 
-            {/* Signature Creed Callout */}
-            <div className="p-5 bg-white border border-slate-200 border-l-4 border-l-[#009999] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-              <span className="text-sm sm:text-base font-black text-[#002d3b] uppercase tracking-wider">
-                We don&apos;t wait for the future.
-              </span>
-              <span className="text-sm sm:text-base font-black text-[#009999] uppercase tracking-wider">
-                We actively search for it.
-              </span>
+              {/* Text Side */}
+              <div className="lg:col-span-7 p-6 sm:p-10 space-y-6">
+                <div className="space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
+                  <p className="text-base sm:text-lg font-bold text-[#002d3b] border-l-4 border-[#009999] pl-3">
+                    The future does not arrive all at once.
+                  </p>
+                  <p>
+                    It emerges through thousands of signals—a scientific paper, a patent, a new material, a startup, a breakthrough technology, a changing regulation, a new resource discovery, a shifting consumer need or an entirely new business model.
+                  </p>
+                  <p>
+                    The TAKNISER Global Explorer &amp; Research Team exists to identify these signals before they become obvious.
+                  </p>
+                  <p>
+                    Our global innovation engine continuously explores, researches, discovers, connects, experiments and scales opportunities across industries, technologies and geographies.
+                  </p>
+                </div>
+
+                {/* Signature Creed Callout */}
+                <div className="p-5 bg-white border border-slate-200 border-l-4 border-l-[#009999] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+                  <span className="text-sm sm:text-base font-black text-[#002d3b] uppercase tracking-wider">
+                    We don&apos;t wait for the future.
+                  </span>
+                  <span className="text-sm sm:text-base font-black text-[#009999] uppercase tracking-wider">
+                    We actively search for it.
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -374,7 +381,7 @@ export default function IndustriesPage() {
       ───────────────────────────────────────────────────────────── */}
       <section className="py-20 bg-[#f4f5f6] border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
+
           <div className="text-center space-y-3">
             <div className="text-xs font-mono font-bold text-[#009999] tracking-widest uppercase">
               STRUCTURED METHODOLOGY
@@ -428,7 +435,7 @@ export default function IndustriesPage() {
       ───────────────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-24 bg-[#001822] text-white border-b border-slate-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
+
           <div className="text-center space-y-3">
             <div className="text-xs font-mono font-bold text-[#009999] tracking-widest uppercase">
               PIPELINE FRAMEWORK
@@ -445,13 +452,11 @@ export default function IndustriesPage() {
           <div className="max-w-2xl mx-auto space-y-3">
             {SIGNAL_STEPS.map((step, idx) => (
               <div key={step.name} className="flex flex-col items-center">
-                
+
                 {/* Step Card */}
                 <div className="w-full bg-[#002d3b] border border-slate-700/80 p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:border-[#009999] transition-all">
                   <div className="flex items-center gap-3.5">
-                    <div className="w-8 h-8 bg-[#001822] border border-[#009999]/50 text-[#009999] font-mono font-bold text-xs flex items-center justify-center shrink-0">
-                      0{idx + 1}
-                    </div>
+                    <div className="w-2.5 h-2.5 bg-[#009999] shrink-0" />
                     <div>
                       <h4 className="text-base font-black text-white uppercase tracking-tight">
                         {step.name}
@@ -461,8 +466,8 @@ export default function IndustriesPage() {
                       </p>
                     </div>
                   </div>
-                  <div className="hidden sm:block text-xs font-mono text-[#009999] font-bold">
-                    STEP 0{idx + 1}
+                  <div className="hidden sm:block text-xs font-mono text-[#009999] font-bold uppercase tracking-wider">
+                    EXECUTION PHASE
                   </div>
                 </div>
 
@@ -481,80 +486,13 @@ export default function IndustriesPage() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 6: INNOVATION WITHOUT BORDERS & PRINCIPLES (CLEAN WHITE)
-      ───────────────────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-24 bg-white border-b border-slate-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
-            
-            {/* Column 1: Innovation Without Borders */}
-            <div className="bg-[#f8fafc] border border-slate-200 p-8 sm:p-10 space-y-6">
-              <div className="space-y-2 border-b border-slate-200 pb-4">
-                <span className="text-xs font-mono font-bold text-[#009999] tracking-widest uppercase">
-                  GLOBAL PERSPECTIVE
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-black text-[#002d3b] uppercase tracking-tight">
-                  INNOVATION WITHOUT BORDERS
-                </h3>
-              </div>
-
-              <div className="space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
-                <p>
-                  The next breakthrough may come from a laboratory in Europe, a university in Asia, a technology company in North America, a resource discovery in Africa, a farm in India—or from an idea that does not yet exist.
-                </p>
-                <p className="font-bold text-[#002d3b]">
-                  TAKNISER operates with a global perspective and an open horizon.
-                </p>
-                <p>
-                  We believe innovation flourishes when disciplines, cultures, technologies and markets come together.
-                </p>
-              </div>
-
-              <div className="pt-6 border-t border-slate-200 text-xs sm:text-sm font-bold text-[#009999] uppercase tracking-wide">
-                One world. Many possibilities. Infinite opportunities to innovate.
-              </div>
-            </div>
-
-            {/* Column 2: Our Innovation Principles */}
-            <div className="bg-[#f8fafc] border border-slate-200 p-8 sm:p-10 space-y-6">
-              <div className="space-y-2 border-b border-slate-200 pb-4">
-                <span className="text-xs font-mono font-bold text-[#009999] tracking-widest uppercase">
-                  FOUNDATIONAL PILLARS
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-black text-[#002d3b] uppercase tracking-tight">
-                  OUR INNOVATION PRINCIPLES
-                </h3>
-              </div>
-
-              <div className="space-y-2.5">
-                {PRINCIPLES.map((pr) => (
-                  <div
-                    key={pr.title}
-                    className="p-3 bg-white border border-slate-200 hover:border-[#009999] transition-colors flex flex-col sm:flex-row sm:items-baseline gap-2"
-                  >
-                    <span className="text-xs font-mono font-bold text-[#009999] uppercase tracking-wider shrink-0 min-w-[120px]">
-                      {pr.title}
-                    </span>
-                    <span className="text-xs text-slate-600 font-medium">
-                      {pr.desc}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ─────────────────────────────────────────────────────────────
           SECTION 7: FROM EXPLORATION TO IMPACT (GRAND FINALE & CTA)
       ───────────────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-28 bg-[#001822] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,153,153,0.12),transparent_70%)] pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10 text-center">
-          
+
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#009999] text-[#009999] text-xs font-mono font-bold tracking-widest uppercase bg-[#002d3b]/60">
               <span>MANIFESTO FOR PROGRESS</span>

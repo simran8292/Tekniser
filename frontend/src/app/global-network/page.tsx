@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Globe,
@@ -71,16 +72,26 @@ const GLOBAL_STATS = [
 export default function GlobalNetworkPage() {
   return (
     <div className="pt-24 min-h-screen bg-[#f8fafc] text-slate-800 font-sans antialiased selection:bg-[#009999] selection:text-white">
-      
+
       {/* ─────────────────────────────────────────────────────────────
-          PAGE HERO SECTION (Siemens Modern Executive Dark)
+          PAGE HERO SECTION (Siemens Executive Dark with Themed Faded Background)
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative py-20 lg:py-28 bg-[#001822] text-white overflow-hidden border-b border-slate-800">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_center,rgba(0,153,153,0.15),transparent_70%)] pointer-events-none" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#002d3b12_1px,transparent_1px),linear-gradient(to_bottom,#002d3b12_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none opacity-40" />
+      <section className="relative py-24 lg:py-32 bg-[#001822] text-white overflow-hidden border-b border-slate-800">
+        {/* Clear Background Imagery with Legibility Fade */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/about_logistics_port.jpg"
+            alt="TAKNISER Global Logistics & Operations Network"
+            fill
+            priority
+            className="object-cover opacity-55 filter contrast-110 brightness-95 scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/80 via-[#001822]/60 to-[#001822]/95" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,24,34,0.7)_90%)] pointer-events-none" />
+        </div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-          
+
           {/* Label from verbatim document */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-[#009999] text-[#009999] text-xs font-mono font-bold tracking-widest uppercase bg-[#002d3b]/70 backdrop-blur-sm">
             <Sparkles className="w-3.5 h-3.5 text-[#009999]" />
@@ -122,7 +133,7 @@ export default function GlobalNetworkPage() {
       ───────────────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-24 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
+
           <div className="border-b border-slate-300 pb-5 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
               <span className="text-xs font-mono font-bold text-[#009999] uppercase tracking-widest">
@@ -148,7 +159,7 @@ export default function GlobalNetworkPage() {
       ───────────────────────────────────────────────────────────── */}
       <section className="py-20 bg-white border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
+
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <div className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#009999] tracking-widest uppercase">
               <ShieldCheck className="w-3.5 h-3.5 text-[#009999]" />
@@ -202,7 +213,7 @@ export default function GlobalNetworkPage() {
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
             Our regional offices and engineering centers are ready to support your organization with advanced manufacturing, strategic mineral procurement, AgTech solutions, and international logistics.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-2">
             <Link
               href="/contact"

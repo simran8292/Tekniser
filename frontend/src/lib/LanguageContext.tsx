@@ -125,8 +125,8 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "about-us": "About Us",
     "vision-2046": "Vision 2046",
     "what-we-do": "WHAT WE DO",
-    "capabilities": "Capabilities",
-    "industries": "Industries",
+    "capabilities": "INNOVATION",
+    "industries": "T1G IMPACTS",
     "responsibility": "RESPONSIBILITY",
 
     // About Section
@@ -161,7 +161,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "s3-highlight": "Standards",
     "s3-desc": "Delivering integrated solutions from AgTech and Robotics to Space Economy, powering a resilient and advanced global lifestyle.",
     "s3-primary": "Explore Divisions",
-    "s3-secondary": "View Capabilities",
+    "s3-secondary": "View Innovation",
 
     // Right Showcase Card
     "showcase-heritage": "Hessen Heritage",

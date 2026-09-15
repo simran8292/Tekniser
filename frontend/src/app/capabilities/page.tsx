@@ -5,12 +5,6 @@ import {
   Sparkles,
   ArrowRight,
   ArrowDown,
-  Rocket,
-  Layers,
-  Sprout,
-  HeartPulse,
-  Bot,
-  Globe,
   RefreshCw,
   Cpu,
   Zap,
@@ -18,188 +12,88 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Innovation & Capabilities — TAKNISER ONE GLOBE",
+  title: "INNOVATION — TAKNISER ONE GLOBE",
   description:
-    "Exploring what's next. Building what matters. Discover the TAKNISER Innovation Ecosystem across seven interconnected platforms and the continuous innovation flywheel.",
+    "Exploring what's next. Building what matters. Discover the TAKNISER continuous innovation flywheel and technological capabilities.",
 };
-
-const SYNERGIES = [
-  {
-    icon: Rocket,
-    text: "Space intelligence can transform agriculture.",
-  },
-  {
-    icon: Layers,
-    text: "Critical minerals enable the technologies of tomorrow.",
-  },
-  {
-    icon: Bot,
-    text: "Robotics can transform industry.",
-  },
-  {
-    icon: Cpu,
-    text: "AI can accelerate scientific discovery.",
-  },
-  {
-    icon: HeartPulse,
-    text: "Life sciences can extend human potential.",
-  },
-  {
-    icon: Globe,
-    text: "Global trade can take breakthrough solutions from one market to the world.",
-  },
-];
-
-const PLATFORMS = [
-  {
-    code: "01",
-    title: "SPACE ECONOMY",
-    tagline: "Explore Beyond Boundaries",
-    icon: Rocket,
-    image: "/platform_space.jpg",
-    lead: "We look beyond Earth to understand, connect and enable the world beneath us.",
-    description:
-      "Satellite intelligence, space technologies, Earth observation, connectivity and emerging space applications can unlock new ways to understand our planet, manage resources and create entirely new opportunities.",
-    footer: "From Earth observation to the next frontier of space-enabled industries.",
-  },
-  {
-    code: "02",
-    title: "MINING & MINERALS",
-    tagline: "Power the Future Responsibly",
-    icon: Layers,
-    image: "/platform_mining.jpg",
-    lead: "The technologies transforming tomorrow require the resources of today.",
-    description:
-      "TAKNISER explores critical minerals, advanced extraction, processing, recycling, resource efficiency and circular models that can help build more resilient global supply chains.",
-    footer: "Turning resources into responsible pathways for progress.",
-  },
-  {
-    code: "03",
-    title: "AGTECH",
-    tagline: "Feed the Future",
-    icon: Sprout,
-    image: "/platform_agtech.jpg",
-    lead: "Food security is one of humanity's defining challenges.",
-    description:
-      "We explore precision agriculture, smart irrigation, regenerative farming, agricultural technology, controlled environments, data-driven cultivation and next-generation food systems.",
-    footer: "Growing more. Wasting less. Restoring more.",
-  },
-  {
-    code: "04",
-    title: "LIFECARE",
-    tagline: "Improve Human Life",
-    icon: HeartPulse,
-    image: "/platform_lifecare.jpg",
-    lead: "The future of healthcare is moving from treatment toward prevention, personalization and human longevity.",
-    description:
-      "TAKNISER explores healthcare technologies, biotechnology, wellness, diagnostics, preventive solutions and emerging life-science opportunities that can improve the quality and potential of human life.",
-    footer: "Technology with one purpose: a better life.",
-  },
-  {
-    code: "05",
-    title: "LIFESTYLE",
-    tagline: "Enable Better Living",
-    icon: Sparkles,
-    image: "/platform_lifestyle.jpg",
-    lead: "Innovation should ultimately improve how people live.",
-    description:
-      "We explore sustainable products, intelligent environments, new experiences, responsible consumption and technologies that make everyday life more connected, efficient, comfortable and meaningful.",
-    footer: "Better products. Better experiences. Better living.",
-  },
-  {
-    code: "06",
-    title: "ROBOTICS",
-    tagline: "Augment Human Potential",
-    icon: Bot,
-    image: "/platform_robotics.jpg",
-    lead: "The next industrial revolution will not simply replace human capability — it will amplify it.",
-    description:
-      "TAKNISER explores intelligent machines, industrial automation, robotics, AI-enabled systems and technologies designed to perform complex, repetitive or hazardous tasks.",
-    footer: "Machines that extend what humanity can achieve.",
-  },
-  {
-    code: "07",
-    title: "GLOBAL TRADING",
-    tagline: "Connect Global Value",
-    icon: Globe,
-    image: "/platform_trading.jpg",
-    lead: "Great innovation has little impact if it cannot reach the world.",
-    description:
-      "TAKNISER's global trading platform connects manufacturers, technologies, resources, markets and customers across borders — creating pathways for innovation to move from discovery to deployment.",
-    footer: "Connecting ideas, products and possibilities with the markets that need them.",
-  },
-];
 
 const FLYWHEEL_STEPS = [
   {
-    step: "01",
     title: "EXPLORE",
     desc: "We look beyond today's boundaries.",
     icon: Compass,
   },
   {
-    step: "02",
     title: "DISCOVER",
     desc: "We identify technologies, opportunities and ideas with transformative potential.",
     icon: Sparkles,
   },
   {
-    step: "03",
     title: "BUILD",
     desc: "We turn promising ideas into products, businesses, prototypes and solutions.",
     icon: Cpu,
   },
   {
-    step: "04",
     title: "SCALE",
     desc: "We connect successful innovations with capital, capabilities, markets and global networks.",
     icon: Zap,
   },
   {
-    step: "05",
     title: "REGENERATE",
     desc: "We create solutions that strengthen people, communities, economies and the natural world.",
     icon: RefreshCw,
   },
 ];
 
-import fs from "fs";
-import path from "path";
-
-const ASSET_FILES: Record<string, string> = {
-  "platform_space.jpg": "space_economy_platform_1789193878039.jpg",
-  "platform_mining.jpg": "mining_and_minerals_quarry_1789193016830.jpg",
-  "platform_agtech.jpg": "agtech_precision_farming_1789193900223.jpg",
-  "platform_lifecare.jpg": "lifecare_biotech_lab_1789193928146.jpg",
-  "platform_lifestyle.jpg": "lifestyle_smart_home_1789193955960.jpg",
-  "platform_robotics.jpg": "robotics_automation_arms_1789193988070.jpg",
-  "platform_trading.jpg": "global_trading_port_1789194428457.jpg",
-};
+const PRINCIPLES = [
+  {
+    title: "CURIOUS",
+    desc: "We question what is known and explore what is possible.",
+  },
+  {
+    title: "BOLD",
+    desc: "We pursue opportunities others may overlook.",
+  },
+  {
+    title: "CONNECTED",
+    desc: "We bring together people, knowledge, technology and markets.",
+  },
+  {
+    title: "RESPONSIBLE",
+    desc: "We innovate with consideration for people, society and the planet.",
+  },
+  {
+    title: "EXPERIMENTAL",
+    desc: "We test ideas in the real world and learn quickly.",
+  },
+  {
+    title: "LONG-TERM",
+    desc: "We build for decades—not merely for the next quarter.",
+  },
+  {
+    title: "IMPACT-DRIVEN",
+    desc: "We measure innovation by what it changes.",
+  },
+];
 
 export default function CapabilitiesPage() {
-  const brainDir = "C:\\Users\\UPL\\.gemini\\antigravity-ide\\brain\\4745b516-61b1-4d56-a83f-6b4fdc3156a3";
-  const publicDir = path.join(process.cwd(), "public");
-
-  Object.entries(ASSET_FILES).forEach(([destName, srcName]) => {
-    const destPath = path.join(publicDir, destName);
-    if (!fs.existsSync(destPath)) {
-      const srcPath = path.join(brainDir, srcName);
-      try {
-        if (fs.existsSync(srcPath)) {
-          fs.copyFileSync(srcPath, destPath);
-        }
-      } catch {}
-    }
-  });
-
   return (
     <div className="pt-24 min-h-screen bg-[#f4f5f6] text-slate-800">
 
-      {/* Hero Section - Siemens Precision Dark with Deep Petrol Atmosphere */}
-      <section className="relative py-20 lg:py-28 bg-[#001822] text-white overflow-hidden border-b border-slate-800">
-        {/* Subtle cybernetic backdrop glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_center,rgba(0,153,153,0.15),transparent_70%)] pointer-events-none" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#002d3b10_1px,transparent_1px),linear-gradient(to_bottom,#002d3b10_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none opacity-40" />
+      {/* Hero Section - Siemens Precision Dark with Themed Faded Background */}
+      <section className="relative py-24 lg:py-32 bg-[#001822] text-white overflow-hidden border-b border-slate-800">
+        {/* Clear Background Imagery with Legibility Fade */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/platform_robotics.jpg"
+            alt="Advanced Innovation and Robotics"
+            fill
+            priority
+            className="object-cover opacity-55 filter contrast-110 brightness-95 scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/80 via-[#001822]/60 to-[#001822]/95" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,24,34,0.7)_90%)] pointer-events-none" />
+        </div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-8">
 
@@ -250,9 +144,9 @@ export default function CapabilitiesPage() {
             <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 text-xs sm:text-sm font-mono font-bold">
               {["EXPLORE", "DISCOVER", "BUILD", "SCALE", "REGENERATE"].map((step, idx, arr) => (
                 <div key={step} className="flex items-center gap-2 sm:gap-3">
-                  <div className="px-3.5 py-2 bg-[#002d3b] border border-[#009999]/60 text-white tracking-widest hover:border-[#009999] transition-colors">
-                    <span className="text-[#009999] mr-1.5">0{idx + 1}.</span>
-                    {step}
+                  <div className="px-3.5 py-2 bg-[#002d3b] border border-[#009999]/60 text-white tracking-widest hover:border-[#009999] transition-colors flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 bg-[#009999] rounded-full inline-block" />
+                    <span>{step}</span>
                   </div>
                   {idx < arr.length - 1 && (
                     <span className="text-[#009999] font-bold text-base">→</span>
@@ -265,146 +159,128 @@ export default function CapabilitiesPage() {
         </div>
       </section>
 
-      {/* The TAKNISER Innovation Ecosystem - Seven Platforms */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      {/* ─────────────────────────────────────────────────────────────
+          INNOVATION WITHOUT BORDERS & PRINCIPLES (WITH PICTORIAL SHOWCASE)
+      ───────────────────────────────────────────────────────────── */}
+      <section className="py-20 lg:py-24 bg-white border-b border-slate-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
-          {/* Section Header */}
-          <div className="space-y-4 max-w-3xl">
-            <div className="inline-flex items-center gap-2 text-xs font-bold text-[#009999] tracking-widest uppercase">
-              <span>Interconnected Vision</span>
+          {/* Pictorial Visual Feature Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="relative h-64 border border-slate-200 overflow-hidden shadow-sm group">
+              <Image
+                src="/platform_robotics.jpg"
+                alt="AI Robotics and Autonomous Engineering"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#001822]/90 via-[#001822]/40 to-transparent p-5 flex flex-col justify-end">
+                <span className="text-[10px] font-mono font-bold text-[#00cccc] uppercase tracking-widest">
+                  Breakthrough Tech
+                </span>
+                <div className="text-white font-black text-lg uppercase tracking-tight">
+                  Intelligent Robotics
+                </div>
+              </div>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#002d3b] uppercase tracking-tight">
-              THE TAKNISER <span className="text-[#009999]">INNOVATION ECOSYSTEM</span>
-            </h2>
-            <div className="text-lg sm:text-xl font-bold text-[#002d3b] uppercase tracking-wide">
-              Seven Platforms. One Connected Vision.
+
+            <div className="relative h-64 border border-slate-200 overflow-hidden shadow-sm group">
+              <Image
+                src="/about_conglomerate_hq.jpg"
+                alt="Global Innovation and Research Operations Hub"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#001822]/90 via-[#001822]/40 to-transparent p-5 flex flex-col justify-end">
+                <span className="text-[10px] font-mono font-bold text-[#00cccc] uppercase tracking-widest">
+                  Global Operations
+                </span>
+                <div className="text-white font-black text-lg uppercase tracking-tight">
+                  Connected Innovation Hub
+                </div>
+              </div>
+            </div>
+
+            <div className="relative h-64 border border-slate-200 overflow-hidden shadow-sm group">
+              <Image
+                src="/platform_space.jpg"
+                alt="Next-Generation Space Observation and Earth Intelligence"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#001822]/90 via-[#001822]/40 to-transparent p-5 flex flex-col justify-end">
+                <span className="text-[10px] font-mono font-bold text-[#00cccc] uppercase tracking-widest">
+                  Next Horizon
+                </span>
+                <div className="text-white font-black text-lg uppercase tracking-tight">
+                  Space &amp; Earth Observation
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Interconnected Synergy Nexus */}
-          <div className="bg-[#f4f5f6] border-2 border-slate-200 p-6 sm:p-10 space-y-6">
-            <div className="border-b border-slate-300 pb-4">
-              <h3 className="text-lg sm:text-xl font-black text-[#002d3b]">
-                The world&apos;s greatest opportunities do not exist in isolation.
-              </h3>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+
+            {/* Column 1: Innovation Without Borders */}
+            <div className="bg-[#f8fafc] border border-slate-200 p-8 sm:p-10 space-y-6">
+              <div className="space-y-2 border-b border-slate-200 pb-4">
+                <span className="text-xs font-mono font-bold text-[#009999] tracking-widest uppercase">
+                  GLOBAL PERSPECTIVE
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-black text-[#002d3b] uppercase tracking-tight">
+                  INNOVATION WITHOUT BORDERS
+                </h3>
+              </div>
+
+              <div className="space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p>
+                  The next breakthrough may come from a laboratory in Europe, a university in Asia, a technology company in North America, a resource discovery in Africa, a farm in India—or from an idea that does not yet exist.
+                </p>
+                <p className="font-bold text-[#002d3b]">
+                  TAKNISER operates with a global perspective and an open horizon.
+                </p>
+                <p>
+                  We believe innovation flourishes when disciplines, cultures, technologies and markets come together.
+                </p>
+              </div>
+
+              <div className="pt-6 border-t border-slate-200 text-xs sm:text-sm font-bold text-[#009999] uppercase tracking-wide">
+                One world. Many possibilities. Infinite opportunities to innovate.
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {SYNERGIES.map((syn, idx) => {
-                const IconComponent = syn.icon;
-                return (
+            {/* Column 2: Our Innovation Principles */}
+            <div className="bg-[#f8fafc] border border-slate-200 p-8 sm:p-10 space-y-6">
+              <div className="space-y-2 border-b border-slate-200 pb-4">
+                <span className="text-xs font-mono font-bold text-[#009999] tracking-widest uppercase">
+                  FOUNDATIONAL PILLARS
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-black text-[#002d3b] uppercase tracking-tight">
+                  OUR INNOVATION PRINCIPLES
+                </h3>
+              </div>
+
+              <div className="space-y-2.5">
+                {PRINCIPLES.map((pr) => (
                   <div
-                    key={idx}
-                    className="bg-white border border-slate-200 p-4 flex items-start gap-3.5 hover:border-[#009999] transition-all"
+                    key={pr.title}
+                    className="p-3 bg-white border border-slate-200 hover:border-[#009999] transition-colors flex flex-col sm:flex-row sm:items-baseline gap-2"
                   >
-                    <div className="p-2 bg-[#002d3b] text-[#009999] shrink-0">
-                      <IconComponent className="w-4 h-4" />
-                    </div>
-                    <p className="text-sm font-semibold text-slate-700 leading-snug">
-                      {syn.text}
-                    </p>
+                    <span className="text-xs font-mono font-bold text-[#009999] uppercase tracking-wider shrink-0 min-w-[120px]">
+                      {pr.title}
+                    </span>
+                    <span className="text-xs text-slate-600 font-medium">
+                      {pr.desc}
+                    </span>
                   </div>
-                );
-              })}
+                ))}
+              </div>
             </div>
 
-            <div className="pt-4 border-t border-slate-300">
-              <p className="font-bold text-[#002d3b] text-sm sm:text-base">
-                TAKNISER brings these possibilities together through <span className="text-[#009999]">seven interconnected business platforms</span>.
-              </p>
-            </div>
           </div>
-
-          {/* The 7 Platforms Grid */}
-          <div className="space-y-8">
-            <div className="border-b-2 border-[#009999] pb-3 flex items-center justify-between">
-              <h3 className="text-xl sm:text-2xl font-black text-[#002d3b] uppercase">
-                The Seven Business Platforms
-              </h3>
-              <span className="text-xs font-mono font-bold text-[#009999] tracking-wider uppercase">
-                07 Strategic Ecosystems
-              </span>
-            </div>
-
-            <div className="space-y-6">
-              {PLATFORMS.map((plat, idx) => {
-                const IconComp = plat.icon;
-                const isEven = idx % 2 === 1;
-
-                return (
-                  <div
-                    key={plat.code}
-                    className="bg-white border border-slate-200 hover:border-[#009999] hover:shadow-xl transition-all duration-300 overflow-hidden"
-                  >
-                    <div className={`grid grid-cols-1 lg:grid-cols-12 items-stretch ${isEven ? "lg:flex-row-reverse" : ""}`}>
-                      {/* Content Column (7 cols) */}
-                      <div className={`p-6 sm:p-8 lg:p-10 flex flex-col justify-between space-y-6 lg:col-span-7 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
-                        <div className="space-y-4">
-                          {/* Top Tag & Code */}
-                          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-4">
-                            <div className="flex items-center gap-3">
-                              <div className="p-2.5 bg-[#002d3b] text-[#009999]">
-                                <IconComp className="w-5 h-5" />
-                              </div>
-                              <div>
-                                <div className="text-xs font-mono font-bold text-[#009999] tracking-widest">
-                                  PLATFORM {plat.code}
-                                </div>
-                                <h4 className="text-xl sm:text-2xl font-black text-[#002d3b] uppercase tracking-tight">
-                                  {plat.title}
-                                </h4>
-                              </div>
-                            </div>
-                            <span className="inline-block px-3 py-1 bg-slate-100 border border-slate-200 text-xs font-bold text-[#009999] uppercase tracking-wider">
-                              {plat.tagline}
-                            </span>
-                          </div>
-
-                          {/* Lead text */}
-                          <p className="text-base sm:text-lg font-bold text-[#002d3b] leading-relaxed">
-                            {plat.lead}
-                          </p>
-
-                          {/* Full detailed description */}
-                          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                            {plat.description}
-                          </p>
-                        </div>
-
-                        {/* Footer Mandate & Action */}
-                        <div className="pt-5 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                          <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#009999]">
-                            <span className="w-2 h-2 bg-[#009999] rounded-full inline-block shrink-0" />
-                            <span>{plat.footer}</span>
-                          </div>
-                          <Link
-                            href="/contact"
-                            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#002d3b] hover:text-[#009999] transition-colors uppercase tracking-wider group"
-                          >
-                            <span>Explore Platform</span>
-                            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                          </Link>
-                        </div>
-                      </div>
-
-                      {/* Image Column (5 cols) */}
-                      <div className={`relative min-h-[260px] sm:min-h-[320px] lg:min-h-full lg:col-span-5 overflow-hidden bg-slate-900 group ${isEven ? "lg:order-1" : "lg:order-2"}`}>
-                        <Image
-                          src={plat.image}
-                          alt={plat.title}
-                          fill
-                          sizes="(max-width: 1024px) 100vw, 40vw"
-                          className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
         </div>
       </section>
 
@@ -446,7 +322,7 @@ export default function CapabilitiesPage() {
                     </div>
                     <div className="space-y-1 flex-1">
                       <div className="text-xs font-mono font-bold text-[#009999] uppercase tracking-widest">
-                        PHASE {step.step}
+                        CYCLE STAGE
                       </div>
                       <h4 className="text-lg sm:text-xl font-black text-white uppercase tracking-tight">
                         {step.title}

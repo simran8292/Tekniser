@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import fs from "fs";
+import path from "path";
 import Hero from "@/components/home/Hero";
 import AboutSection from "@/components/home/AboutSection";
 import IndustriesSection from "@/components/home/IndustriesSection";
@@ -16,6 +18,25 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
+  try {
+    const brainDir = "C:\\Users\\UPL\\.gemini\\antigravity-ide\\brain\\45a3c682-d4f5-4300-bee4-77ede293761b";
+    const imagesToSync: Record<string, string> = {
+      "sustainable_earth_slide.jpg": "sustainable_earth_future_1789455695010.jpg",
+      "about_hesse_heritage.jpg": "hesse_germany_engineering_1789456466684.jpg",
+      "about_midcentury_factory.jpg": "industrial_expansion_midcentury_1789456495689.jpg",
+      "about_logistics_port.jpg": "international_logistics_trade_1789456519916.jpg",
+      "about_conglomerate_hq.jpg": "global_conglomerate_hub_1789456540948.jpg",
+    };
+    const publicDir = path.join(process.cwd(), "public");
+    for (const [destFile, srcFile] of Object.entries(imagesToSync)) {
+      const destPath = path.join(publicDir, destFile);
+      const srcPath = path.join(brainDir, srcFile);
+      if (!fs.existsSync(destPath) && fs.existsSync(srcPath)) {
+        fs.copyFileSync(srcPath, destPath);
+      }
+    }
+  } catch {}
+
   return (
     <>
       <Hero />

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Sparkles,
@@ -18,31 +19,24 @@ export const metadata: Metadata = {
 
 const MISSION_PILLARS = [
   {
-    code: "01",
     text: "Deliver world-class products and technologies.",
   },
   {
-    code: "02",
     text: "Build sustainable global supply chains.",
   },
   {
-    code: "03",
     text: "Create long-term value for customers and partners.",
   },
   {
-    code: "04",
     text: "Promote innovation across every business division.",
   },
   {
-    code: "05",
     text: "Support governments and industries through reliable infrastructure solutions.",
   },
   {
-    code: "06",
     text: "Develop future-ready technologies for the next generation.",
   },
   {
-    code: "07",
     text: "Expand TAKNISER's presence across every major international market.",
   },
 ];
@@ -82,32 +76,26 @@ const STRATEGIC_PILLARS = [
 
 const ROADMAP_PILLARS = [
   {
-    code: "01",
     title: "ONE GLOBAL NETWORK",
     desc: "A connected network of regional headquarters, operating companies, strategic partners, manufacturers, distributors, and customers — working together as one global ecosystem.",
   },
   {
-    code: "02",
     title: "ONE INDUSTRIAL ECOSYSTEM",
     desc: "Integrating engineering, manufacturing, sourcing, procurement, logistics, technology, and distribution to create more efficient and resilient global supply chains.",
   },
   {
-    code: "03",
     title: "ONE DIGITAL CONNECTED WORLD",
     desc: "Using digital technologies, intelligent systems, data, and automation to connect markets, operations, customers, and partners in real time.",
   },
   {
-    code: "04",
     title: "ONE STANDARD OF EXCELLENCE",
     desc: "Carrying forward the principles that shaped TAKNISER from its earliest roots — Präzision, Qualität, Zuverlässigkeit, Ingenieurskunst, and Vertrauen — while continuously raising the standard for a changing world.",
   },
   {
-    code: "05",
     title: "ONE RESPONSIBLE FUTURE",
     desc: "Building growth that creates lasting value for people, communities, industries, and the planet — with sustainability and responsible business embedded into the TAKNISER ecosystem.",
   },
   {
-    code: "06",
     title: "ONE GLOBE, SHARED OPPORTUNITY",
     desc: "Breaking down traditional boundaries between markets and industries to create new opportunities for collaboration, innovation, investment, and sustainable economic development.",
   },
@@ -116,16 +104,26 @@ const ROADMAP_PILLARS = [
 export default function Vision2046Page() {
   return (
     <div className="pt-24 min-h-screen bg-[#f8fafc] text-slate-800 font-sans antialiased selection:bg-[#009999] selection:text-white">
-      
+
       {/* ─────────────────────────────────────────────────────────────
-          PAGE HERO SECTION (Siemens Executive Dark)
+          PAGE HERO SECTION (Siemens Executive Dark with Faded Background)
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative py-20 lg:py-28 bg-[#001822] text-white overflow-hidden border-b border-slate-800">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_center,rgba(0,153,153,0.15),transparent_70%)] pointer-events-none" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#002d3b12_1px,transparent_1px),linear-gradient(to_bottom,#002d3b12_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none opacity-40" />
+      <section className="relative py-24 lg:py-32 bg-[#001822] text-white overflow-hidden border-b border-slate-800">
+        {/* Clear Background Imagery with Legibility Fade */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/sustainable_earth_slide.jpg"
+            alt="Vision 2046 Global Outlook"
+            fill
+            priority
+            className="object-cover opacity-55 filter contrast-110 brightness-95 scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/80 via-[#001822]/60 to-[#001822]/95" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,24,34,0.7)_90%)]" />
+        </div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-          
+
           {/* Label from verbatim document */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-[#009999] text-[#009999] text-xs font-mono font-bold tracking-widest uppercase bg-[#002d3b]/70 backdrop-blur-sm">
             <Sparkles className="w-3.5 h-3.5 text-[#009999]" />
@@ -162,7 +160,7 @@ export default function Vision2046Page() {
       ───────────────────────────────────────────────────────────── */}
       <section className="py-20 bg-white border-b border-slate-200">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          
+
           <div className="text-center space-y-2">
             <span className="text-xs font-mono font-bold text-[#009999] uppercase tracking-widest">
               CORPORATE MANDATE
@@ -172,71 +170,44 @@ export default function Vision2046Page() {
             </h2>
           </div>
 
-          {/* Verbatim Vision Statement Box */}
-          <div className="bg-[#f8fafc] border border-slate-200 p-8 sm:p-12 space-y-8 shadow-sm">
+          {/* Verbatim Vision Statement Box (No rectangular grid) */}
+          <div className="bg-[#f8fafc] border border-slate-200 p-8 sm:p-14 shadow-sm">
             <blockquote className="text-lg sm:text-2xl font-semibold text-[#002d3b] italic leading-relaxed text-center border-l-4 border-[#009999] pl-4 sm:pl-8">
               &ldquo;To build TAKNISER into one of the world&apos;s most respected industrial, technology, manufacturing, sourcing, distribution, and global trading conglomerates by delivering innovative, sustainable, and reliable solutions across every major continent while connecting businesses, industries, and communities through one integrated global network.&rdquo;
             </blockquote>
-
-            {/* Strategic Target Metrics */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-slate-200 text-center">
-              <div className="p-4 bg-white border border-slate-200">
-                <div className="text-2xl sm:text-3xl font-black text-[#002d3b] font-mono">2046</div>
-                <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mt-1">Vision Target Year</div>
-              </div>
-              <div className="p-4 bg-white border border-slate-200">
-                <div className="text-2xl sm:text-3xl font-black text-[#002d3b] font-mono">190+</div>
-                <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mt-1">Countries &amp; Territories</div>
-              </div>
-              <div className="p-4 bg-white border border-slate-200">
-                <div className="text-2xl sm:text-3xl font-black text-[#002d3b] font-mono">6</div>
-                <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mt-1">Active Continents</div>
-              </div>
-              <div className="p-4 bg-white border border-slate-200">
-                <div className="text-2xl sm:text-3xl font-black text-[#009999] font-mono">1</div>
-                <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mt-1">Integrated Global Platform</div>
-              </div>
-            </div>
           </div>
 
         </div>
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          OUR MISSION PILLARS (SEVEN PILLARS) (Clean Light Canvas)
+          OUR MISSION PILLARS (Clean Light Canvas - No Serial Numbers)
       ───────────────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-24 bg-[#f8fafc] border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
+
           <div className="max-w-3xl mx-auto text-center space-y-3">
             <span className="text-xs font-mono font-bold text-[#009999] uppercase tracking-widest">
               STRATEGIC EXECUTION
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-[#002d3b] uppercase tracking-tight">
-              Our Mission Pillars <span className="text-[#009999]">(Seven Pillars)</span>
+              Our Mission Pillars
             </h2>
             <p className="text-slate-600 text-sm sm:text-base">
-              Seven foundational commitments guiding every operational strategy and corporate decision worldwide.
+              Foundational commitments guiding every operational strategy and corporate decision worldwide.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {MISSION_PILLARS.map((pillar) => (
+            {MISSION_PILLARS.map((pillar, idx) => (
               <div
-                key={pillar.code}
+                key={idx}
                 className="bg-white border border-slate-200 p-6 flex items-start gap-4 hover:border-[#009999] hover:shadow-md transition-all rounded-none"
               >
-                <div className="w-10 h-10 bg-[#002d3b] text-[#00cccc] font-mono font-black text-sm flex items-center justify-center shrink-0">
-                  {pillar.code}
-                </div>
-                <div className="space-y-1">
-                  <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">
-                    MISSION PILLAR {pillar.code}
-                  </div>
-                  <p className="text-sm font-bold text-[#002d3b] leading-snug">
-                    {pillar.text}
-                  </p>
-                </div>
+                <div className="w-2.5 h-2.5 mt-1.5 bg-[#009999] shrink-0" />
+                <p className="text-sm font-bold text-[#002d3b] leading-relaxed">
+                  {pillar.text}
+                </p>
               </div>
             ))}
           </div>
@@ -249,7 +220,7 @@ export default function Vision2046Page() {
       ───────────────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-24 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
+
           <div className="max-w-3xl mx-auto text-center space-y-3">
             <span className="text-xs font-mono font-bold text-[#009999] uppercase tracking-widest">
               CORE CAPABILITIES
@@ -295,11 +266,11 @@ export default function Vision2046Page() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          OUR VISION FOR 2046 (Detailed Commitments Roadmap)
+          OUR VISION FOR 2046 (Detailed Commitments Roadmap - No Serial Numbers)
       ───────────────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-24 bg-[#f8fafc] border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
+
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs font-mono font-bold text-[#009999] uppercase tracking-widest">
               LONG-TERM BLUEPRINT
@@ -308,19 +279,17 @@ export default function Vision2046Page() {
               Our Vision for <span className="text-[#009999]">2046</span>
             </h2>
             <p className="text-slate-600 text-sm sm:text-base">
-              Six core commitments shaping the integrated global industrial platform of tomorrow.
+              Core commitments shaping the integrated global industrial platform of tomorrow.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {ROADMAP_PILLARS.map((item) => (
+            {ROADMAP_PILLARS.map((item, idx) => (
               <div
-                key={item.code}
+                key={idx}
                 className="bg-white border border-slate-200 p-6 sm:p-7 space-y-3 hover:border-[#009999] hover:shadow-md transition-all rounded-none"
               >
-                <div className="text-xl font-mono font-black text-[#009999] pb-2 border-b border-slate-100">
-                  {item.code}
-                </div>
+                <div className="w-8 h-1 bg-[#009999] mb-4" />
                 <h3 className="text-base font-extrabold text-[#002d3b] uppercase tracking-tight">
                   {item.title}
                 </h3>
@@ -341,7 +310,7 @@ export default function Vision2046Page() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,153,153,0.12),transparent_70%)] pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10 relative z-10">
-          
+
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#009999] text-[#009999] text-xs font-mono font-bold tracking-widest uppercase bg-[#002d3b]/70">
               <span>CENTURY OUTLOOK</span>
@@ -362,7 +331,7 @@ export default function Vision2046Page() {
             <p>
               From our German engineering heritage to our vision of a connected global future, the TAKNISER journey continues with the same fundamental belief:
             </p>
-            
+
             <div className="p-4 bg-[#001822] border-l-4 border-[#009999] text-white font-bold text-sm sm:text-base uppercase tracking-wider">
               Build with precision. Operate with integrity. Connect without boundaries. Create lasting value.
             </div>

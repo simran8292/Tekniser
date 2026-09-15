@@ -29,7 +29,7 @@ export default function Hero() {
       description: t("s2-desc"),
       primaryCta: { text: t("s2-primary"), href: "/responsibility" },
       secondaryCta: { text: t("s2-secondary"), href: "/responsibility/sustainable-earth" },
-      bgImage: "/susta_e.webp",
+      bgImage: "/sustainable_earth_slide.jpg",
     },
     {
       id: "what-we-do",
@@ -77,17 +77,17 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
           {/* Left Column: Dynamic Content */}
-          <div className="lg:col-span-7 space-y-4 text-left" key={slide.id}>
-            <div className="text-xs sm:text-sm font-semibold text-[#009999] uppercase tracking-[0.15em] animate-fade-in-up">
+          <div className="lg:col-span-7 space-y-5 text-left" key={slide.id}>
+            <div className="text-xs sm:text-sm font-normal text-[#009999] uppercase tracking-[0.18em] animate-fade-in-up">
               {slide.kicker}
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] uppercase animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-normal !font-normal text-white tracking-wide leading-[1.2] uppercase animate-fade-in-up" style={{ animationDelay: '100ms', fontWeight: 400 }}>
               {slide.title} <br className="hidden sm:inline" />
-              <span className="text-[#009999]">{slide.highlight}</span>
+              <span className="text-[#009999] font-normal" style={{ fontWeight: 400 }}>{slide.highlight}</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-200 max-w-2xl font-normal leading-relaxed animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+            <p className="text-sm sm:text-base text-slate-200 max-w-2xl font-light leading-relaxed animate-fade-in-up" style={{ animationDelay: '200ms', fontWeight: 300 }}>
               {slide.description}
             </p>
 
@@ -118,8 +118,10 @@ export default function Hero() {
           {/* Right Column: Visual Showcase Card (Static branding) */}
           <div className="lg:col-span-5 relative hidden lg:block">
             <div className="relative bg-[#001822]/90 p-6 sm:p-8 border border-slate-800 space-y-6 rounded-none backdrop-blur-md">
-              <div className="relative w-full h-24 sm:h-28 bg-[#001b24] p-4 flex items-center justify-center border border-slate-800 rounded-none">
-                <Image src="/brand/logo.svg" alt="TAKNISER ONE GLOBE" width={360} height={120} className="object-contain" />
+              <div className="relative w-full h-20 bg-[#001b24] px-6 py-3 flex items-center justify-center border border-slate-800 rounded-none">
+                <div className="relative h-9 w-44">
+                  <Image src="/brand/logo.svg" alt="TAKNISER ONE GLOBE" fill priority className="object-contain" />
+                </div>
               </div>
               <div className="space-y-4 text-left">
                 <div className={`flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-slate-400 border-b border-slate-800 pb-2 ${currentLanguage === 'ar' ? 'flex-row-reverse' : ''}`}>

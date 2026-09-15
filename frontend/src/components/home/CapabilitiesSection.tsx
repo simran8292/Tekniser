@@ -20,10 +20,10 @@ export default function CapabilitiesSection() {
             <span>End-to-End Industrial Value Chain</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-light text-[#002d3b] tracking-wide leading-tight">
-            Complete <span className="font-bold text-[#009999]">Capabilities</span>
+            Complete <span className="font-bold text-[#009999]">Innovation &amp; Value Chain</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
-            From engineering and manufacturing through to logistics, digital transformation, and after-sales services — TAKNISER delivers across the full industrial value chain.
+            From breakthrough innovation, engineering and manufacturing through to logistics and digital transformation — TAKNISER delivers across the full industrial value chain.
           </p>
         </div>
 
@@ -40,9 +40,7 @@ export default function CapabilitiesSection() {
                   <div className="w-10 h-10 bg-slate-50 border border-slate-100 rounded-lg flex items-center justify-center group-hover:bg-[#009999]/5 transition-colors">
                     <IconComponent className="w-5 h-5 text-[#009999]" strokeWidth={1.5} />
                   </div>
-                  <span className="text-[10px] font-mono font-semibold text-slate-400 tracking-widest">
-                    {String(idx + 1).padStart(2, "0")}
-                  </span>
+                  <span className="w-2 h-2 rounded-full bg-[#009999]" />
                 </div>
                 <h3 className="text-sm font-semibold tracking-wide text-[#002d3b] leading-tight">{cap.title}</h3>
                 <p className="text-xs text-slate-500 font-light leading-relaxed">{cap.description}</p>
