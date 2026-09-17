@@ -11,7 +11,7 @@ const divisionImages: Record<string, string> = {
   "agtech": "/platform_agtech.jpg",
   "lifecare": "/platform_lifecare.jpg",
   "lifestyle": "/platform_lifestyle.jpg",
-  "robotics": "/platform_robotics.jpg",
+  "robotics": "/clean_robotics.jpg",
   "global-trading": "/platform_trading.jpg",
 };
 

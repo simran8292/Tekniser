@@ -85,7 +85,7 @@ export default function CapabilitiesPage() {
         {/* Clear Background Imagery with Legibility Fade */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/platform_robotics.jpg"
+            src="/clean_robotics.jpg"
             alt="Advanced Innovation and Robotics"
             fill
             priority
@@ -169,7 +169,7 @@ export default function CapabilitiesPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="relative h-64 border border-slate-200 overflow-hidden shadow-sm group">
               <Image
-                src="/platform_robotics.jpg"
+                src="/clean_robotics.jpg"
                 alt="AI Robotics and Autonomous Engineering"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -187,7 +187,7 @@ export default function CapabilitiesPage() {
 
             <div className="relative h-64 border border-slate-200 overflow-hidden shadow-sm group">
               <Image
-                src="/about_conglomerate_hq.jpg"
+                src="/clean_corporate_hq.jpg"
                 alt="Global Innovation and Research Operations Hub"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"

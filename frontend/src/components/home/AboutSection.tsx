@@ -19,7 +19,7 @@ export default function AboutSection() {
             <div className="aspect-[4/3] relative bg-slate-100 border border-slate-200 p-3 rounded-2xl">
               <div className="relative w-full h-full rounded-xl overflow-hidden">
                 <Image 
-                  src="/about_conglomerate_hq.jpg" 
+                  src="/clean_corporate_hq.jpg" 
                   alt="TAKNISER Global Corporate Headquarters" 
                   fill 
                   className="object-cover"

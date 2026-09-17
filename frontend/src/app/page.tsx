@@ -19,21 +19,17 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   try {
-    const brainDir = "C:\\Users\\UPL\\.gemini\\antigravity-ide\\brain\\45a3c682-d4f5-4300-bee4-77ede293761b";
-    const imagesToSync: Record<string, string> = {
-      "sustainable_earth_slide.jpg": "sustainable_earth_future_1789455695010.jpg",
-      "about_hesse_heritage.jpg": "hesse_germany_engineering_1789456466684.jpg",
-      "about_midcentury_factory.jpg": "industrial_expansion_midcentury_1789456495689.jpg",
-      "about_logistics_port.jpg": "international_logistics_trade_1789456519916.jpg",
-      "about_conglomerate_hq.jpg": "global_conglomerate_hub_1789456540948.jpg",
-    };
+    const currentBrainDir = "C:\\Users\\UPL\\.gemini\\antigravity-ide\\brain\\580ed72c-eea2-4d60-a445-854ff94bea2d";
     const publicDir = path.join(process.cwd(), "public");
-    for (const [destFile, srcFile] of Object.entries(imagesToSync)) {
-      const destPath = path.join(publicDir, destFile);
-      const srcPath = path.join(brainDir, srcFile);
-      if (!fs.existsSync(destPath) && fs.existsSync(srcPath)) {
-        fs.copyFileSync(srcPath, destPath);
-      }
+    const newHqSrc = path.join(currentBrainDir, "corporate_global_hq_1789627716297.jpg");
+    const newRoboticsSrc = path.join(currentBrainDir, "advanced_clean_robotics_1789628848467.jpg");
+    if (fs.existsSync(newHqSrc)) {
+      fs.copyFileSync(newHqSrc, path.join(publicDir, "clean_corporate_hq.jpg"));
+      fs.copyFileSync(newHqSrc, path.join(publicDir, "about_conglomerate_hq.jpg"));
+    }
+    if (fs.existsSync(newRoboticsSrc)) {
+      fs.copyFileSync(newRoboticsSrc, path.join(publicDir, "clean_robotics.jpg"));
+      fs.copyFileSync(newRoboticsSrc, path.join(publicDir, "platform_robotics.jpg"));
     }
   } catch {}
 

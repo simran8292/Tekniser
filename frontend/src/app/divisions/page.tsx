@@ -110,7 +110,7 @@ const PLATFORMS = [
     title: "ROBOTICS",
     tagline: "Augment Human Potential",
     icon: Bot,
-    image: "/platform_robotics.jpg",
+    image: "/clean_robotics.jpg",
     lead: "The next industrial revolution will not simply replace human capability — it will amplify it.",
     description:
       "TAKNISER explores intelligent machines, industrial automation, robotics, AI-enabled systems and technologies designed to perform complex, repetitive or hazardous tasks.",
@@ -243,7 +243,7 @@ const DIVISIONS: DivisionItem[] = [
     description:
       "State-of-the-art industrial arm robots, Autonomous Mobile Robots (AMRs), smart warehouse automation, and factory-wide cyber-physical integration.",
     icon: Bot,
-    image: "/platform_robotics.jpg",
+    image: "/clean_robotics.jpg",
     categories: [
       "Industrial Robots",
       "Warehouse Automation",
@@ -381,154 +381,73 @@ export default function DivisionsPage() {
             </div>
           </div>
 
-          {/* The 7 Platforms Grid */}
-          <div className="space-y-8">
-            <div className="border-b-2 border-[#009999] pb-3 flex items-center justify-between">
-              <h3 className="text-xl sm:text-2xl font-black text-[#002d3b] uppercase">
-                The Seven Business Platforms
-              </h3>
-              <span className="text-xs font-mono font-bold text-[#009999] tracking-wider uppercase">
-                Strategic Ecosystems
-              </span>
-            </div>
-
-            <div className="space-y-6">
-              {PLATFORMS.map((plat, idx) => {
-                const IconComp = plat.icon;
-                const isEven = idx % 2 === 1;
-
-                return (
-                  <div
-                    key={plat.code}
-                    className="bg-white border border-slate-200 hover:border-[#009999] hover:shadow-xl transition-all duration-300 overflow-hidden"
-                  >
-                    <div className={`grid grid-cols-1 lg:grid-cols-12 items-stretch ${isEven ? "lg:flex-row-reverse" : ""}`}>
-                      {/* Content Column (7 cols) */}
-                      <div className={`p-6 sm:p-8 lg:p-10 flex flex-col justify-between space-y-6 lg:col-span-7 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
-                        <div className="space-y-4">
-                          {/* Top Tag & Code */}
-                          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-4">
-                            <div className="flex items-center gap-3">
-                              <div className="p-2.5 bg-[#002d3b] text-[#009999]">
-                                <IconComp className="w-5 h-5" />
-                              </div>
-                              <div>
-                                <div className="text-xs font-mono font-bold text-[#009999] tracking-widest uppercase">
-                                  Strategic Platform
-                                </div>
-                                <h4 className="text-xl sm:text-2xl font-black text-[#002d3b] uppercase tracking-tight">
-                                  {plat.title}
-                                </h4>
-                              </div>
-                            </div>
-                            <span className="inline-block px-3 py-1 bg-slate-100 border border-slate-200 text-xs font-bold text-[#009999] uppercase tracking-wider">
-                              {plat.tagline}
-                            </span>
-                          </div>
-
-                          {/* Lead text */}
-                          <p className="text-base sm:text-lg font-bold text-[#002d3b] leading-relaxed">
-                            {plat.lead}
-                          </p>
-
-                          {/* Full detailed description */}
-                          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                            {plat.description}
-                          </p>
-                        </div>
-
-                        {/* Footer Mandate & Action */}
-                        <div className="pt-5 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                          <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#009999]">
-                            <span className="w-2 h-2 bg-[#009999] rounded-full inline-block shrink-0" />
-                            <span>{plat.footer}</span>
-                          </div>
-                          <Link
-                            href="/contact"
-                            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#002d3b] hover:text-[#009999] transition-colors uppercase tracking-wider group"
-                          >
-                            <span>Explore Platform</span>
-                            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                          </Link>
-                        </div>
-                      </div>
-
-                      {/* Image Column (5 cols) */}
-                      <div className={`relative min-h-[260px] sm:min-h-[320px] lg:min-h-full lg:col-span-5 overflow-hidden bg-slate-900 group ${isEven ? "lg:order-1" : "lg:order-2"}`}>
-                        <Image
-                          src={plat.image}
-                          alt={plat.title}
-                          fill
-                          sizes="(max-width: 1024px) 100vw, 40vw"
-                          className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
         </div>
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          THE BUSINESS DIVISIONS (Clean, High-Readability White Cards)
+          UNIFIED BUSINESS DIVISIONS & PLATFORMS SECTION
       ───────────────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-24 bg-[#f8fafc]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
 
-          {/* Section Header (without the red 7) */}
+          {/* Section Header */}
           <div className="border-b border-slate-300 pb-5 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
               <span className="text-xs font-mono font-bold text-[#009999] uppercase tracking-widest">
-                CONGLOMERATE ARCHITECTURE
+                CONGLOMERATE ARCHITECTURE &bull; STRATEGIC ECOSYSTEMS
               </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-[#002d3b] uppercase tracking-tight mt-1">
-                The Business Divisions
+              <h2 className="text-2xl sm:text-4xl font-black text-[#002d3b] uppercase tracking-tight mt-1">
+                The Business Divisions &amp; Platforms
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-slate-500 max-w-md text-left sm:text-right">
-              Integrated operational entities delivering specialized capabilities across essential worldwide industries.
+              Integrated operational entities delivering specialized capabilities, strategic ecosystems, and worldwide industrial supply chains.
             </p>
           </div>
 
-          {/* Division Cards Stack */}
-          <div className="space-y-8">
-            {DIVISIONS.map((division) => {
+          {/* Unified Cards Stack - Merges Vision Lead, Core Descriptions, Category Tags & Exploration CTA */}
+          <div className="space-y-12">
+            {DIVISIONS.map((division, idx) => {
               const IconComponent = division.icon;
+              const plat = PLATFORMS[idx] || PLATFORMS.find(p => p.title.toLowerCase() === division.title.toLowerCase()) || PLATFORMS[0];
+
               return (
                 <div
                   key={division.id}
                   id={division.id}
                   className="bg-white border border-slate-200 hover:border-[#009999] hover:shadow-xl transition-all duration-300 rounded-none overflow-hidden"
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-stretch">
 
-                    {/* Left Column: Sector Identity & Visual Representation */}
-                    <div className="lg:col-span-5 p-7 sm:p-9 bg-slate-50/80 border-b lg:border-b-0 lg:border-r border-slate-200 flex flex-col justify-between space-y-6">
+                    {/* Left Column: Visual Representation & Brand Identity */}
+                    <div className="lg:col-span-5 p-7 sm:p-9 bg-slate-50/90 border-b lg:border-b-0 lg:border-r border-slate-200 flex flex-col justify-between space-y-6">
                       <div className="space-y-4">
                         {/* Division Image Banner */}
-                        <div className="relative w-full h-44 overflow-hidden border border-slate-200 bg-slate-100 group">
+                        <div className="relative w-full h-52 overflow-hidden border border-slate-200 bg-slate-900 group">
                           <Image
                             src={division.image}
                             alt={division.title}
                             fill
-                            className="object-cover transition-transform duration-500 hover:scale-105"
+                            sizes="(max-width: 1024px) 100vw, 40vw"
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-[#002d3b]/80 via-transparent to-transparent pointer-events-none" />
-                          <div className="absolute bottom-3 left-3 flex items-center gap-2">
-                            <div className="p-2 bg-[#002d3b] text-[#009999]">
-                              <IconComponent className="w-4 h-4" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#002d3b]/85 via-[#002d3b]/20 to-transparent pointer-events-none" />
+                          <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                            <div className="flex items-center gap-2">
+                              <div className="p-2 bg-[#002d3b] text-[#009999] border border-slate-700">
+                                <IconComponent className="w-4 h-4" />
+                              </div>
+                              <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-white drop-shadow-sm">
+                                Strategic Platform
+                              </span>
                             </div>
-                            <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-white drop-shadow-sm">
-                              Strategic Sector
+                            <span className="px-2.5 py-1 bg-[#002d3b]/90 border border-slate-700 text-[10px] font-bold text-[#00cccc] uppercase tracking-wider">
+                              {plat.tagline}
                             </span>
                           </div>
                         </div>
 
-                        {/* Title (Only Title, No serial numbers) */}
+                        {/* Title */}
                         <h3 className="text-2xl sm:text-3xl font-black text-[#002d3b] uppercase tracking-tight">
                           {division.title}
                         </h3>
@@ -539,8 +458,8 @@ export default function DivisionsPage() {
                         </p>
                       </div>
 
-                      {/* Action Button to Division Detail */}
-                      <div className="pt-2">
+                      {/* Action Links */}
+                      <div className="pt-2 flex flex-wrap items-center gap-3">
                         <Link
                           href={`/divisions/${division.slug}`}
                           className="btn-siemens btn-siemens-primary inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider px-5 py-2.5"
@@ -548,36 +467,72 @@ export default function DivisionsPage() {
                           <span>Explore {division.title}</span>
                           <ArrowRight className="w-3.5 h-3.5" />
                         </Link>
+                        <Link
+                          href="/contact"
+                          className="px-4 py-2 border border-slate-300 text-slate-700 hover:border-[#009999] hover:text-[#002d3b] text-xs font-bold uppercase tracking-wider transition-colors"
+                        >
+                          Division Inquiry
+                        </Link>
                       </div>
                     </div>
 
-                    {/* Right Column: Description & Product/Service Categories */}
+                    {/* Right Column: Strategic Narrative, Scope & Product Categories */}
                     <div className="lg:col-span-7 p-7 sm:p-9 flex flex-col justify-between space-y-6 bg-white">
-
-                      {/* Description */}
-                      <div className="space-y-2">
-                        <div className="text-[11px] font-mono font-bold uppercase tracking-widest text-slate-400">
-                          Sector Scope &amp; Capabilities
+                      
+                      <div className="space-y-5">
+                        {/* Lead Thought / Ecosystem Vision */}
+                        <div className="p-4 bg-[#f8fafc] border-l-4 border-[#009999] space-y-1.5">
+                          <div className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#009999]">
+                            Platform Strategic Mandate
+                          </div>
+                          <p className="text-sm sm:text-base font-bold text-[#002d3b] leading-relaxed">
+                            {plat.lead}
+                          </p>
                         </div>
-                        <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                          {division.description}
-                        </p>
+
+                        {/* Description 1: Platform Ecosystem Overview */}
+                        <div className="space-y-1.5">
+                          <div className="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400">
+                            Ecosystem Overview
+                          </div>
+                          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            {plat.description}
+                          </p>
+                        </div>
+
+                        {/* Description 2: Sector Capabilities */}
+                        <div className="space-y-1.5">
+                          <div className="text-[10px] font-mono font-bold uppercase tracking-widest text-slate-400">
+                            Operational Capabilities
+                          </div>
+                          <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
+                            {division.description}
+                          </p>
+                        </div>
                       </div>
 
-                      {/* Product & Service Categories */}
-                      <div className="space-y-3 pt-4 border-t border-slate-100">
-                        <div className="text-xs font-bold uppercase tracking-wider text-[#002d3b]">
-                          Product &amp; Service Categories
+                      {/* Bottom Segment: Product & Service Categories + Strategic Footer Note */}
+                      <div className="pt-4 border-t border-slate-100 space-y-4">
+                        <div className="space-y-2">
+                          <div className="text-[11px] font-bold uppercase tracking-wider text-[#002d3b]">
+                            Product &amp; Service Categories
+                          </div>
+                          <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                            {division.categories.map((cat) => (
+                              <span
+                                key={cat}
+                                className="text-xs font-medium px-2.5 py-1 bg-[#f8fafc] border border-slate-200 text-slate-700 hover:border-[#009999] hover:text-[#002d3b] hover:bg-white transition-all rounded-none"
+                              >
+                                {cat}
+                              </span>
+                            ))}
+                          </div>
                         </div>
-                        <div className="flex flex-wrap gap-2">
-                          {division.categories.map((cat) => (
-                            <span
-                              key={cat}
-                              className="text-xs font-medium px-3 py-1.5 bg-[#f8fafc] border border-slate-200 text-slate-700 hover:border-[#009999] hover:text-[#002d3b] hover:bg-white transition-all rounded-none"
-                            >
-                              {cat}
-                            </span>
-                          ))}
+
+                        {/* Strategic Platform Footer Motto */}
+                        <div className="pt-2 border-t border-dashed border-slate-200 flex items-center gap-2 text-xs font-bold text-[#009999]">
+                          <span className="w-2 h-2 bg-[#009999] rounded-full inline-block shrink-0" />
+                          <span>{plat.footer}</span>
                         </div>
                       </div>
 
