@@ -40,7 +40,6 @@ export default function CapabilitiesSection() {
                   <div className="w-10 h-10 bg-slate-50 border border-slate-100 rounded-lg flex items-center justify-center group-hover:bg-[#009999]/5 transition-colors">
                     <IconComponent className="w-5 h-5 text-[#009999]" strokeWidth={1.5} />
                   </div>
-                  <span className="w-2 h-2 rounded-full bg-[#009999]" />
                 </div>
                 <h3 className="text-sm font-semibold tracking-wide text-[#002d3b] leading-tight">{cap.title}</h3>
                 <p className="text-xs text-slate-500 font-light leading-relaxed">{cap.description}</p>

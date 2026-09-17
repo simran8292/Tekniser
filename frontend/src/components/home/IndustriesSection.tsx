@@ -86,10 +86,6 @@ export default function IndustriesSection() {
                   <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wide mb-2">{industry.title}</h3>
                   <p className="text-xs text-slate-500 leading-relaxed">{industry.description}</p>
                 </div>
-                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-400">
-                  <span className="uppercase">Frontier</span>
-                  <span className="text-[#009999]">→</span>
-                </div>
               </div>
             );
           })}

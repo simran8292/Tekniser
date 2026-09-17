@@ -35,14 +35,11 @@ export default function DivisionsGrid() {
                 href={`/divisions/${division.slug}`}
                 className="bg-white p-6 border border-slate-200 group flex flex-col justify-between space-y-6 cursor-pointer rounded-2xl shadow-sm hover:shadow-xl hover:border-[#009999]/30 transition-all duration-300"
               >
-                {/* Top: Icon + Code */}
+                {/* Top: Icon */}
                 <div className="flex items-center justify-between">
                   <div className="w-12 h-12 bg-slate-50 border border-slate-100 rounded-xl flex items-center justify-center group-hover:bg-[#009999]/5 transition-colors">
                     <IconComponent className="w-6 h-6 text-[#009999]" strokeWidth={1.5} />
                   </div>
-                  <span className="font-mono text-xs font-semibold text-[#009999] tracking-wider uppercase">
-                    Strategic Division
-                  </span>
                 </div>
 
                 {/* Middle: Title + Tagline */}

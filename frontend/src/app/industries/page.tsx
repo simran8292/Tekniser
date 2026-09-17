@@ -260,11 +260,7 @@ export default function IndustriesPage() {
                   className="bg-white border border-slate-200 p-6 sm:p-7 flex flex-col justify-between hover:border-[#009999] hover:shadow-lg transition-all duration-200"
                 >
                   <div className="space-y-4">
-                    {/* Header: Code & Icon */}
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                      <span className="text-xs font-mono font-bold text-[#009999] tracking-widest uppercase">
-                        IMPACT FRONTIER
-                      </span>
+                    <div className="flex items-center justify-end pb-3 border-b border-slate-100">
                       <div className="p-2.5 bg-[#f4f5f6] text-[#009999] border border-slate-200">
                         <IconComp className="w-4 h-4" />
                       </div>
@@ -284,11 +280,6 @@ export default function IndustriesPage() {
                     <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                       {item.desc}
                     </p>
-                  </div>
-
-                  <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono font-semibold text-slate-400">
-                    <span>STRATEGIC DOMAIN</span>
-                    <span className="text-[#009999]">→</span>
                   </div>
                 </div>
               );

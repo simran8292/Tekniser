@@ -202,9 +202,8 @@ export default function Vision2046Page() {
             {MISSION_PILLARS.map((pillar, idx) => (
               <div
                 key={idx}
-                className="bg-white border border-slate-200 p-6 flex items-start gap-4 hover:border-[#009999] hover:shadow-md transition-all rounded-none"
+                className="bg-white border border-slate-200 p-6 flex items-center hover:border-[#009999] hover:shadow-md transition-all rounded-none"
               >
-                <div className="w-2.5 h-2.5 mt-1.5 bg-[#009999] shrink-0" />
                 <p className="text-sm font-bold text-[#002d3b] leading-relaxed">
                   {pillar.text}
                 </p>
@@ -251,11 +250,6 @@ export default function Vision2046Page() {
                     <p className="text-sm text-slate-600 leading-relaxed font-normal">
                       {pillar.desc}
                     </p>
-                  </div>
-
-                  <div className="pt-4 mt-4 border-t border-slate-200 flex items-center justify-between text-[11px] font-mono text-slate-400">
-                    <span>PILLAR MANDATE</span>
-                    <span className="text-[#009999]">→</span>
                   </div>
                 </div>
               );
