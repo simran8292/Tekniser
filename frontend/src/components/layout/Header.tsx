@@ -66,7 +66,7 @@ export default function Header() {
                 className="flex items-center gap-1.5 hover:text-[#36b39c] transition-colors focus:outline-none cursor-pointer"
               >
                 <Globe className="w-3.5 h-3.5 text-[#36b39c]" />
-                <span className="capitalize">{currentRegion} | {currentLanguage.toUpperCase()}</span>
+                <span className="capitalize">{currentRegion === "global" ? "1Globe" : currentRegion} | {currentLanguage.toUpperCase()}</span>
               </button>
 
               {/* Support & Community Dropdown */}
@@ -307,7 +307,7 @@ export default function Header() {
               className="flex items-center justify-center gap-1.5 py-3 border border-slate-800 bg-[#001822] hover:text-[#36b39c] transition-colors rounded-none cursor-pointer"
             >
               <Globe className="w-4 h-4 text-[#36b39c]" />
-              <span className="capitalize">{currentLanguage.toUpperCase()} | {currentRegion}</span>
+              <span className="capitalize">{currentLanguage.toUpperCase()} | {currentRegion === "global" ? "1Globe" : currentRegion}</span>
             </button>
             <Link
               href="/admin/login"

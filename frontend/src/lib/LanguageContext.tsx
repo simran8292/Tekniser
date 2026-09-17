@@ -30,7 +30,7 @@ export interface RegionOption {
 export const REGIONS: RegionOption[] = [
   {
     id: "global",
-    name: "TAKNISER Global",
+    name: "Takniser 1Globe",
     languages: [
       { code: "en", name: "English" },
       { code: "ar", name: "العربية" },

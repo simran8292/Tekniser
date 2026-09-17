@@ -15,7 +15,7 @@ export default function LanguageDrawer({ isOpen, onClose }: LanguageDrawerProps)
 
   if (!isOpen) return null;
 
-  const currentRegionName = REGIONS.find((r) => r.id === currentRegion)?.name || "TAKNISER Global";
+  const currentRegionName = REGIONS.find((r) => r.id === currentRegion)?.name || "Takniser 1Globe";
 
   const handleSelectLanguage = (code: LanguageCode, id: RegionId) => {
     changeLanguageAndRegion(code, id);
