@@ -33,10 +33,14 @@ body {
   color: var(--text-primary);
   font-family: var(--font-sans);
   overflow-x: hidden;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-feature-settings: "lnum" 1;
 }
 
 h1, h2, h3, h4, h5, h6, .font-legacy, .font-serif {
   font-family: var(--font-serif) !important;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-feature-settings: "lnum" 1;
 }
 
 /* Siemens Flat Rectangular Card Panels */

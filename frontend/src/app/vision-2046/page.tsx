@@ -131,8 +131,8 @@ export default function Vision2046Page() {
           </div>
 
           {/* Heading from verbatim document */}
-          <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
-            Vision <span className="text-[#009999]">2046</span>
+          <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight [font-feature-settings:'lnum'_1] [font-variant-numeric:lining-nums]">
+            VISION <span className="text-[#009999] [font-feature-settings:'lnum'_1] [font-variant-numeric:lining-nums] inline-block">2046</span>
           </h1>
 
           {/* Description from verbatim document */}

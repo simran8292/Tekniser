@@ -158,7 +158,7 @@ export default function Header() {
                       {isDivisions && isDivisionsOpen && (
                         <div className="absolute top-full left-0 w-80 mt-0 py-2 bg-[#001822] shadow-2xl border border-slate-800 divide-y divide-slate-800/60 rounded-none z-50">
                           <div className="px-4 py-2 text-[9px] font-bold uppercase tracking-wider text-slate-500">
-                            7 Core Business Divisions
+                            Core Business Divisions
                           </div>
                           <div className="py-1">
                             {BUSINESS_DIVISIONS.map((div) => (
