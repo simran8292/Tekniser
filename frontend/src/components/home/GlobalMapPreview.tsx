@@ -16,7 +16,14 @@ const REGION_COLORS: Record<string, string> = {
 
 export default function GlobalMapPreview() {
   const [activeRegion, setActiveRegion] = useState<string | null>(null);
-  const [tooltip, setTooltip] = useState<{ x: number; y: number; title: string; region: string } | null>(null);
+  const [tooltip, setTooltip] = useState<{
+    x: number;
+    y: number;
+    title: string;
+    region: string;
+    type?: string;
+    desc?: string;
+  } | null>(null);
 
   const regions = [...new Set(GLOBAL_NETWORK_LOCATIONS.map((l) => l.region))];
   const filteredLocations = activeRegion
@@ -93,50 +100,101 @@ export default function GlobalMapPreview() {
                 const color = REGION_COLORS[loc.region] || "#009999";
                 const isHQ = loc.type === "HQ";
                 const isLogistics = loc.type === "LOGISTICS_HUB";
+
                 return (
-                  <g key={idx}>
+                  <g
+                    key={idx}
+                    className="cursor-pointer group"
+                    onMouseEnter={(e) => {
+                      const rect = e.currentTarget.closest("svg")!.getBoundingClientRect();
+                      const svgX = (cx / 1000) * rect.width;
+                      const svgY = (cy / 500) * rect.height;
+                      setTooltip({
+                        x: svgX,
+                        y: svgY,
+                        title: loc.title,
+                        region: loc.region,
+                        type: loc.type,
+                        desc: loc.description,
+                      });
+                    }}
+                    onMouseLeave={() => setTooltip(null)}
+                  >
                     {/* Pulse ring for HQ */}
                     {isHQ && (
                       <>
-                        <circle cx={cx} cy={cy} r="14" fill={color + "1A"} stroke={color} strokeWidth="1" opacity="0.6" />
-                        <circle cx={cx} cy={cy} r="8" fill={color + "22"} stroke={color} strokeWidth="1.5" opacity="0.8" />
+                        <circle cx={cx} cy={cy} r="18" fill={color + "1A"} stroke={color} strokeWidth="1" opacity="0.6" />
+                        <circle cx={cx} cy={cy} r="10" fill={color + "22"} stroke={color} strokeWidth="1.5" opacity="0.8" />
                       </>
                     )}
+
+                    {/* Vector Office Building Pin Graphic for Points */}
+                    {isHQ ? (
+                      <g transform={`translate(${cx - 26}, ${cy - 44})`}>
+                        {/* Global HQ Prominent Vector Building */}
+                        <image
+                          href="/office_vector_transparent.png"
+                          width="52"
+                          height="44"
+                          className="invert brightness-150"
+                        />
+                      </g>
+                    ) : (
+                      <g transform={`translate(${cx - 19}, ${cy - 30})`}>
+                        {/* Regional Office Enhanced Vector Building */}
+                        <image
+                          href="/office_vector_transparent.png"
+                          width="38"
+                          height="30"
+                          className="invert brightness-125 opacity-90 group-hover:opacity-100 group-hover:scale-115 transition-transform"
+                        />
+                      </g>
+                    )}
+
+                    {/* Base Pin Indicator Dot */}
                     <circle
                       cx={cx}
                       cy={cy}
-                      r={isHQ ? 5 : isLogistics ? 4 : 3}
+                      r={isHQ ? 4 : 3}
                       fill={color}
-                      stroke="rgba(0,45,59,0.5)"
-                      strokeWidth={isHQ ? 1.5 : 1}
-                      className="cursor-pointer"
-                      onMouseEnter={(e) => {
-                        const rect = e.currentTarget.closest("svg")!.getBoundingClientRect();
-                        const svgX = (cx / 1000) * rect.width;
-                        const svgY = (cy / 500) * rect.height;
-                        setTooltip({ x: svgX, y: svgY, title: loc.title, region: loc.region });
-                      }}
-                      onMouseLeave={() => setTooltip(null)}
+                      stroke="#001822"
+                      strokeWidth={1}
                     />
                   </g>
                 );
               })}
             </svg>
 
-            {/* Tooltip */}
+            {/* Rich Hover Tooltip with Office Vector */}
             {tooltip && (
               <div
-                className="absolute z-20 bg-[#001b24] border border-slate-800 rounded-none px-3 py-2 text-xs shadow-xl pointer-events-none"
+                className="absolute z-20 bg-[#001822]/95 backdrop-blur-md border border-[#009999] rounded-none p-3 text-xs shadow-2xl pointer-events-none flex items-center gap-3"
                 style={{
-                  left: `${Math.min(tooltip.x, 80)}%`,
-                  top: `${Math.max(tooltip.y - 10, 5)}%`,
+                  left: `${Math.min(Math.max(tooltip.x, 20), 80)}%`,
+                  top: `${Math.max(tooltip.y - 15, 8)}%`,
                   transform: "translate(-50%, -100%)",
                   whiteSpace: "nowrap",
                 }}
               >
-                <div className="font-bold text-white text-xs mb-0.5">{tooltip.title}</div>
-                <div className="font-medium" style={{ color: REGION_COLORS[tooltip.region] }}>
-                  {tooltip.region}
+                {/* Office Vector Thumbnail inside Tooltip */}
+                <div className="w-14 h-12 relative shrink-0 bg-[#002d3b] border border-slate-700 p-1 flex items-center justify-center">
+                  <Image
+                    src="/office_vector_transparent.png"
+                    alt="Office Vector"
+                    fill
+                    className="object-contain filter invert brightness-125 p-0.5"
+                  />
+                </div>
+                <div>
+                  <div className="font-bold text-white text-xs mb-0.5">{tooltip.title}</div>
+                  <div className="text-[11px] font-mono" style={{ color: REGION_COLORS[tooltip.region] || "#00cccc" }}>
+                    {tooltip.region} • {tooltip.type}
+                  </div>
+                  {tooltip.desc && (
+                    <div className="text-[10px] text-slate-300 font-normal max-w-xs truncate mt-0.5">
+                      {tooltip.desc}
+                    </div>
+                  )}
                 </div>
               </div>
             )}
