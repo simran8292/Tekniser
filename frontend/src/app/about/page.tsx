@@ -75,10 +75,10 @@ export default function AboutPage() {
             <Shield className="w-3.5 h-3.5 text-[#009999]" />
             <span>Corporate Heritage</span>
           </div>
-          <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tight uppercase leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase leading-tight">
             A CENTURY OF <span className="text-[#009999]">GERMAN HERITAGE</span>
           </h1>
-          <p className="text-slate-200 text-lg sm:text-xl max-w-4xl mx-auto leading-relaxed font-normal">
+          <p className="text-slate-200 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed font-normal">
             For more than a century, TAKNISER has embodied the enduring spirit of German engineering — where Präzision, Qualität, Zuverlässigkeit, Ingenieurskunst, and Vertrauen define not simply how we work, but who we are.
           </p>
         </div>

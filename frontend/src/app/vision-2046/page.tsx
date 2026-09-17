@@ -131,12 +131,12 @@ export default function Vision2046Page() {
           </div>
 
           {/* Heading from verbatim document */}
-          <h1 className="text-4xl sm:text-7xl font-black uppercase tracking-tight text-white leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
             Vision <span className="text-[#009999]">2046</span>
           </h1>
 
           {/* Description from verbatim document */}
-          <p className="text-slate-200 text-base sm:text-xl max-w-3xl mx-auto leading-relaxed font-normal">
+          <p className="text-slate-200 text-sm sm:text-lg max-w-3xl mx-auto leading-relaxed font-normal">
             TAKNISER’s strategic century vision charts the course from a Hessen engineering heritage to a globally respected industrial, technology and trading conglomerate.
           </p>
 

@@ -143,7 +143,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "s1-kicker": "100+ Years of German Engineering Heritage",
     "s1-title": "BUILDING THE FUTURE OF GLOBAL INDUSTRY",
     "s1-highlight": "One Globe. One Ecosystem. One Future.",
-    "s1-desc": "100+ Years of German Engineering Heritage. Operating in 190+ Countries through 29/30+ COMPANIES GLOBALY Regional Headquarters.",
+    "s1-desc": "100+ Years of German Engineering Heritage. Operating in 190+ Countries through 30+ COMPANIES GLOBALY Regional Headquarters.",
     "s1-primary": "Our History & Heritage",
     "s1-secondary": "Explore Global Network",
 
@@ -177,7 +177,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "footer-corporate-tagline": "100+ Years of German Engineering Heritage. Building the Future of Global Industry.",
     "footer-german-desc": "Established upon German principles of Präzision, Qualität, Zuverlässigkeit, Ingenieurskunst, and Vertrauen since early 20th century Hesse.",
     "footer-global-presence": "Global Presence",
-    "footer-regional-hq": "29 Regional Headquarters",
+    "footer-regional-hq": "30 Regional Headquarters",
     "footer-global-hq": "Global HQ – TAKNISER GmbH",
     "footer-hq-location": "Hesse (Hessen), Germany",
     "footer-inquiries": "Corporate Inquiries Portal",
@@ -191,7 +191,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "cap-source": "Global Strategic Sourcing",
     "cap-procure": "International Procurement",
     "cap-epc": "EPC & Project Supply",
-    "cap-logistics": "JAFZA Logistics Network",
+    "cap-logistics": "Global Logistics Network",
   },
   ar: {
     // Utilities & Top bar
@@ -263,7 +263,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "footer-corporate-tagline": "أكثر من 100 عام من التميز الهندسي الألماني. بناء مستقبل الصناعة العالمية.",
     "footer-german-desc": "تأسست وفقاً للمبادئ الألمانية المتمثلة في الدقة، والجودة، والموثوقية، والبراعة الهندسية، والثقة منذ أوائل القرن العشرين في ولاية هسن.",
     "footer-global-presence": "الانتشار العالمي",
-    "footer-regional-hq": "29 مقراً إقليمياً",
+    "footer-regional-hq": "30 مقراً إقليمياً",
     "footer-global-hq": "المقر الرئيسي العالمي – تاكنيسر ذ.م.م",
     "footer-hq-location": "هسن، ألمانيا",
     "footer-inquiries": "بوابة الاستفسارات المشتركة",
@@ -278,7 +278,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "cap-source": "التوريد الاستراتيجي العالمي",
     "cap-procure": "المشتريات الدولية",
     "cap-epc": "الهندسة والمشتريات والبناء وتوريد المشاريع",
-    "cap-logistics": "شبكة جافزا اللوجستية",
+    "cap-logistics": "الشبكة اللوجستية العالمية",
   },
   zh: {
     // Utilities & Top bar
@@ -350,7 +350,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "footer-corporate-tagline": "百年德国工程底蕴。塑造全球工业未来。",
     "footer-german-desc": "自20世纪初在黑森州成立以来，始终坚守德国精密、品质、可靠、工程造诣与信任的基石。",
     "footer-global-presence": "全球业务分布",
-    "footer-regional-hq": "29 个区域总部",
+    "footer-regional-hq": "30 个区域总部",
     "footer-global-hq": "全球总部 – TAKNISER GmbH",
     "footer-hq-location": "德国黑森州",
     "footer-inquiries": "企业咨询门户",
@@ -365,7 +365,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "cap-source": "全球战略采购",
     "cap-procure": "国际采购",
     "cap-epc": "EPC项目供货",
-    "cap-logistics": "JAFZA物流网络",
+    "cap-logistics": "全球物流网络",
   },
   pl: {
     // Utilities & Top bar
@@ -437,7 +437,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "footer-corporate-tagline": "Ponad 100 lat niemieckiego dziedzictwa inżynieryjnego. Budowanie przyszłości globalnego przemysłu.",
     "footer-german-desc": "Założona w oparciu o niemieckie zasady Präzision, Qualität, Zuverlässigkeit, Ingenieurskunst i Vertrauen od początku XX wieku w Hesji.",
     "footer-global-presence": "Globalna Obecność",
-    "footer-regional-hq": "29 Regionalnych Siedzib",
+    "footer-regional-hq": "30 Regionalnych Siedzib",
     "footer-global-hq": "Centrala Globalna – TAKNISER GmbH",
     "footer-hq-location": "Hesja (Hessen), Niemcy",
     "footer-inquiries": "Portal Zapytań Korporacyjnych",
@@ -452,7 +452,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "cap-source": "Globalne Pozyskiwanie Strategiczne",
     "cap-procure": "Zamówienia Międzynarodowe",
     "cap-epc": "Dostawy Projektowe EPC",
-    "cap-logistics": "Sieć Logistyczna JAFZA",
+    "cap-logistics": "Globalna Sieć Logistyczna",
   },
   ja: {
     // Utilities & Top bar
@@ -524,7 +524,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "footer-corporate-tagline": "100年以上のドイツエンジニアリングの伝統。グローバル産業の未来を築く。",
     "footer-german-desc": "20世紀初頭のヘッセンにおけるドイツの精密、品質、信頼性、エンジニアリングの粋、そして信頼の原則に基づいて設立されました。",
     "footer-global-presence": "グローバル展開",
-    "footer-regional-hq": "29の地域本部",
+    "footer-regional-hq": "30の地域本部",
     "footer-global-hq": "グローバル本社 – TAKNISER GmbH",
     "footer-hq-location": "ドイツ ヘッセン州",
     "footer-inquiries": "企業お問い合わせポータル",
@@ -539,7 +539,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "cap-source": "グローバル戦略的調達",
     "cap-procure": "国際調達",
     "cap-epc": "EPC＆プロジェクトサプライ",
-    "cap-logistics": "JAFZA物流ネットワーク",
+    "cap-logistics": "グローバル物流ネットワーク",
   },
   ko: {
     // Utilities & Top bar
@@ -611,7 +611,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "footer-corporate-tagline": "100년 이상의 독일 엔지니어링 우수성. 글로벌 산업의 미래를 건설하다.",
     "footer-german-desc": "20세기 초 헤센에서 독일의 정밀성, 품질, 신뢰성, 엔지니어링 우수성 및 신뢰의 원칙을 바탕으로 설립되었습니다.",
     "footer-global-presence": "글로벌 입지",
-    "footer-regional-hq": "29개 지역 본부",
+    "footer-regional-hq": "30개 지역 본부",
     "footer-global-hq": "글로벌 본사 – TAKNISER GmbH",
     "footer-hq-location": "독일 헤센",
     "footer-inquiries": "기업 문의 포털",
@@ -626,7 +626,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "cap-source": "글로벌 전략적 소싱",
     "cap-procure": "국제 조달",
     "cap-epc": "EPC 및 프로젝트 공급",
-    "cap-logistics": "JAFZA 물류 네트워크",
+    "cap-logistics": "글로벌 물류 네트워크",
   },
 };
 

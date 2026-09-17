@@ -7,6 +7,7 @@ import { LanguageProvider } from "@/lib/LanguageContext";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   display: "swap",
   variable: "--font-montserrat",
 });
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     siteName: "TAKNISER ONE GLOBE",
     title: "TAKNISER ONE GLOBE — Global Industrial, Technology & Trading Conglomerate",
     description:
-      "100+ Years of German Engineering Heritage. Building the Future of Global Industry. Operating in 190+ countries through 29 Regional Headquarters across 6 continents.",
+      "100+ Years of German Engineering Heritage. Building the Future of Global Industry. Operating in 190+ countries through 30 Regional Headquarters across 6 continents.",
     images: [{ url: "/brand/logo.png", width: 479, height: 163, alt: "TAKNISER ONE GLOBE Official Logo" }],
   },
   twitter: {

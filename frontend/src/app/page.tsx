@@ -14,7 +14,7 @@ import { CORPORATE_INFO } from "@/lib/data";
 export const metadata: Metadata = {
   title: "TAKNISER ONE GLOBE — Global Industrial, Technology & Trading Conglomerate",
   description:
-    "100+ Years of German Engineering Heritage. Building the Future of Global Industry. TAKNISER ONE GLOBE operates in 190+ countries through 29 Regional Headquarters.",
+    "100+ Years of German Engineering Heritage. Building the Future of Global Industry. TAKNISER ONE GLOBE operates in 190+ countries through 30 Regional Headquarters.",
 };
 
 export default function HomePage() {

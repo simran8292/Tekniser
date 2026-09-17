@@ -43,14 +43,9 @@ export default function Footer() {
           {/* Column 1: Brand & German Heritage */}
           <div className="lg:col-span-2 space-y-5">
             <Link href="/" className="inline-block">
-              <div className="relative h-12 w-56">
-                <Image
-                  src="/brand/logo.svg"
-                  alt="TAKNISER ONE GLOBE Logo"
-                  fill
-                  className="object-contain object-left brightness-0 invert"
-                />
-              </div>
+              <span className="font-sans font-black tracking-[0.04em] text-white text-3xl uppercase select-none">
+                TAKNISER
+              </span>
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed pr-4">
               {t("footer-german-desc")}

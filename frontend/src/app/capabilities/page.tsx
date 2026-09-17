@@ -105,11 +105,11 @@ export default function CapabilitiesPage() {
 
           {/* Main Hero Title */}
           <div className="space-y-4">
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight leading-tight text-white">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-tight text-white">
               EXPLORING WHAT&apos;S NEXT. <br />
               <span className="text-[#009999]">BUILDING WHAT MATTERS.</span>
             </h1>
-            <p className="text-base sm:text-xl text-[#00cccc] font-semibold italic max-w-2xl mx-auto">
+            <p className="text-sm sm:text-lg text-[#00cccc] font-semibold italic max-w-2xl mx-auto">
               Innovating across the frontiers of humanity, technology and nature.
             </p>
           </div>

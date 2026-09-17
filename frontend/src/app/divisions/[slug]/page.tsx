@@ -87,10 +87,10 @@ export default async function DivisionDetailPage({ params }: Props) {
                   Strategic Sector
                 </span>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-black text-white leading-tight uppercase">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight uppercase">
                 {division.title}
               </h1>
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">{division.tagline}</p>
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">{division.tagline}</p>
               <Link
                 href="/contact"
                 className="btn-siemens btn-siemens-primary flex items-center justify-center gap-2 max-w-fit rounded-none font-bold text-sm uppercase tracking-wider"

@@ -36,7 +36,7 @@ export default function GlobalMapPreview() {
             One Globe. <span className="font-bold text-[#009999]">One Network.</span>
           </h2>
           <p className="text-slate-200 text-base">
-            TAKNISER ONE GLOBE operates through 29 Regional Headquarters, strategic logistics hubs, and business offices across 190+ countries and 6 continents.
+            TAKNISER ONE GLOBE operates through 30 Regional Headquarters, strategic logistics hubs, and business offices across 190+ countries and 6 continents.
           </p>
         </div>
 
@@ -147,7 +147,7 @@ export default function GlobalMapPreview() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-10">
           {[
             { label: "Global HQ", value: "1", color: "text-white" },
-            { label: "Regional HQs", value: "29", color: "text-[#009999]" },
+            { label: "Regional HQs", value: "30", color: "text-[#009999]" },
             { label: "Countries & Territories", value: "190+", color: "text-[#009999]" },
             { label: "Continents", value: "6", color: "text-white" },
             { label: "Logistics Hubs", value: "3+", color: "text-[#009999]" },

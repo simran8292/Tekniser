@@ -303,12 +303,12 @@ export default function DivisionsPage() {
           </div>
 
           {/* Heading from verbatim document */}
-          <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
             Our <span className="text-[#009999]">Business Divisions</span>
           </h1>
 
           {/* Description from verbatim document */}
-          <p className="text-slate-200 text-base sm:text-xl max-w-3xl mx-auto leading-relaxed font-normal">
+          <p className="text-slate-200 text-sm sm:text-lg max-w-3xl mx-auto leading-relaxed font-normal">
             Seven transformative sectors, one integrated global platform. TAKNISER ONE GLOBE connects industrial manufacturing, space economy, strategic minerals, AgTech, LifeCare, intelligent robotics, and international trade.
           </p>
 
@@ -620,7 +620,7 @@ export default function DivisionsPage() {
               <div className="text-xs text-slate-500 uppercase font-mono mt-1">Countries Served</div>
             </div>
             <div className="p-4 bg-[#f8fafc] border border-slate-200">
-              <div className="text-2xl font-black text-[#002d3b]">29+</div>
+              <div className="text-2xl font-black text-[#002d3b]">30+</div>
               <div className="text-xs text-slate-500 uppercase font-mono mt-1">Operating Entities</div>
             </div>
             <div className="p-4 bg-[#f8fafc] border border-slate-200">

@@ -13,7 +13,7 @@ import RegionalHeadquartersList from "@/components/network/RegionalHeadquartersL
 export const metadata: Metadata = {
   title: "Global Network — TAKNISER ONE GLOBE",
   description:
-    "One Globe. One Network. One Future. Explore TAKNISER's strategically positioned global network of 29 Regional Headquarters, logistics hubs, engineering centers, and business offices across 190+ countries.",
+    "One Globe. One Network. One Future. Explore TAKNISER's strategically positioned global network of 30 Regional Headquarters, logistics hubs, engineering centers, and business offices across 190+ countries.",
 };
 
 const GLOBAL_STATS = [
@@ -24,7 +24,7 @@ const GLOBAL_STATS = [
   },
   {
     label: "Regional Headquarters",
-    value: "29",
+    value: "30",
     desc: "Operational across global hubs",
   },
   {
@@ -99,13 +99,13 @@ export default function GlobalNetworkPage() {
           </div>
 
           {/* Heading from verbatim document */}
-          <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
             Global <span className="text-[#009999]">Network</span>
           </h1>
 
           {/* Description from verbatim document */}
-          <p className="text-slate-200 text-base sm:text-xl max-w-3xl mx-auto leading-relaxed font-normal">
-            One Globe. One Network. One Future. — TAKNISER operates through a strategically positioned global network of 29 Regional Headquarters, logistics hubs, engineering centers, and business offices across 190+ countries.
+          <p className="text-slate-200 text-sm sm:text-lg max-w-3xl mx-auto leading-relaxed font-normal">
+            One Globe. One Network. One Future. — TAKNISER operates through a strategically positioned global network of 30 Regional Headquarters, logistics hubs, engineering centers, and business offices across 190+ countries.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 pt-2 text-xs font-mono text-slate-400">
@@ -113,7 +113,7 @@ export default function GlobalNetworkPage() {
               1 Global HQ (Germany)
             </span>
             <span className="px-3 py-1 bg-[#002d3b] border border-slate-700 text-[#00cccc]">
-              29 Regional Headquarters
+              30 Regional Headquarters
             </span>
             <span className="px-3 py-1 bg-[#002d3b] border border-slate-700 text-[#00cccc]">
               190+ Countries Served

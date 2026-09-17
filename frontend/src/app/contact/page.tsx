@@ -58,12 +58,12 @@ export default function ContactPage() {
           </div>
 
           {/* Heading from verbatim document */}
-          <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
             Contact <span className="text-[#009999]">TAKNISER</span>
           </h1>
 
           {/* Description from verbatim document */}
-          <p className="text-slate-200 text-base sm:text-xl max-w-3xl mx-auto leading-relaxed font-normal">
+          <p className="text-slate-200 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
             Whether you are a manufacturer, government body, EPC contractor, OEM, or institutional buyer — our global corporate team is ready to respond to your inquiry.
           </p>
 
@@ -189,14 +189,14 @@ export default function ContactPage() {
                   <span>Global Logistics Hub</span>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-650 leading-relaxed font-medium">
-                  Our <span className="font-bold text-[#002d3b]">JAFZA Logistics Hub in UAE</span> serves as the primary global distribution &amp; free zone logistics center for Middle East, Africa, and Asia operations.
+                  Our <span className="font-bold text-[#002d3b]">Global Logistics Hub in UAE</span> serves as the primary global distribution &amp; free zone logistics center for Middle East, Africa, and Asia operations.
                 </p>
                 <div className="pt-2">
                   <Link
                     href="/global-network"
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-[#009999] hover:text-[#002d3b] transition-colors uppercase tracking-wider"
                   >
-                    <span>View JAFZA in Global Network</span>
+                    <span>View Logistics Hub in Global Network</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>

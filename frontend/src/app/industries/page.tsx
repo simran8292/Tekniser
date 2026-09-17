@@ -216,16 +216,16 @@ export default function IndustriesPage() {
             <span>T1G IMPACTS</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-tight">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-tight">
             T1G IMPACTS: <br className="hidden sm:inline" />
             <span className="text-[#009999]">12 GLOBAL FRONTIERS</span>
           </h1>
 
-          <p className="text-base sm:text-xl text-[#00cccc] font-semibold uppercase tracking-wide">
+          <p className="text-sm sm:text-lg text-[#00cccc] font-semibold uppercase tracking-wide">
             Where We Believe the Next Great Opportunities Will Emerge
           </p>
 
-          <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-300 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
             TAKNISER continuously explores twelve interconnected frontiers that have the potential to redefine industries and create transformative global impact on Earth and beyond.
           </p>
         </div>

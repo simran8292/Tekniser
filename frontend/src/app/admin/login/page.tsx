@@ -47,14 +47,10 @@ export default function AdminLoginPage() {
       <div className="w-full max-w-md relative z-10">
         {/* Logo Section */}
         <div className="text-center mb-8">
-          <div className="relative h-14 w-56 mx-auto mb-5">
-            <Image
-              src="/brand/logo.svg"
-              alt="TAKNISER ONE GLOBE"
-              fill
-              priority
-              className="object-contain"
-            />
+          <div className="mb-5 text-center">
+            <span className="font-sans font-black tracking-[0.04em] text-[#36b39c] text-3xl sm:text-4xl uppercase select-none">
+              TAKNISER
+            </span>
           </div>
           <div className="flex items-center justify-center gap-2 text-slate-400 text-xs uppercase tracking-wider mb-2 font-bold">
             <Lock className="w-3.5 h-3.5 text-[#36b39c]" />

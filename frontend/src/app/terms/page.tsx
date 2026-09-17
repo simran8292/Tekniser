@@ -71,11 +71,11 @@ export default function TermsPage() {
             <span>LEGAL &amp; COMPLIANCE</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
             Terms <span className="text-[#009999]">of Use</span>
           </h1>
 
-          <p className="text-slate-200 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-200 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
             Legal terms, platform guidelines, and governing conditions for engaging with the TAKNISER ONE GLOBE digital platform.
           </p>
 

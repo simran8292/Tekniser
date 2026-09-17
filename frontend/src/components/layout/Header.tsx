@@ -51,20 +51,12 @@ export default function Header() {
             }`}
           >
             {/* Logo */}
-            <Link href="/" className="flex items-center">
-              <div
-                className={`relative transition-all duration-300 ${
-                  isScrolled ? "h-8 w-36" : "h-11 w-48"
-                }`}
-              >
-                <Image
-                  src="/brand/logo.svg"
-                  alt="TAKNISER ONE GLOBE"
-                  fill
-                  priority
-                  className="object-contain object-left"
-                />
-              </div>
+            <Link href="/" className="flex items-center group">
+              <span className={`font-sans font-black tracking-[0.04em] text-[#36b39c] uppercase select-none transition-all duration-300 ${
+                isScrolled ? "text-2xl" : "text-[2rem] leading-none"
+              }`}>
+                TAKNISER
+              </span>
             </Link>
 
             {/* Utility navigation */}
@@ -241,15 +233,9 @@ export default function Header() {
         <div className="lg:hidden flex items-center justify-between py-3.5">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="relative h-8 w-36">
-              <Image
-                src="/brand/logo.svg"
-                alt="TAKNISER ONE GLOBE"
-                fill
-                priority
-                className="object-contain object-left"
-              />
-            </div>
+            <span className="font-sans font-black tracking-[0.04em] text-[#36b39c] text-2xl uppercase select-none leading-none">
+              TAKNISER
+            </span>
           </Link>
 
           {/* Action & Toggle Controls */}

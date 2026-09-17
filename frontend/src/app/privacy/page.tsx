@@ -81,11 +81,11 @@ export default function PrivacyPage() {
             <span>LEGAL &amp; COMPLIANCE</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
             Privacy <span className="text-[#009999]">Policy</span>
           </h1>
 
-          <p className="text-slate-200 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-200 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
             TAKNISER GmbH is committed to protecting your personal data in strict compliance with the European General Data Protection Regulation (GDPR) and German federal data protection statutes.
           </p>
 

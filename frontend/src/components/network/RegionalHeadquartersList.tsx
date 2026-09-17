@@ -90,7 +90,7 @@ export const NETWORK_HUBS: NetworkHubItem[] = [
     type: "RHQ",
   },
   {
-    name: "JAFZA Logistics Hub & Middle East RHQ",
+    name: "Middle East Logistics Hub & RHQ",
     country: "UAE",
     region: "Middle East",
     role: "Primary Global Distribution & Free Zone Logistics Center",
