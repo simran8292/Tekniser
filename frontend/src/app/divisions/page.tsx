@@ -22,30 +22,55 @@ export const metadata: Metadata = {
     "Seven transformative sectors, one integrated global platform. Explore Space Economy, Mining & Minerals, AgTech, LifeCare, Lifestyle, Robotics, and Global Trading.",
 };
 
-const SYNERGIES = [
+const ECOSYSTEM_PLATFORMS = [
   {
+    title: "Space Intelligence",
+    desc: "Space intelligence can transform agriculture, helping to monitor crop health, soil quality and land use.",
     icon: Rocket,
-    text: "Space intelligence can transform agriculture.",
+    color: "bg-[#009999]",
+    href: "#space-economy",
   },
   {
+    title: "Critical Minerals",
+    desc: "Critical minerals enable the technologies of tomorrow, powering clean energy, EVs and advanced manufacturing.",
     icon: Layers,
-    text: "Critical minerals enable the technologies of tomorrow.",
+    color: "bg-[#1e40af]",
+    href: "#mining-minerals",
   },
   {
+    title: "AI & Robotics",
+    desc: "AI can accelerate scientific discovery, optimize operations and create smarter, safer industries.",
     icon: Bot,
-    text: "Robotics can transform industry.",
+    color: "bg-[#6366f1]",
+    href: "#robotics",
   },
   {
-    icon: Cpu,
-    text: "AI can accelerate scientific discovery.",
-  },
-  {
+    title: "Life Sciences",
+    desc: "Life sciences can extend human potential, improving health, longevity and quality of life.",
     icon: HeartPulse,
-    text: "Life sciences can extend human potential.",
+    color: "bg-[#0f766e]",
+    href: "#lifecare",
   },
   {
+    title: "Global Trade",
+    desc: "Global trade can take breakthrough solutions from one market to the world, creating shared prosperity.",
     icon: Globe,
-    text: "Global trade can take breakthrough solutions from one market to the world.",
+    color: "bg-[#0284c7]",
+    href: "#global-trading",
+  },
+  {
+    title: "Technology & Innovation",
+    desc: "Technology and innovation connect people, systems and ideas—building a smarter, more resilient future.",
+    icon: Cpu,
+    color: "bg-[#7c3aed]",
+    href: "#robotics",
+  },
+  {
+    title: "Sustainability",
+    desc: "Sustainability ensures progress today without compromising tomorrow, balancing growth with a healthier planet.",
+    icon: Sprout,
+    color: "bg-[#059669]",
+    href: "#agtech",
   },
 ];
 
@@ -331,63 +356,138 @@ export default function DivisionsPage() {
       {/* ─────────────────────────────────────────────────────────────
           THE TAKNISER INNOVATION ECOSYSTEM - SEVEN PLATFORMS
       ───────────────────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-slate-200 overflow-hidden">
+        <div className="max-w-[1580px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center">
 
-          {/* Section Header */}
-          <div className="space-y-4 max-w-3xl">
-            <div className="inline-flex items-center gap-2 text-xs font-bold text-[#009999] tracking-widest uppercase">
-              <span>Interconnected Vision</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#002d3b] uppercase tracking-tight">
-              THE TAKNISER <span className="text-[#009999]">INNOVATION ECOSYSTEM</span>
-            </h2>
-            <div className="text-lg sm:text-xl font-bold text-[#002d3b] uppercase tracking-wide">
-              Seven Platforms. One Connected Vision.
-            </div>
-          </div>
+            {/* Left Column (Header, 7 Cards Grid, Bottom Callout) */}
+            <div className="lg:col-span-6 xl:col-span-6 space-y-6">
+              {/* Eyebrow */}
+              <div className="flex items-center gap-2 text-xs font-bold text-[#009999] tracking-widest uppercase">
+                <span className="w-6 h-0.5 bg-[#009999]" />
+                <span>Interconnected Vision</span>
+              </div>
 
-          {/* Interconnected Synergy Nexus */}
-          <div className="bg-[#f4f5f6] border-2 border-slate-200 p-6 sm:p-10 space-y-6">
-            <div className="border-b border-slate-300 pb-4">
-              <h3 className="text-lg sm:text-xl font-black text-[#002d3b]">
-                The world&apos;s greatest opportunities do not exist in isolation.
-              </h3>
-            </div>
+              {/* Heading */}
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-[#002d3b] uppercase tracking-tight leading-tight">
+                THE TAKNISER{" "}
+                <span className="text-[#009999]">
+                  INNOVATION ECOSYSTEM
+                </span>
+              </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {SYNERGIES.map((syn, idx) => {
-                const IconComponent = syn.icon;
-                return (
-                  <div
-                    key={idx}
-                    className="bg-white border border-slate-200 p-4 flex items-start gap-3.5 hover:border-[#009999] transition-all"
-                  >
-                    <div className="p-2 bg-[#002d3b] text-[#009999] shrink-0">
-                      <IconComponent className="w-4 h-4" />
-                    </div>
-                    <p className="text-sm font-semibold text-slate-700 leading-snug">
-                      {syn.text}
+              {/* Subheading & Lead */}
+              <div className="space-y-2.5">
+                <p className="text-xs sm:text-sm font-extrabold text-[#002d3b] uppercase tracking-wider">
+                  SEVEN PLATFORMS. ONE CONNECTED VISION.
+                </p>
+                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-xl">
+                  The world&apos;s greatest opportunities do not exist in isolation. TAKNISER brings together seven interconnected business platforms, creating a powerful ecosystem of innovation, technology and sustainable growth.
+                </p>
+              </div>
+
+              {/* 7 Cards Grid (2 columns) */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
+                {ECOSYSTEM_PLATFORMS.map((card, idx) => {
+                  const IconComp = card.icon;
+                  return (
+                    <a
+                      key={idx}
+                      href={card.href}
+                      className="bg-white border border-slate-200/90 p-3.5 sm:p-4 rounded-xl flex flex-col justify-between hover:border-[#009999] hover:shadow-md transition-all group"
+                    >
+                      <div className="flex items-center justify-between gap-3">
+                        <div className="flex items-center gap-2.5">
+                          <div
+                            className={`w-8 h-8 rounded-lg ${card.color} text-white flex items-center justify-center shrink-0 shadow-sm`}
+                          >
+                            <IconComp className="w-4 h-4" />
+                          </div>
+                          <span className="text-xs sm:text-[0.825rem] font-bold text-[#002d3b] group-hover:text-[#009999] transition-colors">
+                            {card.title}
+                          </span>
+                        </div>
+                        <span className="text-slate-400 group-hover:text-[#009999] group-hover:translate-x-0.5 transition-all text-sm">
+                          &rarr;
+                        </span>
+                      </div>
+                      <p className="text-[11px] sm:text-xs text-slate-500 leading-relaxed mt-2.5">
+                        {card.desc}
+                      </p>
+                    </a>
+                  );
+                })}
+              </div>
+
+              {/* Bottom Callout Banner */}
+              <div className="bg-[#f0fdfa] border border-[#ccfbf1] p-3.5 sm:p-4 rounded-xl flex items-center justify-between gap-4 shadow-sm">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-white border border-[#99f6e4] text-[#009999] flex items-center justify-center shrink-0 shadow-sm text-lg font-bold">
+                    &infin;
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-mono font-bold text-[#009999] uppercase tracking-wider block">
+                      Together, These Platforms
+                    </span>
+                    <p className="text-xs sm:text-sm font-bold text-[#002d3b]">
+                      Power a Smarter, Healthier, More Sustainable Future.
                     </p>
                   </div>
-                );
-              })}
+                </div>
+                <a
+                  href="#divisions"
+                  className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-white border border-[#99f6e4] text-xs font-bold text-[#009999] hover:bg-[#009999] hover:text-white transition-all rounded-lg shrink-0 shadow-sm"
+                >
+                  <span>Learn More</span>
+                  <span>&rarr;</span>
+                </a>
+              </div>
             </div>
 
-            <div className="pt-4 border-t border-slate-300">
-              <p className="font-bold text-[#002d3b] text-sm sm:text-base">
-                TAKNISER brings these possibilities together through <span className="text-[#009999]">seven interconnected business platforms</span>.
-              </p>
+            {/* Right Column (Visual Artwork + Crisp HTML Dark Banner) */}
+            <div className="lg:col-span-6 xl:col-span-6 relative flex flex-col items-center lg:items-end">
+              <div className="w-full max-w-[620px] space-y-4">
+                {/* Visual Artwork with Curved Panels & Photo Tiles */}
+                <div className="relative w-full rounded-3xl overflow-hidden shadow-2xl border border-slate-100 group bg-slate-50">
+                  <Image
+                    src="/innovation_ecosystem_artwork.jpg"
+                    alt="The TAKNISER Innovation Ecosystem - Interconnected Platforms"
+                    width={1058}
+                    height={1076}
+                    priority
+                    className="w-full h-auto object-contain group-hover:scale-[1.01] transition-transform duration-500"
+                  />
+                </div>
+
+                {/* Crisp Dark Navy Callout Banner (100% Vector HTML Typography) */}
+                <div className="bg-[#002230] text-white p-5 sm:p-6 lg:p-7 rounded-2xl border border-slate-800 shadow-xl">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 sm:gap-8">
+                    <div className="sm:w-5/12 border-b sm:border-b-0 sm:border-r border-slate-700/80 pb-3 sm:pb-0 sm:pr-6">
+                      <span className="w-7 h-1 bg-[#009999] block mb-2.5" />
+                      <h4 className="text-base sm:text-lg lg:text-xl font-serif font-bold text-white tracking-tight leading-snug">
+                        Multiple Industries.
+                        <br />
+                        One Ecosystem.
+                      </h4>
+                    </div>
+                    <div className="sm:w-7/12">
+                      <p className="text-xs sm:text-[0.825rem] text-slate-300 leading-relaxed font-normal">
+                        By connecting innovation, expertise and global partnerships, TAKNISER creates solutions that drive progress across industries and generations.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+
           </div>
-
         </div>
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
           UNIFIED BUSINESS DIVISIONS & PLATFORMS SECTION
       ───────────────────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-24 bg-[#f8fafc]">
+      <section id="divisions" className="py-20 lg:py-24 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
 
           {/* Section Header */}
