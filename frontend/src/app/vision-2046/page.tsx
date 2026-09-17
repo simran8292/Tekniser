@@ -9,6 +9,11 @@ import {
   Leaf,
   Handshake,
   Cpu,
+  Settings,
+  Link2,
+  Users,
+  Lightbulb,
+  Landmark,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -20,24 +25,31 @@ export const metadata: Metadata = {
 const MISSION_PILLARS = [
   {
     text: "Deliver world-class products and technologies.",
+    icon: Settings,
   },
   {
     text: "Build sustainable global supply chains.",
+    icon: Link2,
   },
   {
     text: "Create long-term value for customers and partners.",
+    icon: Users,
   },
   {
     text: "Promote innovation across every business division.",
+    icon: Lightbulb,
   },
   {
     text: "Support governments and industries through reliable infrastructure solutions.",
+    icon: Landmark,
   },
   {
     text: "Develop future-ready technologies for the next generation.",
+    icon: Cpu,
   },
   {
     text: "Expand TAKNISER's presence across every major international market.",
+    icon: Globe,
   },
 ];
 
@@ -78,26 +90,32 @@ const ROADMAP_PILLARS = [
   {
     title: "ONE GLOBAL NETWORK",
     desc: "A connected network of regional headquarters, operating companies, strategic partners, manufacturers, distributors, and customers — working together as one global ecosystem.",
+    image: "/vision_pillar_1.jpg",
   },
   {
     title: "ONE INDUSTRIAL ECOSYSTEM",
     desc: "Integrating engineering, manufacturing, sourcing, procurement, logistics, technology, and distribution to create more efficient and resilient global supply chains.",
+    image: "/vision_pillar_2.jpg",
   },
   {
     title: "ONE DIGITAL CONNECTED WORLD",
     desc: "Using digital technologies, intelligent systems, data, and automation to connect markets, operations, customers, and partners in real time.",
+    image: "/vision_pillar_3.jpg",
   },
   {
     title: "ONE STANDARD OF EXCELLENCE",
     desc: "Carrying forward the principles that shaped TAKNISER from its earliest roots — Präzision, Qualität, Zuverlässigkeit, Ingenieurskunst, and Vertrauen — while continuously raising the standard for a changing world.",
+    image: "/vision_pillar_4.jpg",
   },
   {
     title: "ONE RESPONSIBLE FUTURE",
     desc: "Building growth that creates lasting value for people, communities, industries, and the planet — with sustainability and responsible business embedded into the TAKNISER ecosystem.",
+    image: "/vision_pillar_5.jpg",
   },
   {
     title: "ONE GLOBE, SHARED OPPORTUNITY",
     desc: "Breaking down traditional boundaries between markets and industries to create new opportunities for collaboration, innovation, investment, and sustainable economic development.",
+    image: "/vision_pillar_6.jpg",
   },
 ];
 
@@ -156,61 +174,100 @@ export default function Vision2046Page() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          THE OFFICIAL VISION STATEMENT (Pure White & Clean Card)
+          THE OFFICIAL VISION STATEMENT (Split Panoramic Banner UI)
       ───────────────────────────────────────────────────────────── */}
-      <section className="py-20 bg-white border-b border-slate-200">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <section className="relative bg-white border-y border-slate-200 overflow-hidden">
+        {/* Right Panoramic Visual (Interconnected Globe, Sunrise, Port & City Skyline) */}
+        <div className="absolute top-0 right-0 bottom-0 w-full lg:w-[56%] xl:w-[54%] pointer-events-none select-none z-0">
+          <Image
+            src="/vision_global_network.jpg"
+            alt="Global Interconnected Network - Vision 2046"
+            fill
+            priority
+            className="object-cover object-center"
+          />
+          {/* Seamless Gradient Fade to White on the left edge */}
+          <div className="absolute inset-y-0 left-0 w-28 sm:w-40 lg:w-56 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
+          {/* Mobile Overlay so text is 100% legible on small screens */}
+          <div className="absolute inset-0 bg-white/90 sm:bg-white/70 lg:hidden z-10" />
+        </div>
 
-          <div className="text-center space-y-2">
-            <span className="text-xs font-mono font-bold text-[#009999] uppercase tracking-widest">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+          <div className="max-w-xl lg:max-w-lg xl:max-w-xl">
+            {/* Kicker */}
+            <span className="text-xs sm:text-sm font-bold text-[#009999] uppercase tracking-wider block mb-2.5">
               CORPORATE MANDATE
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-[#002d3b] uppercase tracking-tight">
+
+            {/* Heading */}
+            <h2 className="text-2xl sm:text-3xl lg:text-[2.25rem] font-serif font-black text-[#002d3b] uppercase tracking-tight mb-6 sm:mb-8 leading-tight">
               The Official Vision Statement
             </h2>
-          </div>
 
-          {/* Verbatim Vision Statement Box (No rectangular grid) */}
-          <div className="bg-[#f8fafc] border border-slate-200 p-8 sm:p-14 shadow-sm">
-            <blockquote className="text-lg sm:text-2xl font-semibold text-[#002d3b] italic leading-relaxed text-center border-l-4 border-[#009999] pl-4 sm:pl-8">
-              &ldquo;To build TAKNISER into one of the world&apos;s most respected industrial, technology, manufacturing, sourcing, distribution, and global trading conglomerates by delivering innovative, sustainable, and reliable solutions across every major continent while connecting businesses, industries, and communities through one integrated global network.&rdquo;
-            </blockquote>
+            {/* Verbatim Vision Statement Box with teal vertical accent bar */}
+            <div className="border-l-4 border-[#009999] pl-5 sm:pl-7 py-1">
+              <blockquote className="text-base sm:text-lg lg:text-[1.125rem] font-semibold text-[#002d3b] italic leading-relaxed sm:leading-[1.75]">
+                &ldquo;To build TAKNISER into one of the world&apos;s most respected industrial, technology, manufacturing, sourcing, distribution, and global trading conglomerates by delivering innovative, sustainable, and reliable solutions across every major continent while connecting businesses, industries, and communities through one integrated global network.&rdquo;
+              </blockquote>
+            </div>
           </div>
-
         </div>
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          OUR MISSION PILLARS (Clean Light Canvas - No Serial Numbers)
+          OUR MISSION PILLARS (Split Smart Factory Banner & Pillars Grid)
       ───────────────────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-24 bg-[#f8fafc] border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="relative bg-white border-b border-slate-200 overflow-hidden">
+        {/* Left Factory Visual (Robotic Arm, High-Tech Assembly Line) */}
+        <div className="absolute top-0 left-0 bottom-0 w-full lg:w-[42%] xl:w-[40%] pointer-events-none select-none z-0">
+          <Image
+            src="/mission_smart_factory.jpg"
+            alt="Smart Manufacturing Facility - Vision 2046"
+            fill
+            priority
+            className="object-cover object-left sm:object-[10%_top]"
+          />
+          {/* Seamless Gradient Fade to White on the right edge */}
+          <div className="absolute inset-y-0 right-0 w-28 sm:w-44 lg:w-64 bg-gradient-to-l from-white via-white/80 to-transparent z-10" />
+          {/* Mobile Overlay so cards and text are 100% legible on small screens */}
+          <div className="absolute inset-0 bg-white/90 sm:bg-white/75 lg:hidden z-10" />
+        </div>
 
-          <div className="max-w-3xl mx-auto text-center space-y-3">
-            <span className="text-xs font-mono font-bold text-[#009999] uppercase tracking-widest">
-              STRATEGIC EXECUTION
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-[#002d3b] uppercase tracking-tight">
-              Our Mission Pillars
-            </h2>
-            <p className="text-slate-600 text-sm sm:text-base">
-              Foundational commitments guiding every operational strategy and corporate decision worldwide.
-            </p>
+        <div className="relative z-10 max-w-[1540px] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+          <div className="lg:ml-auto lg:w-[64%] xl:w-[65%]">
+            {/* Header */}
+            <div className="mb-6 sm:mb-8">
+              <span className="text-xs font-bold text-[#009999] uppercase tracking-wider block mb-1.5 font-sans">
+                STRATEGIC EXECUTION
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-[2.25rem] font-serif font-black text-[#002d3b] uppercase tracking-tight mb-2.5 leading-tight">
+                Our Mission Pillars
+              </h2>
+              <p className="text-slate-600 text-xs sm:text-sm max-w-2xl leading-relaxed">
+                Foundational commitments guiding every operational strategy and corporate decision worldwide.
+              </p>
+            </div>
+
+            {/* 3-Column Pillars Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
+              {MISSION_PILLARS.map((pillar, idx) => {
+                const IconComp = pillar.icon;
+                return (
+                  <div
+                    key={idx}
+                    className="bg-white border border-slate-200/90 p-4 sm:p-5 flex flex-col justify-start hover:border-[#009999] hover:shadow-md transition-all rounded-none group min-h-[115px] sm:min-h-[125px]"
+                  >
+                    {IconComp && (
+                      <IconComp className="w-5 h-5 sm:w-6 sm:h-6 text-[#009999] mb-3 stroke-[2.2] group-hover:scale-110 transition-transform" />
+                    )}
+                    <p className="text-xs sm:text-[0.825rem] font-semibold text-[#002d3b] leading-relaxed">
+                      {pillar.text}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {MISSION_PILLARS.map((pillar, idx) => (
-              <div
-                key={idx}
-                className="bg-white border border-slate-200 p-6 flex items-center hover:border-[#009999] hover:shadow-md transition-all rounded-none"
-              >
-                <p className="text-sm font-bold text-[#002d3b] leading-relaxed">
-                  {pillar.text}
-                </p>
-              </div>
-            ))}
-          </div>
-
         </div>
       </section>
 
@@ -260,16 +317,16 @@ export default function Vision2046Page() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          OUR VISION FOR 2046 (Detailed Commitments Roadmap - No Serial Numbers)
+          OUR VISION FOR 2046 (Alternating Split Media & Commitment Rows)
       ───────────────────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-24 bg-[#f8fafc] border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="py-20 lg:py-28 bg-[#f8fafc] border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14 sm:space-y-16 lg:space-y-20">
 
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs font-mono font-bold text-[#009999] uppercase tracking-widest">
               LONG-TERM BLUEPRINT
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-[#002d3b] uppercase tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-[#002d3b] uppercase tracking-tight">
               Our Vision for <span className="text-[#009999]">2046</span>
             </h2>
             <p className="text-slate-600 text-sm sm:text-base">
@@ -277,21 +334,58 @@ export default function Vision2046Page() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {ROADMAP_PILLARS.map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-white border border-slate-200 p-6 sm:p-7 space-y-3 hover:border-[#009999] hover:shadow-md transition-all rounded-none"
-              >
-                <div className="w-8 h-1 bg-[#009999] mb-4" />
-                <h3 className="text-base font-extrabold text-[#002d3b] uppercase tracking-tight">
-                  {item.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
+          <div className="space-y-8 sm:space-y-10 lg:space-y-12">
+            {ROADMAP_PILLARS.map((item, idx) => {
+              const isEven = idx % 2 === 0;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white border border-slate-200 shadow-sm hover:border-[#009999]/70 hover:shadow-md transition-all duration-300 overflow-hidden group"
+                >
+                  <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[300px] sm:min-h-[340px]">
+                    
+                    {/* Media Column (Alternating) */}
+                    <div
+                      className={`relative min-h-[240px] sm:min-h-[280px] lg:min-h-full lg:col-span-6 overflow-hidden ${
+                        isEven ? "lg:order-1" : "lg:order-2"
+                      }`}
+                    >
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                      />
+                      {/* Subtle gradient separator on desktop */}
+                      <div
+                        className={`hidden lg:block absolute inset-y-0 w-24 pointer-events-none z-10 ${
+                          isEven
+                            ? "right-0 bg-gradient-to-l from-white via-white/50 to-transparent"
+                            : "left-0 bg-gradient-to-r from-white via-white/50 to-transparent"
+                        }`}
+                      />
+                    </div>
+
+                    {/* Content Column (Alternating) */}
+                    <div
+                      className={`p-7 sm:p-10 lg:p-14 lg:col-span-6 flex flex-col justify-center ${
+                        isEven ? "lg:order-2" : "lg:order-1"
+                      }`}
+                    >
+                      <h3 className="text-xl sm:text-2xl lg:text-[1.65rem] font-serif font-black text-[#002d3b] uppercase tracking-tight mb-4 leading-snug">
+                        {item.title}
+                      </h3>
+
+                      <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
         </div>

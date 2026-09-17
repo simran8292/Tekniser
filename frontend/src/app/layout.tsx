@@ -94,7 +94,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${cormorant.variable}`}>
+    <html lang="de" className={`${montserrat.variable} ${cormorant.variable}`}>
       <head>
         <script
           type="application/ld+json"

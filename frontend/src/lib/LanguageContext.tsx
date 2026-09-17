@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-export type LanguageCode = "en" | "ar" | "zh" | "pl" | "ja" | "ko";
+export type LanguageCode = "de" | "en" | "ar" | "zh" | "pl" | "ja" | "ko";
 
 export type RegionId =
   | "global"
@@ -32,8 +32,17 @@ export const REGIONS: RegionOption[] = [
     id: "global",
     name: "Takniser 1Globe",
     languages: [
+      { code: "de", name: "Deutsch" },
       { code: "en", name: "English" },
       { code: "ar", name: "العربية" },
+    ],
+  },
+  {
+    id: "europe",
+    name: "TAKNISER Europe",
+    languages: [
+      { code: "de", name: "Deutsch" },
+      { code: "en", name: "English" },
     ],
   },
   {
@@ -48,11 +57,6 @@ export const REGIONS: RegionOption[] = [
       { code: "en", name: "English" },
       { code: "zh", name: "中文(中国)" },
     ],
-  },
-  {
-    id: "europe",
-    name: "TAKNISER Europe",
-    languages: [{ code: "en", name: "English" }],
   },
   {
     id: "poland",
@@ -107,6 +111,92 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 // Translation Dictionary
 const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
+  de: {
+    // Utilities & Top bar
+    "you-are-in": "Sie befinden sich in",
+    "global-offices": "Weltweite Niederlassungen",
+    "heritage-about": "Tradition & Über uns",
+    "contact-hq": "Hauptsitz kontaktieren",
+    "log-in": "Anmelden",
+    "support-community": "Support & Community",
+    "search-placeholder": "Suchen...",
+    "search-platform": "Plattform durchsuchen...",
+    "contact-corporate": "Unternehmensplattform kontaktieren",
+    "admin-login": "Admin-Anmeldung",
+    "close": "Schließen",
+
+    // Nav Links
+    "about-us": "Über Uns",
+    "vision-2046": "Vision 2046",
+    "what-we-do": "WAS WIR TUN",
+    "capabilities": "INNOVATION",
+    "industries": "T1G IMPACTS",
+    "responsibility": "VERANTWORTUNG",
+
+    // About Section
+    "about-takniser": "Über TAKNISER",
+    "century-of": "Ein Jahrhundert der",
+    "legacy": "Tradition",
+    "years-of-excellence": "Jahre Exzellenz",
+    "global-hub": "Globaler Hub",
+    "worldwide-reach": "Weltweite Reichweite",
+    "operating-in-countries": "Aktiv in über 190 Ländern",
+    "read-full-story": "Ganze Geschichte lesen",
+
+    // Slide 1
+    "s1-kicker": "Über 100 Jahre deutsche Ingenieurstradition",
+    "s1-title": "DIE ZUKUNFT DER GLOBALEN INDUSTRIE GESTALTEN",
+    "s1-highlight": "One Globe. One Ecosystem. One Future.",
+    "s1-desc": "Über 100 Jahre deutsche Ingenieurstradition. Aktiv in über 190 Ländern über 30 regionale Hauptsitze weltweit.",
+    "s1-primary": "Geschichte & Tradition",
+    "s1-secondary": "Globales Netzwerk erkunden",
+
+    // Slide 2
+    "s2-kicker": "Nachhaltige Erde & Zukunft",
+    "s2-title": "Globale Verantwortung",
+    "s2-highlight": "Vorleben",
+    "s2-desc": "Förderung umweltbewusster Innovationen und Stärkung von Gemeinschaften, um ein nachhaltiges Erbe für zukünftige Generationen zu sichern.",
+    "s2-primary": "Unsere Verantwortung",
+    "s2-secondary": "Nachhaltige Erde",
+
+    // Slide 3
+    "s3-kicker": "7 Kernbereiche",
+    "s3-title": "Industriestandards",
+    "s3-highlight": "Neu Definieren",
+    "s3-desc": "Integrierte Lösungen von Agrartechnologie und Robotik bis zur Weltraumwirtschaft für einen zukunftsfähigen globalen Lebensstil.",
+    "s3-primary": "Bereiche erkunden",
+    "s3-secondary": "Innovationen ansehen",
+
+    // Right Showcase Card
+    "showcase-heritage": "Tradition aus Hessen",
+    "showcase-countries": "190+ Länder",
+    "showcase-desc": "Vor über einem Jahrhundert in Hessen gegründet, hat sich TAKNISER von spezialisierter Energiesystemtechnik zu einem integrierten globalen Industriekonzern entwickelt.",
+    "showcase-roadmap": "Vision 2046 Roadmap",
+    "showcase-vision-desc": "Entdecken Sie unsere 100-Jahre-Vision",
+
+    // Footer Contact CTA
+    "footer-ready": "Bereit für die Zusammenarbeit mit TAKNISER?",
+    "footer-team-desc": "Unser weltweites Team aus Industriespezialisten, Ingenieuren und Beschaffungsexperten steht bereit, integrierte Lösungen für Ihre Anforderungen zu liefern.",
+    "footer-contact-team": "Unser Team kontaktieren",
+    "footer-corporate-tagline": "Über 100 Jahre deutsche Ingenieurstradition. Die Zukunft der globalen Industrie gestalten.",
+    "footer-german-desc": "Gegründet auf den deutschen Grundsätzen Präzision, Qualität, Zuverlässigkeit, Ingenieurskunst und Vertrauen seit dem frühen 20. Jahrhundert in Hessen.",
+    "footer-global-presence": "Globale Präsenz",
+    "footer-regional-hq": "30 Regionale Hauptsitze",
+    "footer-global-hq": "Globaler Hauptsitz – TAKNISER GmbH",
+    "footer-hq-location": "Hessen, Deutschland",
+    "footer-inquiries": "Portal für Unternehmensanfragen",
+    "footer-admin-area": "Admin-Bereich",
+    "footer-copyright": "© 2026 TAKNISER ONE GLOBE (TAKNISER GmbH). Alle Rechte vorbehalten. Über 100 Jahre deutsche Ingenieurstradition.",
+    "footer-privacy": "Datenschutz",
+    "footer-terms": "Nutzungsbedingungen",
+    "footer-global-footprint": "Globaler Fußabdruck",
+    "cap-eng": "Ingenieurwesen & Beratung",
+    "cap-mfg": "Industrielle Fertigung",
+    "cap-source": "Globale strategische Beschaffung",
+    "cap-procure": "Internationale Beschaffung",
+    "cap-epc": "EPC & Projektversorgung",
+    "cap-logistics": "Globales Logistiknetzwerk",
+  },
   en: {
     // Utilities & Top bar
     "you-are-in": "You are in",
@@ -631,7 +721,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
 };
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [currentLanguage, setCurrentLanguage] = useState<LanguageCode>("en");
+  const [currentLanguage, setCurrentLanguage] = useState<LanguageCode>("de");
   const [currentRegion, setCurrentRegion] = useState<RegionId>("global");
 
   // Load language settings on mount
@@ -641,6 +731,9 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
     if (savedLang) {
       setCurrentLanguage(savedLang);
+    } else {
+      // Default to German when website opens for the first time
+      setCurrentLanguage("de");
     }
     if (savedRegion) {
       setCurrentRegion(savedRegion);
