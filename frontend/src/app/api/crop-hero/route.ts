@@ -79,7 +79,7 @@ Write-Output "SUCCESS: Removed white curved border from image"
   fs.writeFileSync(scriptFile, psScript, "utf8");
   try {
     const out = execSync(`"${psPath}" -ExecutionPolicy Bypass -File "${scriptFile}"`, { encoding: "utf8" });
-    try { fs.unlinkSync(scriptFile); } catch {}
+    try { fs.unlinkSync(scriptFile); } catch { }
     return NextResponse.json({ result: out.trim() });
   } catch (e: any) {
     return NextResponse.json({ error: e.message });

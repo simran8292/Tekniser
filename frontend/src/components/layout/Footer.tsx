@@ -2,7 +2,16 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Globe, Shield, Award, MapPin, Mail, Lock, ArrowRight, Briefcase } from "lucide-react";
+import {
+  Globe,
+  Shield,
+  Award,
+  MapPin,
+  Mail,
+  Lock,
+  ArrowRight,
+  Briefcase,
+} from "lucide-react";
 import { BUSINESS_DIVISIONS } from "@/lib/data";
 import { useLanguage } from "@/lib/LanguageContext";
 
@@ -11,35 +20,94 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#002d3b] border-t border-slate-800 text-slate-300 relative overflow-hidden">
-      
-      {/* Prominent Contact CTA Section */}
-      <div className="bg-[#009999] py-16 border-y border-[#008080]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className={`flex flex-col lg:flex-row items-center justify-between gap-8 ${currentLanguage === 'ar' ? 'lg:flex-row-reverse text-right' : 'text-left'}`}>
-            <div className="text-center lg:text-left space-y-3">
-              <h2 className="text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
-                {t("footer-ready")}
+
+      {/* ─────────────────────────────────────────────────────────────
+          FULL-WIDTH CONTACT CTA BANNER (Exact #009999 Background)
+      ───────────────────────────────────────────────────────────── */}
+      <div className="relative w-full overflow-hidden bg-[#009999] min-h-[320px] lg:min-h-[360px] flex items-center">
+        
+        {/* Background Image on Right Side */}
+        <div className="absolute inset-0 lg:left-[36%] lg:inset-y-0 z-0">
+          <Image
+            src="/cta_engineers_port.jpg"
+            alt="TAKNISER Global Industrial Operations"
+            fill
+            sizes="(max-width: 1024px) 100vw, 64vw"
+            className="object-cover object-[52%_center] lg:object-[46%_22%] filter contrast-[1.04] brightness-[0.98]"
+            priority
+          />
+          {/* Gradient on mobile/tablet so text is 100% readable */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#009999] via-[#009999]/95 to-[#009999]/50 lg:hidden" />
+        </div>
+
+        {/* Organic Curved Wave Divider with Glowing Edge (Desktop Only) */}
+        <div className="hidden lg:block absolute inset-0 z-10 pointer-events-none">
+          <svg
+            viewBox="0 0 1000 500"
+            preserveAspectRatio="none"
+            className="w-full h-full"
+          >
+            <defs>
+              <linearGradient id="ctaTealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#009999" />
+                <stop offset="100%" stopColor="#008c8c" />
+              </linearGradient>
+            </defs>
+            {/* Filled Teal Wave Shape covering left side */}
+            <path
+              d="M 0,0 L 530,0 C 565,85 550,185 508,265 C 472,335 448,415 455,500 L 0,500 Z"
+              fill="url(#ctaTealGrad)"
+            />
+            {/* Subtle Edge Line on the Wave */}
+            <path
+              d="M 530,0 C 565,85 550,185 508,265 C 472,335 448,415 455,500"
+              fill="none"
+              stroke="#ffffff"
+              strokeWidth="2"
+              strokeOpacity="0.35"
+            />
+          </svg>
+        </div>
+
+        {/* Left Content Block inside standard container */}
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 py-8 lg:py-10">
+          <div className={`w-full lg:w-[50%] flex flex-col justify-center space-y-4 ${currentLanguage === 'ar' ? 'text-right' : 'text-left'}`}>
+            
+            {/* Main Headline */}
+            <div>
+              <h2 className="text-2xl sm:text-3xl lg:text-[38px] leading-[1.14] text-white tracking-tight">
+                <span className="font-serif font-bold text-white">Ready to Work with </span>
+                <br className="hidden sm:inline" />
+                <span className="font-sans font-black text-white tracking-tight uppercase">
+                  TAKNISER?
+                </span>
               </h2>
-              <p className="text-white max-w-2xl text-base sm:text-lg opacity-90">
-                {t("footer-team-desc")}
-              </p>
             </div>
-            <div className="shrink-0">
+
+            {/* Description */}
+            <p className="text-white/95 text-xs sm:text-sm lg:text-[14px] leading-relaxed max-w-lg font-normal">
+              {t("footer-team-desc")}
+            </p>
+
+            {/* Action Button */}
+            <div className="pt-1">
               <Link
                 href="/contact"
-                className="w-full sm:w-auto px-8 py-4 bg-white text-[#002d3b] hover:bg-slate-100 transition-colors font-bold uppercase tracking-wider text-sm rounded-none flex items-center justify-center gap-2 shadow-lg"
+                className="inline-flex items-center justify-center gap-2.5 px-7 py-3 bg-white hover:bg-[#002d3b] text-[#009999] hover:text-white transition-all duration-300 font-bold uppercase tracking-wider text-xs sm:text-[13px] rounded-none shadow-lg group"
               >
                 <span>{t("footer-contact-team")}</span>
-                <ArrowRight className={`w-4 h-4 text-[#002d3b] ${currentLanguage === 'ar' ? 'rotate-180' : ''}`} />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
               </Link>
             </div>
+
           </div>
         </div>
+
       </div>
 
       <div className="pt-16 pb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
-          
+
           {/* Column 1: Brand & German Heritage */}
           <div className="lg:col-span-2 space-y-5">
             <Link href="/" className="inline-block">

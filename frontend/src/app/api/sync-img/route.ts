@@ -15,6 +15,12 @@ export async function GET(request: Request) {
 
   const results: Record<string, string> = {};
 
+  const newCta = "C:\\Users\\UPL\\.gemini\\antigravity-ide\\brain\\be87c960-0cf0-4552-b96f-56aebe0b8aae\\cta_hero_port_1789797803032.jpg";
+  if (fs.existsSync(newCta)) {
+    fs.copyFileSync(newCta, path.join(pubDir, "cta_engineers_port.jpg"));
+    results["cta_engineers_port"] = "copied successfully";
+  }
+
   try {
     if (fs.existsSync(hq)) {
       fs.copyFileSync(hq, path.join(pubDir, "clean_corporate_hq.jpg"));

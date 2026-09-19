@@ -31,7 +31,7 @@ export default function CapabilitiesSection() {
   return (
     <section className="py-20 lg:py-24 bg-[#f8fafc] border-y border-slate-200 relative overflow-hidden">
       <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10 relative z-10">
-        
+
         {/* Section Header */}
         <div className="border-b border-slate-200 pb-6">
           <div className="max-w-3xl space-y-2">
@@ -53,7 +53,7 @@ export default function CapabilitiesSection() {
 
         {/* Main Value Chain Grid: 63% Cards (Left) + 37% Hero Showcase (Right) - Perfect Height Balance */}
         <div className="flex flex-col xl:flex-row gap-6 lg:gap-8 items-start">
-          
+
           {/* Left: 63% Width - All 12 Split Cards in 2 Columns */}
           <div className="w-full xl:w-[63%] 2xl:w-[64%]">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-3.5">
@@ -103,7 +103,7 @@ export default function CapabilitiesSection() {
 
           {/* Right: 37% Width - Exact Hero Showcase Visual from Reference (Sticky on Desktop) */}
           <div className="w-full xl:w-[37%] 2xl:w-[36%] xl:sticky xl:top-24 flex flex-col">
-            <div className="relative w-full rounded-3xl xl:rounded-[36px] overflow-hidden shadow-xl border border-slate-200/80 bg-[#00141e] group">
+            <div className="relative w-full rounded-none overflow-hidden shadow-xl bg-[#00141e] group">
               <Image
                 src="/exact_right_hero_clean.jpg"
                 alt="Complete Industrial Value Chain &amp; Logistics Network"
