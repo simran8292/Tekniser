@@ -181,9 +181,6 @@ export default function GlobalNetworkPage() {
                 className="bg-[#f8fafc] border border-slate-200 p-5 flex flex-col justify-between hover:border-[#009999] hover:bg-white transition-all rounded-none"
               >
                 <div className="space-y-2">
-                  <div className="text-[10px] font-mono font-bold text-[#009999] uppercase tracking-wider">
-                    METRIC 0{idx + 1}
-                  </div>
                   <div className="text-lg sm:text-xl font-black text-[#002d3b] tracking-tight leading-tight">
                     {item.value}
                   </div>

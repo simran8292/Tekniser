@@ -4,17 +4,7 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 
 export type LanguageCode = "de" | "en" | "ar" | "zh" | "pl" | "ja" | "ko";
 
-export type RegionId =
-  | "global"
-  | "americas"
-  | "china"
-  | "europe"
-  | "poland"
-  | "india"
-  | "japan"
-  | "korea"
-  | "malaysia"
-  | "singapore";
+export type RegionId = string;
 
 export interface LanguageOption {
   code: LanguageCode;
@@ -24,78 +14,504 @@ export interface LanguageOption {
 export interface RegionOption {
   id: RegionId;
   name: string;
+  country: string;
+  city?: string;
+  entityName: string;
+  continent: "Europe" | "Middle East" | "Africa" | "North America" | "Latin America" | "Asia" | "Oceania" | "Global";
+  flag: string;
+  coverage?: string;
+  type: "HQ" | "RHQ" | "LOGISTICS HUB" | "GLOBAL";
   languages: LanguageOption[];
 }
 
 export const REGIONS: RegionOption[] = [
+  // ─── GLOBAL ───
   {
     id: "global",
-    name: "Takniser 1Globe",
+    name: "TAKNISER 1Globe",
+    country: "Worldwide Network",
+    city: "Global Portal",
+    entityName: "TAKNISER ONE GLOBE",
+    continent: "Global",
+    flag: "🌐",
+    coverage: "190+ Countries",
+    type: "GLOBAL",
     languages: [
       { code: "de", name: "Deutsch" },
       { code: "en", name: "English" },
       { code: "ar", name: "العربية" },
     ],
   },
+
+  // ─── EUROPE (10 RHQs + GHQ) ───
   {
-    id: "europe",
-    name: "TAKNISER Europe",
+    id: "germany-ghq",
+    name: "TAKNISER Group HQ",
+    country: "Germany",
+    city: "Dillenburg",
+    entityName: "TAKNISER GmbH",
+    continent: "Europe",
+    flag: "🌐",
+    coverage: "Global Group HQ",
+    type: "HQ",
     languages: [
       { code: "de", name: "Deutsch" },
       { code: "en", name: "English" },
     ],
   },
   {
-    id: "americas",
-    name: "TAKNISER Americas",
-    languages: [{ code: "en", name: "English" }],
+    id: "germany",
+    name: "TAKNISER Central Europe",
+    country: "Germany",
+    city: "Dillenburg",
+    entityName: "TAKNISER GmbH",
+    continent: "Europe",
+    flag: "🇩🇪",
+    coverage: "Central Europe",
+    type: "RHQ",
+    languages: [
+      { code: "de", name: "Deutsch" },
+      { code: "en", name: "English" },
+    ],
+  },
+  {
+    id: "france",
+    name: "TAKNISER France",
+    country: "France",
+    city: "Paris",
+    entityName: "TAKNISER BERNARD LAURENT SARL",
+    continent: "Europe",
+    flag: "🇫🇷",
+    coverage: "Francophone Europe",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+      { code: "de", name: "Français" },
+    ],
+  },
+  {
+    id: "uk",
+    name: "TAKNISER United Kingdom",
+    country: "UK",
+    city: "London",
+    entityName: "TAKNISER ROTHS UK LIMITED",
+    continent: "Europe",
+    flag: "🇬🇧",
+    coverage: "UK & Ireland",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+    ],
+  },
+  {
+    id: "netherlands",
+    name: "TAKNISER Benelux",
+    country: "Netherlands",
+    city: "Rotterdam",
+    entityName: "TAKNISER VRIES BENELUX B.V.",
+    continent: "Europe",
+    flag: "🇳🇱",
+    coverage: "Benelux & Logistics",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+      { code: "de", name: "Nederlands" },
+    ],
+  },
+  {
+    id: "italy",
+    name: "TAKNISER Italy",
+    country: "Italy",
+    city: "Milan",
+    entityName: "TAKNISER VENETO INDUSTRIALE S.R.L.",
+    continent: "Europe",
+    flag: "🇮🇹",
+    coverage: "Southern Europe",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+      { code: "de", name: "Italiano" },
+    ],
+  },
+  {
+    id: "spain",
+    name: "TAKNISER Iberia",
+    country: "Spain",
+    city: "Madrid",
+    entityName: "TAKNISER VELASCO IBERIA S.L.",
+    continent: "Europe",
+    flag: "🇪🇸",
+    coverage: "Iberian Peninsula",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+      { code: "de", name: "Español" },
+    ],
+  },
+  {
+    id: "sweden",
+    name: "TAKNISER Scandinavia",
+    country: "Sweden",
+    city: "Stockholm",
+    entityName: "TAKNISER AB",
+    continent: "Europe",
+    flag: "🇸🇪",
+    coverage: "Nordics & Scandinavia",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+      { code: "de", name: "Svenska" },
+    ],
+  },
+  {
+    id: "finland",
+    name: "TAKNISER Finland",
+    country: "Finland",
+    city: "Helsinki",
+    entityName: "TAKNISER ANTTONEN OY",
+    continent: "Europe",
+    flag: "🇫🇮",
+    coverage: "Finland & Central Asia",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+      { code: "de", name: "Suomi" },
+    ],
+  },
+  {
+    id: "greece",
+    name: "TAKNISER Balkans",
+    country: "Greece",
+    city: "Athens",
+    entityName: "TAKNISER FREDRIKSON HELLAS I.K.E.",
+    continent: "Europe",
+    flag: "🇬🇷",
+    coverage: "Balkans & E. Med",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+      { code: "de", name: "Ελληνικά" },
+    ],
+  },
+  {
+    id: "estonia",
+    name: "TAKNISER Baltic States",
+    country: "Estonia",
+    city: "Tallinn",
+    entityName: "TAKNISER MEYER BALTIQUE OÜ",
+    continent: "Europe",
+    flag: "🇪🇪",
+    coverage: "Baltic Region",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+      { code: "de", name: "Eesti" },
+    ],
+  },
+
+  // ─── MIDDLE EAST (3 Regional Hubs) ───
+  {
+    id: "uae",
+    name: "TAKNISER UAE (Commercial)",
+    country: "UAE",
+    city: "Dubai (Business Bay)",
+    entityName: "TAKNISER GMBH TRD L.L.C.",
+    continent: "Middle East",
+    flag: "🇦🇪",
+    coverage: "Gulf & Middle East",
+    type: "RHQ",
+    languages: [
+      { code: "ar", name: "العربية" },
+      { code: "en", name: "English" },
+    ],
+  },
+  {
+    id: "uae-jafza",
+    name: "TAKNISER Global Logistics Hub",
+    country: "UAE",
+    city: "Dubai (JAFZA)",
+    entityName: "TAKNISER SARL E&ET FZCO",
+    continent: "Middle East",
+    flag: "🇦🇪",
+    coverage: "Global Free Zone Logistics",
+    type: "LOGISTICS HUB",
+    languages: [
+      { code: "ar", name: "العربية" },
+      { code: "en", name: "English" },
+    ],
+  },
+  {
+    id: "saudi",
+    name: "TAKNISER Saudi Arabia",
+    country: "Saudi Arabia",
+    city: "Dammam",
+    entityName: "TAKNISER HOFFMANN ARABIA LLC.",
+    continent: "Middle East",
+    flag: "🇸🇦",
+    coverage: "Saudi Arabia & Levant",
+    type: "RHQ",
+    languages: [
+      { code: "ar", name: "العربية" },
+      { code: "en", name: "English" },
+    ],
+  },
+
+  // ─── AFRICA (3 RHQs) ───
+  {
+    id: "south-africa",
+    name: "TAKNISER Southern Africa",
+    country: "South Africa",
+    city: "Johannesburg",
+    entityName: "TAKNISER RATCLIFF SAVANNA (PTY) LIMITED",
+    continent: "Africa",
+    flag: "🇿🇦",
+    coverage: "Southern Africa",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+    ],
+  },
+  {
+    id: "kenya",
+    name: "TAKNISER East Africa",
+    country: "Kenya",
+    city: "Nairobi",
+    entityName: "TAKNISER MENARD KENYA LIMITED",
+    continent: "Africa",
+    flag: "🇰🇪",
+    coverage: "East & Central Africa",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+    ],
+  },
+  {
+    id: "ghana",
+    name: "TAKNISER West Africa",
+    country: "Ghana",
+    city: "Accra",
+    entityName: "TAKNISER PINAULT AOF LIMITED",
+    continent: "Africa",
+    flag: "🇬🇭",
+    coverage: "West Africa",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+    ],
+  },
+
+  // ─── NORTH AMERICA (2 RHQs) ───
+  {
+    id: "usa",
+    name: "TAKNISER United States",
+    country: "USA",
+    city: "Texas",
+    entityName: "TAKNISER STERLING AMERICANA LLC",
+    continent: "North America",
+    flag: "🇺🇸",
+    coverage: "USA & Global Sourcing",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+    ],
+  },
+  {
+    id: "canada",
+    name: "TAKNISER Canada",
+    country: "Canada",
+    city: "Toronto",
+    entityName: "TAKNISER STERLING CANADA CORP.",
+    continent: "North America",
+    flag: "🇨🇦",
+    coverage: "Canada & Arctic Supply",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+    ],
+  },
+
+  // ─── LATIN AMERICA (4 RHQs) ───
+  {
+    id: "mexico",
+    name: "TAKNISER Mexico",
+    country: "Mexico",
+    city: "Mexico City",
+    entityName: "TAKNISER LEMANN MEXICANA S. DE R.L. DE C.V.",
+    continent: "Latin America",
+    flag: "🇲🇽",
+    coverage: "Mexico & Manufacturing",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+      { code: "de", name: "Español" },
+    ],
+  },
+  {
+    id: "panama",
+    name: "TAKNISER Panama",
+    country: "Panama",
+    city: "Panama City",
+    entityName: "TAKNISER ORTEGA PANAMÁ S.A.",
+    continent: "Latin America",
+    flag: "🇵🇦",
+    coverage: "Central America & Canal Trade",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+      { code: "de", name: "Español" },
+    ],
+  },
+  {
+    id: "chile",
+    name: "TAKNISER Chile",
+    country: "Chile",
+    city: "Santiago",
+    entityName: "TAKNISER PINO ANDINA SpA",
+    continent: "Latin America",
+    flag: "🇨🇱",
+    coverage: "Andean Region & Mining",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+      { code: "de", name: "Español" },
+    ],
+  },
+  {
+    id: "brazil",
+    name: "TAKNISER Brazil",
+    country: "Brazil",
+    city: "São Paulo",
+    entityName: "TAKNISER SANTOS AMAZONIA LTDA.",
+    continent: "Latin America",
+    flag: "🇧🇷",
+    coverage: "South America & AgTech",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+      { code: "de", name: "Português" },
+    ],
+  },
+
+  // ─── ASIA (7 RHQs) ───
+  {
+    id: "india",
+    name: "TAKNISER India",
+    country: "India",
+    city: "Ahmedabad",
+    entityName: "TAKNISER AB INDIA PRIVATE LIMITED",
+    continent: "Asia",
+    flag: "🇮🇳",
+    coverage: "South Asia & Engineering",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+    ],
   },
   {
     id: "china",
     name: "TAKNISER China",
+    country: "China",
+    city: "Guangzhou",
+    entityName: "TAKNISER SHULIANG CHINA CO., LTD.",
+    continent: "Asia",
+    flag: "🇨🇳",
+    coverage: "Greater China Manufacturing",
+    type: "RHQ",
     languages: [
+      { code: "zh", name: "中文" },
       { code: "en", name: "English" },
-      { code: "zh", name: "中文(中国)" },
     ],
   },
   {
-    id: "poland",
-    name: "TAKNISER Poland",
+    id: "hong-kong",
+    name: "TAKNISER Hong Kong",
+    country: "Hong Kong",
+    city: "Hong Kong SAR",
+    entityName: "TAKNISER SHĀNSHĀN HK LIMITED",
+    continent: "Asia",
+    flag: "🇭🇰",
+    coverage: "North Asia Trade Finance",
+    type: "RHQ",
     languages: [
       { code: "en", name: "English" },
-      { code: "pl", name: "polski" },
+      { code: "zh", name: "繁體中文" },
     ],
-  },
-  {
-    id: "india",
-    name: "TAKNISER India",
-    languages: [{ code: "en", name: "English" }],
   },
   {
     id: "japan",
     name: "TAKNISER Japan",
+    country: "Japan",
+    city: "Tokyo",
+    entityName: "TAKNISER TAKEMITSU JAPAN K.K.",
+    continent: "Asia",
+    flag: "🇯🇵",
+    coverage: "Japan Robotics & Tech",
+    type: "RHQ",
     languages: [
-      { code: "en", name: "English" },
       { code: "ja", name: "日本語" },
+      { code: "en", name: "English" },
     ],
   },
   {
     id: "korea",
-    name: "TAKNISER Korea",
+    name: "TAKNISER South Korea",
+    country: "South Korea",
+    city: "Seoul",
+    entityName: "TAKNISER KOREA LTD.",
+    continent: "Asia",
+    flag: "🇰🇷",
+    coverage: "East Asia Advanced Tech",
+    type: "RHQ",
     languages: [
-      { code: "en", name: "English" },
       { code: "ko", name: "한국어" },
+      { code: "en", name: "English" },
     ],
-  },
-  {
-    id: "malaysia",
-    name: "TAKNISER Malaysia",
-    languages: [{ code: "en", name: "English" }],
   },
   {
     id: "singapore",
     name: "TAKNISER Singapore",
-    languages: [{ code: "en", name: "English" }],
+    country: "Singapore",
+    city: "Singapore",
+    entityName: "TAKNISER MERLION SINGAPORE PTE. LTD.",
+    continent: "Asia",
+    flag: "🇸🇬",
+    coverage: "ASEAN Financial & Trade Hub",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+      { code: "zh", name: "华语" },
+    ],
+  },
+  {
+    id: "turkiye",
+    name: "TAKNISER Türkiye",
+    country: "Türkiye",
+    city: "Istanbul",
+    entityName: "TAKNISER SAHENK TURK A.Ş.",
+    continent: "Asia",
+    flag: "🇹🇷",
+    coverage: "Eurasian Cross-Border Trade",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+      { code: "de", name: "Türkçe" },
+    ],
+  },
+
+  // ─── OCEANIA (1 RHQ) ───
+  {
+    id: "australia",
+    name: "TAKNISER Australia",
+    country: "Australia",
+    city: "Melbourne",
+    entityName: "TAKNISER PALLMER PACIFIC PTY LTD",
+    continent: "Oceania",
+    flag: "🇦🇺",
+    coverage: "Oceania Heavy Equipment",
+    type: "RHQ",
+    languages: [
+      { code: "en", name: "English" },
+    ],
   },
 ];
 

@@ -6,12 +6,13 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Globe, User, Search } from "lucide-react";
 import { BUSINESS_DIVISIONS } from "@/lib/data";
-import { useLanguage } from "@/lib/LanguageContext";
+import { useLanguage, REGIONS } from "@/lib/LanguageContext";
 import LanguageDrawer from "./LanguageDrawer";
 import { AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const { currentLanguage, currentRegion, t } = useLanguage();
+  const currentRegionLabel = REGIONS.find((r) => r.id === currentRegion)?.country || (currentRegion === "global" ? "1Globe" : currentRegion);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDivisionsOpen, setIsDivisionsOpen] = useState(false);
@@ -64,7 +65,7 @@ export default function Header() {
                 className="flex items-center gap-1.5 hover:text-[#36b39c] transition-colors focus:outline-none cursor-pointer"
               >
                 <Globe className="w-3.5 h-3.5 text-[#36b39c]" />
-                <span className="capitalize">{currentRegion === "global" ? "1Globe" : currentRegion} | {currentLanguage.toUpperCase()}</span>
+                <span className="uppercase">{currentRegionLabel} | {currentLanguage.toUpperCase()}</span>
               </button>
 
               {/* Support & Community Dropdown */}

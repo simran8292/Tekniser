@@ -512,7 +512,6 @@ export default function RegionalHeadquartersList() {
                   <CheckCircle2 className="w-3 h-3 text-emerald-600" />
                   Active Operation
                 </span>
-                <span className="text-[#009999] font-bold">TAKNISER ONE</span>
               </div>
             </div>
           );
