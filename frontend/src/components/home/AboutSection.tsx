@@ -16,24 +16,25 @@ export default function AboutSection() {
           
           {/* Left: Visual Representation */}
           <div className="relative">
-            <div className="aspect-[4/3] relative bg-slate-100 border border-slate-200 p-3 rounded-2xl">
+            <div className="aspect-[1543/1019] relative bg-slate-100 border border-slate-200 p-2 sm:p-2.5 rounded-2xl shadow-sm">
               <div className="relative w-full h-full rounded-xl overflow-hidden">
                 <Image 
-                  src="/clean_corporate_hq_branded.jpg" 
+                  src="/officeimage.png" 
                   alt="TAKNISER Global Corporate Headquarters - Dillenburg Campus" 
                   fill 
-                  className="object-cover"
+                  className="object-contain"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
               </div>
             </div>
             
             {/* Overlay Stat Box */}
-            <div className={`absolute -bottom-8 bg-[#001822] p-8 border border-[#009999] shadow-2xl hidden md:block rounded-2xl ${
-              currentLanguage === 'ar' ? '-left-8' : '-right-8'
+            <div className={`absolute -bottom-6 bg-[#001822] p-5 sm:p-6 border border-[#009999] shadow-2xl hidden md:block rounded-xl ${
+              currentLanguage === 'ar' ? '-left-4' : '-right-4'
             }`}>
-              <div className="text-4xl font-black text-white mb-2">{CORPORATE_INFO.heritageYears}</div>
-              <div className="text-xs font-bold text-[#009999] uppercase tracking-widest">{t("years-of-excellence")}</div>
+              <div className="text-3xl font-black text-white mb-1">{CORPORATE_INFO.heritageYears}</div>
+              <div className="text-[11px] font-bold text-[#009999] uppercase tracking-wider">{t("years-of-excellence")}</div>
             </div>
           </div>
 
