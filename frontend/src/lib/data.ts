@@ -25,6 +25,9 @@ export interface IndustryData {
 export interface GlobalLocationData {
   region: string;
   country: string;
+  city?: string;
+  coverage?: string;
+  flag?: string;
   type: string;
   title: string;
   coordinates: { x: number; y: number }; // Percentage relative coordinates for responsive SVG map
@@ -213,23 +216,338 @@ export const INDUSTRIES: IndustryData[] = [
 ];
 
 export const GLOBAL_NETWORK_LOCATIONS: GlobalLocationData[] = [
-  { region: "Europe", country: "Germany", type: "HQ", title: "Global HQ – TAKNISER GmbH", coordinates: { x: 50, y: 28 }, description: "Global Headquarters & Central Engineering Center (Hesse, Germany)" },
-  { region: "Europe", country: "Germany", type: "RHQ", title: "European RHQ Network (10 RHQs)", coordinates: { x: 48, y: 30 }, description: "10 Strategic Regional Headquarters covering Western & Eastern Europe" },
-  { region: "North America", country: "United States", type: "RHQ", title: "TAKNISER Sterling Americana LLC", coordinates: { x: 22, y: 32 }, description: "North American Regional HQ & Strategic Procurement Division" },
-  { region: "Latin America", country: "Mexico", type: "RHQ", title: "TAKNISER Latin America – Mexico Hub", coordinates: { x: 20, y: 48 }, description: "Manufacturing & North-South Logistics Coordination" },
-  { region: "Latin America", country: "Panama", type: "RHQ", title: "TAKNISER Panama Regional Office", coordinates: { x: 27, y: 55 }, description: "Maritime Trade & Canal Logistics Center" },
-  { region: "Latin America", country: "Chile", type: "RHQ", title: "TAKNISER Chile Mineral Operations", coordinates: { x: 30, y: 78 }, description: "Mining & Critical Minerals Sourcing Hub" },
-  { region: "Latin America", country: "Brazil", type: "RHQ", title: "TAKNISER Brazil Operations", coordinates: { x: 36, y: 68 }, description: "AgTech & Industrial Sourcing Headquarters" },
-  { region: "Africa", country: "Ghana", type: "RHQ", title: "TAKNISER West Africa Hub", coordinates: { x: 47, y: 58 }, description: "Infrastructure & Mineral Trade Office" },
-  { region: "Africa", country: "Kenya", type: "RHQ", title: "TAKNISER East Africa Hub", coordinates: { x: 58, y: 60 }, description: "Energy & Agricultural Technology Division" },
-  { region: "Africa", country: "South Africa", type: "RHQ", title: "TAKNISER Southern Africa RHQ", coordinates: { x: 54, y: 79 }, description: "Industrial Equipment & Mining Supply Hub" },
-  { region: "Middle East", country: "UAE", type: "LOGISTICS_HUB", title: "Middle East Logistics Hub & RHQ", coordinates: { x: 62, y: 44 }, description: "Primary Global Distribution & Free Zone Logistics Center" },
-  { region: "Middle East", country: "Saudi Arabia", type: "RHQ", title: "TAKNISER Saudi Arabia Operations", coordinates: { x: 60, y: 42 }, description: "Infrastructure, EPC & Energy Trade Headquarters" },
-  { region: "Asia", country: "India", type: "RHQ", title: "TAKNISER South Asia RHQ", coordinates: { x: 72, y: 46 }, description: "Engineering Center & Industrial Sourcing Office" },
-  { region: "Asia", country: "Singapore", type: "RHQ", title: "TAKNISER Southeast Asia RHQ", coordinates: { x: 80, y: 59 }, description: "Financial & International Global Trading Center" },
-  { region: "Asia", country: "China", type: "RHQ", title: "TAKNISER Greater China Hub", coordinates: { x: 82, y: 38 }, description: "Manufacturing & Supply Chain Coordination" },
-  { region: "Asia", country: "Hong Kong", type: "RHQ", title: "TAKNISER Hong Kong Trading", coordinates: { x: 83, y: 43 }, description: "Trade Finance & Asia Logistics Office" },
-  { region: "Asia", country: "Japan", type: "RHQ", title: "TAKNISER Japan Robotics Office", coordinates: { x: 90, y: 35 }, description: "Robotics & High-Tech Components Division" },
-  { region: "Asia", country: "Türkiye", type: "RHQ", title: "TAKNISER Eurasia Bridge Hub", coordinates: { x: 56, y: 35 }, description: "Eurasian Cross-Border Trade & Logistics Center" },
-  { region: "Oceania", country: "Australia", type: "RHQ", title: "TAKNISER Oceania RHQ", coordinates: { x: 88, y: 75 }, description: "Mining & Heavy Equipment Operations Hub" },
+  // ─── GLOBAL HEADQUARTERS ───
+  {
+    region: "Europe",
+    country: "Germany",
+    city: "Dillenburg",
+    coverage: "Global Headquarters",
+    flag: "🌐",
+    type: "HQ",
+    title: "TAKNISER GmbH (GHQ)",
+    coordinates: { x: 49.5, y: 26.5 },
+    description: "Global Headquarters & Central Engineering Center (Dillenburg, Germany)"
+  },
+
+  // ─── EUROPE (10 RHQs) ───
+  {
+    region: "Europe",
+    country: "Sweden",
+    city: "Stockholm",
+    coverage: "Scandinavia",
+    flag: "🇸🇪",
+    type: "RHQ",
+    title: "TAKNISER AB",
+    coordinates: { x: 52.8, y: 19.5 },
+    description: "Scandinavia Regional Headquarters (Stockholm, Sweden)"
+  },
+  {
+    region: "Europe",
+    country: "Estonia",
+    city: "Tallinn",
+    coverage: "Baltic States",
+    flag: "🇪🇪",
+    type: "RHQ",
+    title: "TAKNISER MEYER BALTIQUE OÜ",
+    coordinates: { x: 55.5, y: 20.8 },
+    description: "Baltic States Regional Headquarters (Tallinn, Estonia)"
+  },
+  {
+    region: "Europe",
+    country: "Germany",
+    city: "Dillenburg",
+    coverage: "Central Europe",
+    flag: "🇩🇪",
+    type: "RHQ",
+    title: "TAKNISER GmbH",
+    coordinates: { x: 50.5, y: 27.8 },
+    description: "Central Europe Regional Headquarters (Dillenburg, Germany)"
+  },
+  {
+    region: "Europe",
+    country: "France",
+    city: "Paris",
+    coverage: "Francophone Europe",
+    flag: "🇫🇷",
+    type: "RHQ",
+    title: "TAKNISER BERNARD LAURENT SARL",
+    coordinates: { x: 47.5, y: 28.5 },
+    description: "Francophone Europe Regional Headquarters (Paris, France)"
+  },
+  {
+    region: "Europe",
+    country: "Netherlands",
+    city: "Rotterdam",
+    coverage: "Benelux & European Logistics",
+    flag: "🇳🇱",
+    type: "RHQ",
+    title: "TAKNISER VRIES BENELUX B.V.",
+    coordinates: { x: 48.6, y: 25.5 },
+    description: "Benelux & European Logistics Center (Rotterdam, Netherlands)"
+  },
+  {
+    region: "Europe",
+    country: "Italy",
+    city: "Milan",
+    coverage: "Southern Europe",
+    flag: "🇮🇹",
+    type: "RHQ",
+    title: "TAKNISER VENETO INDUSTRIALE S.R.L.",
+    coordinates: { x: 50.0, y: 31.8 },
+    description: "Southern Europe Regional Headquarters (Milan, Italy)"
+  },
+  {
+    region: "Europe",
+    country: "Spain",
+    city: "Madrid",
+    coverage: "Iberia",
+    flag: "🇪🇸",
+    type: "RHQ",
+    title: "TAKNISER VELASCO IBERIA S.L.",
+    coordinates: { x: 45.2, y: 33.5 },
+    description: "Iberia Regional Headquarters (Madrid, Spain)"
+  },
+  {
+    region: "Europe",
+    country: "Greece",
+    city: "Athens",
+    coverage: "Balkans",
+    flag: "🇬🇷",
+    type: "RHQ",
+    title: "TAKNISER FREDRIKSON HELLAS I.K.E.",
+    coordinates: { x: 54.8, y: 35.8 },
+    description: "Balkans Regional Headquarters (Athens, Greece)"
+  },
+  {
+    region: "Europe",
+    country: "Finland",
+    city: "Helsinki",
+    coverage: "Finland & Central Asia",
+    flag: "🇫🇮",
+    type: "RHQ",
+    title: "TAKNISER ANTTONEN OY",
+    coordinates: { x: 56.5, y: 17.5 },
+    description: "Finland & Central Asia Regional Headquarters (Helsinki, Finland)"
+  },
+  {
+    region: "Europe",
+    country: "UK",
+    city: "London",
+    coverage: "UK & Ireland",
+    flag: "🇬🇧",
+    type: "RHQ",
+    title: "TAKNISER ROTHS UK LIMITED",
+    coordinates: { x: 46.2, y: 25.0 },
+    description: "UK & Ireland Regional Headquarters (London, UK)"
+  },
+
+  // ─── NORTH AMERICA ───
+  {
+    region: "North America",
+    country: "United States",
+    city: "Texas",
+    coverage: "USA & Canada",
+    flag: "🇺🇸",
+    type: "RHQ",
+    title: "TAKNISER STERLING AMERICANA LLC",
+    coordinates: { x: 21.5, y: 36.5 },
+    description: "North American Regional HQ & Strategic Procurement Division (Texas, USA)"
+  },
+
+  // ─── LATIN AMERICA ───
+  {
+    region: "Latin America",
+    country: "Mexico",
+    city: "Mexico City",
+    coverage: "Mexico",
+    flag: "🇲🇽",
+    type: "RHQ",
+    title: "TAKNISER LEMANN MEXICANA S. DE R.L. DE C.V.",
+    coordinates: { x: 20.0, y: 48.0 },
+    description: "Manufacturing & North-South Logistics Coordination (Mexico City, Mexico)"
+  },
+  {
+    region: "Latin America",
+    country: "Panama",
+    city: "Panama City",
+    coverage: "Central America & Caribbean",
+    flag: "🇵🇦",
+    type: "RHQ",
+    title: "TAKNISER ORTEGA PANAMÁ S.A.",
+    coordinates: { x: 26.8, y: 55.0 },
+    description: "Maritime Trade & Canal Logistics Center (Panama City, Panama)"
+  },
+  {
+    region: "Latin America",
+    country: "Chile",
+    city: "Santiago",
+    coverage: "Andean Region",
+    flag: "🇨🇱",
+    type: "RHQ",
+    title: "TAKNISER PINO ANDINA SpA",
+    coordinates: { x: 29.5, y: 78.0 },
+    description: "Mining & Critical Minerals Sourcing Hub (Santiago, Chile)"
+  },
+  {
+    region: "Latin America",
+    country: "Brazil",
+    city: "São Paulo",
+    coverage: "South America",
+    flag: "🇧🇷",
+    type: "RHQ",
+    title: "TAKNISER SANTOS AMAZONIA LTDA.",
+    coordinates: { x: 35.5, y: 71.0 },
+    description: "AgTech & Industrial Sourcing Headquarters (São Paulo, Brazil)"
+  },
+
+  // ─── AFRICA ───
+  {
+    region: "Africa",
+    country: "Ghana",
+    city: "Accra",
+    coverage: "West Africa",
+    flag: "🇬🇭",
+    type: "RHQ",
+    title: "TAKNISER PINAULT AOF LIMITED",
+    coordinates: { x: 47.0, y: 56.5 },
+    description: "Infrastructure & Mineral Trade Office (Accra, Ghana)"
+  },
+  {
+    region: "Africa",
+    country: "Kenya",
+    city: "Nairobi",
+    coverage: "East & Central Africa",
+    flag: "🇰🇪",
+    type: "RHQ",
+    title: "TAKNISER MENARD KENYA LIMITED",
+    coordinates: { x: 58.5, y: 60.0 },
+    description: "Energy & Agricultural Technology Division (Nairobi, Kenya)"
+  },
+  {
+    region: "Africa",
+    country: "South Africa",
+    city: "Johannesburg",
+    coverage: "Southern Africa",
+    flag: "🇿🇦",
+    type: "RHQ",
+    title: "TAKNISER RATCLIFF SAVANNA (PTY) LTD",
+    coordinates: { x: 54.5, y: 79.0 },
+    description: "Industrial Equipment & Mining Supply Hub (Johannesburg, South Africa)"
+  },
+
+  // ─── MIDDLE EAST ───
+  {
+    region: "Middle East",
+    country: "UAE",
+    city: "Dubai",
+    coverage: "Gulf & Middle East",
+    flag: "🇦🇪",
+    type: "RHQ",
+    title: "TAKNISER GmbH TRADING LLC",
+    coordinates: { x: 63.0, y: 42.5 },
+    description: "Gulf & Middle East Regional Headquarters (Dubai, UAE)"
+  },
+  {
+    region: "Middle East",
+    country: "Saudi Arabia",
+    city: "Dammam",
+    coverage: "Saudi Arabia & Levant",
+    flag: "🇸🇦",
+    type: "RHQ",
+    title: "TAKNISER HOFFMANN ARABIA LLC",
+    coordinates: { x: 60.5, y: 41.5 },
+    description: "Infrastructure, EPC & Energy Trade Headquarters (Dammam, Saudi Arabia)"
+  },
+  {
+    region: "Middle East",
+    country: "UAE",
+    city: "JAFZA, Dubai",
+    coverage: "Global Distribution & Logistics",
+    flag: "🇦🇪",
+    type: "LOGISTICS_HUB",
+    title: "TAKNISER SARL FZCO",
+    coordinates: { x: 64.0, y: 44.5 },
+    description: "Primary Global Distribution & Free Zone Logistics Center (JAFZA, Dubai, UAE)"
+  },
+
+  // ─── ASIA ───
+  {
+    region: "Asia",
+    country: "India",
+    city: "Ahmedabad",
+    coverage: "South Asia",
+    flag: "🇮🇳",
+    type: "RHQ",
+    title: "TAKNISER AB INDIA PRIVATE LIMITED",
+    coordinates: { x: 71.5, y: 46.0 },
+    description: "Engineering Center & Industrial Sourcing Office (Ahmedabad, India)"
+  },
+  {
+    region: "Asia",
+    country: "Singapore",
+    city: "Singapore",
+    coverage: "ASEAN",
+    flag: "🇸🇬",
+    type: "RHQ",
+    title: "TAKNISER MERLION SINGAPORE PTE. LTD.",
+    coordinates: { x: 80.0, y: 59.0 },
+    description: "Financial & International Global Trading Center (Singapore)"
+  },
+  {
+    region: "Asia",
+    country: "China",
+    city: "Guangzhou",
+    coverage: "China",
+    flag: "🇨🇳",
+    type: "RHQ",
+    title: "TAKNISER SHULIANG CHINA CO., LTD.",
+    coordinates: { x: 82.0, y: 41.5 },
+    description: "Manufacturing & Supply Chain Coordination (Guangzhou, China)"
+  },
+  {
+    region: "Asia",
+    country: "Hong Kong",
+    city: "Hong Kong SAR",
+    coverage: "North Asia & Global Sourcing",
+    flag: "🇭🇰",
+    type: "RHQ",
+    title: "TAKNISER SHĀNSHĀN HK LIMITED",
+    coordinates: { x: 83.5, y: 43.5 },
+    description: "Trade Finance & Asia Logistics Office (Hong Kong SAR)"
+  },
+  {
+    region: "Asia",
+    country: "Japan",
+    city: "Tokyo",
+    coverage: "Japan",
+    flag: "🇯🇵",
+    type: "RHQ",
+    title: "TAKNISER TAKEMITSU JAPAN K.K.",
+    coordinates: { x: 90.0, y: 35.0 },
+    description: "Robotics & High-Tech Components Division (Tokyo, Japan)"
+  },
+  {
+    region: "Asia",
+    country: "Türkiye",
+    city: "Istanbul",
+    coverage: "Türkiye & Caucasus",
+    flag: "🇹🇷",
+    type: "RHQ",
+    title: "TAKNISER SAHENK TURK A.Ş.",
+    coordinates: { x: 56.5, y: 34.0 },
+    description: "Eurasian Cross-Border Trade & Logistics Center (Istanbul, Türkiye)"
+  },
+
+  // ─── OCEANIA ───
+  {
+    region: "Oceania",
+    country: "Australia",
+    city: "Melbourne",
+    coverage: "Oceania",
+    flag: "🇦🇺",
+    type: "RHQ",
+    title: "TAKNISER PALLMER PACIFIC PTY LTD",
+    coordinates: { x: 88.5, y: 80.0 },
+    description: "Mining & Heavy Equipment Operations Hub (Melbourne, Australia)"
+  }
 ];

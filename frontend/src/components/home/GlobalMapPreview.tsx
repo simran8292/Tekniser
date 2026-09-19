@@ -23,6 +23,10 @@ export default function GlobalMapPreview() {
     region: string;
     type?: string;
     desc?: string;
+    city?: string;
+    country?: string;
+    coverage?: string;
+    flag?: string;
   } | null>(null);
 
   const regions = [...new Set(GLOBAL_NETWORK_LOCATIONS.map((l) => l.region))];
@@ -102,19 +106,20 @@ export default function GlobalMapPreview() {
 
                 return (
                   <g
-                    key={idx}
+                    key={`${loc.title}-${loc.country}-${idx}`}
                     className="cursor-pointer group"
-                    onMouseEnter={(e) => {
-                      const rect = e.currentTarget.closest("svg")!.getBoundingClientRect();
-                      const svgX = (cx / 1000) * rect.width;
-                      const svgY = (cy / 500) * rect.height;
+                    onMouseEnter={() => {
                       setTooltip({
-                        x: svgX,
-                        y: svgY,
+                        x: loc.coordinates.x,
+                        y: loc.coordinates.y,
                         title: loc.title,
                         region: loc.region,
                         type: loc.type,
                         desc: loc.description,
+                        city: loc.city,
+                        country: loc.country,
+                        coverage: loc.coverage,
+                        flag: loc.flag,
                       });
                     }}
                     onMouseLeave={() => setTooltip(null)}
@@ -129,23 +134,23 @@ export default function GlobalMapPreview() {
 
                     {/* Vector Office Building Pin Graphic for Points */}
                     {isHQ ? (
-                      <g transform={`translate(${cx - 26}, ${cy - 44})`}>
+                      <g transform={`translate(${cx - 20}, ${cy - 34})`}>
                         {/* Global HQ Prominent Vector Building */}
                         <image
                           href="/office_vector_transparent.png"
-                          width="52"
-                          height="44"
+                          width="40"
+                          height="34"
                           className="invert brightness-150"
                         />
                       </g>
                     ) : (
-                      <g transform={`translate(${cx - 19}, ${cy - 30})`}>
+                      <g transform={`translate(${cx - 13}, ${cy - 22})`}>
                         {/* Regional Office Enhanced Vector Building */}
                         <image
                           href="/office_vector_transparent.png"
-                          width="38"
-                          height="30"
-                          className="invert brightness-125 opacity-90 group-hover:opacity-100 group-hover:scale-115 transition-transform"
+                          width="26"
+                          height="22"
+                          className="invert brightness-125 opacity-90 group-hover:opacity-100 group-hover:scale-125 transition-transform"
                         />
                       </g>
                     )}
@@ -167,16 +172,16 @@ export default function GlobalMapPreview() {
             {/* Rich Hover Tooltip with Office Vector */}
             {tooltip && (
               <div
-                className="absolute z-20 bg-[#001822]/95 backdrop-blur-md border border-[#009999] rounded-none p-3 text-xs shadow-2xl pointer-events-none flex items-center gap-3"
+                className="absolute z-20 bg-[#001822]/95 backdrop-blur-md border border-[#009999] rounded-none p-3 text-xs shadow-2xl pointer-events-none flex items-center gap-3 transition-opacity duration-150"
                 style={{
-                  left: `${Math.min(Math.max(tooltip.x, 20), 80)}%`,
-                  top: `${Math.max(tooltip.y - 15, 8)}%`,
+                  left: `${Math.min(Math.max(tooltip.x, 15), 85)}%`,
+                  top: `${Math.max(tooltip.y - 6, 8)}%`,
                   transform: "translate(-50%, -100%)",
                   whiteSpace: "nowrap",
                 }}
               >
                 {/* Office Vector Thumbnail inside Tooltip */}
-                <div className="w-14 h-12 relative shrink-0 bg-[#002d3b] border border-slate-700 p-1 flex items-center justify-center">
+                <div className="w-12 h-12 relative shrink-0 bg-[#002d3b] border border-slate-700 p-1 flex items-center justify-center">
                   <Image
                     src="/office_vector_transparent.png"
                     alt="Office Vector"
@@ -185,9 +190,12 @@ export default function GlobalMapPreview() {
                   />
                 </div>
                 <div>
-                  <div className="font-bold text-white text-xs mb-0.5">{tooltip.title}</div>
+                  <div className="flex items-center gap-1.5 font-bold text-white text-xs mb-0.5">
+                    {tooltip.flag && <span className="text-sm leading-none">{tooltip.flag}</span>}
+                    <span>{tooltip.title}</span>
+                  </div>
                   <div className="text-[11px] font-mono" style={{ color: REGION_COLORS[tooltip.region] || "#00cccc" }}>
-                    {tooltip.region} • {tooltip.type}
+                    {tooltip.city ? `${tooltip.city}, ` : ""}{tooltip.country} {tooltip.coverage ? `• Coverage: ${tooltip.coverage}` : ""} • {tooltip.type}
                   </div>
                   {tooltip.desc && (
                     <div className="text-[10px] text-slate-300 font-normal max-w-xs truncate mt-0.5">

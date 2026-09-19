@@ -13,143 +13,318 @@ import {
 export interface NetworkHubItem {
   name: string;
   country: string;
+  city?: string;
   region: string;
   role: string;
+  coverage?: string;
+  flag?: string;
   type: "HQ" | "RHQ" | "LOGISTICS HUB";
 }
 
 export const NETWORK_HUBS: NetworkHubItem[] = [
+  // ─── GLOBAL HEADQUARTERS ───
   {
-    name: "Global HQ – TAKNISER GmbH",
+    name: "TAKNISER GmbH",
+    city: "Dillenburg",
     country: "Germany",
     region: "Europe",
-    role: "Global Headquarters & Central Engineering Center (Hesse, Germany)",
+    coverage: "Global Headquarters",
+    role: "Global Headquarters & Central Engineering Center (Dillenburg, Germany)",
+    flag: "🌐",
     type: "HQ",
   },
+
+  // ─── EUROPE (10 RHQs) ───
   {
-    name: "European RHQ Network (10 RHQs)",
+    name: "TAKNISER AB",
+    city: "Stockholm",
+    country: "Sweden",
+    region: "Europe",
+    coverage: "Scandinavia",
+    role: "Scandinavia Regional Headquarters & Strategic Distribution Hub",
+    flag: "🇸🇪",
+    type: "RHQ",
+  },
+  {
+    name: "TAKNISER MEYER BALTIQUE OÜ",
+    city: "Tallinn",
+    country: "Estonia",
+    region: "Europe",
+    coverage: "Baltic States",
+    role: "Baltic States Regional Headquarters & Northern European Operations",
+    flag: "🇪🇪",
+    type: "RHQ",
+  },
+  {
+    name: "TAKNISER GmbH",
+    city: "Dillenburg",
     country: "Germany",
     region: "Europe",
-    role: "10 Strategic Regional Headquarters covering Western & Eastern Europe",
+    coverage: "Central Europe",
+    role: "Central Europe Regional Headquarters & Advanced Engineering Hub",
+    flag: "🇩🇪",
     type: "RHQ",
   },
   {
-    name: "TAKNISER Sterling Americana LLC",
-    country: "United States",
+    name: "TAKNISER BERNARD LAURENT SARL",
+    city: "Paris",
+    country: "France",
+    region: "Europe",
+    coverage: "Francophone Europe",
+    role: "Francophone Europe Regional Headquarters & Industrial Solutions",
+    flag: "🇫🇷",
+    type: "RHQ",
+  },
+  {
+    name: "TAKNISER VRIES BENELUX B.V.",
+    city: "Rotterdam",
+    country: "Netherlands",
+    region: "Europe",
+    coverage: "Benelux & European Logistics",
+    role: "Benelux & European Maritime Logistics Coordination Hub",
+    flag: "🇳🇱",
+    type: "RHQ",
+  },
+  {
+    name: "TAKNISER VENETO INDUSTRIALE S.R.L.",
+    city: "Milan",
+    country: "Italy",
+    region: "Europe",
+    coverage: "Southern Europe",
+    role: "Southern Europe Regional Headquarters & High-Precision Automation",
+    flag: "🇮🇹",
+    type: "RHQ",
+  },
+  {
+    name: "TAKNISER VELASCO IBERIA S.L.",
+    city: "Madrid",
+    country: "Spain",
+    region: "Europe",
+    coverage: "Iberia",
+    role: "Iberia Regional Headquarters & Mediterranean Supply Operations",
+    flag: "🇪🇸",
+    type: "RHQ",
+  },
+  {
+    name: "TAKNISER FREDRIKSON HELLAS I.K.E.",
+    city: "Athens",
+    country: "Greece",
+    region: "Europe",
+    coverage: "Balkans",
+    role: "Balkans Regional Headquarters & Maritime Infrastructure Center",
+    flag: "🇬🇷",
+    type: "RHQ",
+  },
+  {
+    name: "TAKNISER ANTTONEN OY",
+    city: "Helsinki",
+    country: "Finland",
+    region: "Europe",
+    coverage: "Finland & Central Asia",
+    role: "Finland & Central Asia Regional Headquarters & High-Tech Division",
+    flag: "🇫🇮",
+    type: "RHQ",
+  },
+  {
+    name: "TAKNISER ROTHS UK LIMITED",
+    city: "London",
+    country: "UK",
+    region: "Europe",
+    coverage: "UK & Ireland",
+    role: "UK & Ireland Regional Headquarters & Strategic Procurement Hub",
+    flag: "🇬🇧",
+    type: "RHQ",
+  },
+
+  // ─── NORTH AMERICA ───
+  {
+    name: "TAKNISER STERLING AMERICANA LLC",
+    city: "Texas",
+    country: "USA",
     region: "North America",
+    coverage: "USA & Canada",
     role: "North American Regional HQ & Strategic Procurement Division",
+    flag: "🇺🇸",
     type: "RHQ",
   },
+
+  // ─── LATIN AMERICA ───
   {
-    name: "TAKNISER Latin America – Mexico Hub",
+    name: "TAKNISER LEMANN MEXICANA S. DE R.L. DE C.V.",
+    city: "Mexico City",
     country: "Mexico",
     region: "Latin America",
+    coverage: "Mexico",
     role: "Manufacturing & North-South Logistics Coordination",
+    flag: "🇲🇽",
     type: "RHQ",
   },
   {
-    name: "TAKNISER Panama Regional Office",
+    name: "TAKNISER ORTEGA PANAMÁ S.A.",
+    city: "Panama City",
     country: "Panama",
     region: "Latin America",
+    coverage: "Central America & Caribbean",
     role: "Maritime Trade & Canal Logistics Center",
+    flag: "🇵🇦",
     type: "RHQ",
   },
   {
-    name: "TAKNISER Chile Mineral Operations",
+    name: "TAKNISER PINO ANDINA SpA",
+    city: "Santiago",
     country: "Chile",
     region: "Latin America",
+    coverage: "Andean Region",
     role: "Mining & Critical Minerals Sourcing Hub",
+    flag: "🇨🇱",
     type: "RHQ",
   },
   {
-    name: "TAKNISER Brazil Operations",
+    name: "TAKNISER SANTOS AMAZONIA LTDA.",
+    city: "São Paulo",
     country: "Brazil",
     region: "Latin America",
+    coverage: "South America",
     role: "AgTech & Industrial Sourcing Headquarters",
+    flag: "🇧🇷",
     type: "RHQ",
   },
+
+  // ─── AFRICA ───
   {
-    name: "TAKNISER West Africa Hub",
+    name: "TAKNISER PINAULT AOF LIMITED",
+    city: "Accra",
     country: "Ghana",
     region: "Africa",
+    coverage: "West Africa",
     role: "Infrastructure & Mineral Trade Office",
+    flag: "🇬🇭",
     type: "RHQ",
   },
   {
-    name: "TAKNISER East Africa Hub",
+    name: "TAKNISER MENARD KENYA LIMITED",
+    city: "Nairobi",
     country: "Kenya",
     region: "Africa",
+    coverage: "East & Central Africa",
     role: "Energy & Agricultural Technology Division",
+    flag: "🇰🇪",
     type: "RHQ",
   },
   {
-    name: "TAKNISER Southern Africa RHQ",
+    name: "TAKNISER RATCLIFF SAVANNA (PTY) LTD",
+    city: "Johannesburg",
     country: "South Africa",
     region: "Africa",
+    coverage: "Southern Africa",
     role: "Industrial Equipment & Mining Supply Hub",
+    flag: "🇿🇦",
     type: "RHQ",
   },
+
+  // ─── MIDDLE EAST ───
   {
-    name: "Middle East Logistics Hub & RHQ",
+    name: "TAKNISER GmbH TRADING LLC",
+    city: "Dubai",
     country: "UAE",
     region: "Middle East",
-    role: "Primary Global Distribution & Free Zone Logistics Center",
-    type: "LOGISTICS HUB",
+    coverage: "Gulf & Middle East",
+    role: "Gulf & Middle East Regional Commercial Operations Hub",
+    flag: "🇦🇪",
+    type: "RHQ",
   },
   {
-    name: "TAKNISER Saudi Arabia Operations",
+    name: "TAKNISER HOFFMANN ARABIA LLC",
+    city: "Dammam",
     country: "Saudi Arabia",
     region: "Middle East",
+    coverage: "Saudi Arabia & Levant",
     role: "Infrastructure, EPC & Energy Trade Headquarters",
+    flag: "🇸🇦",
     type: "RHQ",
   },
   {
-    name: "TAKNISER South Asia RHQ",
+    name: "TAKNISER SARL FZCO",
+    city: "JAFZA, Dubai",
+    country: "UAE",
+    region: "Middle East",
+    coverage: "Global Distribution & Logistics",
+    role: "Primary Global Distribution & Free Zone Logistics Center",
+    flag: "🇦🇪",
+    type: "LOGISTICS HUB",
+  },
+
+  // ─── ASIA ───
+  {
+    name: "TAKNISER AB INDIA PRIVATE LIMITED",
+    city: "Ahmedabad",
     country: "India",
     region: "Asia",
+    coverage: "South Asia",
     role: "Engineering Center & Industrial Sourcing Office",
+    flag: "🇮🇳",
     type: "RHQ",
   },
   {
-    name: "TAKNISER Southeast Asia RHQ",
+    name: "TAKNISER MERLION SINGAPORE PTE. LTD.",
+    city: "Singapore",
     country: "Singapore",
     region: "Asia",
+    coverage: "ASEAN",
     role: "Financial & International Global Trading Center",
+    flag: "🇸🇬",
     type: "RHQ",
   },
   {
-    name: "TAKNISER Greater China Hub",
+    name: "TAKNISER SHULIANG CHINA CO., LTD.",
+    city: "Guangzhou",
     country: "China",
     region: "Asia",
+    coverage: "China",
     role: "Manufacturing & Supply Chain Coordination",
+    flag: "🇨🇳",
     type: "RHQ",
   },
   {
-    name: "TAKNISER Hong Kong Trading",
+    name: "TAKNISER SHĀNSHĀN HK LIMITED",
+    city: "Hong Kong SAR",
     country: "Hong Kong",
     region: "Asia",
+    coverage: "North Asia & Global Sourcing",
     role: "Trade Finance & Asia Logistics Office",
+    flag: "🇭🇰",
     type: "RHQ",
   },
   {
-    name: "TAKNISER Japan Robotics Office",
+    name: "TAKNISER TAKEMITSU JAPAN K.K.",
+    city: "Tokyo",
     country: "Japan",
     region: "Asia",
+    coverage: "Japan",
     role: "Robotics & High-Tech Components Division",
+    flag: "🇯🇵",
     type: "RHQ",
   },
   {
-    name: "TAKNISER Eurasia Bridge Hub",
+    name: "TAKNISER SAHENK TURK A.Ş.",
+    city: "Istanbul",
     country: "Türkiye",
     region: "Asia",
+    coverage: "Türkiye & Caucasus",
     role: "Eurasian Cross-Border Trade & Logistics Center",
+    flag: "🇹🇷",
     type: "RHQ",
   },
+
+  // ─── OCEANIA ───
   {
-    name: "TAKNISER Oceania RHQ",
+    name: "TAKNISER PALLMER PACIFIC PTY LTD",
+    city: "Melbourne",
     country: "Australia",
     region: "Oceania",
+    coverage: "Oceania",
     role: "Mining & Heavy Equipment Operations Hub",
+    flag: "🇦🇺",
     type: "RHQ",
   },
 ];
@@ -178,6 +353,8 @@ export default function RegionalHeadquartersList() {
         !q ||
         hub.name.toLowerCase().includes(q) ||
         hub.country.toLowerCase().includes(q) ||
+        (hub.city && hub.city.toLowerCase().includes(q)) ||
+        (hub.coverage && hub.coverage.toLowerCase().includes(q)) ||
         hub.role.toLowerCase().includes(q) ||
         hub.region.toLowerCase().includes(q);
       return matchesRegion && matchesSearch;
@@ -195,7 +372,7 @@ export default function RegionalHeadquartersList() {
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
-              placeholder="Search hubs, countries, or capabilities..."
+              placeholder="Search hubs, countries, cities, or coverage..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-2 text-xs sm:text-sm border border-slate-300 focus:border-[#009999] focus:outline-none bg-slate-50 text-slate-800 rounded-none placeholder:text-slate-400"
@@ -239,7 +416,7 @@ export default function RegionalHeadquartersList() {
 
           return (
             <div
-              key={hub.name}
+              key={`${hub.name}-${hub.country}-${hub.coverage || ""}`}
               className={`p-6 border flex flex-col justify-between transition-all duration-200 hover:shadow-md ${isHQ
                   ? "bg-white border-[#009999] ring-1 ring-[#009999]/30"
                   : "bg-white border-slate-200 hover:border-[#009999]"
@@ -248,9 +425,10 @@ export default function RegionalHeadquartersList() {
               <div className="space-y-4">
                 {/* Header: Location & Badge */}
                 <div className="flex items-start justify-between gap-3 pb-3 border-b border-slate-100">
-                  <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-500">
-                    <MapPin className="w-3.5 h-3.5 text-[#009999] shrink-0" />
-                    <span>{hub.country}, Region: {hub.region}</span>
+                  <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-700">
+                    {hub.flag && <span className="text-base leading-none">{hub.flag}</span>}
+                    <span>{hub.city ? `${hub.city}, ` : ""}{hub.country}</span>
+                    <span className="text-slate-400 font-normal">({hub.region})</span>
                   </div>
 
                   {/* Type Badge */}
@@ -265,6 +443,14 @@ export default function RegionalHeadquartersList() {
                     [Type: {hub.type}]
                   </span>
                 </div>
+
+                {/* Coverage Pill */}
+                {hub.coverage && (
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 text-[#002d3b] text-[11px] font-mono font-semibold border border-slate-200">
+                    <span className="text-[#009999]">●</span>
+                    <span>Coverage: {hub.coverage}</span>
+                  </div>
+                )}
 
                 {/* Hub Title */}
                 <div>
