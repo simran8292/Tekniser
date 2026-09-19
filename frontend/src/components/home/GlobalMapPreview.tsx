@@ -33,7 +33,7 @@ export default function GlobalMapPreview() {
   return (
     <section className="py-24 bg-[#002d3b] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#009999] text-[#009999] text-xs font-bold tracking-wider uppercase rounded-none bg-transparent">
@@ -51,11 +51,10 @@ export default function GlobalMapPreview() {
         <div className="flex flex-wrap justify-center gap-2 mb-10">
           <button
             onClick={() => setActiveRegion(null)}
-            className={`px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all rounded-none border ${
-              !activeRegion
+            className={`px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all rounded-none border ${!activeRegion
                 ? "bg-[#009999] border-[#009999] text-white"
                 : "border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white bg-transparent"
-            }`}
+              }`}
           >
             All Regions
           </button>

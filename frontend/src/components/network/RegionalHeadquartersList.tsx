@@ -189,7 +189,7 @@ export default function RegionalHeadquartersList() {
       {/* Controls Bar: Search & Region Tabs */}
       <div className="bg-white border border-slate-200 p-4 sm:p-6 space-y-4 shadow-sm">
         <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
-          
+
           {/* Search Box */}
           <div className="relative flex-1 max-w-md">
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -219,11 +219,10 @@ export default function RegionalHeadquartersList() {
               <button
                 key={region}
                 onClick={() => setSelectedRegion(region)}
-                className={`px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider transition-all rounded-none border ${
-                  isSelected
+                className={`px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider transition-all rounded-none border ${isSelected
                     ? "bg-[#002d3b] border-[#002d3b] text-white"
                     : "bg-[#f8fafc] border-slate-200 text-slate-600 hover:border-[#009999] hover:text-[#002d3b]"
-                }`}
+                  }`}
               >
                 {region} <span className="ml-1 text-[11px] font-mono opacity-80">({count})</span>
               </button>
@@ -241,11 +240,10 @@ export default function RegionalHeadquartersList() {
           return (
             <div
               key={hub.name}
-              className={`p-6 border flex flex-col justify-between transition-all duration-200 hover:shadow-md ${
-                isHQ
+              className={`p-6 border flex flex-col justify-between transition-all duration-200 hover:shadow-md ${isHQ
                   ? "bg-white border-[#009999] ring-1 ring-[#009999]/30"
                   : "bg-white border-slate-200 hover:border-[#009999]"
-              }`}
+                }`}
             >
               <div className="space-y-4">
                 {/* Header: Location & Badge */}
@@ -257,13 +255,12 @@ export default function RegionalHeadquartersList() {
 
                   {/* Type Badge */}
                   <span
-                    className={`text-[10px] font-mono font-bold px-2 py-0.5 tracking-wider shrink-0 uppercase border ${
-                      isHQ
+                    className={`text-[10px] font-mono font-bold px-2 py-0.5 tracking-wider shrink-0 uppercase border ${isHQ
                         ? "bg-[#002d3b] text-[#00cccc] border-[#009999]"
                         : isLogistics
-                        ? "bg-[#009999]/10 text-[#009999] border-[#009999]"
-                        : "bg-slate-100 text-slate-700 border-slate-300"
-                    }`}
+                          ? "bg-[#009999]/10 text-[#009999] border-[#009999]"
+                          : "bg-slate-100 text-slate-700 border-slate-300"
+                      }`}
                   >
                     [Type: {hub.type}]
                   </span>
