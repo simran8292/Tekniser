@@ -9,9 +9,12 @@ import {
   Ship,
   Sparkles,
   ArrowRight,
+  Building2,
+  UserCheck,
 } from "lucide-react";
 import ContactForm from "@/components/forms/ContactForm";
 import CareerForm from "@/components/forms/CareerForm";
+import { OFFICIAL_REGIONAL_ENTITIES, REGIONAL_LEADERSHIP } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Contact TAKNISER — Corporate Contact Portal",
@@ -89,7 +92,7 @@ export default function ContactPage() {
       {/* ─────────────────────────────────────────────────────────────
           MAIN CONTENT SECTION (Clean White & Light Slate Canvas)
       ───────────────────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-24 bg-[#f8fafc]">
+      <section id="inquiry-form" className="py-20 lg:py-24 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
 
@@ -146,8 +149,35 @@ export default function ContactPage() {
                     </div>
                   </div>
 
+                  {/* Regional Leadership (Middle East & Africa) */}
+                  <div className="flex items-start gap-4 pt-4 border-t border-slate-100">
+                    <div className="p-2.5 bg-[#009999] text-white shrink-0">
+                      <UserCheck className="w-5 h-5" />
+                    </div>
+                    <div className="space-y-0.5">
+                      <div className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">
+                        Regional Leadership (MEA)
+                      </div>
+                      <div className="font-bold text-[#002d3b] text-base">
+                        MOHAMMED AMMAR
+                      </div>
+                      <div className="text-slate-600 font-medium text-xs sm:text-sm">
+                        Business Head — Middle East &amp; Africa
+                      </div>
+                      <div className="pt-1.5">
+                        <a
+                          href="#regional-directory"
+                          className="inline-flex items-center gap-1 text-xs font-bold text-[#009999] hover:text-[#002d3b] transition-colors"
+                        >
+                          <span>View 6 Regional Operating Entities</span>
+                          <ArrowRight className="w-3 h-3" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
                   {/* Response Commitment */}
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-start gap-4 pt-2">
                     <div className="p-2.5 bg-[#002d3b] text-[#009999] shrink-0">
                       <Clock className="w-5 h-5" />
                     </div>
@@ -229,6 +259,146 @@ export default function ContactPage() {
             </div>
 
           </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────────────────────
+          REGIONAL DIRECTORY & OPERATING ENTITIES (Middle East & Africa Network)
+      ───────────────────────────────────────────────────────────── */}
+      <section id="regional-directory" className="py-20 lg:py-24 bg-white border-t border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+          {/* Section Header */}
+          <div className="max-w-3xl mx-auto text-center space-y-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-[#009999] text-[#009999] text-xs font-mono font-bold tracking-widest uppercase bg-[#002d3b]/5">
+              <Sparkles className="w-3.5 h-3.5 text-[#009999]" />
+              <span>REGIONAL DIRECTORY &amp; OPERATING ENTITIES</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-black text-[#002d3b] uppercase tracking-tight">
+              Middle East &amp; Africa <span className="text-[#009999]">Network</span>
+            </h2>
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Official corporate entities, licensed regional subsidiaries, and dedicated leadership connecting commercial, industrial, EPC, and logistics partnerships across the Middle East &amp; Africa.
+            </p>
+          </div>
+
+          {/* Regional Leadership Spotlight Card */}
+          <div className="bg-[#001822] text-white p-8 sm:p-10 border-l-4 border-[#009999] shadow-xl relative overflow-hidden">
+            <div className="absolute -right-10 -bottom-10 w-80 h-80 bg-[#009999]/10 rounded-full blur-3xl pointer-events-none" />
+            
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+              <div className="lg:col-span-8 space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#009999]/20 border border-[#009999]/40 text-[#00cccc] text-[11px] font-mono font-bold uppercase tracking-widest">
+                  <UserCheck className="w-3.5 h-3.5 text-[#00cccc]" />
+                  <span>Key Leadership — Middle East &amp; Africa</span>
+                </div>
+                
+                <div>
+                  <h3 className="text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
+                    MOHAMMED AMMAR
+                  </h3>
+                  <div className="text-base sm:text-lg font-bold text-[#00cccc] mt-1">
+                    Business Head — Middle East &amp; Africa
+                  </div>
+                </div>
+
+                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-2xl font-light">
+                  Overseeing corporate business development, regional commercial operations, cross-border sourcing, EPC project delivery, and governmental alliances across the UAE, Saudi Arabia, South Africa, Kenya, Ghana, and regional trading corridors.
+                </p>
+
+                <div className="flex flex-wrap gap-2 pt-1 text-[11px] font-mono text-slate-300">
+                  <span className="px-2.5 py-1 bg-[#002d3b] border border-slate-700">6 Strategic Operating Hubs</span>
+                  <span className="px-2.5 py-1 bg-[#002d3b] border border-slate-700">Commercial &amp; EPC Sourcing</span>
+                  <span className="px-2.5 py-1 bg-[#002d3b] border border-slate-700">Free Zone Bonded Logistics</span>
+                </div>
+              </div>
+
+              <div className="lg:col-span-4 flex flex-col gap-3 lg:items-end justify-center">
+                <a
+                  href="#inquiry-form"
+                  className="btn-siemens btn-siemens-primary inline-flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider px-6 py-3.5 text-center w-full sm:w-auto"
+                >
+                  <span>Connect with MEA Leadership</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+                <div className="text-[11px] font-mono text-slate-400 lg:text-right">
+                  Official Liaison Channel &bull; Fast Response
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 6 Official Operating Entities Grid */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-between pb-2 border-b border-slate-200">
+              <div className="text-xs font-mono font-bold text-[#002d3b] uppercase tracking-wider">
+                Official Registered Operating Entities &amp; Physical Hubs
+              </div>
+              <div className="text-xs font-mono text-slate-500">
+                6 Verified Corporate Offices
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {OFFICIAL_REGIONAL_ENTITIES.map((entity) => (
+                <div
+                  key={entity.id}
+                  className="bg-[#f8fafc] border border-slate-200 hover:border-[#009999] hover:shadow-lg transition-all duration-300 p-7 flex flex-col justify-between group"
+                >
+                  <div className="space-y-4">
+                    {/* Top Bar: Country */}
+                    <div className="flex items-center gap-2.5 pb-3 border-b border-slate-200">
+                      <span className="text-xl leading-none">{entity.flag}</span>
+                      <span className="text-xs font-mono font-bold text-[#002d3b] uppercase tracking-wider">
+                        {entity.country}
+                      </span>
+                    </div>
+
+                    {/* Company Name */}
+                    <div>
+                      <h4 className="text-base font-black text-[#002d3b] uppercase tracking-tight group-hover:text-[#009999] transition-colors leading-snug">
+                        {entity.companyName}
+                      </h4>
+                    </div>
+
+                    {/* Exact Physical Address Card */}
+                    <div className="p-3.5 bg-white border border-slate-200 space-y-1">
+                      <div className="flex items-center gap-1.5 text-[10px] font-mono font-bold text-[#009999] uppercase tracking-wider">
+                        <MapPin className="w-3.5 h-3.5 text-[#009999] shrink-0" />
+                        <span>Registered Office Address</span>
+                      </div>
+                      <p className="text-xs font-semibold text-slate-800 leading-relaxed pl-5">
+                        {entity.address}
+                      </p>
+                    </div>
+
+                    {/* Role & Functional Scope */}
+                    <div className="space-y-1.5 pt-1 text-xs">
+                      <div className="text-slate-700 font-medium leading-relaxed">
+                        {entity.role}
+                      </div>
+                      <div className="text-[11px] text-slate-500 font-mono">
+                        <span className="font-semibold text-slate-700">Scope: </span>
+                        {entity.divisionScope}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Card Footer */}
+                  <div className="pt-4 mt-6 border-t border-slate-200 flex items-center justify-end text-[11px] font-mono">
+                    <a
+                      href="#inquiry-form"
+                      className="text-[#009999] hover:text-[#002d3b] font-bold inline-flex items-center gap-1 group-hover:underline"
+                    >
+                      <span>Inquiry</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -318,32 +488,6 @@ export default function ContactPage() {
             </div>
           </div>
 
-        </div>
-      </section>
-
-      {/* ─────────────────────────────────────────────────────────────
-          GLOBAL NETWORK LINK BANNER (Siemens Dark Petrol)
-      ───────────────────────────────────────────────────────────── */}
-      <section className="py-16 bg-[#001822] text-white border-t border-slate-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight">
-            Connect Directly with a <span className="text-[#009999]">Regional Headquarters</span>
-          </h2>
-          <p className="text-slate-300 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
-            Need regional logistics, local supply contracts, or country-specific representation? Our 30+ Regional Headquarters are stationed across Europe, the Americas, Africa, Middle East, Asia, and Oceania.
-          </p>
-          <div className="flex justify-center gap-4 pt-2">
-            <Link
-              href="/global-network"
-              className="btn-siemens btn-siemens-primary inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider px-6 py-3"
-            >
-              <span>Explore 30+ Regional Hubs</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-          <div className="text-center text-xs text-slate-500 font-mono pt-6">
-            TAKNISER ONE GLOBE — Complete Website Content Reference
-          </div>
         </div>
       </section>
 

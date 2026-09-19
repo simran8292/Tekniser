@@ -14,11 +14,14 @@ export interface NetworkHubItem {
   name: string;
   country: string;
   city?: string;
+  address?: string;
   region: string;
   role: string;
   coverage?: string;
   flag?: string;
   type: "HQ" | "RHQ" | "LOGISTICS HUB";
+  contactPerson?: string;
+  contactRole?: string;
 }
 
 export const NETWORK_HUBS: NetworkHubItem[] = [
@@ -195,63 +198,81 @@ export const NETWORK_HUBS: NetworkHubItem[] = [
     name: "TAKNISER PINAULT AOF LIMITED",
     city: "Accra",
     country: "Ghana",
+    address: "Atlantic Tower, Plot #16, Near Kotoka Airport, Accra, Ghana",
     region: "Africa",
     coverage: "West Africa",
-    role: "Infrastructure & Mineral Trade Office",
+    role: "West Africa Regional Operations & Strategic Trade Hub",
     flag: "🇬🇭",
     type: "RHQ",
+    contactPerson: "Mohammed Ammar",
+    contactRole: "Business Head - MEA",
   },
   {
     name: "TAKNISER MENARD KENYA LIMITED",
     city: "Nairobi",
     country: "Kenya",
+    address: "Times Tower, Haile Selassie Avenue, Nairobi, Kenya",
     region: "Africa",
     coverage: "East & Central Africa",
-    role: "Energy & Agricultural Technology Division",
+    role: "East & Central Africa Regional Operations & AgTech Hub",
     flag: "🇰🇪",
     type: "RHQ",
+    contactPerson: "Mohammed Ammar",
+    contactRole: "Business Head - MEA",
   },
   {
-    name: "TAKNISER RATCLIFF SAVANNA (PTY) LTD",
+    name: "TAKNISER RATCLIFF SAVANNA (PTY) LIMITED",
     city: "Johannesburg",
     country: "South Africa",
+    address: "Sandton Towers, 164 5th St, CBD, Johannesburg, South Africa",
     region: "Africa",
     coverage: "Southern Africa",
-    role: "Industrial Equipment & Mining Supply Hub",
+    role: "Southern Africa Industrial Equipment & Mining Supply Hub",
     flag: "🇿🇦",
     type: "RHQ",
+    contactPerson: "Mohammed Ammar",
+    contactRole: "Business Head - MEA",
   },
 
   // ─── MIDDLE EAST ───
   {
-    name: "TAKNISER GmbH TRADING LLC",
+    name: "TAKNISER GMBH TRD L.L.C.",
     city: "Dubai",
     country: "UAE",
+    address: "Regal Tower, Business Bay, Dubai, United Arab Emirates",
     region: "Middle East",
     coverage: "Gulf & Middle East",
-    role: "Gulf & Middle East Regional Commercial Operations Hub",
+    role: "Middle East & Regional Commercial Operations Headquarters",
     flag: "🇦🇪",
     type: "RHQ",
+    contactPerson: "Mohammed Ammar",
+    contactRole: "Business Head - MEA",
   },
   {
-    name: "TAKNISER HOFFMANN ARABIA LLC",
+    name: "TAKNISER HOFFMANN ARABIA LLC.",
     city: "Dammam",
     country: "Saudi Arabia",
+    address: "Dammam 2nd Industrial City, Dammam, Kingdom of Saudi Arabia",
     region: "Middle East",
     coverage: "Saudi Arabia & Levant",
-    role: "Infrastructure, EPC & Energy Trade Headquarters",
+    role: "Infrastructure, EPC & Energy Industrial Supply Operations",
     flag: "🇸🇦",
     type: "RHQ",
+    contactPerson: "Mohammed Ammar",
+    contactRole: "Business Head - MEA",
   },
   {
-    name: "TAKNISER SARL FZCO",
+    name: "TAKNISER SARL E&ET FZCO",
     city: "JAFZA, Dubai",
     country: "UAE",
+    address: "JAFZA 26, Jafza South, Jebel Ali Industrial Area, United Arab Emirates",
     region: "Middle East",
     coverage: "Global Distribution & Logistics",
     role: "Primary Global Distribution & Free Zone Logistics Center",
     flag: "🇦🇪",
     type: "LOGISTICS HUB",
+    contactPerson: "Mohammed Ammar",
+    contactRole: "Business Head - MEA",
   },
 
   // ─── ASIA ───
@@ -463,6 +484,26 @@ export default function RegionalHeadquartersList() {
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                   {hub.role}
                 </p>
+
+                {/* Physical Address if available */}
+                {hub.address && (
+                  <div className="flex items-start gap-2 text-xs text-slate-700 bg-slate-50 p-3 border border-slate-200">
+                    <MapPin className="w-4 h-4 text-[#009999] shrink-0 mt-0.5" />
+                    <div>
+                      <div className="text-[10px] font-mono font-bold uppercase text-slate-400">Official Office Address</div>
+                      <div className="font-semibold text-[#002d3b] leading-relaxed">{hub.address}</div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Regional Leadership if available */}
+                {hub.contactPerson && (
+                  <div className="text-[11px] font-mono font-bold text-[#009999] bg-[#002d3b]/5 px-2.5 py-1 border border-[#009999]/20 inline-flex items-center gap-1.5">
+                    <span>Executive Liaison:</span>
+                    <span className="text-[#002d3b]">{hub.contactPerson}</span>
+                    <span className="text-slate-500 font-normal">({hub.contactRole})</span>
+                  </div>
+                )}
               </div>
 
               {/* Bottom Operational Status */}

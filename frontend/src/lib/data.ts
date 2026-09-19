@@ -26,12 +26,34 @@ export interface GlobalLocationData {
   region: string;
   country: string;
   city?: string;
+  address?: string;
   coverage?: string;
   flag?: string;
   type: string;
   title: string;
   coordinates: { x: number; y: number }; // Percentage relative coordinates for responsive SVG map
   description: string;
+}
+
+export interface RegionalLeader {
+  name: string;
+  role: string;
+  region: string;
+  focus: string;
+  coverage: string;
+}
+
+export interface OfficialEntity {
+  id: string;
+  companyName: string;
+  country: string;
+  city: string;
+  address: string;
+  region: string;
+  flag: string;
+  role: string;
+  divisionScope: string;
+  type: "RHQ" | "LOGISTICS_HUB" | "OPERATING_ENTITY";
 }
 
 export const CORPORATE_INFO = {
@@ -405,34 +427,37 @@ export const GLOBAL_NETWORK_LOCATIONS: GlobalLocationData[] = [
     region: "Africa",
     country: "Ghana",
     city: "Accra",
+    address: "Atlantic Tower, Plot #16, Near Kotoka Airport, Accra, Ghana",
     coverage: "West Africa",
     flag: "🇬🇭",
     type: "RHQ",
     title: "TAKNISER PINAULT AOF LIMITED",
     coordinates: { x: 47.0, y: 56.5 },
-    description: "Infrastructure & Mineral Trade Office (Accra, Ghana)"
+    description: "West Africa Regional Operations & Strategic Trade Hub (Accra, Ghana)"
   },
   {
     region: "Africa",
     country: "Kenya",
     city: "Nairobi",
+    address: "Times Tower, Haile Selassie Avenue, Nairobi, Kenya",
     coverage: "East & Central Africa",
     flag: "🇰🇪",
     type: "RHQ",
     title: "TAKNISER MENARD KENYA LIMITED",
     coordinates: { x: 58.5, y: 60.0 },
-    description: "Energy & Agricultural Technology Division (Nairobi, Kenya)"
+    description: "East & Central Africa Regional Operations Hub (Nairobi, Kenya)"
   },
   {
     region: "Africa",
     country: "South Africa",
     city: "Johannesburg",
+    address: "Sandton Towers, 164 5th St, CBD, Johannesburg, South Africa",
     coverage: "Southern Africa",
     flag: "🇿🇦",
     type: "RHQ",
-    title: "TAKNISER RATCLIFF SAVANNA (PTY) LTD",
+    title: "TAKNISER RATCLIFF SAVANNA (PTY) LIMITED",
     coordinates: { x: 54.5, y: 79.0 },
-    description: "Industrial Equipment & Mining Supply Hub (Johannesburg, South Africa)"
+    description: "Southern Africa Industrial Equipment & Mining Supply Hub (Johannesburg, South Africa)"
   },
 
   // ─── MIDDLE EAST ───
@@ -440,32 +465,35 @@ export const GLOBAL_NETWORK_LOCATIONS: GlobalLocationData[] = [
     region: "Middle East",
     country: "UAE",
     city: "Dubai",
+    address: "Regal Tower, Business Bay, Dubai, United Arab Emirates",
     coverage: "Gulf & Middle East",
     flag: "🇦🇪",
     type: "RHQ",
-    title: "TAKNISER GmbH TRADING LLC",
+    title: "TAKNISER GMBH TRD L.L.C.",
     coordinates: { x: 63.0, y: 42.5 },
-    description: "Gulf & Middle East Regional Headquarters (Dubai, UAE)"
+    description: "Middle East & Regional Commercial Operations Headquarters (Dubai, UAE)"
   },
   {
     region: "Middle East",
     country: "Saudi Arabia",
     city: "Dammam",
+    address: "Dammam 2nd Industrial City, Dammam, Kingdom of Saudi Arabia",
     coverage: "Saudi Arabia & Levant",
     flag: "🇸🇦",
     type: "RHQ",
-    title: "TAKNISER HOFFMANN ARABIA LLC",
+    title: "TAKNISER HOFFMANN ARABIA LLC.",
     coordinates: { x: 60.5, y: 41.5 },
-    description: "Infrastructure, EPC & Energy Trade Headquarters (Dammam, Saudi Arabia)"
+    description: "Infrastructure, EPC & Energy Industrial Supply Operations (Dammam, Saudi Arabia)"
   },
   {
     region: "Middle East",
     country: "UAE",
     city: "JAFZA, Dubai",
+    address: "JAFZA 26, Jafza South, Jebel Ali Industrial Area, United Arab Emirates",
     coverage: "Global Distribution & Logistics",
     flag: "🇦🇪",
     type: "LOGISTICS_HUB",
-    title: "TAKNISER SARL FZCO",
+    title: "TAKNISER SARL E&ET FZCO",
     coordinates: { x: 64.0, y: 44.5 },
     description: "Primary Global Distribution & Free Zone Logistics Center (JAFZA, Dubai, UAE)"
   },
@@ -551,3 +579,89 @@ export const GLOBAL_NETWORK_LOCATIONS: GlobalLocationData[] = [
     description: "Mining & Heavy Equipment Operations Hub (Melbourne, Australia)"
   }
 ];
+
+export const REGIONAL_LEADERSHIP: RegionalLeader[] = [
+  {
+    name: "MOHAMMED AMMAR",
+    role: "Business Head — Middle East & Africa",
+    region: "Middle East & Africa (MEA)",
+    focus: "Regional Commercial Operations, EPC Partnerships & Supply Chain Expansion",
+    coverage: "UAE, Saudi Arabia, South Africa, Kenya, Ghana & Levant",
+  },
+];
+
+export const OFFICIAL_REGIONAL_ENTITIES: OfficialEntity[] = [
+  {
+    id: "entity-uae-trd",
+    companyName: "TAKNISER GMBH TRD L.L.C.",
+    country: "United Arab Emirates",
+    city: "Dubai",
+    address: "Regal Tower, Business Bay, Dubai, United Arab Emirates",
+    region: "Middle East",
+    flag: "🇦🇪",
+    role: "Middle East & Regional Commercial Operations Headquarters",
+    divisionScope: "Global Trade, EPC Sourcing & Regional Commercial Partnerships",
+    type: "RHQ",
+  },
+  {
+    id: "entity-uae-fzco",
+    companyName: "TAKNISER SARL E&ET FZCO",
+    country: "United Arab Emirates",
+    city: "Dubai (Jebel Ali)",
+    address: "JAFZA 26, Jafza South, Jebel Ali Industrial Area, United Arab Emirates",
+    region: "Middle East",
+    flag: "🇦🇪",
+    role: "Primary Global Distribution & Free Zone Logistics Center",
+    divisionScope: "Bonded Warehousing, Cross-Docking & Multi-Modal Corridors",
+    type: "LOGISTICS_HUB",
+  },
+  {
+    id: "entity-ksa",
+    companyName: "TAKNISER HOFFMANN ARABIA LLC.",
+    country: "Kingdom of Saudi Arabia",
+    city: "Dammam",
+    address: "Dammam 2nd Industrial City, Dammam, Kingdom of Saudi Arabia",
+    region: "Middle East",
+    flag: "🇸🇦",
+    role: "Infrastructure, EPC & Energy Industrial Supply Operations",
+    divisionScope: "Heavy EPC Procurement, Energy Sector Support & Industrial Systems",
+    type: "RHQ",
+  },
+  {
+    id: "entity-rsa",
+    companyName: "TAKNISER RATCLIFF SAVANNA (PTY) LIMITED",
+    country: "South Africa",
+    city: "Johannesburg",
+    address: "Sandton Towers, 164 5th St, CBD, Johannesburg, South Africa",
+    region: "Africa",
+    flag: "🇿🇦",
+    role: "Southern Africa Industrial Equipment & Mining Supply Hub",
+    divisionScope: "Mining Machinery, Strategic Minerals Sourcing & Heavy Equipment",
+    type: "RHQ",
+  },
+  {
+    id: "entity-kenya",
+    companyName: "TAKNISER MENARD KENYA LIMITED",
+    country: "Kenya",
+    city: "Nairobi",
+    address: "Times Tower, Haile Selassie Avenue, Nairobi, Kenya",
+    region: "Africa",
+    flag: "🇰🇪",
+    role: "East & Central Africa Regional Operations Hub",
+    divisionScope: "Agricultural Technology, Energy Systems & Industrial Trade",
+    type: "RHQ",
+  },
+  {
+    id: "entity-ghana",
+    companyName: "TAKNISER PINAULT AOF LIMITED",
+    country: "Ghana",
+    city: "Accra",
+    address: "Atlantic Tower, Plot #16, Near Kotoka Airport, Accra, Ghana",
+    region: "Africa",
+    flag: "🇬🇭",
+    role: "West Africa Regional Operations & Strategic Trade Hub",
+    divisionScope: "Infrastructure Supplies, Mineral Trade & Maritime Logistics",
+    type: "RHQ",
+  },
+];
+

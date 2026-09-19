@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import {
   Globe,
   Shield,
@@ -17,6 +18,8 @@ import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Footer() {
   const { t, currentLanguage } = useLanguage();
+  const pathname = usePathname();
+  const isContactPage = pathname === "/contact";
 
   return (
     <footer className="bg-[#002d3b] border-t border-slate-800 text-slate-300 relative overflow-hidden">
@@ -24,7 +27,8 @@ export default function Footer() {
       {/* ─────────────────────────────────────────────────────────────
           FULL-WIDTH CONTACT CTA BANNER (Exact #009999 Background)
       ───────────────────────────────────────────────────────────── */}
-      <div className="relative w-full overflow-hidden bg-[#009999] min-h-[320px] lg:min-h-[360px] flex items-center">
+      {!isContactPage && (
+        <div className="relative w-full overflow-hidden bg-[#009999] min-h-[320px] lg:min-h-[360px] flex items-center">
 
         {/* Background Image on Right Side */}
         <div className="absolute inset-0 lg:left-[36%] lg:inset-y-0 z-0">
@@ -104,6 +108,7 @@ export default function Footer() {
         </div>
 
       </div>
+      )}
 
       <div className="pt-16 pb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
