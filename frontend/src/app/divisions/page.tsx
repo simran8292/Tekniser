@@ -578,7 +578,7 @@ export default function DivisionsPage() {
 
                     {/* Right Column: Strategic Narrative, Scope & Product Categories */}
                     <div className="lg:col-span-7 p-7 sm:p-9 flex flex-col justify-between space-y-6 bg-white">
-                      
+
                       <div className="space-y-5">
                         {/* Lead Thought / Ecosystem Vision */}
                         <div className="p-4 bg-[#f8fafc] border-l-4 border-[#009999] space-y-1.5">

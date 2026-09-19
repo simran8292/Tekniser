@@ -25,7 +25,7 @@ export default function Footer() {
           FULL-WIDTH CONTACT CTA BANNER (Exact #009999 Background)
       ───────────────────────────────────────────────────────────── */}
       <div className="relative w-full overflow-hidden bg-[#009999] min-h-[320px] lg:min-h-[360px] flex items-center">
-        
+
         {/* Background Image on Right Side */}
         <div className="absolute inset-0 lg:left-[36%] lg:inset-y-0 z-0">
           <Image
@@ -72,7 +72,7 @@ export default function Footer() {
         {/* Left Content Block inside standard container */}
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 py-8 lg:py-10">
           <div className={`w-full lg:w-[50%] flex flex-col justify-center space-y-4 ${currentLanguage === 'ar' ? 'text-right' : 'text-left'}`}>
-            
+
             {/* Main Headline */}
             <div>
               <h2 className="text-2xl sm:text-3xl lg:text-[38px] leading-[1.14] text-white tracking-tight">

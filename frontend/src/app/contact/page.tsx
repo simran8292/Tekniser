@@ -39,7 +39,7 @@ export default function ContactPage() {
         {/* Clear Background Imagery with Legibility Fade */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/clean_corporate_hq.jpg"
+            src="/clean_corporate_hq_branded.jpg"
             alt="TAKNISER Corporate Operations"
             fill
             priority

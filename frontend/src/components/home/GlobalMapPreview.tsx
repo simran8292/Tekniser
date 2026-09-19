@@ -56,8 +56,8 @@ export default function GlobalMapPreview() {
           <button
             onClick={() => setActiveRegion(null)}
             className={`px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all rounded-none border ${!activeRegion
-                ? "bg-[#009999] border-[#009999] text-white"
-                : "border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white bg-transparent"
+              ? "bg-[#009999] border-[#009999] text-white"
+              : "border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white bg-transparent"
               }`}
           >
             All Regions

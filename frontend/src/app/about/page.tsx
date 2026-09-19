@@ -43,7 +43,7 @@ const TIMELINE_PAST = [
   {
     period: "Early 21st Century",
     title: "Diversified Global Conglomerate",
-    image: "/clean_corporate_hq.jpg",
+    image: "/clean_corporate_hq_branded.jpg",
     imageAlt: "Modern global conglomerate headquarters and technology operations complex",
     description:
       "Entering the new millennium, TAKNISER expanded beyond individual industries and markets to develop a more diversified global operating model. Through strategic partnerships, acquisitions, international sourcing, and market development, TAKNISER established a growing network of regional operations and international relationships — bringing engineering, manufacturing, trade, logistics, technology, and commercial expertise together within one increasingly connected organization.",

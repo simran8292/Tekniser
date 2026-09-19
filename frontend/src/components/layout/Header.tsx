@@ -46,15 +46,13 @@ export default function Header() {
         <div className="hidden lg:block">
           {/* Top Deck: Brand Logo & Utility Links */}
           <div
-            className={`flex items-center justify-between transition-all duration-300 ${
-              isScrolled ? "py-1.5" : "py-3"
-            }`}
+            className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? "py-1.5" : "py-3"
+              }`}
           >
             {/* Logo */}
             <Link href="/" className="flex items-center group">
-              <span className={`font-sans font-black tracking-[0.04em] text-[#36b39c] uppercase select-none transition-all duration-300 ${
-                isScrolled ? "text-2xl" : "text-[2rem] leading-none"
-              }`}>
+              <span className={`font-sans font-black tracking-[0.04em] text-[#36b39c] uppercase select-none transition-all duration-300 ${isScrolled ? "text-2xl" : "text-[2rem] leading-none"
+                }`}>
                 TAKNISER
               </span>
             </Link>
@@ -114,9 +112,8 @@ export default function Header() {
 
           {/* Bottom Deck: Primary Navigation Links & Search */}
           <div
-            className={`flex items-center justify-between transition-all duration-300 ${
-              isScrolled ? "py-1.5" : "py-2.5"
-            }`}
+            className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? "py-1.5" : "py-2.5"
+              }`}
           >
             {/* Primary Nav links */}
             <nav className="flex items-center space-x-7">
@@ -140,17 +137,15 @@ export default function Header() {
                     >
                       <Link
                         href={link.href}
-                        className={`relative py-2 text-[11px] font-bold uppercase tracking-widest transition-all flex items-center gap-1 border-b-2 ${
-                          isCurrentActive
+                        className={`relative py-2 text-[11px] font-bold uppercase tracking-widest transition-all flex items-center gap-1 border-b-2 ${isCurrentActive
                             ? "border-[#36b39c] text-[#36b39c]"
                             : "border-transparent text-white hover:text-[#36b39c]"
-                        }`}
+                          }`}
                       >
                         <span>{link.name}</span>
                         <ChevronDown
-                          className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                            isOpen ? "rotate-180" : ""
-                          }`}
+                          className={`w-3.5 h-3.5 transition-transform duration-200 ${isOpen ? "rotate-180" : ""
+                            }`}
                         />
                       </Link>
 
@@ -203,11 +198,10 @@ export default function Header() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className={`relative py-2 text-[11px] font-bold uppercase tracking-widest transition-all border-b-2 ${
-                      isActive
+                    className={`relative py-2 text-[11px] font-bold uppercase tracking-widest transition-all border-b-2 ${isActive
                         ? "border-[#36b39c] text-[#36b39c]"
                         : "border-transparent text-white hover:text-[#36b39c]"
-                    }`}
+                      }`}
                   >
                     {link.name}
                   </Link>
@@ -283,11 +277,10 @@ export default function Header() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block px-3 py-3 text-sm font-semibold transition-colors rounded-none ${
-                    isActive
+                  className={`block px-3 py-3 text-sm font-semibold transition-colors rounded-none ${isActive
                       ? "text-[#36b39c] bg-[#001822] border-l-4 border-[#36b39c]"
                       : "text-slate-300 hover:text-[#36b39c]"
-                  }`}
+                    }`}
                 >
                   {link.name}
                 </Link>

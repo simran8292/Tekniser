@@ -187,7 +187,7 @@ export default function CapabilitiesPage() {
 
             <div className="relative h-64 border border-slate-200 overflow-hidden shadow-sm group">
               <Image
-                src="/clean_corporate_hq.jpg"
+                src="/clean_corporate_hq_branded.jpg"
                 alt="Global Innovation and Research Operations Hub"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"

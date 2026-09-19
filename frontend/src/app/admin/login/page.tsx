@@ -43,7 +43,7 @@ export default function AdminLoginPage() {
     <div className="min-h-screen flex items-center justify-center bg-[#000e1a] px-4 relative overflow-hidden">
       {/* Decorative Brand Glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-[#36b39c]/5 rounded-full blur-[100px] pointer-events-none" />
-      
+
       <div className="w-full max-w-md relative z-10">
         {/* Logo Section */}
         <div className="text-center mb-8">
@@ -68,9 +68,8 @@ export default function AdminLoginPage() {
         >
           {/* Smoothly animated Error Alert Box */}
           <div
-            className={`transition-all duration-300 ease-in-out overflow-hidden ${
-              error ? "max-h-20 opacity-100" : "max-h-0 opacity-0"
-            }`}
+            className={`transition-all duration-300 ease-in-out overflow-hidden ${error ? "max-h-20 opacity-100" : "max-h-0 opacity-0"
+              }`}
           >
             <div className="flex items-center gap-2.5 p-3.5 bg-red-500/10 border border-red-500/35 text-red-400 text-xs font-semibold rounded-none">
               <AlertCircle className="w-4 h-4 shrink-0" />

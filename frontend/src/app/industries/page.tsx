@@ -281,7 +281,7 @@ export default function IndustriesPage() {
 
           {/* Main Grid: 12 Frontier Cards (Left 9 cols) + Explorer Summit Pillar (Right 3 cols) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch">
-            
+
             {/* Left Column: 12 Frontier Cards in a 4-col responsive layout */}
             <div className="lg:col-span-9">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">

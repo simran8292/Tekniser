@@ -28,12 +28,12 @@ export default function HomePage() {
       {/* Vision 2046 CTA Section - Siemens Flat Design */}
       <section className="py-24 bg-[#001822] relative overflow-hidden">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8">
-          
+
           <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#009999] text-[#009999] text-xs font-bold tracking-wider uppercase rounded-none bg-transparent">
             <Sparkles className="w-4 h-4 text-[#009999]" />
             <span>Our Strategic Ambition</span>
           </div>
-          
+
           <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight uppercase">
             Vision <span className="text-[#009999]">2046</span>
           </h2>

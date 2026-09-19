@@ -182,9 +182,8 @@ export default function CareerForm() {
             value={formData.fullName}
             onChange={handleChange}
             placeholder="e.g., Alexander Schmidt"
-            className={`w-full px-4 py-3 bg-[#f8fafc] border text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009999] transition-colors rounded-none ${
-              errors.fullName ? "border-red-500 bg-red-50/20" : "border-slate-300"
-            }`}
+            className={`w-full px-4 py-3 bg-[#f8fafc] border text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009999] transition-colors rounded-none ${errors.fullName ? "border-red-500 bg-red-50/20" : "border-slate-300"
+              }`}
           />
           {errors.fullName && <p className="text-xs text-red-600 font-medium">{errors.fullName}</p>}
         </div>
@@ -199,9 +198,8 @@ export default function CareerForm() {
             value={formData.email}
             onChange={handleChange}
             placeholder="e.g., alexander.schmidt@example.com"
-            className={`w-full px-4 py-3 bg-[#f8fafc] border text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009999] transition-colors rounded-none ${
-              errors.email ? "border-red-500 bg-red-50/20" : "border-slate-300"
-            }`}
+            className={`w-full px-4 py-3 bg-[#f8fafc] border text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009999] transition-colors rounded-none ${errors.email ? "border-red-500 bg-red-50/20" : "border-slate-300"
+              }`}
           />
           {errors.email && <p className="text-xs text-red-600 font-medium">{errors.email}</p>}
         </div>
@@ -233,9 +231,8 @@ export default function CareerForm() {
             value={formData.country}
             onChange={handleChange}
             placeholder="e.g., Germany, UAE, United States, Singapore"
-            className={`w-full px-4 py-3 bg-[#f8fafc] border text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009999] transition-colors rounded-none ${
-              errors.country ? "border-red-500 bg-red-50/20" : "border-slate-300"
-            }`}
+            className={`w-full px-4 py-3 bg-[#f8fafc] border text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009999] transition-colors rounded-none ${errors.country ? "border-red-500 bg-red-50/20" : "border-slate-300"
+              }`}
           />
           {errors.country && <p className="text-xs text-red-600 font-medium">{errors.country}</p>}
         </div>
@@ -251,9 +248,8 @@ export default function CareerForm() {
             name="department"
             value={formData.department}
             onChange={handleChange}
-            className={`w-full px-4 py-3 bg-[#f8fafc] border text-sm text-slate-900 focus:outline-none focus:border-[#009999] transition-colors rounded-none ${
-              errors.department ? "border-red-500 bg-red-50/20" : "border-slate-300"
-            }`}
+            className={`w-full px-4 py-3 bg-[#f8fafc] border text-sm text-slate-900 focus:outline-none focus:border-[#009999] transition-colors rounded-none ${errors.department ? "border-red-500 bg-red-50/20" : "border-slate-300"
+              }`}
           >
             <option value="">Select an area of interest...</option>
             {DEPARTMENTS.map((dept) => (
@@ -273,9 +269,8 @@ export default function CareerForm() {
             name="experience"
             value={formData.experience}
             onChange={handleChange}
-            className={`w-full px-4 py-3 bg-[#f8fafc] border text-sm text-slate-900 focus:outline-none focus:border-[#009999] transition-colors rounded-none ${
-              errors.experience ? "border-red-500 bg-red-50/20" : "border-slate-300"
-            }`}
+            className={`w-full px-4 py-3 bg-[#f8fafc] border text-sm text-slate-900 focus:outline-none focus:border-[#009999] transition-colors rounded-none ${errors.experience ? "border-red-500 bg-red-50/20" : "border-slate-300"
+              }`}
           >
             <option value="">Select experience level...</option>
             {EXPERIENCE_LEVELS.map((lvl) => (
@@ -308,7 +303,7 @@ export default function CareerForm() {
         <label className="block text-xs font-bold uppercase tracking-wider text-[#002d3b]">
           Upload CV / Resume <span className="text-red-500">*</span>
         </label>
-        
+
         <div className="border-2 border-dashed border-slate-300 hover:border-[#009999] bg-[#f8fafc] p-6 transition-colors text-center relative">
           <input
             ref={fileInputRef}

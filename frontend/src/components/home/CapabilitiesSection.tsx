@@ -103,7 +103,7 @@ export default function CapabilitiesSection() {
 
           {/* Right: Exactly 30% Width - S-Curve Organic Structure Hero Showcase UI */}
           <div className="w-full xl:w-[30%] 2xl:w-[30%] flex flex-col xl:[filter:drop-shadow(-8px_14px_28px_rgba(0,20,30,0.12))]">
-            
+
             {/* Embedded SVG Definition for Exact S-Curve Shape */}
             <svg className="absolute w-0 h-0 pointer-events-none" aria-hidden="true">
               <defs>
@@ -114,7 +114,7 @@ export default function CapabilitiesSection() {
             </svg>
 
             <div className="relative w-full h-full bg-[#00141e] flex flex-col justify-between overflow-hidden rounded-[32px] xl:rounded-none xl:[clip-path:url(#right-s-curve)] group transition-all duration-500">
-              
+
               {/* Top Hero Image with Smooth Zoom Effect */}
               <div className="relative w-full flex-1 min-h-[380px] lg:min-h-[460px] overflow-hidden bg-[#001824]">
                 <Image

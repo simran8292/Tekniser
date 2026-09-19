@@ -343,12 +343,11 @@ export default function Vision2046Page() {
                   className="bg-white border border-slate-200 shadow-sm hover:border-[#009999]/70 hover:shadow-md transition-all duration-300 overflow-hidden group"
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[300px] sm:min-h-[340px]">
-                    
+
                     {/* Media Column (Alternating) */}
                     <div
-                      className={`relative min-h-[240px] sm:min-h-[280px] lg:min-h-full lg:col-span-6 overflow-hidden ${
-                        isEven ? "lg:order-1" : "lg:order-2"
-                      }`}
+                      className={`relative min-h-[240px] sm:min-h-[280px] lg:min-h-full lg:col-span-6 overflow-hidden ${isEven ? "lg:order-1" : "lg:order-2"
+                        }`}
                     >
                       <Image
                         src={item.image}
@@ -359,19 +358,17 @@ export default function Vision2046Page() {
                       />
                       {/* Subtle gradient separator on desktop */}
                       <div
-                        className={`hidden lg:block absolute inset-y-0 w-24 pointer-events-none z-10 ${
-                          isEven
+                        className={`hidden lg:block absolute inset-y-0 w-24 pointer-events-none z-10 ${isEven
                             ? "right-0 bg-gradient-to-l from-white via-white/50 to-transparent"
                             : "left-0 bg-gradient-to-r from-white via-white/50 to-transparent"
-                        }`}
+                          }`}
                       />
                     </div>
 
                     {/* Content Column (Alternating) */}
                     <div
-                      className={`p-7 sm:p-10 lg:p-14 lg:col-span-6 flex flex-col justify-center ${
-                        isEven ? "lg:order-2" : "lg:order-1"
-                      }`}
+                      className={`p-7 sm:p-10 lg:p-14 lg:col-span-6 flex flex-col justify-center ${isEven ? "lg:order-2" : "lg:order-1"
+                        }`}
                     >
                       <h3 className="text-xl sm:text-2xl lg:text-[1.65rem] font-serif font-black text-[#002d3b] uppercase tracking-tight mb-4 leading-snug">
                         {item.title}

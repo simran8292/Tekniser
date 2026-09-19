@@ -57,7 +57,7 @@ const TERMS_SECTIONS = [
 export default function TermsPage() {
   return (
     <div className="pt-24 min-h-screen bg-[#f8fafc] text-slate-800 font-sans antialiased selection:bg-[#009999] selection:text-white">
-      
+
       {/* ─────────────────────────────────────────────────────────────
           HERO SECTION (Siemens Executive Dark)
       ───────────────────────────────────────────────────────────── */}
@@ -95,7 +95,7 @@ export default function TermsPage() {
       ───────────────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-24 bg-[#f8fafc]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          
+
           <div className="flex items-center justify-between border-b border-slate-300 pb-4">
             <div>
               <span className="text-xs font-mono font-bold text-[#009999] uppercase tracking-wider">

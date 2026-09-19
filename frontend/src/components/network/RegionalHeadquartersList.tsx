@@ -397,8 +397,8 @@ export default function RegionalHeadquartersList() {
                 key={region}
                 onClick={() => setSelectedRegion(region)}
                 className={`px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider transition-all rounded-none border ${isSelected
-                    ? "bg-[#002d3b] border-[#002d3b] text-white"
-                    : "bg-[#f8fafc] border-slate-200 text-slate-600 hover:border-[#009999] hover:text-[#002d3b]"
+                  ? "bg-[#002d3b] border-[#002d3b] text-white"
+                  : "bg-[#f8fafc] border-slate-200 text-slate-600 hover:border-[#009999] hover:text-[#002d3b]"
                   }`}
               >
                 {region} <span className="ml-1 text-[11px] font-mono opacity-80">({count})</span>
@@ -418,8 +418,8 @@ export default function RegionalHeadquartersList() {
             <div
               key={`${hub.name}-${hub.country}-${hub.coverage || ""}`}
               className={`p-6 border flex flex-col justify-between transition-all duration-200 hover:shadow-md ${isHQ
-                  ? "bg-white border-[#009999] ring-1 ring-[#009999]/30"
-                  : "bg-white border-slate-200 hover:border-[#009999]"
+                ? "bg-white border-[#009999] ring-1 ring-[#009999]/30"
+                : "bg-white border-slate-200 hover:border-[#009999]"
                 }`}
             >
               <div className="space-y-4">
@@ -434,10 +434,10 @@ export default function RegionalHeadquartersList() {
                   {/* Type Badge */}
                   <span
                     className={`text-[10px] font-mono font-bold px-2 py-0.5 tracking-wider shrink-0 uppercase border ${isHQ
-                        ? "bg-[#002d3b] text-[#00cccc] border-[#009999]"
-                        : isLogistics
-                          ? "bg-[#009999]/10 text-[#009999] border-[#009999]"
-                          : "bg-slate-100 text-slate-700 border-slate-300"
+                      ? "bg-[#002d3b] text-[#00cccc] border-[#009999]"
+                      : isLogistics
+                        ? "bg-[#009999]/10 text-[#009999] border-[#009999]"
+                        : "bg-slate-100 text-slate-700 border-slate-300"
                       }`}
                   >
                     [Type: {hub.type}]
