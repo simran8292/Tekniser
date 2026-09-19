@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import fs from "fs";
-import path from "path";
 import Hero from "@/components/home/Hero";
 import AboutSection from "@/components/home/AboutSection";
 import IndustriesSection from "@/components/home/IndustriesSection";
@@ -18,35 +16,6 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  try {
-    const currentBrainDir = "C:\\Users\\UPL\\.gemini\\antigravity-ide\\brain\\580ed72c-eea2-4d60-a445-854ff94bea2d";
-    const publicDir = path.join(process.cwd(), "public");
-    const newHqSrc = path.join(currentBrainDir, "corporate_global_hq_1789627716297.jpg");
-    const newRoboticsSrc = path.join(currentBrainDir, "advanced_clean_robotics_1789628848467.jpg");
-    if (fs.existsSync(newHqSrc)) {
-      fs.copyFileSync(newHqSrc, path.join(publicDir, "clean_corporate_hq.jpg"));
-      fs.copyFileSync(newHqSrc, path.join(publicDir, "about_conglomerate_hq.jpg"));
-    }
-    if (fs.existsSync(newRoboticsSrc)) {
-      fs.copyFileSync(newRoboticsSrc, path.join(publicDir, "clean_robotics.jpg"));
-      fs.copyFileSync(newRoboticsSrc, path.join(publicDir, "platform_robotics.jpg"));
-    }
-    const newEpcSrc = path.join(currentBrainDir, "chain_card_5_epc_1789665183085.jpg");
-    if (fs.existsSync(newEpcSrc)) {
-      fs.copyFileSync(newEpcSrc, path.join(publicDir, "chain_card_5_epc.jpg"));
-    }
-    const newHeroChainSrc = path.join(currentBrainDir, "hero_value_chain_1789665257191.jpg");
-    if (fs.existsSync(newHeroChainSrc)) {
-      fs.copyFileSync(newHeroChainSrc, path.join(publicDir, "hero_value_chain.jpg"));
-    }
-    const exactHeroCleanSrc = path.join(currentBrainDir, "exact_right_hero_clean.jpg");
-    if (fs.existsSync(exactHeroCleanSrc)) {
-      fs.copyFileSync(exactHeroCleanSrc, path.join(publicDir, "exact_right_hero_clean.jpg"));
-    } else if (fs.existsSync(path.join(publicDir, "exact_right_hero_clean.jpg"))) {
-      fs.copyFileSync(path.join(publicDir, "exact_right_hero_clean.jpg"), exactHeroCleanSrc);
-    }
-  } catch {}
-
   return (
     <>
       <Hero />

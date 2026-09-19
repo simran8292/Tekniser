@@ -51,11 +51,11 @@ export default function CapabilitiesSection() {
           </div>
         </div>
 
-        {/* Main Value Chain Grid: 63% Cards (Left) + 37% Hero Showcase (Right) - Perfect Height Balance */}
-        <div className="flex flex-col xl:flex-row gap-6 lg:gap-8 items-start">
+        {/* Main Value Chain Grid: 70% Cards (Left) + 30% Hero Showcase (Right) */}
+        <div className="flex flex-col xl:flex-row gap-6 lg:gap-8 items-stretch relative">
 
-          {/* Left: 63% Width - All 12 Split Cards in 2 Columns */}
-          <div className="w-full xl:w-[63%] 2xl:w-[64%]">
+          {/* Left: 70% Width - All 12 Split Cards in 2 Columns */}
+          <div className="w-full xl:w-[70%] 2xl:w-[70%]">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-3.5">
               {displayCapabilities.map((cap, idx) => {
                 const IconComponent = iconMap[cap.icon] || Compass;
@@ -101,37 +101,56 @@ export default function CapabilitiesSection() {
             </div>
           </div>
 
-          {/* Right: 37% Width - Exact Hero Showcase Visual from Reference (Sticky on Desktop) */}
-          <div className="w-full xl:w-[37%] 2xl:w-[36%] xl:sticky xl:top-24 flex flex-col">
-            <div className="relative w-full rounded-none overflow-hidden shadow-xl bg-[#00141e] group">
-              <Image
-                src="/exact_right_hero_clean.jpg"
-                alt="Complete Industrial Value Chain &amp; Logistics Network"
-                width={860}
-                height={1184}
-                className="w-full h-auto object-contain block group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-                priority
-              />
+          {/* Right: Exactly 30% Width - S-Curve Organic Structure Hero Showcase UI */}
+          <div className="w-full xl:w-[30%] 2xl:w-[30%] flex flex-col xl:[filter:drop-shadow(-8px_14px_28px_rgba(0,20,30,0.12))]">
+            
+            {/* Embedded SVG Definition for Exact S-Curve Shape */}
+            <svg className="absolute w-0 h-0 pointer-events-none" aria-hidden="true">
+              <defs>
+                <clipPath id="right-s-curve" clipPathUnits="objectBoundingBox">
+                  <path d="M 0.22,0 C 0.10,0.14 0.00,0.28 0.00,0.45 C 0.00,0.65 0.12,0.82 0.24,1 L 0.92,1 Q 1,1 1,0.95 L 1,0.05 Q 1,0 0.92,0 Z" />
+                </clipPath>
+              </defs>
+            </svg>
 
-              {/* Bottom Real HTML Dark Card - Razor Sharp & Crystal Clear */}
-              <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-3.5 sm:left-3.5 sm:right-3.5 z-10 bg-[#001824]/95 backdrop-blur-md p-4 sm:p-5 rounded-2xl sm:rounded-3xl border border-white/15 text-white shadow-2xl">
-                <div className="space-y-1.5">
+            <div className="relative w-full h-full bg-[#00141e] flex flex-col justify-between overflow-hidden rounded-[32px] xl:rounded-none xl:[clip-path:url(#right-s-curve)] group transition-all duration-500">
+              
+              {/* Top Hero Image with Smooth Zoom Effect */}
+              <div className="relative w-full flex-1 min-h-[380px] lg:min-h-[460px] overflow-hidden bg-[#001824]">
+                <Image
+                  src="/value_chain_hero_new.jpg"
+                  alt="Global Logistics, Port Infrastructure and Supply Chain Network"
+                  fill
+                  sizes="(max-width: 1280px) 100vw, 450px"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                  priority
+                />
+                {/* Gradient vignette for seamless visual integration */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#00141e] via-transparent to-black/20 pointer-events-none" />
+              </div>
+
+              {/* Curved Structure UI Content Card - Positioned cleanly below image */}
+              <div className="relative p-6 sm:p-7 xl:py-6 xl:pr-5 xl:pl-[24%] bg-[#00141e] text-white shrink-0 border-t border-white/10 shadow-2xl z-10">
+                <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <span className="w-5 h-[2px] bg-[#00cccc]" />
+                    <span className="w-5 h-[2px] bg-[#00cccc] rounded-full inline-block" />
                     <span className="text-[10px] sm:text-[10.5px] font-mono font-bold text-[#00cccc] uppercase tracking-wider">
                       FROM INNOVATION TO IMPACT
                     </span>
                   </div>
-                  <h3 className="text-[15px] sm:text-[17px] font-serif font-bold text-white tracking-tight leading-snug">
+
+                  <h3 className="text-[17px] sm:text-[19px] font-serif font-bold text-white tracking-tight leading-snug">
                     Building a Smarter, <br />
                     <span className="text-[#00cccc]">More Connected</span> <br />
                     Industrial Future.
                   </h3>
+
+                  <p className="text-[10.5px] sm:text-[11px] text-slate-200 leading-relaxed border-t border-white/10 pt-2.5 mt-2">
+                    By integrating technology, expertise and global partnerships, TAKNISER creates end-to-end solutions that move industries forward &mdash; responsibly and sustainably.
+                  </p>
                 </div>
-                <p className="text-[11px] sm:text-[11.5px] text-slate-200 leading-relaxed border-t border-white/10 pt-2.5 mt-2">
-                  By integrating technology, expertise and global partnerships, TAKNISER creates end-to-end solutions that move industries forward &mdash; responsibly and sustainably.
-                </p>
               </div>
+
             </div>
           </div>
 

@@ -1,13 +1,8 @@
 "use client";
 
-import { INDUSTRIES } from "@/lib/data";
-import { Zap, Flame, Settings, Cog, Shield, Cpu, Building, Truck, Wifi, Box, ShoppingBag, Package, ChevronRight, ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-
-const iconMap: Record<string, any> = {
-  Zap, Flame, Settings, Cog, Shield, Cpu, Building, Truck, Wifi, Box, ShoppingBag, Package
-};
 
 export default function IndustriesSection() {
   return (
@@ -27,7 +22,7 @@ export default function IndustriesSection() {
         </div>
 
         {/* Pictorial Dual Spotlight Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           {/* Spotlight 1: Space & Energy */}
           <div className="relative h-72 border border-slate-200 overflow-hidden shadow-sm group">
             <Image
@@ -73,23 +68,7 @@ export default function IndustriesSection() {
           </div>
         </div>
 
-        {/* Impact Categories Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {INDUSTRIES.map((industry) => {
-            const IconComponent = iconMap[industry.icon] || Settings;
-            return (
-              <div key={industry.title} className="bg-white p-7 border border-slate-200 hover:border-[#009999]/50 hover:shadow-lg transition-all duration-300 group rounded-none text-left flex flex-col justify-between">
-                <div>
-                  <div className="w-12 h-12 bg-slate-50 border border-slate-100 flex items-center justify-center mb-5 group-hover:border-[#009999]/30 group-hover:bg-[#009999]/5 transition-colors">
-                    <IconComponent className="w-6 h-6 text-[#009999]" strokeWidth={1.25} />
-                  </div>
-                  <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wide mb-2">{industry.title}</h3>
-                  <p className="text-xs text-slate-500 leading-relaxed">{industry.description}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+
 
         <div className="mt-12 text-center">
           <Link href="/industries" className="btn-siemens btn-siemens-primary inline-flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider px-8 py-3.5">
