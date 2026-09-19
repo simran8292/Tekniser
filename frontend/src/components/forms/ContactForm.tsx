@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 
 const COUNTRIES = [
   "Germany", "United States", "United Kingdom", "Australia", "Canada", "India", "Singapore",
@@ -17,7 +18,17 @@ const SUBJECTS = [
   "General Corporate Inquiry", "Media & Press", "Investor Relations"
 ];
 
+const SUBJECTS_DE = [
+  "Industrieausrüstung & Beschaffung", "Globale Beschaffungspartnerschaft", "EPC-Projektversorgung",
+  "Ingenieurberatung", "Lieferkettenmanagement", "Internationale Logistik",
+  "Anfrage zu Geschäftsbereichen", "Vertriebspartnerschaft", "Technologielösungen",
+  "Allgemeine Unternehmensanfrage", "Medien & Presse", "Investor Relations"
+];
+
 export default function ContactForm() {
+  const { currentLanguage } = useLanguage();
+  const isDe = currentLanguage === "de";
+
   const [formData, setFormData] = useState({
     fullName: "", company: "", email: "", phone: "", country: "", subject: "", message: "", consent: false,
   });
@@ -27,13 +38,20 @@ export default function ContactForm() {
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
-    if (!formData.fullName || formData.fullName.length < 2) newErrors.fullName = "Full name must be at least 2 characters.";
-    if (!formData.company || formData.company.length < 2) newErrors.company = "Company name is required.";
-    if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Please enter a valid email address.";
-    if (!formData.country) newErrors.country = "Please select a country.";
-    if (!formData.subject) newErrors.subject = "Please select a subject.";
-    if (!formData.message || formData.message.length < 10) newErrors.message = "Message must be at least 10 characters.";
-    if (!formData.consent) newErrors.consent = "You must accept our privacy policy to submit.";
+    if (!formData.fullName || formData.fullName.length < 2)
+      newErrors.fullName = isDe ? "Der vollständige Name muss mindestens 2 Zeichen lang sein." : "Full name must be at least 2 characters.";
+    if (!formData.company || formData.company.length < 2)
+      newErrors.company = isDe ? "Firmenname ist erforderlich." : "Company name is required.";
+    if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
+      newErrors.email = isDe ? "Bitte geben Sie eine gültige E-Mail-Adresse ein." : "Please enter a valid email address.";
+    if (!formData.country)
+      newErrors.country = isDe ? "Bitte wählen Sie ein Land aus." : "Please select a country.";
+    if (!formData.subject)
+      newErrors.subject = isDe ? "Bitte wählen Sie einen Betreff aus." : "Please select a subject.";
+    if (!formData.message || formData.message.length < 10)
+      newErrors.message = isDe ? "Die Nachricht muss mindestens 10 Zeichen lang sein." : "Message must be at least 10 characters.";
+    if (!formData.consent)
+      newErrors.consent = isDe ? "Sie müssen unserer Datenschutzerklärung zustimmen, um abzusenden." : "You must accept our privacy policy to submit.";
     return newErrors;
   };
 
@@ -61,7 +79,7 @@ export default function ContactForm() {
       const data = await res.json();
       if (!res.ok) {
         setStatus("error");
-        setServerMessage(data.error || "An error occurred. Please try again.");
+        setServerMessage(data.error || (isDe ? "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut." : "An error occurred. Please try again."));
         if (data.details) {
           const fieldErrors: Record<string, string> = {};
           Object.entries(data.details).forEach(([k, v]) => { fieldErrors[k] = Array.isArray(v) ? v[0] : String(v); });
@@ -69,11 +87,11 @@ export default function ContactForm() {
         }
       } else {
         setStatus("success");
-        setServerMessage(data.message || "Your inquiry has been submitted.");
+        setServerMessage(data.message || (isDe ? "Ihre Anfrage wurde erfolgreich übermittelt." : "Your inquiry has been submitted."));
       }
     } catch {
       setStatus("error");
-      setServerMessage("Network error. Please check your connection and try again.");
+      setServerMessage(isDe ? "Netzwerkfehler. Bitte überprüfen Sie Ihre Verbindung und versuchen Sie es erneut." : "Network error. Please check your connection and try again.");
     }
   };
 
@@ -85,14 +103,18 @@ export default function ContactForm() {
             <CheckCircle2 className="w-10 h-10 text-emerald-600" />
           </div>
         </div>
-        <h2 className="text-2xl font-bold text-[#002d3b]">Inquiry Submitted</h2>
+        <h2 className="text-2xl font-bold text-[#002d3b]">{isDe ? "Anfrage eingereicht" : "Inquiry Submitted"}</h2>
         <p className="text-slate-750 max-w-md mx-auto">{serverMessage}</p>
-        <p className="text-sm text-slate-500">Our corporate representative will review your inquiry and respond shortly. Reference your submitted email for follow-up.</p>
+        <p className="text-sm text-slate-500">
+          {isDe
+            ? "Unser Unternehmensvertreter wird Ihre Anfrage prüfen und sich in Kürze bei Ihnen melden. Verwenden Sie Ihre übermittelte E-Mail als Referenz."
+            : "Our corporate representative will review your inquiry and respond shortly. Reference your submitted email for follow-up."}
+        </p>
         <button
           onClick={() => { setStatus("idle"); setFormData({ fullName: "", company: "", email: "", phone: "", country: "", subject: "", message: "", consent: false }); }}
           className="btn-siemens btn-siemens-secondary"
         >
-          Submit Another Inquiry
+          {isDe ? "Weitere Anfrage senden" : "Submit Another Inquiry"}
         </button>
       </div>
     );
@@ -111,22 +133,22 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="fullName" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-            Full Name <span className="text-red-500">*</span>
+            {isDe ? "Vollständiger Name" : "Full Name"} <span className="text-red-500">*</span>
           </label>
           <input
             id="fullName" name="fullName" type="text" value={formData.fullName} onChange={handleChange}
-            placeholder="Dr. John Smith"
+            placeholder={isDe ? "Dr. Hans Meyer" : "Dr. John Smith"}
             className={`w-full px-4 py-3 bg-slate-50 border text-slate-800 text-sm placeholder-slate-400 focus:outline-none focus:border-[#009999] rounded-none transition-all ${errors.fullName ? "border-red-500 bg-red-50/50" : "border-slate-300"}`}
           />
           {errors.fullName && <p className="text-red-650 text-xs mt-1">{errors.fullName}</p>}
         </div>
         <div>
           <label htmlFor="company" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-            Company / Organization <span className="text-red-500">*</span>
+            {isDe ? "Unternehmen / Organisation" : "Company / Organization"} <span className="text-red-500">*</span>
           </label>
           <input
             id="company" name="company" type="text" value={formData.company} onChange={handleChange}
-            placeholder="Global Energy Holdings GmbH"
+            placeholder={isDe ? "Industrie Gruppe GmbH" : "Global Energy Holdings GmbH"}
             className={`w-full px-4 py-3 bg-slate-50 border text-slate-800 text-sm placeholder-slate-400 focus:outline-none focus:border-[#009999] rounded-none transition-all ${errors.company ? "border-red-500 bg-red-50/50" : "border-slate-300"}`}
           />
           {errors.company && <p className="text-red-655 text-xs mt-1">{errors.company}</p>}
@@ -137,18 +159,18 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="email" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-            Business Email <span className="text-red-500">*</span>
+            {isDe ? "Geschäftliche E-Mail" : "Business Email"} <span className="text-red-500">*</span>
           </label>
           <input
             id="email" name="email" type="email" value={formData.email} onChange={handleChange}
-            placeholder="j.smith@company.com"
+            placeholder="h.meyer@company.de"
             className={`w-full px-4 py-3 bg-slate-50 border text-slate-800 text-sm placeholder-slate-400 focus:outline-none focus:border-[#009999] rounded-none transition-all ${errors.email ? "border-red-500 bg-red-50/50" : "border-slate-300"}`}
           />
           {errors.email && <p className="text-red-650 text-xs mt-1">{errors.email}</p>}
         </div>
         <div>
           <label htmlFor="phone" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-            Phone Number <span className="text-slate-400">(Optional)</span>
+            {isDe ? "Telefonnummer" : "Phone Number"} <span className="text-slate-400">({isDe ? "Optional" : "Optional"})</span>
           </label>
           <input
             id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange}
@@ -162,27 +184,27 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="country" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-            Country <span className="text-red-500">*</span>
+            {isDe ? "Land" : "Country"} <span className="text-red-500">*</span>
           </label>
           <select
             id="country" name="country" value={formData.country} onChange={handleChange}
             className={`w-full px-4 py-3 bg-slate-50 border text-slate-800 text-sm focus:outline-none focus:border-[#009999] rounded-none transition-all appearance-none ${errors.country ? "border-red-500 bg-red-50/50" : "border-slate-300"}`}
           >
-            <option value="">Select your country</option>
+            <option value="">{isDe ? "Land auswählen" : "Select your country"}</option>
             {COUNTRIES.map((c) => <option key={c} value={c}>{c}</option>)}
           </select>
           {errors.country && <p className="text-red-650 text-xs mt-1">{errors.country}</p>}
         </div>
         <div>
           <label htmlFor="subject" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-            Subject / Inquiry Type <span className="text-red-500">*</span>
+            {isDe ? "Betreff / Art der Anfrage" : "Subject / Inquiry Type"} <span className="text-red-500">*</span>
           </label>
           <select
             id="subject" name="subject" value={formData.subject} onChange={handleChange}
             className={`w-full px-4 py-3 bg-slate-50 border text-slate-800 text-sm focus:outline-none focus:border-[#009999] rounded-none transition-all appearance-none ${errors.subject ? "border-red-500 bg-red-50/50" : "border-slate-300"}`}
           >
-            <option value="">Select inquiry type</option>
-            {SUBJECTS.map((s) => <option key={s} value={s}>{s}</option>)}
+            <option value="">{isDe ? "Betreff auswählen" : "Select inquiry type"}</option>
+            {(isDe ? SUBJECTS_DE : SUBJECTS).map((s) => <option key={s} value={s}>{s}</option>)}
           </select>
           {errors.subject && <p className="text-red-650 text-xs mt-1">{errors.subject}</p>}
         </div>
@@ -191,11 +213,11 @@ export default function ContactForm() {
       {/* Message */}
       <div>
         <label htmlFor="message" className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-          Message <span className="text-red-500">*</span>
+          {isDe ? "Nachricht" : "Message"} <span className="text-red-500">*</span>
         </label>
         <textarea
           id="message" name="message" rows={5} value={formData.message} onChange={handleChange}
-          placeholder="Please describe your requirements, project scope, or inquiry in detail..."
+          placeholder={isDe ? "Bitte beschreiben Sie Ihre Anforderungen, Ihren Projektumfang oder Ihre Anfrage im Detail..." : "Please describe your requirements, project scope, or inquiry in detail..."}
           className={`w-full px-4 py-3 bg-slate-50 border text-slate-800 text-sm placeholder-slate-400 focus:outline-none focus:border-[#009999] rounded-none transition-all resize-none ${errors.message ? "border-red-500 bg-red-50/50" : "border-slate-300"}`}
         />
         <div className="flex justify-between mt-1">
@@ -212,8 +234,17 @@ export default function ContactForm() {
             className="mt-1 w-4 h-4 border-slate-300 bg-white text-[#009999] focus:ring-[#009999]/30 rounded-none cursor-pointer"
           />
           <span className="text-xs leading-relaxed font-medium">
-            I consent to TAKNISER ONE GLOBE storing and processing my personal data submitted above for the purpose of responding to this business inquiry, in accordance with our{" "}
-            <a href="/privacy" className="text-[#009999] hover:underline font-bold">Privacy Policy</a>.
+            {isDe ? (
+              <>
+                Ich willige ein, dass TAKNISER ONE GLOBE meine oben übermittelten personenbezogenen Daten zum Zwecke der Beantwortung dieser geschäftlichen Anfrage gemäß unserer{" "}
+                <a href="/privacy" className="text-[#009999] hover:underline font-bold">Datenschutzerklärung</a> speichert und verarbeitet.
+              </>
+            ) : (
+              <>
+                I consent to TAKNISER ONE GLOBE storing and processing my personal data submitted above for the purpose of responding to this business inquiry, in accordance with our{" "}
+                <a href="/privacy" className="text-[#009999] hover:underline font-bold">Privacy Policy</a>.
+              </>
+            )}
           </span>
         </label>
         {errors.consent && <p className="text-red-650 text-xs mt-1">{errors.consent}</p>}
@@ -228,12 +259,12 @@ export default function ContactForm() {
         {status === "loading" ? (
           <>
             <Loader2 className="w-5 h-5 animate-spin text-white" />
-            <span>Submitting Inquiry...</span>
+            <span>{isDe ? "Wird gesendet..." : "Submitting Inquiry..."}</span>
           </>
         ) : (
           <>
             <Send className="w-5 h-5 text-white" />
-            <span>Submit Corporate Inquiry</span>
+            <span>{isDe ? "Unternehmensanfrage senden" : "Submit Corporate Inquiry"}</span>
           </>
         )}
       </button>

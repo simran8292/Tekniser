@@ -9,6 +9,7 @@ import {
   CheckCircle2,
   Globe2,
 } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export interface NetworkHubItem {
   name: string;
@@ -362,8 +363,20 @@ const REGIONS = [
 ];
 
 export default function RegionalHeadquartersList() {
+  const { currentLanguage } = useLanguage();
   const [selectedRegion, setSelectedRegion] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+
+  const regionNames: Record<string, string> = {
+    "All": currentLanguage === 'de' ? "Alle" : currentLanguage === 'ar' ? "الكل" : "All",
+    "Europe": currentLanguage === 'de' ? "Europa" : currentLanguage === 'ar' ? "أوروبا" : "Europe",
+    "Middle East": currentLanguage === 'de' ? "Mittlerer Osten" : currentLanguage === 'ar' ? "الشرق الأوسط" : "Middle East",
+    "Africa": currentLanguage === 'de' ? "Afrika" : currentLanguage === 'ar' ? "أفريقيا" : "Africa",
+    "North America": currentLanguage === 'de' ? "Nordamerika" : currentLanguage === 'ar' ? "أمريكا الشمالية" : "North America",
+    "Latin America": currentLanguage === 'de' ? "Lateinamerika" : currentLanguage === 'ar' ? "أمريكا اللاتينية" : "Latin America",
+    "Asia": currentLanguage === 'de' ? "Asien" : currentLanguage === 'ar' ? "آسيا" : "Asia",
+    "Oceania": currentLanguage === 'de' ? "Ozeanien" : currentLanguage === 'ar' ? "أوقيانوسيا" : "Oceania",
+  };
 
   const filteredHubs = useMemo(() => {
     return NETWORK_HUBS.filter((hub) => {
@@ -383,25 +396,31 @@ export default function RegionalHeadquartersList() {
   }, [selectedRegion, searchQuery]);
 
   return (
-    <div className="space-y-8">
+    <div className={`space-y-8 ${currentLanguage === 'ar' ? 'rtl text-right' : 'text-left'}`}>
       {/* Controls Bar: Search & Region Tabs */}
       <div className="bg-white border border-slate-200 p-4 sm:p-6 space-y-4 shadow-sm">
         <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
 
           {/* Search Box */}
           <div className="relative flex-1 max-w-md">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <Search className={`w-4 h-4 text-slate-400 absolute top-1/2 -translate-y-1/2 ${currentLanguage === 'ar' ? 'right-3.5' : 'left-3.5'}`} />
             <input
               type="text"
-              placeholder="Search hubs, countries, cities, or coverage..."
+              placeholder={currentLanguage === 'de' ? "Hauptsitze, Länder, Städte oder Abdeckung durchsuchen..." : currentLanguage === 'ar' ? "بحث في المراكز، الدول، المدن، أو مناطق التغطية..." : "Search hubs, countries, cities, or coverage..."}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 text-xs sm:text-sm border border-slate-300 focus:border-[#009999] focus:outline-none bg-slate-50 text-slate-800 rounded-none placeholder:text-slate-400"
+              className={`w-full py-2 text-xs sm:text-sm border border-slate-300 focus:border-[#009999] focus:outline-none bg-slate-50 text-slate-800 rounded-none placeholder:text-slate-400 ${currentLanguage === 'ar' ? 'pr-10 pl-4' : 'pl-10 pr-4'}`}
             />
           </div>
 
           <div className="text-xs font-mono text-slate-500 self-center md:self-auto">
-            Showing <span className="font-bold text-[#002d3b]">{filteredHubs.length}</span> of {NETWORK_HUBS.length} Strategic Hubs
+            {currentLanguage === 'de' ? (
+              <>Zeige <span className="font-bold text-[#002d3b]">{filteredHubs.length}</span> von {NETWORK_HUBS.length} strategischen Hubs</>
+            ) : currentLanguage === 'ar' ? (
+              <>عرض <span className="font-bold text-[#002d3b]">{filteredHubs.length}</span> من أصل {NETWORK_HUBS.length} مركزاً استراتيجياً</>
+            ) : (
+              <>Showing <span className="font-bold text-[#002d3b]">{filteredHubs.length}</span> of {NETWORK_HUBS.length} Strategic Hubs</>
+            )}
           </div>
         </div>
 
@@ -413,6 +432,7 @@ export default function RegionalHeadquartersList() {
                 ? NETWORK_HUBS.length
                 : NETWORK_HUBS.filter((h) => h.region === region).length;
             const isSelected = selectedRegion === region;
+            const displayName = regionNames[region] || region;
             return (
               <button
                 key={region}
@@ -422,7 +442,7 @@ export default function RegionalHeadquartersList() {
                   : "bg-[#f8fafc] border-slate-200 text-slate-600 hover:border-[#009999] hover:text-[#002d3b]"
                   }`}
               >
-                {region} <span className="ml-1 text-[11px] font-mono opacity-80">({count})</span>
+                {displayName} <span className="ml-1 text-[11px] font-mono opacity-80">({count})</span>
               </button>
             );
           })}
@@ -461,7 +481,7 @@ export default function RegionalHeadquartersList() {
                         : "bg-slate-100 text-slate-700 border-slate-300"
                       }`}
                   >
-                    [Type: {hub.type}]
+                    {currentLanguage === 'de' ? `[Typ: ${hub.type}]` : currentLanguage === 'ar' ? `[النوع: ${hub.type}]` : `[Type: ${hub.type}]`}
                   </span>
                 </div>
 
@@ -469,7 +489,7 @@ export default function RegionalHeadquartersList() {
                 {hub.coverage && (
                   <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-slate-100 text-[#002d3b] text-[11px] font-mono font-semibold border border-slate-200">
                     <span className="text-[#009999]">●</span>
-                    <span>Coverage: {hub.coverage}</span>
+                    <span>{currentLanguage === 'de' ? 'Abdeckung:' : currentLanguage === 'ar' ? 'التغطية:' : 'Coverage:'} {hub.coverage}</span>
                   </div>
                 )}
 
@@ -490,7 +510,9 @@ export default function RegionalHeadquartersList() {
                   <div className="flex items-start gap-2 text-xs text-slate-700 bg-slate-50 p-3 border border-slate-200">
                     <MapPin className="w-4 h-4 text-[#009999] shrink-0 mt-0.5" />
                     <div>
-                      <div className="text-[10px] font-mono font-bold uppercase text-slate-400">Official Office Address</div>
+                      <div className="text-[10px] font-mono font-bold uppercase text-slate-400">
+                        {currentLanguage === 'de' ? 'Offizielle Büroadresse' : currentLanguage === 'ar' ? 'العنوان الرسمي للمكتب' : 'Official Office Address'}
+                      </div>
                       <div className="font-semibold text-[#002d3b] leading-relaxed">{hub.address}</div>
                     </div>
                   </div>
@@ -499,7 +521,7 @@ export default function RegionalHeadquartersList() {
                 {/* Regional Leadership if available */}
                 {hub.contactPerson && (
                   <div className="text-[11px] font-mono font-bold text-[#009999] bg-[#002d3b]/5 px-2.5 py-1 border border-[#009999]/20 inline-flex items-center gap-1.5">
-                    <span>Executive Liaison:</span>
+                    <span>{currentLanguage === 'de' ? 'Geschäftsführung / Kontakt:' : currentLanguage === 'ar' ? 'الاتصال والقيادة:' : 'Executive Liaison:'}</span>
                     <span className="text-[#002d3b]">{hub.contactPerson}</span>
                     <span className="text-slate-500 font-normal">({hub.contactRole})</span>
                   </div>
@@ -510,7 +532,7 @@ export default function RegionalHeadquartersList() {
               <div className="pt-4 mt-5 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-400">
                 <span className="flex items-center gap-1.5 text-emerald-700 font-semibold">
                   <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-                  Active Operation
+                  {currentLanguage === 'de' ? 'Aktiver Betrieb' : currentLanguage === 'ar' ? 'تشغيل نشط ومستمر' : 'Active Operation'}
                 </span>
               </div>
             </div>
@@ -521,8 +543,12 @@ export default function RegionalHeadquartersList() {
       {filteredHubs.length === 0 && (
         <div className="text-center py-12 bg-white border border-slate-200 space-y-2">
           <Globe2 className="w-8 h-8 text-slate-400 mx-auto" />
-          <div className="text-sm font-bold text-[#002d3b]">No regional hubs found</div>
-          <p className="text-xs text-slate-500">Try adjusting your search query or region filter.</p>
+          <div className="text-sm font-bold text-[#002d3b]">
+            {currentLanguage === 'de' ? 'Keine regionalen Hubs gefunden' : currentLanguage === 'ar' ? 'لم يتم العثور على مراكز إقليمية' : 'No regional hubs found'}
+          </div>
+          <p className="text-xs text-slate-500">
+            {currentLanguage === 'de' ? 'Passen Sie Ihre Suchanfrage oder den Regionsfilter an.' : currentLanguage === 'ar' ? 'يرجى تعديل مصطلح البحث أو تصفية المناطق.' : 'Try adjusting your search query or region filter.'}
+          </p>
         </div>
       )}
     </div>

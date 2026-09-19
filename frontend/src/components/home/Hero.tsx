@@ -109,7 +109,7 @@ export default function Hero() {
                   key={index}
                   onClick={() => setCurrentSlide(index)}
                   className={`h-1.5 transition-all rounded-none ${index === currentSlide ? "w-8 bg-[#009999]" : "w-4 bg-slate-600 hover:bg-slate-500"}`}
-                  aria-label={`Go to slide ${index + 1}`}
+                  aria-label={`${t("go-to-slide")} ${index + 1}`}
                 />
               ))}
             </div>

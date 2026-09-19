@@ -12,7 +12,9 @@ import { AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const { currentLanguage, currentRegion, t } = useLanguage();
-  const currentRegionLabel = REGIONS.find((r) => r.id === currentRegion)?.country || (currentRegion === "global" ? "1Globe" : currentRegion);
+  const currentRegionLabel = currentRegion === "global" 
+    ? t("worldwide-network") 
+    : (REGIONS.find((r) => r.id === currentRegion)?.country || currentRegion);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDivisionsOpen, setIsDivisionsOpen] = useState(false);
@@ -154,7 +156,7 @@ export default function Header() {
                       {isDivisions && isDivisionsOpen && (
                         <div className="absolute top-full left-0 w-80 mt-0 py-2 bg-[#001822] shadow-2xl border border-slate-800 divide-y divide-slate-800/60 rounded-none z-50">
                           <div className="px-4 py-2 text-[9px] font-bold uppercase tracking-wider text-slate-500">
-                            Core Business Divisions
+                            {t("nav-divisions-dropdown")}
                           </div>
                           <div className="py-1">
                             {BUSINESS_DIVISIONS.map((div) => (
@@ -163,7 +165,7 @@ export default function Header() {
                                 href={`/divisions/${div.slug}`}
                                 className="flex items-center px-4 py-2.5 text-xs text-slate-300 hover:text-[#36b39c] hover:bg-[#002d3b] transition-colors"
                               >
-                                <span className="font-semibold">{div.title}</span>
+                                <span className="font-semibold">{t(`div-${div.slug}-title`) || div.title}</span>
                               </Link>
                             ))}
                           </div>
@@ -173,20 +175,20 @@ export default function Header() {
                       {!isDivisions && isResponsibilityOpen && (
                         <div className="absolute top-full left-0 w-72 mt-0 py-2 bg-[#001822] shadow-2xl border border-slate-800 divide-y divide-slate-800/60 rounded-none z-50">
                           <div className="px-4 py-2 text-[9px] font-bold uppercase tracking-wider text-slate-500">
-                            Corporate Responsibility
+                            {t("nav-responsibility-dropdown")}
                           </div>
                           <div className="py-1">
                             <Link
                               href="/responsibility/family"
                               className="block px-4 py-2.5 text-xs text-slate-300 hover:text-[#36b39c] hover:bg-[#002d3b] transition-colors font-semibold"
                             >
-                              TAKNISER ONE GLOBE FAMILY
+                              {t("nav-family")}
                             </Link>
                             <Link
                               href="/responsibility/sustainable-earth"
                               className="block px-4 py-2.5 text-xs text-slate-300 hover:text-[#36b39c] hover:bg-[#002d3b] transition-colors font-semibold"
                             >
-                              SUSTAINABLE EARTH
+                              {t("nav-earth")}
                             </Link>
                           </div>
                         </div>
@@ -301,7 +303,7 @@ export default function Header() {
               className="flex items-center justify-center gap-1.5 py-3 border border-slate-800 bg-[#001822] hover:text-[#36b39c] transition-colors rounded-none cursor-pointer"
             >
               <Globe className="w-4 h-4 text-[#36b39c]" />
-              <span className="capitalize">{currentLanguage.toUpperCase()} | {currentRegion === "global" ? "1Globe" : currentRegion}</span>
+              <span className="uppercase">{currentRegionLabel} | {currentLanguage.toUpperCase()}</span>
             </button>
             <Link
               href="/admin/login"

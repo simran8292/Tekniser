@@ -529,24 +529,26 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
   de: {
     // Utilities & Top bar
+    "worldwide-network": "Weltweites Netzwerk",
     "you-are-in": "Sie befinden sich in",
     "global-offices": "Weltweite Niederlassungen",
     "heritage-about": "Tradition & Über uns",
     "contact-hq": "Hauptsitz kontaktieren",
     "log-in": "Anmelden",
-    "support-community": "Support & Community",
+    "support-community": "Hilfe & Kundendienst",
     "search-placeholder": "Suchen...",
     "search-platform": "Plattform durchsuchen...",
     "contact-corporate": "Unternehmensplattform kontaktieren",
     "admin-login": "Admin-Anmeldung",
     "close": "Schließen",
+    "go-to-slide": "Zu Folie wechseln",
 
     // Nav Links
     "about-us": "Über Uns",
     "vision-2046": "Vision 2046",
     "what-we-do": "WAS WIR TUN",
     "capabilities": "INNOVATION",
-    "industries": "T1G IMPACTS",
+    "industries": "T1G AUSWIRKUNGEN",
     "responsibility": "VERANTWORTUNG",
 
     // About Section
@@ -562,7 +564,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     // Slide 1
     "s1-kicker": "Über 100 Jahre deutsche Ingenieurstradition",
     "s1-title": "DIE ZUKUNFT DER GLOBALEN INDUSTRIE GESTALTEN",
-    "s1-highlight": "One Globe. One Ecosystem. One Future.",
+    "s1-highlight": "Eine Welt. Ein Ökosystem. Eine Zukunft.",
     "s1-desc": "Über 100 Jahre deutsche Ingenieurstradition. Aktiv in über 190 Ländern über 30 regionale Hauptsitze weltweit.",
     "s1-primary": "Geschichte & Tradition",
     "s1-secondary": "Globales Netzwerk erkunden",
@@ -612,9 +614,166 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "cap-procure": "Internationale Beschaffung",
     "cap-epc": "EPC & Projektversorgung",
     "cap-logistics": "Globales Logistiknetzwerk",
+
+    // Navigation Dropdowns
+    "nav-divisions-dropdown": "Kern-Geschäftsbereiche",
+    "nav-responsibility-dropdown": "Unternehmensverantwortung",
+    "nav-family": "TAKNISER ONE GLOBE FAMILIE",
+    "nav-earth": "NACHHALTIGE ERDE",
+    "header-vision-tag": "Vision 2046",
+
+    // Industries Section
+    "ind-kicker": "GLOBALE AUSWIRKUNGEN",
+    "ind-title": "T1G Globale Auswirkungen",
+    "ind-desc": "Bereitstellung spezialisierter, hochleistungsfähiger Lösungen und transformativer Wirkung über diverse globale Zukunftsbereiche auf der Erde und darüber hinaus.",
+    "ind-spotlight1-kicker": "Zukunftserkundung",
+    "ind-spotlight1-title": "Raumfahrt & Planetare Systeme",
+    "ind-spotlight1-desc": "Einsatz fortschrittlicher Orbital-Hardware, Erdbeobachtungssatelliten und planetarer Ressourcen-Intelligenz.",
+    "ind-spotlight2-kicker": "Nachhaltige Zukunft",
+    "ind-spotlight2-title": "Saubere Transformation & Naturpositiv",
+    "ind-spotlight2-desc": "Investitionen in widerstandsfähige Ernährungssysteme, saubere Wasserinfrastruktur, zirkuläre Rohstoffwirtschaft und erneuerbare Energiewende.",
+    "ind-cta": "Alle 12 T1G Impacts erkunden",
+
+    // Divisions Grid
+    "div-kicker": "Integriertes Unternehmenskonglomerat",
+    "div-title-prefix": "Sieben",
+    "div-title-highlight": "Kernbereiche",
+    "div-subtitle": "Von Raumfahrttechnologie bis zu nachhaltiger Landwirtschaft agiert TAKNISER ONE GLOBE in sieben transformativen Industriesektoren – alle vernetzt über eine integrierte globale Plattform.",
+    "div-card-explore": "Bereich erkunden",
+    "div-cta-title": "Alle Geschäftsbereiche ansehen",
+    "div-cta-desc": "Das gesamte TAKNISER-Portfolio erkunden",
+    "div-cta-btn": "One Globe Plattform",
+
+    // 7 Divisions
+    "div-space-economy-title": "Raumfahrtwirtschaft",
+    "div-space-economy-tagline": "Die Zukunft über die Erde hinaus gestalten durch fortschrittliche Raumfahrttechnologien und globale Raumfahrt-Partnerschaften.",
+    "div-mining-minerals-title": "Bergbau & Rohstoffe",
+    "div-mining-minerals-tagline": "Förderung des weltweiten Industriewachstums durch verantwortungsvollen Bergbau, Veredelung und Handel strategischer Rohstoffe.",
+    "div-agtech-title": "Agrartechnologie",
+    "div-agtech-tagline": "Transformation globaler Ernährungssysteme durch Präzisionslandwirtschaft, intelligente Bewässerung und nachhaltige Agrarlösungen.",
+    "div-lifecare-title": "Lifecare & Gesundheit",
+    "div-lifecare-tagline": "Förderung des menschlichen Wohlbefindens durch Medizintechnik, pharmazeutische Versorgung und globale Gesundheitsinfrastruktur.",
+    "div-lifestyle-title": "Lifestyle & Wohnen",
+    "div-lifestyle-tagline": "Verbesserung des täglichen Lebens durch hochwertige Konsumgüter und intelligente Lifestyle-Lösungen.",
+    "div-robotics-title": "Robotik & KI",
+    "div-robotics-tagline": "Beschleunigung von Industrie 4.0 mit intelligenter Automatisierung und KI-gestützten Industrielösungen.",
+    "div-global-trading-title": "Globaler Handel & Logistik",
+    "div-global-trading-tagline": "Verbindung von Herstellern, Industrien, Regierungen und weltweiten Märkten durch ein integriertes internationales Handelsökosystem.",
+
+    // Division Categories
+    "cat-satellite-components": "Satellitenkomponenten",
+    "cat-space-communications": "Raumfahrtkommunikation",
+    "cat-earth-observation": "Erdbeobachtung",
+    "cat-space-electronics": "Raumfahrtelektronik",
+    "cat-launch-support-technologies": "Startunterstützung",
+    "cat-copper": "Kupfer",
+    "cat-lithium": "Lithium",
+    "cat-nickel": "Nickel",
+    "cat-rare-earth-elements": "Seltene Erden",
+    "cat-aluminum": "Aluminium",
+    "cat-graphite": "Graphit",
+    "cat-critical-mineral-trading": "Kritischer Mineralienhandel",
+    "cat-coal": "Kohle",
+    "cat-irrigation-systems": "Bewässerungssysteme",
+    "cat-fertilizers": "Düngemittel",
+    "cat-seeds": "Saatgut",
+    "cat-agricultural-machinery": "Landmaschinen",
+    "cat-food-processing": "Lebensmittelverarbeitung",
+    "cat-medical-devices": "Medizinprodukte",
+    "cat-hospital-equipment": "Krankenhausausstattung",
+    "cat-pharmaceuticals": "Pharmazeutika",
+    "cat-biotechnology": "Biotechnologie",
+    "cat-diagnostics-equipment": "Diagnostikgeräte",
+    "cat-consumer-appliances": "Haushaltsgeräte",
+    "cat-smart-living": "Intelligentes Wohnen",
+    "cat-personal-care": "Körperpflege",
+    "cat-lifestyle-products": "Lifestyle-Produkte",
+    "cat-home-technologies": "Haustechnologien",
+    "cat-industrial-robots": "Industrieroboter",
+    "cat-automation-systems": "Automatisierungssysteme",
+    "cat-ai-robotics": "KI-Robotik",
+    "cat-warehouse-automation": "Lagerautomatisierung",
+    "cat-collaborative-robots": "Kollaborative Roboter",
+    "cat-energy": "Energie",
+    "cat-electrical": "Elektrotechnik",
+    "cat-electronics": "Elektronik",
+    "cat-metals": "Metalle",
+    "cat-machinery": "Maschinenbau",
+    "cat-chemicals": "Chemikalien",
+    "cat-construction-materials": "Baustoffe",
+    "cat-commodities": "Rohstoffe",
+
+    // Capabilities Section
+    "cap-section-kicker": "DURCHGEHENDE INDUSTRIELLE WERTSCHÖPFUNGSKETTE",
+    "cap-section-title1": "Ganzheitliche Innovation &",
+    "cap-section-title2": "Wertschöpfungskette",
+    "cap-section-desc": "Von bahnbrechender Innovation, Ingenieurwesen und Fertigung bis hin zu Logistik und digitaler Transformation – TAKNISER liefert entlang der gesamten industriellen Wertschöpfungskette.",
+
+    "cap-item-0-title": "Ingenieurwesen & Beratung",
+    "cap-item-0-desc": "Jahrhundertelange deutsche Ingenieurserfahrung für Machbarkeit, Systemarchitektur und Optimierung.",
+    "cap-item-1-title": "Industrielle Fertigung",
+    "cap-item-1-desc": "Präzisions-OEM-Fertigung nach strengsten europäischen Qualitäts- und Toleranzmaßstäben.",
+    "cap-item-2-title": "Globale strategische Beschaffung",
+    "cap-item-2-desc": "Direkter Zugang zu strategischen Rohstoffen, kritischen Mineralien und spezialisierten Industriekomponenten.",
+    "cap-item-3-title": "Internationale Beschaffung",
+    "cap-item-3-desc": "Durchgängige Multiwährungs-Beschaffung für institutionelle Großprojekte, Versorger und Regierungsverträge.",
+    "cap-item-4-title": "EPC & Projektversorgung",
+    "cap-item-4-desc": "Schlüsselfertige Ausrüstungslieferung und technische Unterstützung für internationale Großprojekte.",
+    "cap-item-5-title": "Globales Logistiknetzwerk",
+    "cap-item-5-desc": "Multimodale See-, Luft- und Landfracht, angetrieben durch strategische globale Drehkreuze.",
+    "cap-item-6-title": "Internationaler Handel & Vertrieb",
+    "cap-item-6-desc": "Grenzüberschreitende Vertriebspartnerschaften und weltweiter Ausbau solider Absatznetzwerke.",
+    "cap-item-7-title": "Lagerhaltung & Kühlkette",
+    "cap-item-7-desc": "Strategisch positionierte Zolllager und automatisierte Distributionszentren weltweit.",
+    "cap-item-8-title": "Deep-Tech & Automatisierung",
+    "cap-item-8-desc": "Industrie 4.0-Integration, Sensornetzwerke und cyber-physische Fertigungssysteme.",
+    "cap-item-9-title": "Erneuerbare Energielösungen",
+    "cap-item-9-desc": "Solar-, Wind- und Wasserstoff-Großanlagen für nachhaltige industrielle Energieautarkie.",
+    "cap-item-10-title": "Unternehmensführung & Compliance",
+    "cap-item-10-desc": "Strikte Einhaltung internationaler Handelsgesetze, ESG-Richtlinien und Qualitätsstandards.",
+    "cap-item-11-title": "Wartung & After-Sales-Support",
+    "cap-item-11-desc": "Langfristige Wartungsverträge, Ersatzteilmanagement, Retrofitting und 24/7-Support.",
+
+    "cap-showcase-kicker": "VON INNOVATION ZU WIRKUNG",
+    "cap-showcase-title1": "Eine intelligentere,",
+    "cap-showcase-title2": "stärker vernetzte",
+    "cap-showcase-title3": "industrielle Zukunft bauen.",
+    "cap-showcase-desc": "Durch die Integration von Technologie, Fachwissen und weltweiten Partnerschaften schafft TAKNISER ganzheitliche Lösungen, die Industrien voranbringen – verantwortungsvoll und zukunftssicher.",
+
+    // Global Map Section
+    "map-kicker": "Weltweite operative Präsenz",
+    "map-title1": "Eine Welt.",
+    "map-title2": "Ein globales Netzwerk.",
+    "map-desc": "TAKNISER ONE GLOBE agiert über 30 regionale Hauptsitze, strategische Logistikhubs und Geschäftsstellen in über 190 Ländern auf 6 Kontinenten.",
+    "map-all-regions": "Alle Regionen",
+    "map-view-interactive": "Interaktive Weltkarte ansehen",
+    "stat-ghq": "Globaler Hauptsitz",
+    "stat-rhq": "Regionale Hauptsitze",
+    "stat-countries": "Länder & Gebiete",
+    "stat-continents": "Kontinente",
+    "stat-logistics": "Logistikhubs",
+
+    // Home - Vision 2046
+    "home-vision-kicker": "Unsere strategische Ambition",
+    "home-vision-title": "Vision 2046",
+    "home-vision-quote": "„Ein global vernetztes TAKNISER-Ökosystem zu schaffen, das industrielle Innovation, nachhaltiges Wachstum und verlässliche Lösungen in allen Märkten und Gemeinschaften vorantreibt.“",
+    "pillar-1-title": "Innovation",
+    "pillar-1-desc": "Zukunftsfähige Technologien in allen Schlüsselindustrien",
+    "pillar-2-title": "Nachhaltigkeit",
+    "pillar-2-desc": "Verantwortungsvolle und kreislauforientierte Lieferketten",
+    "pillar-3-title": "Globale Expansion",
+    "pillar-3-desc": "In über 190 Ländern aktiv und kontinuierlich wachsend",
+    "pillar-4-title": "Verlässliche Partnerschaften",
+    "pillar-4-desc": "Langfristige Wertschöpfung mit Industrie und Staaten",
+    "home-vision-cta": "Vision 2046 entdecken",
+    "home-heritage-cta": "Tradition & Geschichte",
+
+    // Footer
+    "footer-careers": "Karriere & Chancen",
   },
   en: {
     // Utilities & Top bar
+    "worldwide-network": "Worldwide Network",
     "you-are-in": "You are in",
     "global-offices": "Global Offices",
     "heritage-about": "Heritage & About",
@@ -626,6 +785,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "contact-corporate": "Contact Corporate Platform",
     "admin-login": "Admin Log in",
     "close": "Close",
+    "go-to-slide": "Go to slide",
 
     // Nav Links
     "about-us": "About Us",
@@ -698,9 +858,166 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "cap-procure": "International Procurement",
     "cap-epc": "EPC & Project Supply",
     "cap-logistics": "Global Logistics Network",
+
+    // Navigation Dropdowns
+    "nav-divisions-dropdown": "Core Business Divisions",
+    "nav-responsibility-dropdown": "Corporate Responsibility",
+    "nav-family": "TAKNISER ONE GLOBE FAMILY",
+    "nav-earth": "SUSTAINABLE EARTH",
+    "header-vision-tag": "Vision 2046",
+
+    // Industries Section
+    "ind-kicker": "GLOBAL IMPACTS",
+    "ind-title": "T1G Impacts",
+    "ind-desc": "Providing specialized, high-performance solutions and transformative impact across diverse global frontiers on Earth and beyond.",
+    "ind-spotlight1-kicker": "Frontier Exploration",
+    "ind-spotlight1-title": "Space & Planetary Systems",
+    "ind-spotlight1-desc": "Deploying advanced orbital hardware, Earth observation satellites, and planetary resource intelligence.",
+    "ind-spotlight2-kicker": "Sustainable Tomorrow",
+    "ind-spotlight2-title": "Clean Transition & Nature Positive",
+    "ind-spotlight2-desc": "Investing into resilient food systems, clean water infrastructure, circular mineral economies, and renewable transitions.",
+    "ind-cta": "Explore All 12 T1G Impacts",
+
+    // Divisions Grid
+    "div-kicker": "Integrated Business Conglomerate",
+    "div-title-prefix": "Seven",
+    "div-title-highlight": "Core Divisions",
+    "div-subtitle": "From deep-space technology to sustainable agriculture, TAKNISER ONE GLOBE operates across seven transformative industrial sectors — all connected through one integrated global platform.",
+    "div-card-explore": "Explore Division",
+    "div-cta-title": "View All Divisions",
+    "div-cta-desc": "Explore the Complete TAKNISER Portfolio",
+    "div-cta-btn": "One Globe Platform",
+
+    // 7 Divisions Titles & Taglines
+    "div-space-economy-title": "Space Economy",
+    "div-space-economy-tagline": "Driving the future beyond Earth through advanced space technologies and global aerospace partnerships.",
+    "div-mining-minerals-title": "Mining & Minerals",
+    "div-mining-minerals-tagline": "Supporting the world's industrial growth through responsible mining, processing, sourcing, and global trading of strategic minerals.",
+    "div-agtech-title": "AgTech",
+    "div-agtech-tagline": "Transforming global food systems through precision agriculture, smart irrigation, and sustainable farm solutions.",
+    "div-lifecare-title": "Lifecare",
+    "div-lifecare-tagline": "Advancing human health through healthcare manufacturing, medical technology, and pharmaceutical supply chains.",
+    "div-lifestyle-title": "Lifestyle",
+    "div-lifestyle-tagline": "Enhancing everyday living through quality consumer products and smart lifestyle solutions.",
+    "div-robotics-title": "Robotics",
+    "div-robotics-tagline": "Accelerating Industry 4.0 with intelligent automation and AI-driven industrial solutions.",
+    "div-global-trading-title": "Global Trading",
+    "div-global-trading-tagline": "Connecting manufacturers, industries, governments, and global markets through an integrated international trading ecosystem.",
+
+    // Division Categories
+    "cat-satellite-components": "Satellite Components",
+    "cat-space-communications": "Space Communications",
+    "cat-earth-observation": "Earth Observation",
+    "cat-space-electronics": "Space Electronics",
+    "cat-launch-support-technologies": "Launch Support Technologies",
+    "cat-copper": "Copper",
+    "cat-lithium": "Lithium",
+    "cat-nickel": "Nickel",
+    "cat-rare-earth-elements": "Rare Earth Elements",
+    "cat-aluminum": "Aluminum",
+    "cat-graphite": "Graphite",
+    "cat-critical-mineral-trading": "Critical Mineral Trading",
+    "cat-coal": "Coal",
+    "cat-irrigation-systems": "Irrigation Systems",
+    "cat-fertilizers": "Fertilizers",
+    "cat-seeds": "Seeds",
+    "cat-agricultural-machinery": "Agricultural Machinery",
+    "cat-food-processing": "Food Processing",
+    "cat-medical-devices": "Medical Devices",
+    "cat-hospital-equipment": "Hospital Equipment",
+    "cat-pharmaceuticals": "Pharmaceuticals",
+    "cat-biotechnology": "Biotechnology",
+    "cat-diagnostics-equipment": "Diagnostics Equipment",
+    "cat-consumer-appliances": "Consumer Appliances",
+    "cat-smart-living": "Smart Living",
+    "cat-personal-care": "Personal Care",
+    "cat-lifestyle-products": "Lifestyle Products",
+    "cat-home-technologies": "Home Technologies",
+    "cat-industrial-robots": "Industrial Robots",
+    "cat-automation-systems": "Automation Systems",
+    "cat-ai-robotics": "AI Robotics",
+    "cat-warehouse-automation": "Warehouse Automation",
+    "cat-collaborative-robots": "Collaborative Robots",
+    "cat-energy": "Energy",
+    "cat-electrical": "Electrical",
+    "cat-electronics": "Electronics",
+    "cat-metals": "Metals",
+    "cat-machinery": "Machinery",
+    "cat-chemicals": "Chemicals",
+    "cat-construction-materials": "Construction Materials",
+    "cat-commodities": "Commodities",
+
+    // Capabilities Section
+    "cap-section-kicker": "END-TO-END INDUSTRIAL VALUE CHAIN",
+    "cap-section-title1": "Complete Innovation &",
+    "cap-section-title2": "Value Chain",
+    "cap-section-desc": "From breakthrough innovation, engineering and manufacturing through to logistics and digital transformation — TAKNISER delivers across the full industrial value chain.",
+
+    "cap-item-0-title": "Engineering & Technical Consulting",
+    "cap-item-0-desc": "Centennial German engineering expertise providing feasibility, system architecture, and optimization.",
+    "cap-item-1-title": "Industrial Manufacturing",
+    "cap-item-1-desc": "Precision OEM manufacturing adhering to stringent European quality and tolerance metrics.",
+    "cap-item-2-title": "Global Strategic Sourcing",
+    "cap-item-2-desc": "Direct access to strategic raw materials, critical minerals, and specialized industrial components.",
+    "cap-item-3-title": "International Procurement",
+    "cap-item-3-desc": "End-to-end multi-currency procurement for institutional, utility, and government contracts.",
+    "cap-item-4-title": "EPC Support & Project Supply",
+    "cap-item-4-desc": "Turnkey equipment supply and engineering support for mega Engineering, Procurement & Construction projects.",
+    "cap-item-5-title": "Global Logistics Network",
+    "cap-item-5-desc": "Multi-modal sea, air, and overland freight powered by global strategic hubs.",
+    "cap-item-6-title": "International Trade & Distribution",
+    "cap-item-6-desc": "Global partner onboarding and international distribution network expansion.",
+    "cap-item-7-title": "Warehousing & Cold Chain",
+    "cap-item-7-desc": "Strategically positioned bonded warehouses and temperature-controlled logistics hubs worldwide.",
+    "cap-item-8-title": "Deep-Tech & Automation",
+    "cap-item-8-desc": "Custom Industry 4.0 integration, sensor networks, and SCADA infrastructure.",
+    "cap-item-9-title": "Renewable Energy Solutions",
+    "cap-item-9-desc": "Utility-scale solar, wind, and hydrogen systems for industrial energy self-sufficiency.",
+    "cap-item-10-title": "Corporate Governance & Compliance",
+    "cap-item-10-desc": "Rigorous adherence to international trade laws, ESG frameworks, and quality norms.",
+    "cap-item-11-title": "Lifecycle Technical & After-Sales Services",
+    "cap-item-11-desc": "Long-term maintenance, spare part management, retrofitting, and technical overhaul.",
+
+    "cap-showcase-kicker": "FROM INNOVATION TO IMPACT",
+    "cap-showcase-title1": "Building a Smarter,",
+    "cap-showcase-title2": "More Connected",
+    "cap-showcase-title3": "Industrial Future.",
+    "cap-showcase-desc": "By integrating technology, expertise and global partnerships, TAKNISER creates end-to-end solutions that move industries forward — responsibly and sustainably.",
+
+    // Global Map Section
+    "map-kicker": "Global Operational Presence",
+    "map-title1": "One Globe.",
+    "map-title2": "One Network.",
+    "map-desc": "TAKNISER ONE GLOBE operates through 30 Regional Headquarters, strategic logistics hubs, and business offices across 190+ countries and 6 continents.",
+    "map-all-regions": "All Regions",
+    "map-view-interactive": "View Interactive World Map",
+    "stat-ghq": "Global HQ",
+    "stat-rhq": "Regional HQs",
+    "stat-countries": "Countries & Territories",
+    "stat-continents": "Continents",
+    "stat-logistics": "Logistics Hubs",
+
+    // Home - Vision 2046
+    "home-vision-kicker": "Our Strategic Ambition",
+    "home-vision-title": "Vision 2046",
+    "home-vision-quote": "“To create a globally connected TAKNISER ecosystem that drives industrial innovation, sustainable growth, and reliable solutions across markets and communities.”",
+    "pillar-1-title": "Innovation",
+    "pillar-1-desc": "Future-ready technologies across all sectors",
+    "pillar-2-title": "Sustainability",
+    "pillar-2-desc": "Responsible global supply chains",
+    "pillar-3-title": "Global Expansion",
+    "pillar-3-desc": "190+ countries and growing",
+    "pillar-4-title": "Trusted Partnerships",
+    "pillar-4-desc": "Long-term value creation",
+    "home-vision-cta": "Discover Vision 2046",
+    "home-heritage-cta": "Our History & Heritage",
+
+    // Footer
+    "footer-careers": "Opportunities & Careers",
   },
   ar: {
     // Utilities & Top bar
+    "worldwide-network": "شبكة عالمية",
     "you-are-in": "أنت في",
     "global-offices": "المكاتب العالمية",
     "heritage-about": "التراث ونبذة عنا",
@@ -712,6 +1029,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "contact-corporate": "الاتصال بالمنصة المشتركة",
     "admin-login": "دخول المشرف",
     "close": "إغلاق",
+    "go-to-slide": "الانتقال إلى الشريحة",
 
     // Nav Links
     "about-us": "من نحن",
@@ -785,6 +1103,162 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "cap-procure": "المشتريات الدولية",
     "cap-epc": "الهندسة والمشتريات والبناء وتوريد المشاريع",
     "cap-logistics": "الشبكة اللوجستية العالمية",
+
+    // Navigation Dropdowns
+    "nav-divisions-dropdown": "قطاعات الأعمال الأساسية",
+    "nav-responsibility-dropdown": "المسؤولية المؤسسية",
+    "nav-family": "عائلة تاكنيسر ون غلوب",
+    "nav-earth": "الأرض المستدامة",
+    "header-vision-tag": "رؤية 2046",
+
+    // Industries Section
+    "ind-kicker": "التأثيرات العالمية",
+    "ind-title": "تأثيرات T1G",
+    "ind-desc": "تقديم حلول متخصصة وعالية الأداء وتأثير تحويلي عبر مختلف الآفاق العالمية على الأرض وخارجها.",
+    "ind-spotlight1-kicker": "استكشاف الآفاق",
+    "ind-spotlight1-title": "الفضاء والأنظمة الكوكبية",
+    "ind-spotlight1-desc": "نشر أحدث الأجهزة المدارية، وأقمار رصد الأرض، واستخبارات الموارد الكوكبية.",
+    "ind-spotlight2-kicker": "غد مستدام",
+    "ind-spotlight2-title": "التحول النظيف وإيجابية الطبيعة",
+    "ind-spotlight2-desc": "الاستثمار في أنظمة غذائية مرنة، وبنية تحتية للمياه النظيفة، واقتصادات دائرية للمعادن، والتحول للطاقة المتجددة.",
+    "ind-cta": "استكشف جميع تأثيرات T1G الـ 12",
+
+    // Divisions Grid
+    "div-kicker": "تكتل أعمال متكامل",
+    "div-title-prefix": "سبعة",
+    "div-title-highlight": "قطاعات أساسية",
+    "div-subtitle": "من تكنولوجيا الفضاء السحيق إلى الزراعة المستدامة، تعمل تاكنيسر ون غلوب عبر سبعة قطاعات صناعية تحويلية متصلة بمنصة عالمية موحدة.",
+    "div-card-explore": "استكشف القطاع",
+    "div-cta-title": "عرض جميع القطاعات",
+    "div-cta-desc": "استكشف محفظة تاكنيسر الكاملة",
+    "div-cta-btn": "منصة ون غلوب",
+
+    // 7 Divisions
+    "div-space-economy-title": "اقتصاد الفضاء",
+    "div-space-economy-tagline": "قيادة المستقبل إلى ما وراء الأرض عبر تقنيات الفضاء المتقدمة وشراكات الطيران العالمية.",
+    "div-mining-minerals-title": "التعدين والمعادن",
+    "div-mining-minerals-tagline": "دعم النمو الصناعي العالمي بالتعدين المسؤول والتجارة الدولية للمعادن الاستراتيجية.",
+    "div-agtech-title": "التكنولوجيا الزراعية",
+    "div-agtech-tagline": "تطوير أنظمة الغذاء العالمية بالزراعة الدقيقة والري الذكي والحلول الزراعية المستدامة.",
+    "div-lifecare-title": "الرعاية الصحية والحياة",
+    "div-lifecare-tagline": "الارتقاء بصحة الإنسان عبر الأجهزة الطبية والتكنولوجيا وسلاسل التوريد الدوائية.",
+    "div-lifestyle-title": "أسلوب الحياة والعيش",
+    "div-lifestyle-tagline": "تحسين المعيشة اليومية بمنتجات استهلاكية راقية وحلول أسلوب الحياة الذكية.",
+    "div-robotics-title": "الروبوتات والذكاء الاصطناعي",
+    "div-robotics-tagline": "تسريع الثورة الصناعية الرابعة بالأتمتة الذكية والحلول المدعومة بالذكاء الاصطناعي.",
+    "div-global-trading-title": "التجارة العالمية واللوجستيات",
+    "div-global-trading-tagline": "ربط المصنعين والقطاعات والحكومات بالأسواق الدولية عبر منظومة تجارة متكاملة.",
+
+    // Division Categories
+    "cat-satellite-components": "مكونات الأقمار الصناعية",
+    "cat-space-communications": "اتصالات الفضاء",
+    "cat-earth-observation": "رصد الأرض",
+    "cat-space-electronics": "إلكترونيات الفضاء",
+    "cat-launch-support-technologies": "تقنيات دعم الإطلاق",
+    "cat-copper": "النحاس",
+    "cat-lithium": "الليثيوم",
+    "cat-nickel": "النيكل",
+    "cat-rare-earth-elements": "العناصر الأرضية النادرة",
+    "cat-aluminum": "الألمنيوم",
+    "cat-graphite": "الجرافيت",
+    "cat-critical-mineral-trading": "تجارة المعادن الحرجة",
+    "cat-coal": "الفحم",
+    "cat-irrigation-systems": "أنظمة الري",
+    "cat-fertilizers": "الأسمدة",
+    "cat-seeds": "البذور",
+    "cat-agricultural-machinery": "الآلات الزراعية",
+    "cat-food-processing": "تصنيع الأغذية",
+    "cat-medical-devices": "الأجهزة الطبية",
+    "cat-hospital-equipment": "معدات المستشفيات",
+    "cat-pharmaceuticals": "الأدوية",
+    "cat-biotechnology": "التكنولوجيا الحيوية",
+    "cat-diagnostics-equipment": "أجهزة التشخيص",
+    "cat-consumer-appliances": "الأجهزة المنزلية",
+    "cat-smart-living": "المعيشة الذكية",
+    "cat-personal-care": "العناية الشخصية",
+    "cat-lifestyle-products": "منتجات أسلوب الحياة",
+    "cat-home-technologies": "تقنيات المنزل",
+    "cat-industrial-robots": "الروبوتات الصناعية",
+    "cat-automation-systems": "أنظمة الأتمتة",
+    "cat-ai-robotics": "روبوتات الذكاء الاصطناعي",
+    "cat-warehouse-automation": "أتمتة المستودعات",
+    "cat-collaborative-robots": "الروبوتات التعاونية",
+    "cat-energy": "الطاقة",
+    "cat-electrical": "الكهرباء",
+    "cat-electronics": "الإلكترونيات",
+    "cat-metals": "المعادن",
+    "cat-machinery": "الآلات",
+    "cat-chemicals": "المواد الكيميائية",
+    "cat-construction-materials": "مواد البناء",
+    "cat-commodities": "السلع الأساسية",
+
+    // Capabilities Section
+    "cap-section-kicker": "سلسلة القيمة الصناعية المتكاملة",
+    "cap-section-title1": "الابتكار المتكامل و",
+    "cap-section-title2": "سلسلة القيمة",
+    "cap-section-desc": "من الابتكار الرائد والهندسة والتصنيع إلى الخدمات اللوجستية والتحول الرقمي – تقدم تاكنيسر عبر كامل سلسلة القيمة الصناعية.",
+
+    "cap-item-0-title": "الهندسة والاستشارات التقنية",
+    "cap-item-0-desc": "خبرة هندسية ألمانية عريقة لدراسات الجدوى وهندسة النظم والتحسين التقني.",
+    "cap-item-1-title": "التصنيع الصناعي",
+    "cap-item-1-desc": "تصنيع دقيق بمعايير الجودة والتسامح الأوروبية الصارمة.",
+    "cap-item-2-title": "التوريد الاستراتيجي العالمي",
+    "cap-item-2-desc": "وصول مباشر للمواد الخام الاستراتيجية والمعادن الحرجة ومكونات الصناعة المتخصصة.",
+    "cap-item-3-title": "المشتريات الدولية",
+    "cap-item-3-desc": "مشتريات متعددة العملات للعقود الحكومية والمؤسسية ومشاريع المرافق العامة.",
+    "cap-item-4-title": "دعم EPC وتوريد المشاريع",
+    "cap-item-4-desc": "توريد معدات متكامل ودعم هندسي للمشاريع الكبرى للهندسة والمشتريات والبناء.",
+    "cap-item-5-title": "الشبكة اللوجستية العالمية",
+    "cap-item-5-desc": "شحن متعدد الوسائط بحراً وجواً وبراً مدعوماً بمراكز استراتيجية دولية.",
+    "cap-item-6-title": "التجارة والتوزيع الدولي",
+    "cap-item-6-desc": "بناء شراكات توزيع وتوسيع شبكات التوريد الموثوقة عالمياً.",
+    "cap-item-7-title": "التخزين وسلسلة التبريد",
+    "cap-item-7-desc": "مستودعات جمركية ومراكز لوجستية مبرمجة ومضبوطة الحرارة حول العالم.",
+    "cap-item-8-title": "التكنولوجيا العميقة والأتمتة",
+    "cap-item-8-desc": "دمج تقنيات الصناعة 4.0، وشبكات الاستشعار، وأنظمة سكادا الصناعية.",
+    "cap-item-9-title": "حلول الطاقة المتجددة",
+    "cap-item-9-desc": "أنظمة طاقة شمسية ورياح وهيدروجين للاكتفاء الذاتي الصناعي المستدام.",
+    "cap-item-10-title": "الحوكمة المؤسسية والامتثال",
+    "cap-item-10-desc": "التزام صارم بقوانين التجارة الدولية وأطر الاستدامة البيئية والاجتماعية والحوكمة.",
+    "cap-item-11-title": "خدمات ما بعد البيع والدعم الفني",
+    "cap-item-11-desc": "صيانة طويلة الأمد وإدارة قطع الغيار والتحديث والدعم الفني المستمر.",
+
+    "cap-showcase-kicker": "من الابتكار إلى التأثير",
+    "cap-showcase-title1": "بناء مستقبل صناعي",
+    "cap-showcase-title2": "أكثر ذكاءً",
+    "cap-showcase-title3": "وترابطاً.",
+    "cap-showcase-desc": "من خلال دمج التكنولوجيا والخبرة والشراكات العالمية، تخلق تاكنيسر حلولاً متكاملة تدفع الصناعات إلى الأمام بمسؤولية واستدامة.",
+
+    // Global Map Section
+    "map-kicker": "الانتشار العملياتي العالمي",
+    "map-title1": "ون غلوب.",
+    "map-title2": "شبكة موحدة.",
+    "map-desc": "تعمل تاكنيسر ون غلوب من خلال 30 مقراً إقليمياً ومراكز لوجستية ومكاتب تجارية في أكثر من 190 دولة عبر 6 قارات.",
+    "map-all-regions": "جميع المناطق",
+    "map-view-interactive": "عرض الخريطة التفاعلية",
+    "stat-ghq": "المقر الرئيسي العالمي",
+    "stat-rhq": "المقرات الإقليمية",
+    "stat-countries": "الدول والأقاليم",
+    "stat-continents": "القارات",
+    "stat-logistics": "المراكز اللوجستية",
+
+    // Home - Vision 2046
+    "home-vision-kicker": "طموحنا الاستراتيجي",
+    "home-vision-title": "رؤية 2046",
+    "home-vision-quote": "«بناء منظومة تاكنيسر المترابطة عالمياً لدفع الابتكار الصناعي، والنمو المستدام، وتقديم حلول موثوقة عبر الأسواق والمجتمعات.»",
+    "pillar-1-title": "الابتكار",
+    "pillar-1-desc": "تقنيات جاهزة للمستقبل عبر مختلف القطاعات الصناعية",
+    "pillar-2-title": "الاستدامة",
+    "pillar-2-desc": "سلاسل توريد عالمية مسؤولة ومستدامة بيئياً",
+    "pillar-3-title": "التوسع العالمي",
+    "pillar-3-desc": "أكثر من 190 دولة وتوسع مستمر",
+    "pillar-4-title": "شراكات موثوقة",
+    "pillar-4-desc": "خلق قيمة طويلة الأجل مع الشركاء والحكومات",
+    "home-vision-cta": "اكتشف رؤية 2046",
+    "home-heritage-cta": "تاريخنا وإرثنا العريق",
+
+    // Footer
+    "footer-careers": "الفرص والوظائف",
   },
   zh: {
     // Utilities & Top bar
@@ -1142,14 +1616,16 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   // Load language settings on mount
   useEffect(() => {
+    const userSelected = localStorage.getItem("takniser_user_selected_lang");
     const savedLang = localStorage.getItem("takniser_lang") as LanguageCode;
     const savedRegion = localStorage.getItem("takniser_region") as RegionId;
 
-    if (savedLang) {
+    if (userSelected === "true" && savedLang && DICTIONARY[savedLang]) {
       setCurrentLanguage(savedLang);
     } else {
-      // Default to German when website opens for the first time
+      // Default to German when website opens
       setCurrentLanguage("de");
+      localStorage.setItem("takniser_lang", "de");
     }
     if (savedRegion) {
       setCurrentRegion(savedRegion);
@@ -1175,10 +1651,11 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     setCurrentRegion(region);
     localStorage.setItem("takniser_lang", lang);
     localStorage.setItem("takniser_region", region);
+    localStorage.setItem("takniser_user_selected_lang", "true");
   };
 
   const t = (key: string): string => {
-    const translation = DICTIONARY[currentLanguage]?.[key] || DICTIONARY["en"]?.[key] || key;
+    const translation = DICTIONARY[currentLanguage]?.[key] || DICTIONARY["de"]?.[key] || DICTIONARY["en"]?.[key] || key;
     return translation;
   };
 

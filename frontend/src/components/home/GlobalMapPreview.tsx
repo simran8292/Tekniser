@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { GLOBAL_NETWORK_LOCATIONS } from "@/lib/data";
+import { useLanguage } from "@/lib/LanguageContext";
 
 const REGION_COLORS: Record<string, string> = {
   Europe: "#009999",
@@ -14,7 +15,29 @@ const REGION_COLORS: Record<string, string> = {
   Oceania: "#06b6d4",
 };
 
+const REGION_TRANSLATIONS: Record<string, Record<string, string>> = {
+  de: {
+    "Europe": "Europa",
+    "North America": "Nordamerika",
+    "Latin America": "Lateinamerika",
+    "Africa": "Afrika",
+    "Middle East": "Mittlerer Osten",
+    "Asia": "Asien",
+    "Oceania": "Ozeanien",
+  },
+  ar: {
+    "Europe": "أوروبا",
+    "North America": "أمريكا الشمالية",
+    "Latin America": "أمريكا اللاتينية",
+    "Africa": "أفريقيا",
+    "Middle East": "الشرق الأوسط",
+    "Asia": "آسيا",
+    "Oceania": "أوقيانوسيا",
+  },
+};
+
 export default function GlobalMapPreview() {
+  const { t, currentLanguage } = useLanguage();
   const [activeRegion, setActiveRegion] = useState<string | null>(null);
   const [tooltip, setTooltip] = useState<{
     x: number;
@@ -41,13 +64,13 @@ export default function GlobalMapPreview() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#009999] text-[#009999] text-xs font-bold tracking-wider uppercase rounded-none bg-transparent">
-            <span>Global Operational Presence</span>
+            <span>{t("map-kicker")}</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-light text-white tracking-wide uppercase">
-            One Globe. <span className="font-bold text-[#009999]">One Network.</span>
+            {t("map-title1")} <span className="font-bold text-[#009999]">{t("map-title2")}</span>
           </h2>
           <p className="text-slate-200 text-base">
-            TAKNISER ONE GLOBE operates through 30 Regional Headquarters, strategic logistics hubs, and business offices across 190+ countries and 6 continents.
+            {t("map-desc")}
           </p>
         </div>
 
@@ -60,22 +83,25 @@ export default function GlobalMapPreview() {
               : "border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white bg-transparent"
               }`}
           >
-            All Regions
+            {t("map-all-regions")}
           </button>
-          {regions.map((region) => (
-            <button
-              key={region}
-              onClick={() => setActiveRegion(activeRegion === region ? null : region)}
-              className="px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all rounded-none border"
-              style={
-                activeRegion === region
-                  ? { backgroundColor: "#009999", borderColor: "#009999", color: "#ffffff" }
-                  : { borderColor: "rgba(255,255,255,0.15)", color: "#cbd5e1", backgroundColor: "transparent" }
-              }
-            >
-              {region}
-            </button>
-          ))}
+          {regions.map((region) => {
+            const localizedRegionName = REGION_TRANSLATIONS[currentLanguage]?.[region] || region;
+            return (
+              <button
+                key={region}
+                onClick={() => setActiveRegion(activeRegion === region ? null : region)}
+                className="px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all rounded-none border"
+                style={
+                  activeRegion === region
+                    ? { backgroundColor: "#009999", borderColor: "#009999", color: "#ffffff" }
+                    : { borderColor: "rgba(255,255,255,0.15)", color: "#cbd5e1", backgroundColor: "transparent" }
+                }
+              >
+                {localizedRegionName}
+              </button>
+            );
+          })}
         </div>
 
         {/* SVG World Map Wrapper - Flat Rectangular */}
@@ -195,7 +221,7 @@ export default function GlobalMapPreview() {
                     <span>{tooltip.title}</span>
                   </div>
                   <div className="text-[11px] font-mono" style={{ color: REGION_COLORS[tooltip.region] || "#00cccc" }}>
-                    {tooltip.city ? `${tooltip.city}, ` : ""}{tooltip.country} {tooltip.coverage ? `• Coverage: ${tooltip.coverage}` : ""} • {tooltip.type}
+                    {tooltip.city ? `${tooltip.city}, ` : ""}{tooltip.country} {tooltip.coverage ? `• ${currentLanguage === 'de' ? 'Abdeckung' : currentLanguage === 'ar' ? 'التغطية' : 'Coverage'}: ${tooltip.coverage}` : ""} • {tooltip.type}
                   </div>
                   {tooltip.desc && (
                     <div className="text-[10px] text-slate-300 font-normal max-w-xs truncate mt-0.5">
@@ -211,11 +237,11 @@ export default function GlobalMapPreview() {
         {/* Stats Row - Flat rectangular containers */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-10">
           {[
-            { label: "Global HQ", value: "1", color: "text-white" },
-            { label: "Regional HQs", value: "30", color: "text-[#009999]" },
-            { label: "Countries & Territories", value: "190+", color: "text-[#009999]" },
-            { label: "Continents", value: "6", color: "text-white" },
-            { label: "Logistics Hubs", value: "3+", color: "text-[#009999]" },
+            { label: t("stat-ghq"), value: "1", color: "text-white" },
+            { label: t("stat-rhq"), value: "30", color: "text-[#009999]" },
+            { label: t("stat-countries"), value: "190+", color: "text-[#009999]" },
+            { label: t("stat-continents"), value: "6", color: "text-white" },
+            { label: t("stat-logistics"), value: "3+", color: "text-[#009999]" },
           ].map((stat) => (
             <div key={stat.label} className="bg-[#001822] border border-slate-800 rounded-none p-4 text-center shadow-none">
               <div className={`text-2xl sm:text-3xl font-bold ${stat.color} font-mono`}>

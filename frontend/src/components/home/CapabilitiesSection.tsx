@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { CAPABILITIES } from "@/lib/data";
+import { useLanguage } from "@/lib/LanguageContext";
 import {
   Compass, Factory, Search, ShoppingCart, HardHat, Network,
   Ship, Share2, Cpu, Zap, Landmark, Wrench
@@ -26,6 +29,7 @@ const capabilityImages: Record<number, string> = {
 };
 
 export default function CapabilitiesSection() {
+  const { t } = useLanguage();
   const displayCapabilities = CAPABILITIES;
 
   return (
@@ -38,15 +42,15 @@ export default function CapabilitiesSection() {
             <div className="flex items-center gap-2">
               <span className="w-6 h-[2.5px] bg-[#009999] inline-block rounded-full" />
               <span className="text-xs font-mono font-bold text-[#009999] uppercase tracking-widest">
-                END-TO-END INDUSTRIAL VALUE CHAIN
+                {t("cap-section-kicker")}
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#002d3b] tracking-tight">
-              Complete Innovation &amp; <br className="hidden sm:inline" />
-              <span className="text-[#009999]">Value Chain</span>
+              {t("cap-section-title1")} <br className="hidden sm:inline" />
+              <span className="text-[#009999]">{t("cap-section-title2")}</span>
             </h2>
             <p className="text-slate-600 text-xs sm:text-sm leading-relaxed pt-1 max-w-2xl">
-              From breakthrough innovation, engineering and manufacturing through to logistics and digital transformation — TAKNISER delivers across the full industrial value chain.
+              {t("cap-section-desc")}
             </p>
           </div>
         </div>
@@ -60,6 +64,9 @@ export default function CapabilitiesSection() {
               {displayCapabilities.map((cap, idx) => {
                 const IconComponent = iconMap[cap.icon] || Compass;
                 const cardImg = capabilityImages[idx] || "/clean_robotics.jpg";
+                const localizedTitle = t(`cap-item-${idx}-title`) || cap.title;
+                const localizedDesc = t(`cap-item-${idx}-desc`) || cap.description;
+
                 return (
                   <div
                     key={cap.title}
@@ -75,12 +82,12 @@ export default function CapabilitiesSection() {
 
                         {/* Title */}
                         <h3 className="text-[13px] sm:text-[14px] font-bold text-[#002230] leading-snug tracking-tight group-hover:text-[#009999] transition-colors pt-0.5">
-                          {cap.title}
+                          {localizedTitle}
                         </h3>
 
                         {/* Description - Full visibility without clipping */}
                         <p className="text-[10.5px] sm:text-[11px] text-slate-500 leading-relaxed">
-                          {cap.description}
+                          {localizedDesc}
                         </p>
                       </div>
                     </div>
@@ -89,7 +96,7 @@ export default function CapabilitiesSection() {
                     <div className="relative w-[110px] sm:w-[130px] md:w-[135px] h-full min-h-[95px] rounded-xl overflow-hidden shrink-0 border border-slate-100 shadow-sm self-stretch">
                       <Image
                         src={cardImg}
-                        alt={cap.title}
+                        alt={localizedTitle}
                         fill
                         sizes="(max-width: 640px) 120px, 150px"
                         className="object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
@@ -135,18 +142,18 @@ export default function CapabilitiesSection() {
                   <div className="flex items-center gap-2">
                     <span className="w-5 h-[2px] bg-[#00cccc] rounded-full inline-block" />
                     <span className="text-[10px] sm:text-[10.5px] font-mono font-bold text-[#00cccc] uppercase tracking-wider">
-                      FROM INNOVATION TO IMPACT
+                      {t("cap-showcase-kicker")}
                     </span>
                   </div>
 
                   <h3 className="text-[17px] sm:text-[19px] font-serif font-bold text-white tracking-tight leading-snug">
-                    Building a Smarter, <br />
-                    <span className="text-[#00cccc]">More Connected</span> <br />
-                    Industrial Future.
+                    {t("cap-showcase-title1")} <br />
+                    <span className="text-[#00cccc]">{t("cap-showcase-title2")}</span> <br />
+                    {t("cap-showcase-title3")}
                   </h3>
 
                   <p className="text-[10.5px] sm:text-[11px] text-slate-200 leading-relaxed border-t border-white/10 pt-2.5 mt-2">
-                    By integrating technology, expertise and global partnerships, TAKNISER creates end-to-end solutions that move industries forward &mdash; responsibly and sustainably.
+                    {t("cap-showcase-desc")}
                   </p>
                 </div>
               </div>

@@ -79,12 +79,8 @@ export default function Footer() {
 
             {/* Main Headline */}
             <div>
-              <h2 className="text-2xl sm:text-3xl lg:text-[38px] leading-[1.14] text-white tracking-tight">
-                <span className="font-serif font-bold text-white">Ready to Work with </span>
-                <br className="hidden sm:inline" />
-                <span className="font-sans font-black text-white tracking-tight uppercase">
-                  TAKNISER?
-                </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-[38px] leading-[1.14] text-white tracking-tight font-serif font-bold">
+                {t("footer-ready")}
               </h2>
             </div>
 
@@ -154,7 +150,7 @@ export default function Footer() {
                     href={`/divisions/${div.slug}`}
                     className="hover:text-[#009999] transition-colors flex items-center gap-1.5"
                   >
-                    <span>{div.title}</span>
+                    <span>{t(`div-${div.slug}-title`) || div.title}</span>
                   </Link>
                 </li>
               ))}
@@ -205,7 +201,7 @@ export default function Footer() {
               <div className={`flex items-center gap-2.5 ${currentLanguage === 'ar' ? 'flex-row-reverse' : ''}`}>
                 <Briefcase className="w-4 h-4 text-[#009999] shrink-0" />
                 <Link href="/contact#careers" className="hover:text-[#009999] transition-colors text-xs">
-                  Opportunities &amp; Careers
+                  {t("footer-careers")}
                 </Link>
               </div>
               <div className={`flex items-center gap-2.5 pt-2 ${currentLanguage === 'ar' ? 'flex-row-reverse' : ''}`}>

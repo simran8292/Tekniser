@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Rocket, Pickaxe, Sprout, HeartPulse, Home, Bot, Globe } from "lucide-react";
 import { BUSINESS_DIVISIONS } from "@/lib/data";
+import { useLanguage } from "@/lib/LanguageContext";
 
 const iconMap: Record<string, React.ElementType> = {
   Rocket, Pickaxe, Sprout, HeartPulse, Home, Bot, Globe,
@@ -18,6 +21,8 @@ const divisionImageMap: Record<string, string> = {
 };
 
 export default function DivisionsGrid() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -26,13 +31,13 @@ export default function DivisionsGrid() {
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#009999] text-[#009999] text-xs font-bold tracking-wider uppercase rounded-none bg-transparent">
             <Globe className="w-3.5 h-3.5 text-[#009999]" />
-            <span>Integrated Business Conglomerate</span>
+            <span>{t("div-kicker")}</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-serif text-[#002d3b] tracking-tight leading-tight">
-            Seven <span className="font-bold text-[#009999]">Core Divisions</span>
+            {t("div-title-prefix")} <span className="font-bold text-[#009999]">{t("div-title-highlight")}</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            From deep-space technology to sustainable agriculture, TAKNISER ONE GLOBE operates across seven transformative industrial sectors — all connected through one integrated global platform.
+            {t("div-subtitle")}
           </p>
         </div>
 
@@ -41,6 +46,9 @@ export default function DivisionsGrid() {
           {BUSINESS_DIVISIONS.map((division) => {
             const IconComponent = iconMap[division.icon] || Globe;
             const bgImage = divisionImageMap[division.slug] || "/platform_space.jpg";
+            const localizedTitle = t(`div-${division.slug}-title`) || division.title;
+            const localizedTagline = t(`div-${division.slug}-tagline`) || division.tagline;
+
             return (
               <Link
                 key={division.id}
@@ -50,7 +58,7 @@ export default function DivisionsGrid() {
                 {/* Background Image */}
                 <Image
                   src={bgImage}
-                  alt={division.title}
+                  alt={localizedTitle}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover object-center group-hover:scale-110 transition-transform duration-700 ease-out"
@@ -72,33 +80,38 @@ export default function DivisionsGrid() {
                   {/* Title & Tagline */}
                   <div className="space-y-1.5">
                     <h3 className="text-xl font-bold tracking-tight text-white leading-tight group-hover:text-teal-300 transition-colors">
-                      {division.title}
+                      {localizedTitle}
                     </h3>
                     <p className="text-xs text-slate-200/90 leading-relaxed line-clamp-3">
-                      {division.tagline}
+                      {localizedTagline}
                     </p>
                   </div>
 
                   {/* Category Tags */}
                   <div className="flex flex-wrap gap-1.5 pt-1">
-                    {division.categories.slice(0, 3).map((cat) => (
-                      <span
-                        key={cat}
-                        className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-white/10 backdrop-blur-md border border-white/15 text-slate-200"
-                      >
-                        {cat}
-                      </span>
-                    ))}
+                    {division.categories.slice(0, 3).map((cat) => {
+                      const catKey = `cat-${cat.toLowerCase().replace(/[^a-z0-9]/g, "-")}`;
+                      const translatedCat = t(catKey);
+                      const displayCat = translatedCat !== catKey ? translatedCat : cat;
+                      return (
+                        <span
+                          key={cat}
+                          className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-white/10 backdrop-blur-md border border-white/15 text-slate-200"
+                        >
+                          {displayCat}
+                        </span>
+                      );
+                    })}
                     {division.categories.length > 3 && (
                       <span className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-white/10 backdrop-blur-md border border-white/15 text-teal-300 font-mono">
-                        +{division.categories.length - 3} more
+                        +{division.categories.length - 3}
                       </span>
                     )}
                   </div>
 
                   {/* Action Link */}
                   <div className="pt-2 border-t border-white/10 flex items-center gap-1.5 text-xs font-bold text-teal-400 group-hover:text-teal-300 transition-colors">
-                    <span>Explore Division</span>
+                    <span>{t("div-card-explore")}</span>
                     <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
@@ -128,14 +141,14 @@ export default function DivisionsGrid() {
               </div>
               <div className="space-y-1">
                 <div className="text-xl font-bold text-white group-hover:text-teal-300 transition-colors">
-                  View All Divisions
+                  {t("div-cta-title")}
                 </div>
                 <div className="text-xs text-slate-300">
-                  Explore the Complete TAKNISER Portfolio
+                  {t("div-cta-desc")}
                 </div>
               </div>
               <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-bold text-teal-300 group-hover:bg-[#009999] group-hover:text-white group-hover:border-[#009999] transition-all">
-                <span>One Globe Platform</span>
+                <span>{t("div-cta-btn")}</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>

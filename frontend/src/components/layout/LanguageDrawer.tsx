@@ -89,10 +89,10 @@ export default function LanguageDrawer({ isOpen, onClose }: LanguageDrawerProps)
                 <div>
                   <div className="flex items-center gap-2">
                     <h2 className="text-sm font-mono font-bold uppercase tracking-wider text-white">
-                      Global Network &amp; Language Selector
+                      {currentLanguage === 'de' ? 'Globales Netzwerk & Sprachauswahl' : 'Global Network & Language Selector'}
                     </h2>
                     <span className="hidden sm:inline-block px-2 py-0.5 bg-[#36b39c]/20 border border-[#36b39c]/40 text-[#36b39c] text-[10px] font-mono font-bold uppercase">
-                      30 RHQs Mentioned
+                      {currentLanguage === 'de' ? '30 Regionale Hauptsitze' : '30 RHQs Mentioned'}
                     </span>
                   </div>
                   <div className="text-xs text-slate-400 mt-0.5 flex items-center gap-1.5">
@@ -116,7 +116,7 @@ export default function LanguageDrawer({ isOpen, onClose }: LanguageDrawerProps)
                   onClick={onClose}
                   className="hidden lg:inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#36b39c] hover:underline px-3 py-1.5 bg-[#001822] border border-slate-800 hover:border-[#36b39c]"
                 >
-                  <span>View Interactive World Map</span>
+                  <span>{t("map-view-interactive")}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
 
@@ -138,6 +138,17 @@ export default function LanguageDrawer({ isOpen, onClose }: LanguageDrawerProps)
               <div className="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0 scrollbar-none">
                 {CONTINENTS.map((continent) => {
                   const isSelected = selectedContinent === continent;
+                  const continentNameMap: Record<string, string> = {
+                    "All": currentLanguage === 'de' ? "Alle" : "All",
+                    "Europe": currentLanguage === 'de' ? "Europa" : "Europe",
+                    "Middle East": currentLanguage === 'de' ? "Mittlerer Osten" : "Middle East",
+                    "Africa": currentLanguage === 'de' ? "Afrika" : "Africa",
+                    "North America": currentLanguage === 'de' ? "Nordamerika" : "North America",
+                    "Latin America": currentLanguage === 'de' ? "Lateinamerika" : "Latin America",
+                    "Asia": currentLanguage === 'de' ? "Asien" : "Asia",
+                    "Oceania": currentLanguage === 'de' ? "Ozeanien" : "Oceania",
+                  };
+                  const displayName = continentNameMap[continent] || continent;
                   const count =
                     continent === "All"
                       ? REGIONS.length
@@ -153,7 +164,7 @@ export default function LanguageDrawer({ isOpen, onClose }: LanguageDrawerProps)
                           : "bg-[#001822] border-slate-800 text-slate-400 hover:text-white hover:border-slate-700"
                       }`}
                     >
-                      {continent}
+                      {displayName}
                       <span className="ml-1 opacity-75">({count})</span>
                     </button>
                   );
@@ -166,7 +177,7 @@ export default function LanguageDrawer({ isOpen, onClose }: LanguageDrawerProps)
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search 30 RHQs or language..."
+                  placeholder={currentLanguage === 'de' ? "30 Hauptsitze oder Sprachen durchsuchen..." : "Search 30 RHQs or language..."}
                   className="w-full bg-[#001822] text-xs text-white placeholder-slate-500 pl-8 pr-3 py-1.5 border border-slate-800 focus:outline-none focus:border-[#36b39c] font-medium"
                 />
                 <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-500" />
@@ -180,10 +191,16 @@ export default function LanguageDrawer({ isOpen, onClose }: LanguageDrawerProps)
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full flex-1">
           <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-800/80 text-xs font-mono text-slate-400">
             <div>
-              Displaying <span className="font-bold text-white">{filteredRegions.length}</span> Official Regional Headquarters &amp; Hubs
+              {currentLanguage === 'de' ? (
+                <>Zeige <span className="font-bold text-white">{filteredRegions.length}</span> offizielle regionale Hauptsitze &amp; Hubs</>
+              ) : (
+                <>Displaying <span className="font-bold text-white">{filteredRegions.length}</span> Official Regional Headquarters &amp; Hubs</>
+              )}
             </div>
             <div className="hidden sm:block text-[11px] text-slate-500">
-              Click any language button to switch locale &amp; regional view
+              {currentLanguage === 'de'
+                ? "Klicken Sie auf eine Sprachschaltfläche, um Sprache und Region anzupassen"
+                : "Click any language button to switch locale & regional view"}
             </div>
           </div>
 
@@ -244,7 +261,7 @@ export default function LanguageDrawer({ isOpen, onClose }: LanguageDrawerProps)
                   {/* Languages Selector Row */}
                   <div className="pt-3 mt-3 border-t border-slate-800/60">
                     <div className="text-[10px] font-mono text-slate-500 mb-1.5 uppercase tracking-wider">
-                      Available Languages:
+                      {currentLanguage === 'de' ? 'Verfügbare Sprachen:' : 'Available Languages:'}
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {region.languages.map((lang) => {
@@ -275,8 +292,12 @@ export default function LanguageDrawer({ isOpen, onClose }: LanguageDrawerProps)
           {filteredRegions.length === 0 && (
             <div className="text-center py-16 bg-[#001422] border border-slate-800 space-y-3">
               <Globe className="w-8 h-8 text-slate-600 mx-auto" />
-              <div className="text-sm font-bold text-white">No Regional Headquarters match your filter</div>
-              <p className="text-xs text-slate-400">Try clearing the search query or selecting "All".</p>
+              <div className="text-sm font-bold text-white">
+                {currentLanguage === 'de' ? 'Keine regionalen Hauptsitze entsprechen Ihrem Filter' : 'No Regional Headquarters match your filter'}
+              </div>
+              <p className="text-xs text-slate-400">
+                {currentLanguage === 'de' ? 'Versuchen Sie, die Suche zu löschen oder „Alle“ auszuwählen.' : 'Try clearing the search query or selecting "All".'}
+              </p>
               <button
                 onClick={() => {
                   setSelectedContinent("All");
@@ -284,7 +305,7 @@ export default function LanguageDrawer({ isOpen, onClose }: LanguageDrawerProps)
                 }}
                 className="mt-2 px-4 py-1.5 bg-[#36b39c] text-[#000e1a] text-xs font-mono font-bold uppercase"
               >
-                Reset Filters
+                {currentLanguage === 'de' ? 'Filter zurücksetzen' : 'Reset Filters'}
               </button>
             </div>
           )}
@@ -296,7 +317,9 @@ export default function LanguageDrawer({ isOpen, onClose }: LanguageDrawerProps)
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span>
-                TAKNISER ONE GLOBE &bull; 30 Regional Headquarters &bull; 1 Global Engineering HQ &bull; Active in 190+ Countries
+                {currentLanguage === 'de'
+                  ? 'TAKNISER ONE GLOBE • 30 Regionale Hauptsitze • 1 Globaler Engineering-Hauptsitz • Aktiv in 190+ Ländern'
+                  : 'TAKNISER ONE GLOBE • 30 Regional Headquarters • 1 Global Engineering HQ • Active in 190+ Countries'}
               </span>
             </div>
             <Link
@@ -304,7 +327,11 @@ export default function LanguageDrawer({ isOpen, onClose }: LanguageDrawerProps)
               onClick={onClose}
               className="text-[#36b39c] hover:underline font-bold flex items-center gap-1"
             >
-              <span>Explore Complete 30 RHQ Network Directory</span>
+              <span>
+                {currentLanguage === 'de'
+                  ? 'Vollständiges Verzeichnis aller 30 regionalen Hauptsitze erkunden'
+                  : 'Explore Complete 30 RHQ Network Directory'}
+              </span>
               <ArrowRight className="w-3 h-3" />
             </Link>
           </div>
