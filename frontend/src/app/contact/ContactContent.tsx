@@ -82,7 +82,7 @@ export default function ContactContent() {
       <section className="relative py-24 lg:py-32 bg-[#001822] text-white overflow-hidden border-b border-slate-800">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/clean_corporate_hq_branded.jpg"
+            src="/officeimage2.png"
             alt="TAKNISER Corporate Operations"
             fill
             priority

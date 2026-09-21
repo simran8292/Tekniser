@@ -39,7 +39,7 @@ const TIMELINE_DE = [
   {
     period: "Frühes 21. Jahrhundert",
     title: "Diversifizierter globaler Konzern",
-    image: "/clean_corporate_hq_branded.jpg",
+    image: "/officeimage2.png",
     imageAlt: "Moderne Konzernzentrale und Technologie-Betriebszentrum",
     description:
       "Im neuen Jahrtausend baute TAKNISER ein vernetztes globales Betriebsmodell auf. Durch strategische Partnerschaften, weltweite Beschaffung und Markterschließung entstand ein umfassendes Netzwerk aus regionalen Niederlassungen.",
@@ -82,7 +82,7 @@ const TIMELINE_EN = [
   {
     period: "Early 21st Century",
     title: "Diversified Global Conglomerate",
-    image: "/clean_corporate_hq_branded.jpg",
+    image: "/officeimage2.png",
     imageAlt: "Modern global conglomerate headquarters and technology operations complex",
     description:
       "Entering the new millennium, TAKNISER expanded beyond individual industries and markets to develop a more diversified global operating model. Through strategic partnerships, acquisitions, international sourcing, and market development, TAKNISER established a growing network of regional operations and international relationships — bringing engineering, manufacturing, trade, logistics, technology, and commercial expertise together within one increasingly connected organization.",
@@ -125,7 +125,7 @@ const TIMELINE_AR = [
   {
     period: "أوائل القرن الحادي والعشرين",
     title: "تكتل عالمي متنوع",
-    image: "/clean_corporate_hq_branded.jpg",
+    image: "/officeimage2.png",
     imageAlt: "مقر رئيسي متطور ومجمع عمليات تكنولوجية لتكتل عالمي",
     description:
       "مع مطلع الألفية الجديدة، تطورت تاكنيسر لتشكل نموذج عمليات عالمي متنوع من خلال الشراكات الاستراتيجية والتوريد الدولي وتطوير الأسواق، موحدة الهندسة والتصنيع والتجارة واللوجستيات في منظومة متكاملة.",

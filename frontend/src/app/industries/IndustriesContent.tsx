@@ -211,7 +211,7 @@ const INDUSTRIES_DATA: Record<string, {
         tagline: "Ein besseres Morgen gestalten.",
         desc: "Innovationen in Bildung, Konnektivität, Mobilität, Sicherheit, Infrastruktur und Lebensqualität.",
         icon: Building2,
-        image: "/about_conglomerate_hq.jpg",
+        image: "/officeimage2.png",
       },
       {
         code: "12",
@@ -436,7 +436,7 @@ const INDUSTRIES_DATA: Record<string, {
         tagline: "Design a better tomorrow.",
         desc: "Innovation across education, connectivity, mobility, safety, infrastructure and quality of life.",
         icon: Building2,
-        image: "/about_conglomerate_hq.jpg",
+        image: "/officeimage2.png",
       },
       {
         code: "12",
@@ -661,7 +661,7 @@ const INDUSTRIES_DATA: Record<string, {
         tagline: "تصميم غد أفضل وأرقى.",
         desc: "الابتكار في التعليم، والاتصالات، والتنقل، والسلامة، وجودة الحياة العامة.",
         icon: Building2,
-        image: "/about_conglomerate_hq.jpg",
+        image: "/officeimage2.png",
       },
       {
         code: "12",
