@@ -160,7 +160,7 @@ const iconList = [FileCheck, Shield, Award, Scale, Landmark];
 
 export default function TermsContent() {
   const { currentLanguage } = useLanguage();
-  const data = TERMS_DATA[currentLanguage] || TERMS_DATA["de"] || TERMS_DATA["en"];
+  const data = TERMS_DATA[currentLanguage] || TERMS_DATA["en"] || TERMS_DATA["de"];
 
   return (
     <div className={`pt-24 min-h-screen bg-[#f8fafc] text-slate-800 font-sans antialiased selection:bg-[#009999] selection:text-white ${currentLanguage === 'ar' ? 'rtl text-right' : 'text-left'}`}>

@@ -139,7 +139,7 @@ const CONTENT = {
 
 export default function ResponsibilityContent() {
   const { currentLanguage } = useLanguage();
-  const c = CONTENT[currentLanguage as "de" | "en" | "ar"] || CONTENT.de;
+  const c = CONTENT[currentLanguage as "de" | "en" | "ar"] || CONTENT.en;
   const isAr = currentLanguage === "ar";
 
   return (

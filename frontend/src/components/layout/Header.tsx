@@ -11,10 +11,7 @@ import LanguageDrawer from "./LanguageDrawer";
 import { AnimatePresence } from "framer-motion";
 
 export default function Header() {
-  const { currentLanguage, currentRegion, t } = useLanguage();
-  const currentRegionLabel = currentRegion === "global" 
-    ? t("worldwide-network") 
-    : (REGIONS.find((r) => r.id === currentRegion)?.country || currentRegion);
+  const { currentLanguage, currentRegion, setLanguage, t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDivisionsOpen, setIsDivisionsOpen] = useState(false);
@@ -38,6 +35,8 @@ export default function Header() {
     { name: t("capabilities"), href: "/capabilities" },
     { name: t("industries"), href: "/industries" },
     { name: t("responsibility"), href: "/responsibility", hasDropdown: true, dropdownType: "responsibility" },
+    { name: t("careers"), href: "/careers" },
+    { name: t("contact"), href: "/contact" },
   ];
 
   return (
@@ -49,50 +48,106 @@ export default function Header() {
         <div className="hidden lg:block">
           {/* Top Deck: Brand Logo & Utility Links */}
           <div
-            className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? "py-1.5" : "py-3"
-              }`}
+            className={`flex items-center justify-between transition-all duration-300 ${
+              isScrolled ? "py-1.5" : "py-3"
+            }`}
           >
             {/* Logo */}
             <Link href="/" className="flex items-center group">
-              <span className={`font-sans font-black tracking-[0.04em] text-[#36b39c] uppercase select-none transition-all duration-300 ${isScrolled ? "text-2xl" : "text-[2rem] leading-none"
-                }`}>
+              <span
+                className={`font-sans font-black tracking-[0.04em] text-[#36b39c] uppercase select-none transition-all duration-300 ${
+                  isScrolled ? "text-2xl" : "text-[2rem] leading-none"
+                }`}
+              >
                 TAKNISER
               </span>
             </Link>
 
             {/* Utility navigation */}
-            <div className="flex items-center gap-6 text-[10.5px] font-bold uppercase tracking-wider text-slate-300">
-              <button
-                onClick={() => setIsLanguageDrawerOpen(true)}
-                className="flex items-center gap-1.5 hover:text-[#36b39c] transition-colors focus:outline-none cursor-pointer"
+            <div className="flex items-center gap-5 text-[10.5px] font-semibold uppercase tracking-wider text-slate-300">
+              {/* Global Network */}
+              <Link
+                href="/global-network"
+                className="flex items-center gap-1.5 hover:text-[#36b39c] transition-colors focus:outline-none"
               >
                 <Globe className="w-3.5 h-3.5 text-[#36b39c]" />
-                <span className="uppercase">{currentRegionLabel} | {currentLanguage.toUpperCase()}</span>
-              </button>
+                <span className="uppercase">{t("nav-global-network")}</span>
+              </Link>
+
+              <span className="text-slate-700 select-none">|</span>
+
+              {/* Language Switcher & Selector (Language / Sprache & EN | DE) */}
+              <div className="flex items-center gap-2">
+                {/* Quick EN | DE Toggle */}
+                <div className="flex items-center gap-1 text-[11px] font-bold">
+                  <button
+                    type="button"
+                    onClick={() => setLanguage("en")}
+                    className={`px-1.5 py-0.5 transition-all cursor-pointer ${
+                      currentLanguage === "en"
+                        ? "text-[#36b39c] border-b-2 border-[#36b39c]"
+                        : "text-slate-400 hover:text-white"
+                    }`}
+                    title="English"
+                  >
+                    EN
+                  </button>
+                  <span className="text-slate-600 select-none font-normal">|</span>
+                  <button
+                    type="button"
+                    onClick={() => setLanguage("de")}
+                    className={`px-1.5 py-0.5 transition-all cursor-pointer ${
+                      currentLanguage === "de"
+                        ? "text-[#36b39c] border-b-2 border-[#36b39c]"
+                        : "text-slate-400 hover:text-white"
+                    }`}
+                    title="Deutsch"
+                  >
+                    DE
+                  </button>
+                </div>
+
+                {/* Language / Sprache Drawer Trigger */}
+                <button
+                  type="button"
+                  onClick={() => setIsLanguageDrawerOpen(true)}
+                  className="flex items-center gap-1 text-[10.5px] font-medium text-slate-400 hover:text-[#36b39c] transition-colors focus:outline-none cursor-pointer pl-1.5 border-l border-slate-800"
+                  title="All Languages & Regional Hubs"
+                >
+                  <span>{t("language-label")}</span>
+                  <ChevronDown className="w-3 h-3 text-slate-500 hover:text-[#36b39c]" />
+                </button>
+              </div>
+
+              <span className="text-slate-700 select-none">|</span>
 
               {/* Support & Community Dropdown */}
               <div className="relative group">
                 <button className="flex items-center gap-1 hover:text-[#36b39c] transition-colors focus:outline-none">
                   <span>{t("support-community")}</span>
-                  <ChevronDown className="w-3.5 h-3.5" />
+                  <ChevronDown className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#36b39c] transition-transform duration-200 group-hover:rotate-180" />
                 </button>
-                <div className={`absolute top-full w-48 pt-2 hidden group-hover:block z-50 ${currentLanguage === 'ar' ? 'left-0' : 'right-0'}`}>
+                <div
+                  className={`absolute top-full w-48 pt-2 hidden group-hover:block z-50 ${
+                    currentLanguage === "ar" ? "left-0" : "right-0"
+                  }`}
+                >
                   <div className="bg-[#001822] border border-slate-800 py-1.5 text-slate-300 text-xs shadow-xl">
                     <Link
                       href="/contact"
-                      className="block px-4 py-2 hover:bg-[#002d3b] hover:text-[#36b39c] transition-colors"
+                      className="block px-4 py-2 hover:bg-[#002d3b] hover:text-[#36b39c] transition-colors font-medium"
                     >
                       {t("contact-hq")}
                     </Link>
                     <Link
                       href="/global-network"
-                      className="block px-4 py-2 hover:bg-[#002d3b] hover:text-[#36b39c] transition-colors"
+                      className="block px-4 py-2 hover:bg-[#002d3b] hover:text-[#36b39c] transition-colors font-medium"
                     >
                       {t("global-offices")}
                     </Link>
                     <Link
                       href="/about"
-                      className="block px-4 py-2 hover:bg-[#002d3b] hover:text-[#36b39c] transition-colors"
+                      className="block px-4 py-2 hover:bg-[#002d3b] hover:text-[#36b39c] transition-colors font-medium"
                     >
                       {t("heritage-about")}
                     </Link>
@@ -100,14 +155,14 @@ export default function Header() {
                 </div>
               </div>
 
-
+              <span className="text-slate-700 select-none">|</span>
 
               {/* Admin login */}
               <Link
                 href="/admin/login"
                 className="flex items-center gap-1.5 hover:text-[#36b39c] transition-colors"
               >
-                <User className="w-3.5 h-3.5" />
+                <User className="w-3.5 h-3.5 text-slate-400" />
                 <span>{t("log-in")}</span>
               </Link>
             </div>
@@ -295,22 +350,75 @@ export default function Header() {
 
           {/* Mobile Utilities */}
           <div className="grid grid-cols-2 gap-2 pt-1.5 text-xs text-slate-300 font-semibold uppercase tracking-wider">
-            <button
-              onClick={() => {
-                setIsMobileMenuOpen(false);
-                setIsLanguageDrawerOpen(true);
-              }}
-              className="flex items-center justify-center gap-1.5 py-3 border border-slate-800 bg-[#001822] hover:text-[#36b39c] transition-colors rounded-none cursor-pointer"
+            {/* Global Network */}
+            <Link
+              href="/global-network"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex items-center justify-center gap-1.5 py-3 border border-slate-800 bg-[#001822] hover:text-[#36b39c] transition-colors rounded-none"
             >
               <Globe className="w-4 h-4 text-[#36b39c]" />
-              <span className="uppercase">{currentRegionLabel} | {currentLanguage.toUpperCase()}</span>
-            </button>
+              <span>{t("nav-global-network")}</span>
+            </Link>
+
+            {/* Language Switcher & Drawer */}
+            <div className="flex items-center justify-center gap-2 py-3 border border-slate-800 bg-[#001822] rounded-none">
+              <button
+                type="button"
+                onClick={() => {
+                  setLanguage("en");
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`px-1.5 py-0.5 font-bold ${
+                  currentLanguage === "en"
+                    ? "text-[#36b39c] border-b border-[#36b39c]"
+                    : "text-slate-400"
+                }`}
+              >
+                EN
+              </button>
+              <span className="text-slate-600">|</span>
+              <button
+                type="button"
+                onClick={() => {
+                  setLanguage("de");
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`px-1.5 py-0.5 font-bold ${
+                  currentLanguage === "de"
+                    ? "text-[#36b39c] border-b border-[#36b39c]"
+                    : "text-slate-400"
+                }`}
+              >
+                DE
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  setIsLanguageDrawerOpen(true);
+                }}
+                className="text-slate-400 hover:text-[#36b39c] pl-1 border-l border-slate-800"
+                title="All Languages"
+              >
+                <ChevronDown className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-2 pt-1 text-xs text-slate-300 font-semibold uppercase tracking-wider">
+            <Link
+              href="/contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex items-center justify-center gap-1.5 py-2.5 border border-slate-800 bg-[#001822] hover:text-[#36b39c] transition-colors rounded-none text-center"
+            >
+              <span>{t("contact-hq")}</span>
+            </Link>
             <Link
               href="/admin/login"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="flex items-center justify-center gap-1.5 py-3 border border-slate-800 bg-[#001822] hover:text-[#36b39c] transition-colors rounded-none text-center"
+              className="flex items-center justify-center gap-1.5 py-2.5 border border-slate-800 bg-[#001822] hover:text-[#36b39c] transition-colors rounded-none text-center"
             >
-              <User className="w-4 h-4" />
+              <User className="w-4 h-4 text-slate-400" />
               <span>{t("admin-login")}</span>
             </Link>
           </div>

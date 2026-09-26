@@ -582,8 +582,8 @@ export const GLOBAL_NETWORK_LOCATIONS: GlobalLocationData[] = [
 
 export const REGIONAL_LEADERSHIP: RegionalLeader[] = [
   {
-    name: "MOHAMMED AMMAR",
-    role: "Business Head — Middle East & Africa",
+    name: "Regional Directorate — Middle East & Africa",
+    role: "Commercial Operations & Business Development",
     region: "Middle East & Africa (MEA)",
     focus: "Regional Commercial Operations, EPC Partnerships & Supply Chain Expansion",
     coverage: "UAE, Saudi Arabia, South Africa, Kenya, Ghana & Levant",

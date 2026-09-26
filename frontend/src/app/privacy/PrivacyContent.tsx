@@ -184,7 +184,7 @@ const iconList = [Building2, Database, FileText, Clock, ShieldCheck, Mail];
 
 export default function PrivacyContent() {
   const { currentLanguage } = useLanguage();
-  const data = PRIVACY_DATA[currentLanguage] || PRIVACY_DATA["de"] || PRIVACY_DATA["en"];
+  const data = PRIVACY_DATA[currentLanguage] || PRIVACY_DATA["en"] || PRIVACY_DATA["de"];
 
   return (
     <div className={`pt-24 min-h-screen bg-[#f8fafc] text-slate-800 font-sans antialiased selection:bg-[#009999] selection:text-white ${currentLanguage === 'ar' ? 'rtl text-right' : 'text-left'}`}>

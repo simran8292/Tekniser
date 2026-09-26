@@ -33,11 +33,11 @@ export default function Footer() {
         {/* Background Image on Right Side */}
         <div className="absolute inset-0 lg:left-[36%] lg:inset-y-0 z-0">
           <Image
-            src="/cta_engineers_port.jpg"
-            alt="TAKNISER Global Industrial Operations"
+            src="/takniser_workstation_branded_v2.jpg"
+            alt="TAKNISER Modern Engineering Workstation & Executive Desk"
             fill
             sizes="(max-width: 1024px) 100vw, 64vw"
-            className="object-cover object-[52%_center] lg:object-[46%_22%] filter contrast-[1.04] brightness-[0.98]"
+            className="object-cover object-[75%_center] lg:object-[72%_45%] filter contrast-[1.02] brightness-[0.98]"
             priority
           />
           {/* Gradient on mobile/tablet so text is 100% readable */}
@@ -200,7 +200,7 @@ export default function Footer() {
               </div>
               <div className={`flex items-center gap-2.5 ${currentLanguage === 'ar' ? 'flex-row-reverse' : ''}`}>
                 <Briefcase className="w-4 h-4 text-[#009999] shrink-0" />
-                <Link href="/contact#careers" className="hover:text-[#009999] transition-colors text-xs">
+                <Link href="/careers" className="hover:text-[#009999] transition-colors text-xs">
                   {t("footer-careers")}
                 </Link>
               </div>

@@ -205,8 +205,6 @@ export const NETWORK_HUBS: NetworkHubItem[] = [
     role: "West Africa Regional Operations & Strategic Trade Hub",
     flag: "🇬🇭",
     type: "RHQ",
-    contactPerson: "Mohammed Ammar",
-    contactRole: "Business Head - MEA",
   },
   {
     name: "TAKNISER MENARD KENYA LIMITED",
@@ -218,8 +216,6 @@ export const NETWORK_HUBS: NetworkHubItem[] = [
     role: "East & Central Africa Regional Operations & AgTech Hub",
     flag: "🇰🇪",
     type: "RHQ",
-    contactPerson: "Mohammed Ammar",
-    contactRole: "Business Head - MEA",
   },
   {
     name: "TAKNISER RATCLIFF SAVANNA (PTY) LIMITED",
@@ -231,8 +227,6 @@ export const NETWORK_HUBS: NetworkHubItem[] = [
     role: "Southern Africa Industrial Equipment & Mining Supply Hub",
     flag: "🇿🇦",
     type: "RHQ",
-    contactPerson: "Mohammed Ammar",
-    contactRole: "Business Head - MEA",
   },
 
   // ─── MIDDLE EAST ───
@@ -246,8 +240,6 @@ export const NETWORK_HUBS: NetworkHubItem[] = [
     role: "Middle East & Regional Commercial Operations Headquarters",
     flag: "🇦🇪",
     type: "RHQ",
-    contactPerson: "Mohammed Ammar",
-    contactRole: "Business Head - MEA",
   },
   {
     name: "TAKNISER HOFFMANN ARABIA LLC.",
@@ -259,8 +251,6 @@ export const NETWORK_HUBS: NetworkHubItem[] = [
     role: "Infrastructure, EPC & Energy Industrial Supply Operations",
     flag: "🇸🇦",
     type: "RHQ",
-    contactPerson: "Mohammed Ammar",
-    contactRole: "Business Head - MEA",
   },
   {
     name: "TAKNISER SARL E&ET FZCO",
@@ -272,8 +262,6 @@ export const NETWORK_HUBS: NetworkHubItem[] = [
     role: "Primary Global Distribution & Free Zone Logistics Center",
     flag: "🇦🇪",
     type: "LOGISTICS HUB",
-    contactPerson: "Mohammed Ammar",
-    contactRole: "Business Head - MEA",
   },
 
   // ─── ASIA ───

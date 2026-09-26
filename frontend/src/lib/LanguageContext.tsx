@@ -520,6 +520,7 @@ interface LanguageContextType {
   currentLanguage: LanguageCode;
   currentRegion: RegionId;
   changeLanguageAndRegion: (lang: LanguageCode, region: RegionId) => void;
+  setLanguage: (lang: LanguageCode) => void;
   t: (key: string) => string;
 }
 
@@ -529,7 +530,9 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
   de: {
     // Utilities & Top bar
-    "worldwide-network": "Weltweites Netzwerk",
+    "nav-global-network": "Globales Netzwerk",
+    "worldwide-network": "Globales Netzwerk",
+    "language-label": "Sprache",
     "you-are-in": "Sie befinden sich in",
     "global-offices": "Weltweite Niederlassungen",
     "heritage-about": "Tradition & Über uns",
@@ -550,6 +553,8 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "capabilities": "INNOVATION",
     "industries": "T1G AUSWIRKUNGEN",
     "responsibility": "VERANTWORTUNG",
+    "careers": "KARRIERE",
+    "contact": "KONTAKT",
 
     // About Section
     "about-takniser": "Über TAKNISER",
@@ -593,7 +598,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "showcase-vision-desc": "Entdecken Sie unsere 100-Jahre-Vision",
 
     // Footer Contact CTA
-    "footer-ready": "Bereit für die Zusammenarbeit mit TAKNISER?",
+    "footer-ready": "Bauen Sie Ihre Zukunft mit TAKNISER",
     "footer-team-desc": "Unser weltweites Team aus Industriespezialisten, Ingenieuren und Beschaffungsexperten steht bereit, integrierte Lösungen für Ihre Anforderungen zu liefern.",
     "footer-contact-team": "Unser Team kontaktieren",
     "footer-corporate-tagline": "Über 100 Jahre deutsche Ingenieurstradition. Die Zukunft der globalen Industrie gestalten.",
@@ -773,7 +778,9 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
   },
   en: {
     // Utilities & Top bar
-    "worldwide-network": "Worldwide Network",
+    "nav-global-network": "Global Network",
+    "worldwide-network": "Global Network",
+    "language-label": "Language",
     "you-are-in": "You are in",
     "global-offices": "Global Offices",
     "heritage-about": "Heritage & About",
@@ -794,6 +801,8 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "capabilities": "INNOVATION",
     "industries": "T1G IMPACTS",
     "responsibility": "RESPONSIBILITY",
+    "careers": "CAREERS",
+    "contact": "CONTACT",
 
     // About Section
     "about-takniser": "About TAKNISER",
@@ -837,7 +846,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "showcase-vision-desc": "Discover our 100-Year Century Vision",
 
     // Footer Contact CTA
-    "footer-ready": "Ready to work with TAKNISER?",
+    "footer-ready": "Build Your Future with TAKNISER",
     "footer-team-desc": "Our global team of industrial specialists, engineers, and procurement experts are ready to deliver integrated solutions for your business needs.",
     "footer-contact-team": "Contact Our Team",
     "footer-corporate-tagline": "100+ Years of German Engineering Heritage. Building the Future of Global Industry.",
@@ -1017,7 +1026,9 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
   },
   ar: {
     // Utilities & Top bar
-    "worldwide-network": "شبكة عالمية",
+    "nav-global-network": "الشبكة العالمية",
+    "worldwide-network": "الشبكة العالمية",
+    "language-label": "اللغة",
     "you-are-in": "أنت في",
     "global-offices": "المكاتب العالمية",
     "heritage-about": "التراث ونبذة عنا",
@@ -1035,9 +1046,11 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "about-us": "من نحن",
     "vision-2046": "رؤية 2046",
     "what-we-do": "ماذا نعمل",
-    "capabilities": "القدرات",
-    "industries": "الصناعات",
+    "capabilities": "الابتكار",
+    "industries": "الأثر",
     "responsibility": "المسؤولية",
+    "careers": "الوظائف",
+    "contact": "اتصل بنا",
 
     // About Section
     "about-takniser": "حول تاكنيسر",
@@ -1081,7 +1094,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "showcase-vision-desc": "اكتشف رؤيتنا المئوية الممتدة لمئة عام",
 
     // Footer Contact CTA
-    "footer-ready": "مستعد للعمل مع تاكنيسر؟",
+    "footer-ready": "ابنِ مستقبلك مع تاكنيسر",
     "footer-team-desc": "فريقنا العالمي من المتخصصين الصناعيين والمهندسين وخبراء المشتريات على أهبة الاستعداد لتقديم حلول متكاملة لمتطلبات عملك.",
     "footer-contact-team": "اتصل بفريقنا",
     "footer-corporate-tagline": "أكثر من 100 عام من التميز الهندسي الألماني. بناء مستقبل الصناعة العالمية.",
@@ -1262,6 +1275,9 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
   },
   zh: {
     // Utilities & Top bar
+    "nav-global-network": "全球网络",
+    "worldwide-network": "全球网络",
+    "language-label": "语言",
     "you-are-in": "您当前处于",
     "global-offices": "全球办事处",
     "heritage-about": "历史与关于我们",
@@ -1278,9 +1294,11 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "about-us": "关于我们",
     "vision-2046": "愿景 2046",
     "what-we-do": "业务范围",
-    "capabilities": "集团能力",
-    "industries": "服务行业",
+    "capabilities": "创新能力",
+    "industries": "全球影响",
     "responsibility": "企业责任",
+    "careers": "招贤纳士",
+    "contact": "联系我们",
 
     // About Section
     "about-takniser": "关于 TAKNISER",
@@ -1324,7 +1342,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "showcase-vision-desc": "了解我们的百年世纪愿景",
 
     // Footer Contact CTA
-    "footer-ready": "准备好与 TAKNISER 合作了吗？",
+    "footer-ready": "与 TAKNISER 共筑未来",
     "footer-team-desc": "我们的全球工业专家、工程师和采购专家团队随时准备为您的业务需求提供集成解决方案。",
     "footer-contact-team": "联系我们的团队",
     "footer-corporate-tagline": "百年德国工程底蕴。塑造全球工业未来。",
@@ -1349,6 +1367,9 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
   },
   pl: {
     // Utilities & Top bar
+    "nav-global-network": "Globalna Sieć",
+    "worldwide-network": "Globalna Sieć",
+    "language-label": "Język",
     "you-are-in": "Jesteś w",
     "global-offices": "Biura Globalne",
     "heritage-about": "Dziedzictwo i O nas",
@@ -1365,9 +1386,11 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "about-us": "O nas",
     "vision-2046": "Wizja 2046",
     "what-we-do": "CO ROBIMY",
-    "capabilities": "Możliwości",
-    "industries": "Branże",
+    "capabilities": "Innowacje",
+    "industries": "Wpływ",
     "responsibility": "ODPOWIEDZIALNOŚĆ",
+    "careers": "KARIERA",
+    "contact": "KONTAKT",
 
     // About Section
     "about-takniser": "O TAKNISER",
@@ -1411,7 +1434,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "showcase-vision-desc": "Odkryj naszą 100-letnią wizję stulecia",
 
     // Footer Contact CTA
-    "footer-ready": "Gotowy na współpracę z TAKNISER?",
+    "footer-ready": "Buduj swoją przyszłość z TAKNISER",
     "footer-team-desc": "Nasz globalny zespół specjalistów przemysłowych, inżynierów i ekspertów ds. zakupów jest gotowy dostarczyć zintegrowane rozwiązania dla Twoich potrzeb biznesowych.",
     "footer-contact-team": "Skontaktuj się z naszym zespołem",
     "footer-corporate-tagline": "Ponad 100 lat niemieckiego dziedzictwa inżynieryjnego. Budowanie przyszłości globalnego przemysłu.",
@@ -1436,6 +1459,9 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
   },
   ja: {
     // Utilities & Top bar
+    "nav-global-network": "グローバルネットワーク",
+    "worldwide-network": "グローバルネットワーク",
+    "language-label": "言語",
     "you-are-in": "現在の地域:",
     "global-offices": "グローバルオフィス",
     "heritage-about": "沿革と会社概要",
@@ -1452,9 +1478,11 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "about-us": "会社概要",
     "vision-2046": "ビジョン 2046",
     "what-we-do": "事業案内",
-    "capabilities": "事業機能",
-    "industries": "サービス産業",
+    "capabilities": "イノベーション",
+    "industries": "インパクト",
     "responsibility": "社会的責任",
+    "careers": "採用情報",
+    "contact": "お問い合わせ",
 
     // About Section
     "about-takniser": "TAKNISERについて",
@@ -1498,7 +1526,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "showcase-vision-desc": "当社の100年ビジョンを発見",
 
     // Footer Contact CTA
-    "footer-ready": "TAKNISERと協業する準備はできていますか？",
+    "footer-ready": "TAKNISERと共に未来を築く",
     "footer-team-desc": "当社の産業スペシャリスト、エンジニア、調達専門家のグローバルチームが、お客様のビジネスニーズに合わせた統合ソリューションを提供する準備を整えています。",
     "footer-contact-team": "チームにお問い合わせ",
     "footer-corporate-tagline": "100年以上のドイツエンジニアリングの伝統。グローバル産業の未来を築く。",
@@ -1523,6 +1551,9 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
   },
   ko: {
     // Utilities & Top bar
+    "nav-global-network": "글로벌 네트워크",
+    "worldwide-network": "글로벌 네트워크",
+    "language-label": "언어",
     "you-are-in": "현재 위치:",
     "global-offices": "글로벌 사무소",
     "heritage-about": "회사 소개 및 연혁",
@@ -1539,9 +1570,11 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "about-us": "회사 소개",
     "vision-2046": "비전 2046",
     "what-we-do": "주요 사업",
-    "capabilities": "핵심 역량",
-    "industries": "서비스 산업",
+    "capabilities": "혁신 역량",
+    "industries": "글로벌 영향",
     "responsibility": "사회적 책임",
+    "careers": "채용정보",
+    "contact": "문의하기",
 
     // About Section
     "about-takniser": "TAKNISER 소개",
@@ -1585,7 +1618,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "showcase-vision-desc": "우리의 100년 비전을 발견하세요",
 
     // Footer Contact CTA
-    "footer-ready": "TAKNISER와 함께 일할 준비가 되셨습니까?",
+    "footer-ready": "TAKNISER와 함께 미래를 구축하세요",
     "footer-team-desc": "당사의 글로벌 산업 전문가, 엔지니어 및 조달 전문가 팀은 귀사의 비즈니스 요구에 부합하는 통합 솔루션을 제공할 준비가 되어 있습니다.",
     "footer-contact-team": "우리 팀에 문의하기",
     "footer-corporate-tagline": "100년 이상의 독일 엔지니어링 우수성. 글로벌 산업의 미래를 건설하다.",
@@ -1611,7 +1644,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
 };
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [currentLanguage, setCurrentLanguage] = useState<LanguageCode>("de");
+  const [currentLanguage, setCurrentLanguage] = useState<LanguageCode>("en");
   const [currentRegion, setCurrentRegion] = useState<RegionId>("global");
 
   // Load language settings on mount
@@ -1623,9 +1656,9 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     if (userSelected === "true" && savedLang && DICTIONARY[savedLang]) {
       setCurrentLanguage(savedLang);
     } else {
-      // Default to German when website opens
-      setCurrentLanguage("de");
-      localStorage.setItem("takniser_lang", "de");
+      // Default to English as master website language
+      setCurrentLanguage("en");
+      localStorage.setItem("takniser_lang", "en");
     }
     if (savedRegion) {
       setCurrentRegion(savedRegion);
@@ -1654,8 +1687,14 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     localStorage.setItem("takniser_user_selected_lang", "true");
   };
 
+  const setLanguage = (lang: LanguageCode) => {
+    setCurrentLanguage(lang);
+    localStorage.setItem("takniser_lang", lang);
+    localStorage.setItem("takniser_user_selected_lang", "true");
+  };
+
   const t = (key: string): string => {
-    const translation = DICTIONARY[currentLanguage]?.[key] || DICTIONARY["de"]?.[key] || DICTIONARY["en"]?.[key] || key;
+    const translation = DICTIONARY[currentLanguage]?.[key] || DICTIONARY["en"]?.[key] || DICTIONARY["de"]?.[key] || key;
     return translation;
   };
 
@@ -1665,6 +1704,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         currentLanguage,
         currentRegion,
         changeLanguageAndRegion,
+        setLanguage,
         t,
       }}
     >

@@ -201,20 +201,20 @@ export default function ContactContent() {
                     </div>
                   </div>
 
-                  {/* Regional Leadership */}
+                  {/* Regional Directorate Channel */}
                   <div className="flex items-start gap-4 pt-4 border-t border-slate-100">
                     <div className="p-2.5 bg-[#009999] text-white shrink-0">
-                      <UserCheck className="w-5 h-5" />
+                      <Mail className="w-5 h-5" />
                     </div>
                     <div className="space-y-0.5">
                       <div className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">
-                        {isDe ? "Regionale Führung (MEA)" : isAr ? "القيادة الإقليمية (الشرق الأوسط وأفريقيا)" : "Regional Leadership (MEA)"}
+                        {isDe ? "Regionale Direktionskanäle" : isAr ? "قنوات الإدارة الإقليمية" : "Regional Directorate Channels"}
                       </div>
                       <div className="font-bold text-[#002d3b] text-base">
-                        MOHAMMED AMMAR
+                        {isDe ? "Naher Osten & Afrika Direktion" : isAr ? "إدارة الشرق الأوسط وأفريقيا" : "Middle East & Africa Directorate"}
                       </div>
                       <div className="text-slate-600 font-medium text-xs sm:text-sm">
-                        {isDe ? "Leiter Geschäftsentwicklung — Naher Osten & Afrika" : isAr ? "رئيس قطاع الأعمال — الشرق الأوسط وأفريقيا" : "Business Head — Middle East & Africa"}
+                        mea@takniser.com • 6 Operating Hubs
                       </div>
                       <div className="pt-1.5">
                         <a
@@ -352,32 +352,32 @@ export default function ContactContent() {
             </p>
           </div>
 
-          {/* Regional Leadership Spotlight Card */}
+          {/* Regional Operations & Official Channels Directorate Card */}
           <div className="bg-[#001822] text-white p-8 sm:p-10 border-l-4 border-[#009999] shadow-xl relative overflow-hidden">
             <div className="absolute -right-10 -bottom-10 w-80 h-80 bg-[#009999]/10 rounded-full blur-3xl pointer-events-none" />
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
               <div className="lg:col-span-8 space-y-4">
                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#009999]/20 border border-[#009999]/40 text-[#00cccc] text-[11px] font-mono font-bold uppercase tracking-widest">
-                  <UserCheck className="w-3.5 h-3.5 text-[#00cccc]" />
-                  <span>{isDe ? "Führungsspitze — Naher Osten & Afrika" : isAr ? "القيادة الرئيسية — الشرق الأوسط وأفريقيا" : "Key Leadership — Middle East & Africa"}</span>
+                  <Building2 className="w-3.5 h-3.5 text-[#00cccc]" />
+                  <span>{isDe ? "Offizielle Regionale Direktion — MEA" : isAr ? "الإدارة الإقليمية الرسمية — الشرق الأوسط وأفريقيا" : "Official Regional Directorate — MEA"}</span>
                 </div>
                 
                 <div>
-                  <h3 className="text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
-                    MOHAMMED AMMAR
+                  <h3 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight">
+                    {isDe ? "Direktion Naher Osten & Afrika" : isAr ? "إدارة الشرق الأوسط وأفريقيا" : "Middle East & Africa Directorate"}
                   </h3>
                   <div className="text-base sm:text-lg font-bold text-[#00cccc] mt-1">
-                    {isDe ? "Leiter Geschäftsentwicklung — Naher Osten & Afrika" : isAr ? "رئيس قطاع الأعمال — الشرق الأوسط وأفريقيا" : "Business Head — Middle East & Africa"}
+                    {isDe ? "Regionale Geschäftsentwicklung, EPC-Beschaffung & Handelskorridore" : isAr ? "تطوير الأعمال الإقليمية ومشتريات EPC والممرات التجارية" : "Regional Business Development, EPC Procurement & Trade Corridors"}
                   </div>
                 </div>
 
                 <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-2xl font-light">
                   {isDe
-                    ? "Verantwortlich für Geschäftsentwicklung, regionale Handelsoperationen, grenzüberschreitende Beschaffung, EPC-Projektabwicklung und staatliche Industrieallianzen in den VAE, Saudi-Arabien, Südafrika, Kenia, Ghana und umliegenden Korridoren."
+                    ? "Zentraler Ansprechpartner für Geschäftsentwicklung, regionale Handelsoperationen, grenzüberschreitende Beschaffung, EPC-Projektabwicklung und staatliche Industrieallianzen in den VAE, Saudi-Arabien, Südafrika, Kenia, Ghana und umliegenden Korridoren."
                     : isAr
-                    ? "الإشراف على تطوير الأعمال والعمليات التجارية والمشتريات ومشاريع EPC والتحالفات الحكومية في الإمارات والسعودية وجنوب أفريقيا وكينيا وغانا."
-                    : "Overseeing corporate business development, regional commercial operations, cross-border sourcing, EPC project delivery, and governmental alliances across the UAE, Saudi Arabia, South Africa, Kenya, Ghana, and regional trading corridors."}
+                    ? "القناة الرسمية للإشراف على تطوير الأعمال والعمليات التجارية والمشتريات ومشاريع EPC والتحالفات الحكومية في الإمارات والسعودية وجنوب أفريقيا وكينيا وغانا."
+                    : "Official corporate directory channel overseeing commercial business development, regional trade operations, cross-border sourcing, EPC project delivery, and industrial supply alliances across the UAE, Saudi Arabia, South Africa, Kenya, Ghana, and regional trading corridors."}
                 </p>
 
                 <div className="flex flex-wrap gap-2 pt-1 text-[11px] font-mono text-slate-300">
@@ -390,6 +390,9 @@ export default function ContactContent() {
                   <span className="px-2.5 py-1 bg-[#002d3b] border border-slate-700">
                     {isDe ? "Zolllager & Freizonenlogistik" : isAr ? "لوجستيات المناطق الحرة" : "Free Zone Bonded Logistics"}
                   </span>
+                  <span className="px-2.5 py-1 bg-[#009999]/30 border border-[#009999] text-[#00cccc]">
+                    mea@takniser.com
+                  </span>
                 </div>
               </div>
 
@@ -398,11 +401,11 @@ export default function ContactContent() {
                   href="#inquiry-form"
                   className="btn-siemens btn-siemens-primary inline-flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider px-6 py-3.5 text-center w-full sm:w-auto"
                 >
-                  <span>{isDe ? "Kontakt mit MEA-Leitung" : isAr ? "التواصل مع قيادة الشرق الأوسط" : "Connect with MEA Leadership"}</span>
+                  <span>{isDe ? "Anfrage an MEA-Direktion" : isAr ? "إرسال استفسار لإدارة الشرق الأوسط" : "Inquire with MEA Directorate"}</span>
                   <ArrowRight className={`w-4 h-4 ${isAr ? "rotate-180" : ""}`} />
                 </a>
                 <div className="text-[11px] font-mono text-slate-400 lg:text-right">
-                  {isDe ? "Offizieller Verbindungskanal • Schnelle Bearbeitung" : isAr ? "قناة اتصال رسمية • استجابة سريعة" : "Official Liaison Channel • Fast Response"}
+                  {isDe ? "Offizieller Direktionskanal • Schnelle Bearbeitung" : isAr ? "قناة تواصل مؤسسية رسمية • استجابة سريعة" : "Official Directorate Channel • Fast Response"}
                 </div>
               </div>
             </div>
@@ -477,102 +480,48 @@ export default function ContactContent() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          OPPORTUNITIES & CAREER SECTION
+          GLOBAL CAREERS & TALENT BANNER (Links to /careers)
       ───────────────────────────────────────────────────────────── */}
-      <section id="careers" className="py-20 lg:py-24 bg-white border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="max-w-3xl mx-auto text-center space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-[#009999] text-[#009999] text-xs font-mono font-bold tracking-widest uppercase bg-[#002d3b]/5">
-              <Sparkles className="w-3.5 h-3.5 text-[#009999]" />
-              <span>{isDe ? "GLOBALES TALENTNETZWERK" : isAr ? "شبكة الكفاءات العالمية" : "GLOBAL TALENT NETWORK"}</span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-black text-[#002d3b] uppercase tracking-tight">
-              {isDe ? (
-                <>Perspektiven & <span className="text-[#009999]">Karriere</span></>
-              ) : isAr ? (
-                <>الفرص و<span className="text-[#009999]">الوظائف</span></>
-              ) : (
-                <>Opportunities &amp; <span className="text-[#009999]">Careers</span></>
-              )}
-            </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              {isDe
-                ? "Werden Sie Teil eines weltweiten Industrie-, Technologie- und Handelskonglomerats in über 190 Ländern. Bewerben Sie sich direkt bei unserem HR-Team für internationale Positionen."
-                : isAr
-                ? "انضم إلى تكتل صناعي وتكنولوجي وتجاري عالمي يمتد عبر أكثر من 190 دولة. تواصل مباشرة مع فريق الموارد البشرية وقدم سيرتك الذاتية."
-                : "Join an international industrial, technology, and trading conglomerate spanning 190+ countries. Connect directly with our Human Resources leadership and submit your resume for global engineering, operational, and commercial positions."}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-            {/* Left: HR Culture */}
-            <div className="lg:col-span-5 space-y-6">
-              <div className="bg-[#f8fafc] p-7 sm:p-8 border border-slate-200 space-y-5">
-                <div className="border-b border-slate-200 pb-3">
-                  <span className="text-xs font-mono font-bold text-[#009999] uppercase tracking-widest">
-                    {isDe ? "ARBEITEN BEI TAKNISER" : isAr ? "العمل في تاكنيسر" : "WORKING AT TAKNISER"}
-                  </span>
-                  <h3 className="text-xl font-bold text-[#002d3b] uppercase tracking-tight mt-1">
-                    {isDe ? "Präzision, Innovation & Globale Wirkung" : isAr ? "الدقة والابتكار والأثر العالمي" : "Precision, Innovation & Global Impact"}
-                  </h3>
-                </div>
-                <p className="text-sm text-slate-650 leading-relaxed">
-                  {isDe
-                    ? "Wir bieten Ingenieuren, Technologen und internationalen Spezialisten das Umfeld, um anspruchsvolle industrielle Herausforderungen in 7 Kernbereichen zu meistern."
-                    : isAr
-                    ? "نمكّن المهندسين والتقنيين وخبراء سلاسل التوريد لمواجهة التحديات الصناعية المعقدة عبر قطاعاتنا السبعة."
-                    : "We empower engineers, technologists, international supply specialists, and strategic operators to tackle complex industrial challenges across 7 core divisions."}
-                </p>
-
-                <div className="space-y-3 pt-2">
-                  {benefits.map((benefit) => (
-                    <div key={benefit.title} className="p-3.5 bg-white border border-slate-200">
-                      <div className="text-xs font-bold text-[#002d3b] uppercase">{benefit.title}</div>
-                      <div className="text-xs text-slate-500 mt-0.5">{benefit.desc}</div>
-                    </div>
-                  ))}
-                </div>
+      <section id="careers" className="py-16 lg:py-20 bg-[#001822] text-white border-t border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-[#002433] p-8 sm:p-12 border-l-4 border-[#009999] shadow-2xl flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+            <div className="space-y-4 max-w-3xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#009999]/20 border border-[#009999]/40 text-[#00cccc] text-[11px] font-mono font-bold uppercase tracking-widest">
+                <Sparkles className="w-3.5 h-3.5 text-[#00cccc]" />
+                <span>{isDe ? "DEDIZIERTES KARRIEREPORTAL" : isAr ? "بوابة التوظيف المخصصة" : "DEDICATED CAREERS PORTAL"}</span>
               </div>
-
-              {/* Direct HR Liaison Note */}
-              <div className="p-6 bg-[#001822] text-white border-l-4 border-[#009999] space-y-2">
-                <div className="text-xs font-mono font-bold text-[#00cccc] uppercase tracking-widest">
-                  {isDe ? "HR TALENT DESK" : isAr ? "مكتب الموارد البشرية" : "HR TALENT DESK"}
-                </div>
-                <div className="text-sm font-bold text-white">
-                  {isDe ? "Direktes Personalportal" : isAr ? "بوابة الموارد البشرية المباشرة" : "Direct Human Resources Portal"}
-                </div>
-                <p className="text-xs text-slate-300 leading-relaxed">
-                  {isDe
-                    ? "Alle eingereichten Profile werden in unseren globalen Kandidatenpool aufgenommen und von regionalen HR-Partnern für passende Projekt- und Bereichsstellen geprüft."
-                    : isAr
-                    ? "يتم إدراج جميع السير الذاتية المرفوعة في قاعدة بيانات الكفاءات العالمية لدينا لمراجعتها من قبل مسؤولي التوظيف الإقليميين."
-                    : "All uploaded resumes are ingested directly into our global candidate pool and reviewed by regional HR partners based on matching project and divisional openings."}
-                </p>
-              </div>
+              <h2 className="text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
+                {isDe ? (
+                  <>Karriere bei TAKNISER — <span className="text-[#00cccc]">Gestalten Sie die Zukunft</span></>
+                ) : isAr ? (
+                  <>الوظائف في تاكنيسر — <span className="text-[#00cccc]">اصنع مستقبلك المهني</span></>
+                ) : (
+                  <>Careers at TAKNISER — <span className="text-[#00cccc]">Build Your Future</span></>
+                )}
+              </h2>
+              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
+                {isDe
+                  ? "Entdecken Sie unsere weltweiten Karrieremöglichkeiten, dualen Studienprogramme, offenen Stellen in 190+ Ländern und reichen Sie Ihren Lebenslauf direkt in unserem zentralen Karriereportal ein."
+                  : isAr
+                  ? "اكتشف فرص العمل العالمية وبرامج التدريب والوظائف الشاغرة في أكثر من 190 دولة وقدم سيرتك الذاتية مباشرة عبر بوابة التوظيف المركزية."
+                  : "Explore global career pathways, dual study tracks, active job openings across 190+ countries, and submit your CV directly through our comprehensive Careers Portal."}
+              </p>
             </div>
 
-            {/* Right: Career Form */}
-            <div className="lg:col-span-7">
-              <div className="bg-[#f8fafc] p-7 sm:p-10 border border-slate-200 shadow-sm space-y-6">
-                <div className="border-b border-slate-200 pb-4">
-                  <span className="text-xs font-mono font-bold text-[#009999] uppercase tracking-widest">
-                    {isDe ? "BEWERBEREINREICHUNG" : isAr ? "تقديم طلب التوظيف" : "CANDIDATE SUBMISSION"}
-                  </span>
-                  <h3 className="text-2xl font-black text-[#002d3b] uppercase tracking-tight mt-1">
-                    {isDe ? "Mit HR verbinden & Lebenslauf einreichen" : isAr ? "التواصل مع الموارد البشرية وتقديم السيرة الذاتية" : "Connect with HR & Submit Resume"}
-                  </h3>
-                  <p className="text-xs text-slate-600 mt-1">
-                    {isDe
-                      ? "Füllen Sie das untenstehende Profil aus und hängen Sie Ihren Lebenslauf im PDF- oder Word-Format an."
-                      : isAr
-                      ? "يرجى تعبئة ملف المرشح أدناه وإرفاق سيرتك الذاتية بصيغة PDF أو Word."
-                      : "Fill out the candidate profile below and attach your CV or resume in PDF or Word format."}
-                  </p>
-                </div>
-
-                <CareerForm />
-              </div>
+            <div className="shrink-0 flex flex-col sm:flex-row lg:flex-col gap-3">
+              <Link
+                href="/careers"
+                className="btn-siemens btn-siemens-primary inline-flex items-center justify-center gap-2 px-8 py-4 text-xs font-bold uppercase tracking-wider text-center"
+              >
+                <span>{isDe ? "Zum Karriereportal" : isAr ? "الانتقال لبوابة التوظيف" : "Explore Careers Portal"}</span>
+                <ArrowRight className={`w-4 h-4 ${isAr ? "rotate-180" : ""}`} />
+              </Link>
+              <Link
+                href="/careers#submit-cv"
+                className="btn-siemens btn-siemens-secondary inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs font-bold uppercase tracking-wider text-center"
+              >
+                <span>{isDe ? "Lebenslauf einreichen" : isAr ? "تقديم السيرة الذاتية" : "Submit Your CV"}</span>
+              </Link>
             </div>
           </div>
         </div>

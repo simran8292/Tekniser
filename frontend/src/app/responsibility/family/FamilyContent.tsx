@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { HeartHandshake, Users, ShieldCheck, Award, ArrowLeft, ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
+import { HeartHandshake, Users, ShieldCheck, Award, ArrowLeft, ArrowRight, Sparkles, Globe, Building2 } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 
 const CONTENT = {
@@ -106,7 +106,7 @@ const CONTENT = {
 
 export default function FamilyContent() {
   const { currentLanguage } = useLanguage();
-  const c = CONTENT[currentLanguage as "de" | "en" | "ar"] || CONTENT.de;
+  const c = CONTENT[currentLanguage as "de" | "en" | "ar"] || CONTENT.en;
   const isAr = currentLanguage === "ar";
 
   return (
@@ -115,11 +115,12 @@ export default function FamilyContent() {
       <section className="relative py-24 lg:py-32 bg-[#001822] text-white overflow-hidden border-b border-slate-800">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/about_hesse_heritage.jpg"
-            alt="TAKNISER Family"
+            src="/takniser_global_team.jpg"
+            alt="TAKNISER Global Team — 30 Regional Headquarters"
             fill
             priority
-            className="object-cover opacity-45 filter contrast-110 brightness-95"
+            quality={95}
+            className="object-cover opacity-40 filter contrast-110 brightness-95"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/85 via-[#001822]/70 to-[#001822]/95" />
         </div>
@@ -141,7 +142,7 @@ export default function FamilyContent() {
         </div>
       </section>
 
-      {/* Intro & Quote */}
+      {/* Intro, Global Team Showcase & Quote */}
       <section className="py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="text-center space-y-3">
           <span className="text-xs font-mono font-bold text-[#009999] uppercase tracking-widest">
@@ -153,6 +154,57 @@ export default function FamilyContent() {
           <p className="text-slate-600 text-base max-w-3xl mx-auto leading-relaxed pt-2">
             {c.introText}
           </p>
+        </div>
+
+        {/* Global Team Photograph Showcase */}
+        <div className="relative border border-slate-200 bg-white overflow-hidden shadow-md">
+          <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-950">
+            <Image
+              src="/takniser_global_team.jpg"
+              alt="TAKNISER Worldwide Team across 30 Regional Headquarters"
+              fill
+              sizes="(max-width: 1200px) 100vw, 1080px"
+              quality={95}
+              className="object-cover"
+            />
+            {/* Overlay Tag */}
+            <div className={`absolute top-4 ${isAr ? "right-4" : "left-4"} sm:top-6 ${isAr ? "sm:right-6" : "sm:left-6"} z-10`}>
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#001822]/90 backdrop-blur-md text-[#00cccc] border border-[#009999]/40 text-xs font-mono font-bold uppercase tracking-wider shadow-lg">
+                <Globe className="w-3.5 h-3.5 text-[#009999]" />
+                {currentLanguage === "de" ? "30 Regionale Hauptsitze • Ein weltweites Team" : currentLanguage === "ar" ? "30 مقراً إقليمياً • فريق عالمي موحد" : "30 Regional Headquarters • One Worldwide Team"}
+              </span>
+            </div>
+          </div>
+
+          {/* Regional Network Highlights */}
+          <div className="p-6 bg-slate-50 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="space-y-1">
+              <div className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+                <Building2 className="w-3.5 h-3.5 text-[#009999]" />
+                <span>{currentLanguage === "de" ? "Regionale Hauptsitze" : currentLanguage === "ar" ? "المقرات الإقليمية" : "Regional Headquarters"}</span>
+              </div>
+              <div className="text-lg font-black text-[#002d3b]">30 Regional HQs</div>
+              <div className="text-xs text-slate-500">{currentLanguage === "de" ? "Vernetzt über 6 Kontinente" : currentLanguage === "ar" ? "مترابطة عبر 6 قارات" : "Interconnected across 6 continents"}</div>
+            </div>
+
+            <div className="space-y-1">
+              <div className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+                <Globe className="w-3.5 h-3.5 text-[#009999]" />
+                <span>{currentLanguage === "de" ? "Weltweite Reichweite" : currentLanguage === "ar" ? "الانتشار الدولي" : "Operating Reach"}</span>
+              </div>
+              <div className="text-lg font-black text-[#002d3b]">190+ Countries</div>
+              <div className="text-xs text-slate-500">{currentLanguage === "de" ? "Globale Wertschöpfungsketten" : currentLanguage === "ar" ? "سلاسل إمداد وصناعة متكاملة" : "Integrated global value chains"}</div>
+            </div>
+
+            <div className="space-y-1">
+              <div className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+                <Users className="w-3.5 h-3.5 text-[#009999]" />
+                <span>{currentLanguage === "de" ? "Gemeinschaft" : currentLanguage === "ar" ? "الكوادر البشرية" : "Unified Workforce"}</span>
+              </div>
+              <div className="text-lg font-black text-[#009999]">{currentLanguage === "de" ? "Eine weltweite Familie" : currentLanguage === "ar" ? "عائلة عالمية موحدة" : "One Worldwide Team"}</div>
+              <div className="text-xs text-slate-500">{currentLanguage === "de" ? "Deutsche Ingenieurskultur weltweit" : currentLanguage === "ar" ? "هندسة ألمانية بآفاق عالمية" : "Shared German engineering values"}</div>
+            </div>
+          </div>
         </div>
 
         {/* Quote Box */}
@@ -169,10 +221,6 @@ export default function FamilyContent() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
           {c.pillars.map((item, idx) => (
             <div key={idx} className="bg-white border border-slate-200 p-6 space-y-2.5 hover:border-[#009999] transition-all">
-              <div className="flex items-center gap-2 text-[#009999] font-mono text-sm font-bold">
-                <CheckCircle2 className="w-4 h-4 text-[#009999]" />
-                <span>0{idx + 1}</span>
-              </div>
               <h3 className="text-lg font-bold text-[#002d3b] uppercase tracking-tight">
                 {item.title}
               </h3>
@@ -193,7 +241,7 @@ export default function FamilyContent() {
             <span>{c.ctaBack}</span>
           </Link>
           <Link
-            href="/contact#careers"
+            href="/careers"
             className="inline-flex items-center gap-2 px-6 py-3 bg-[#009999] hover:bg-[#008080] text-white text-xs font-bold uppercase tracking-wider transition-colors"
           >
             <span>{c.ctaContact}</span>

@@ -1,84 +1,70 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { Send, CheckCircle2, Upload, FileText, X, Briefcase, UserCheck } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { Send, CheckCircle2, Upload, FileText, X, Briefcase, MapPin, Phone, Mail, User, Globe, Linkedin, ShieldCheck } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 
-const DEPARTMENTS_DE = [
-  "Ingenieurwesen & Technisches Design",
-  "Fertigungsbetrieb & Qualitätssicherung",
-  "Globale Lieferkette & Logistik",
-  "Internationaler Handel & Beschaffung",
-  "Informationstechnologie & KI-Robotik",
-  "Unternehmensstrategie & Finanzen",
-  "Regionales Hauptsitzmanagement",
-  "Personalwesen & Talentakquise",
-  "Nachhaltigkeit & Umweltmanagement",
-];
-
-const DEPARTMENTS_EN = [
-  "Engineering & Technical Design",
-  "Manufacturing Operations & Quality Assurance",
-  "Global Supply Chain & Logistics",
-  "International Trading & Procurement",
-  "Information Technology & AI Robotics",
-  "Corporate Strategy & Finance",
-  "Regional Headquarters Management",
-  "Human Resources & Talent Acquisition",
-  "Sustainability & Environmental Management",
-];
-
-const DEPARTMENTS_AR = [
-  "الهندسة والتصميم الفني",
-  "عمليات التصنيع وضمان الجودة",
-  "سلاسل التوريد والخدمات اللوجستية العالمية",
-  "التجارة الدولية والمشتريات",
-  "تكنولوجيا المعلومات وروبوتات الذكاء الاصطناعي",
-  "الاستراتيجية المؤسسية والمالية",
-  "إدارة المقرات الإقليمية",
-  "الموارد البشرية واستقطاب الكفاءات",
-  "الاستدامة والإدارة البيئية",
-];
-
 const EXPERIENCE_DE = [
-  "Berufseinsteiger / Absolvent (0-2 Jahre)",
-  "Fachkraft mit mittlerer Erfahrung (3-5 Jahre)",
-  "Senior Spezialist / Leitung (6-10 Jahre)",
+  "Berufseinsteiger / Absolvent (0–2 Jahre)",
+  "Fachkraft mit mittlerer Erfahrung (3–5 Jahre)",
+  "Senior Spezialist / Leitung (6–10 Jahre)",
   "Führungskraft / Direktor (10+ Jahre)",
 ];
 
 const EXPERIENCE_EN = [
-  "Entry Level / Graduate (0-2 years)",
-  "Mid-Level Professional (3-5 years)",
-  "Senior Specialist / Lead (6-10 years)",
-  "Executive / Director (10+ years)",
+  "0–2 Years (Entry / Graduate)",
+  "3–5 Years (Mid-Level Professional)",
+  "6–10 Years (Senior / Lead)",
+  "10+ Years (Executive / Principal)",
 ];
 
 const EXPERIENCE_AR = [
-  "مستوى مبتدئ / خريج (0-2 سنوات)",
-  "مهني متوسط الخبرة (3-5 سنوات)",
-  "أخصائي أول / قيادي (6-10 سنوات)",
-  "تنفيذي / مدير (10+ سنوات)",
+  "0-2 سنوات (مستوى مبتدئ / خريج)",
+  "3-5 سنوات (مهني متوسط الخبرة)",
+  "6-10 سنوات (أخصائي أول / قيادي)",
+  "10+ سنوات (تنفيذي / مدير)",
 ];
 
-export default function CareerForm() {
+const POPULAR_POSITIONS = [
+  "Lead Autonomous Robotics Architect (Berlin, Germany)",
+  "VP Global Supply Chain & Logistics (Dubai, UAE)",
+  "Senior Satellite & Orbital Payload Engineer (Munich, Germany)",
+  "Global Commodity Trading Director (Geneva / Singapore)",
+  "Precision Agriculture Systems Lead (Zurich, Switzerland)",
+  "Graduate Engineer — Fast-Track Leadership (Frankfurt, Germany)",
+  "Senior ESG & Decarbonization Strategist (Amsterdam, Netherlands)",
+  "General / Speculative Application (Open Requisition)",
+];
+
+interface CareerFormProps {
+  initialPosition?: string;
+  onSuccess?: () => void;
+  isModal?: boolean;
+}
+
+export default function CareerForm({ initialPosition = "", onSuccess, isModal = false }: CareerFormProps) {
   const { currentLanguage } = useLanguage();
   const isDe = currentLanguage === "de";
   const isAr = currentLanguage === "ar";
-  const departments = isDe ? DEPARTMENTS_DE : isAr ? DEPARTMENTS_AR : DEPARTMENTS_EN;
   const experienceLevels = isDe ? EXPERIENCE_DE : isAr ? EXPERIENCE_AR : EXPERIENCE_EN;
 
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     phone: "",
-    country: "",
-    department: "",
-    experience: "",
+    currentLocation: "",
+    positionAppliedFor: initialPosition || "",
+    yearsExperience: "",
     linkedin: "",
-    coverNote: "",
+    coverLetter: "",
     consent: false,
   });
+
+  useEffect(() => {
+    if (initialPosition) {
+      setFormData((prev) => ({ ...prev, positionAppliedFor: initialPosition }));
+    }
+  }, [initialPosition]);
 
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [fileError, setFileError] = useState("");
@@ -116,6 +102,9 @@ export default function CareerForm() {
         return;
       }
       setSelectedFile(file);
+      if (errors.resume) {
+        setErrors((prev) => ({ ...prev, resume: "" }));
+      }
     }
   };
 
@@ -129,6 +118,8 @@ export default function CareerForm() {
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
+
+    // 1. Full Name
     if (!formData.fullName.trim() || formData.fullName.trim().length < 2) {
       newErrors.fullName = isDe
         ? "Bitte geben Sie Ihren vollständigen Namen an."
@@ -136,6 +127,8 @@ export default function CareerForm() {
         ? "يرجى تقديم اسمك القانوني الكامل."
         : "Please provide your full legal name.";
     }
+
+    // 2. Email
     if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = isDe
         ? "Bitte geben Sie eine gültige E-Mail-Adresse ein."
@@ -143,27 +136,44 @@ export default function CareerForm() {
         ? "يرجى إدخال عنوان بريد إلكتروني صالح."
         : "Please enter a valid email address.";
     }
-    if (!formData.country.trim()) {
-      newErrors.country = isDe
-        ? "Bitte geben Sie Ihr Land oder Ihren aktuellen Standort an."
+
+    // 3. Phone / WhatsApp
+    if (!formData.phone.trim() || formData.phone.trim().length < 6) {
+      newErrors.phone = isDe
+        ? "Bitte geben Sie eine gültige Telefon-/WhatsApp-Nummer an."
         : isAr
-        ? "يرجى تحديد بلدك أو موقعك الحالي."
-        : "Please specify your country or current location.";
+        ? "يرجى إدخال رقم هاتف أو واتساب صالح."
+        : "Please enter a valid Phone / WhatsApp number.";
     }
-    if (!formData.department) {
-      newErrors.department = isDe
-        ? "Bitte wählen Sie einen Fachbereich oder ein Interessensgebiet."
+
+    // 4. Current Location
+    if (!formData.currentLocation.trim()) {
+      newErrors.currentLocation = isDe
+        ? "Bitte geben Sie Ihren aktuellen Standort (Stadt, Land) an."
         : isAr
-        ? "يرجى اختيار مجال الاهتمام أو التخصص."
-        : "Please select an area of expertise or interest.";
+        ? "يرجى تحديد موقعك الحالي (المدينة، الدولة)."
+        : "Please specify your current location (City, Country).";
     }
-    if (!formData.experience) {
-      newErrors.experience = isDe
-        ? "Bitte wählen Sie Ihre Berufserfahrungsstufe."
+
+    // 5. Position Applied For
+    if (!formData.positionAppliedFor.trim()) {
+      newErrors.positionAppliedFor = isDe
+        ? "Bitte geben Sie die angestrebte Position an."
         : isAr
-        ? "يرجى اختيار مستوى خبرتك المهنية."
-        : "Please select your professional experience level.";
+        ? "يرجى تحديد المسمى الوظيفي المتقدم إليه."
+        : "Please specify the position you are applying for.";
     }
+
+    // 6. Years of Experience
+    if (!formData.yearsExperience) {
+      newErrors.yearsExperience = isDe
+        ? "Bitte wählen Sie Ihre Jahre an Berufserfahrung."
+        : isAr
+        ? "يرجى اختيار عدد سنوات الخبرة."
+        : "Please select your years of experience.";
+    }
+
+    // 8. CV upload
     if (!selectedFile) {
       newErrors.resume = isDe
         ? "Bitte fügen Sie Ihren Lebenslauf / CV bei (PDF, DOC, DOCX)."
@@ -171,13 +181,16 @@ export default function CareerForm() {
         ? "يرجى إرفاق سيرتك الذاتية (PDF, DOC, DOCX)."
         : "Please attach your CV / Resume (PDF, DOC, DOCX).";
     }
+
+    // 10. Consent / Privacy acceptance
     if (!formData.consent) {
       newErrors.consent = isDe
-        ? "Sie müssen der Datenverarbeitung zur Bewerberprüfung zustimmen."
+        ? "Sie müssen der Datenverarbeitung und den Datenschutzbestimmungen zustimmen."
         : isAr
-        ? "يجب عليك الموافقة على معالجة البيانات للتقييم الوظيفي."
-        : "You must agree to data processing for career evaluation.";
+        ? "يجب عليك الموافقة على معالجة البيانات وسياسة الخصوصية."
+        : "You must accept the privacy policy & consent to data processing.";
     }
+
     return newErrors;
   };
 
@@ -201,53 +214,57 @@ export default function CareerForm() {
     setStatus("loading");
     setTimeout(() => {
       setStatus("success");
+      if (onSuccess) onSuccess();
     }, 1200);
   };
 
   if (status === "success") {
     return (
-      <div className="border border-[#009999]/30 bg-[#001822] text-white p-8 sm:p-12 text-center space-y-6 shadow-xl">
+      <div className="border border-[#009999]/30 bg-[#001822] text-white p-6 sm:p-10 text-center space-y-6 shadow-xl">
         <div className="flex justify-center">
-          <div className="w-16 h-16 bg-[#002d3b] border-2 border-[#009999] flex items-center justify-center">
-            <CheckCircle2 className="w-8 h-8 text-[#00cccc]" />
+          <div className="w-14 h-14 bg-[#002d3b] border-2 border-[#009999] flex items-center justify-center">
+            <CheckCircle2 className="w-7 h-7 text-[#00cccc]" />
           </div>
         </div>
         <div className="space-y-2">
           <span className="text-xs font-mono font-bold text-[#009999] uppercase tracking-widest">
             {isDe ? "BEWERBUNG EINGEGANGEN" : isAr ? "تم استلام الطلب" : "APPLICATION RECEIVED"}
           </span>
-          <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight">
+          <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight">
             {isDe
-              ? "Profil erfolgreich an TAKNISER Talent Acquisition übermittelt"
+              ? "Bewerbung erfolgreich an TAKNISER Talent Acquisition übermittelt"
               : isAr
-              ? "تم إرسال الملف الشخصي إلى فريق استقطاب الكفاءات في تاكنيسر"
-              : "Profile Submitted to TAKNISER Talent Acquisition"}
+              ? "تم إرسال الطلب بنجاح إلى فريق استقطاب الكفاءات في تاكنيسر"
+              : "Application Submitted to TAKNISER Talent Acquisition"}
           </h3>
         </div>
-        <p className="text-slate-300 max-w-lg mx-auto text-sm leading-relaxed">
+        <p className="text-slate-300 max-w-lg mx-auto text-xs sm:text-sm leading-relaxed">
           {isDe ? (
             <>
-              Vielen Dank, <span className="font-bold text-white">{formData.fullName}</span>. Ihr Lebenslauf (
-              <span className="text-[#00cccc] font-mono">{selectedFile?.name}</span>) wurde an unser globales Talentmanagement-Team für den Bereich{" "}
-              <span className="font-bold text-white">{formData.department}</span> weitergeleitet.
+              Vielen Dank, <span className="font-bold text-white">{formData.fullName}</span>. Ihre Bewerbung für{" "}
+              <span className="text-[#00cccc] font-bold">{formData.positionAppliedFor}</span> inklusive Lebenslauf (
+              <span className="text-[#00cccc] font-mono">{selectedFile?.name}</span>) wurde erfolgreich registriert.
             </>
           ) : isAr ? (
             <>
-              شكراً لك، <span className="font-bold text-white">{formData.fullName}</span>. تم توجيه سيرتك الذاتية (
-              <span className="text-[#00cccc] font-mono">{selectedFile?.name}</span>) إلى فريق إدارة الكفاءات العالمي لقسم{" "}
-              <span className="font-bold text-white">{formData.department}</span>.
+              شكراً لك، <span className="font-bold text-white">{formData.fullName}</span>. تم تسجيل طلبك لوظيفة{" "}
+              <span className="text-[#00cccc] font-bold">{formData.positionAppliedFor}</span> مع سيرتك الذاتية (
+              <span className="text-[#00cccc] font-mono">{selectedFile?.name}</span>) بنجاح.
             </>
           ) : (
             <>
-              Thank you, <span className="font-bold text-white">{formData.fullName}</span>. Your resume (
-              <span className="text-[#00cccc] font-mono">{selectedFile?.name}</span>) has been routed to our Global Talent Management team for the{" "}
-              <span className="font-bold text-white">{formData.department}</span> division.
+              Thank you, <span className="font-bold text-white">{formData.fullName}</span>. Your application for{" "}
+              <span className="text-[#00cccc] font-bold">{formData.positionAppliedFor}</span> along with your CV (
+              <span className="text-[#00cccc] font-mono">{selectedFile?.name}</span>) has been routed to our recruitment directors.
             </>
           )}
         </p>
         <div className="p-4 bg-[#002d3b]/80 border border-slate-700 text-xs font-mono text-slate-300 text-left max-w-md mx-auto space-y-1">
-          <div>&bull; {isDe ? "Hauptkontakt" : isAr ? "جهة الاتصال" : "Primary Contact"}: {formData.email}</div>
-          <div>&bull; {isDe ? "Erfahrungsstufe" : isAr ? "المستوى" : "Level"}: {formData.experience}</div>
+          <div>&bull; {isDe ? "Position" : isAr ? "الوظيفة" : "Position"}: {formData.positionAppliedFor}</div>
+          <div>&bull; {isDe ? "E-Mail" : isAr ? "البريد الإلكتروني" : "Email"}: {formData.email}</div>
+          <div>&bull; {isDe ? "Telefon" : isAr ? "الهاتف" : "Phone"}: {formData.phone}</div>
+          <div>&bull; {isDe ? "Standort" : isAr ? "الموقع" : "Location"}: {formData.currentLocation}</div>
+          <div>&bull; {isDe ? "Erfahrung" : isAr ? "الخبرة" : "Experience"}: {formData.yearsExperience}</div>
           <div>&bull; {isDe ? "Prüfungszeitraum" : isAr ? "فترة المراجعة" : "Review Horizon"}: {isDe ? "3–5 Werktage" : isAr ? "3-5 أيام عمل" : "3–5 business days"}</div>
         </div>
         <button
@@ -258,15 +275,15 @@ export default function CareerForm() {
               fullName: "",
               email: "",
               phone: "",
-              country: "",
-              department: "",
-              experience: "",
+              currentLocation: "",
+              positionAppliedFor: initialPosition || "",
+              yearsExperience: "",
               linkedin: "",
-              coverNote: "",
+              coverLetter: "",
               consent: false,
             });
           }}
-          className="btn-siemens btn-siemens-secondary text-xs uppercase tracking-wider font-bold px-6 py-3"
+          className="btn-siemens btn-siemens-secondary text-xs uppercase tracking-wider font-bold px-6 py-2.5"
         >
           {isDe ? "Weiteren Antrag einreichen" : isAr ? "تقديم طلب آخر" : "Submit Another Application"}
         </button>
@@ -275,12 +292,13 @@ export default function CareerForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      {/* Name and Email */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <form onSubmit={handleSubmit} className="space-y-5">
+      {/* 1. Full Name & 2. Email */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-1.5">
-          <label className="block text-xs font-bold uppercase tracking-wider text-[#002d3b]">
-            {isDe ? "Vollständiger Name" : isAr ? "الاسم القانوني الكامل" : "Full Legal Name"}{" "}
+          <label className="flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-[#002d3b]">
+            <User className="w-3.5 h-3.5 text-[#009999]" />
+            <span>{isDe ? "Vollständiger Name" : isAr ? "الاسم الكامل" : "Full Name"}</span>
             <span className="text-red-500">*</span>
           </label>
           <input
@@ -288,8 +306,8 @@ export default function CareerForm() {
             name="fullName"
             value={formData.fullName}
             onChange={handleChange}
-            placeholder={isDe ? "z. B. Alexander Schmidt" : isAr ? "مثال: ألكسندر شميت" : "e.g., Alexander Schmidt"}
-            className={`w-full px-4 py-3 bg-[#f8fafc] border text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009999] transition-colors rounded-none ${
+            placeholder={isDe ? "z. B. Dr. Alexander Schmidt" : isAr ? "مثال: د. ألكسندر شميت" : "e.g., Alexander Schmidt"}
+            className={`w-full px-3.5 py-2.5 bg-[#f8fafc] border text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009999] transition-colors rounded-none ${
               errors.fullName ? "border-red-500 bg-red-50/20" : "border-slate-300"
             }`}
           />
@@ -297,8 +315,9 @@ export default function CareerForm() {
         </div>
 
         <div className="space-y-1.5">
-          <label className="block text-xs font-bold uppercase tracking-wider text-[#002d3b]">
-            {isDe ? "E-Mail-Adresse" : isAr ? "عنوان البريد الإلكتروني" : "Email Address"}{" "}
+          <label className="flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-[#002d3b]">
+            <Mail className="w-3.5 h-3.5 text-[#009999]" />
+            <span>{isDe ? "E-Mail-Adresse" : isAr ? "البريد الإلكتروني" : "Email"}</span>
             <span className="text-red-500">*</span>
           </label>
           <input
@@ -306,8 +325,8 @@ export default function CareerForm() {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder={isDe ? "z. B. alexander.schmidt@beispiel.de" : "e.g., alexander.schmidt@example.com"}
-            className={`w-full px-4 py-3 bg-[#f8fafc] border text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009999] transition-colors rounded-none ${
+            placeholder="alexander.schmidt@example.com"
+            className={`w-full px-3.5 py-2.5 bg-[#f8fafc] border text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009999] transition-colors rounded-none ${
               errors.email ? "border-red-500 bg-red-50/20" : "border-slate-300"
             }`}
           />
@@ -315,83 +334,92 @@ export default function CareerForm() {
         </div>
       </div>
 
-      {/* Phone and Country */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      {/* 3. Phone / WhatsApp & 4. Current Location */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-1.5">
-          <label className="block text-xs font-bold uppercase tracking-wider text-[#002d3b]">
-            {isDe ? "Telefon / WhatsApp (Optional)" : isAr ? "الهاتف / واتساب (اختياري)" : "Phone / WhatsApp (Optional)"}
+          <label className="flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-[#002d3b]">
+            <Phone className="w-3.5 h-3.5 text-[#009999]" />
+            <span>{isDe ? "Telefon / WhatsApp" : isAr ? "الهاتف / واتساب" : "Phone / WhatsApp"}</span>
+            <span className="text-red-500">*</span>
           </label>
           <input
             type="tel"
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            placeholder="+49 170 1234567"
-            className="w-full px-4 py-3 bg-[#f8fafc] border border-slate-300 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009999] transition-colors rounded-none"
+            placeholder="+49 170 1234567 / +971 50 1234567"
+            className={`w-full px-3.5 py-2.5 bg-[#f8fafc] border text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009999] transition-colors rounded-none ${
+              errors.phone ? "border-red-500 bg-red-50/20" : "border-slate-300"
+            }`}
           />
+          {errors.phone && <p className="text-xs text-red-600 font-medium">{errors.phone}</p>}
         </div>
 
         <div className="space-y-1.5">
-          <label className="block text-xs font-bold uppercase tracking-wider text-[#002d3b]">
-            {isDe ? "Aktuelles Land / Standort" : isAr ? "البلد / الموقع الحالي" : "Current Country / Location"}{" "}
+          <label className="flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-[#002d3b]">
+            <MapPin className="w-3.5 h-3.5 text-[#009999]" />
+            <span>{isDe ? "Aktueller Standort" : isAr ? "الموقع الحالي" : "Current Location"}</span>
             <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
-            name="country"
-            value={formData.country}
+            name="currentLocation"
+            value={formData.currentLocation}
             onChange={handleChange}
-            placeholder={isDe ? "z. B. Deutschland, VAE, Schweiz, Österreich" : isAr ? "مثال: الإمارات، السعودية، ألمانيا" : "e.g., Germany, UAE, United States, Singapore"}
-            className={`w-full px-4 py-3 bg-[#f8fafc] border text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009999] transition-colors rounded-none ${
-              errors.country ? "border-red-500 bg-red-50/20" : "border-slate-300"
+            placeholder={isDe ? "z. B. München, Deutschland / Dubai, VAE" : isAr ? "مثال: دبي، الإمارات / برلين، ألمانيا" : "e.g., Munich, Germany / Dubai, UAE / London, UK"}
+            className={`w-full px-3.5 py-2.5 bg-[#f8fafc] border text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009999] transition-colors rounded-none ${
+              errors.currentLocation ? "border-red-500 bg-red-50/20" : "border-slate-300"
             }`}
           />
-          {errors.country && <p className="text-xs text-red-600 font-medium">{errors.country}</p>}
+          {errors.currentLocation && <p className="text-xs text-red-600 font-medium">{errors.currentLocation}</p>}
         </div>
       </div>
 
-      {/* Department & Experience */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      {/* 5. Position Applied For & 6. Years of Experience */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-1.5">
-          <label className="block text-xs font-bold uppercase tracking-wider text-[#002d3b]">
-            {isDe ? "Bevorzugter Bereich / Fachbereich" : isAr ? "القطاع / المجال المفضل" : "Preferred Division / Area"}{" "}
+          <label className="flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-[#002d3b]">
+            <Briefcase className="w-3.5 h-3.5 text-[#009999]" />
+            <span>{isDe ? "Angestrebte Position" : isAr ? "الوظيفة المتقدم إليها" : "Position Applied For"}</span>
             <span className="text-red-500">*</span>
           </label>
-          <select
-            name="department"
-            value={formData.department}
-            onChange={handleChange}
-            className={`w-full px-4 py-3 bg-[#f8fafc] border text-sm text-slate-900 focus:outline-none focus:border-[#009999] transition-colors rounded-none ${
-              errors.department ? "border-red-500 bg-red-50/20" : "border-slate-300"
-            }`}
-          >
-            <option value="">
-              {isDe ? "Interessensgebiet auswählen..." : isAr ? "اختر مجال الاهتمام..." : "Select an area of interest..."}
-            </option>
-            {departments.map((dept) => (
-              <option key={dept} value={dept}>
-                {dept}
-              </option>
-            ))}
-          </select>
-          {errors.department && <p className="text-xs text-red-600 font-medium">{errors.department}</p>}
+          <div className="relative">
+            <input
+              type="text"
+              name="positionAppliedFor"
+              list="positions-list"
+              value={formData.positionAppliedFor}
+              onChange={handleChange}
+              placeholder={isDe ? "Position eingeben oder auswählen..." : isAr ? "أدخل الوظيفة أو اختر..." : "Enter position or select..."}
+              className={`w-full px-3.5 py-2.5 bg-[#f8fafc] border text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009999] transition-colors rounded-none ${
+                errors.positionAppliedFor ? "border-red-500 bg-red-50/20" : "border-slate-300"
+              }`}
+            />
+            <datalist id="positions-list">
+              {POPULAR_POSITIONS.map((pos) => (
+                <option key={pos} value={pos} />
+              ))}
+            </datalist>
+          </div>
+          {errors.positionAppliedFor && <p className="text-xs text-red-600 font-medium">{errors.positionAppliedFor}</p>}
         </div>
 
         <div className="space-y-1.5">
-          <label className="block text-xs font-bold uppercase tracking-wider text-[#002d3b]">
-            {isDe ? "Erfahrungsstufe" : isAr ? "مستوى الخبرة" : "Experience Level"}{" "}
+          <label className="flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-[#002d3b]">
+            <Globe className="w-3.5 h-3.5 text-[#009999]" />
+            <span>{isDe ? "Berufserfahrung (Jahre)" : isAr ? "سنوات الخبرة" : "Years of Experience"}</span>
             <span className="text-red-500">*</span>
           </label>
           <select
-            name="experience"
-            value={formData.experience}
+            name="yearsExperience"
+            value={formData.yearsExperience}
             onChange={handleChange}
-            className={`w-full px-4 py-3 bg-[#f8fafc] border text-sm text-slate-900 focus:outline-none focus:border-[#009999] transition-colors rounded-none ${
-              errors.experience ? "border-red-500 bg-red-50/20" : "border-slate-300"
+            className={`w-full px-3.5 py-2.5 bg-[#f8fafc] border text-sm text-slate-900 focus:outline-none focus:border-[#009999] transition-colors rounded-none ${
+              errors.yearsExperience ? "border-red-500 bg-red-50/20" : "border-slate-300"
             }`}
           >
             <option value="">
-              {isDe ? "Erfahrungsstufe auswählen..." : isAr ? "اختر مستوى الخبرة..." : "Select experience level..."}
+              {isDe ? "Jahre auswählen..." : isAr ? "اختر سنوات الخبرة..." : "Select years of experience..."}
             </option>
             {experienceLevels.map((lvl) => (
               <option key={lvl} value={lvl}>
@@ -399,33 +427,39 @@ export default function CareerForm() {
               </option>
             ))}
           </select>
-          {errors.experience && <p className="text-xs text-red-600 font-medium">{errors.experience}</p>}
+          {errors.yearsExperience && <p className="text-xs text-red-600 font-medium">{errors.yearsExperience}</p>}
         </div>
       </div>
 
-      {/* LinkedIn Profile */}
+      {/* 7. LinkedIn / Portfolio */}
       <div className="space-y-1.5">
-        <label className="block text-xs font-bold uppercase tracking-wider text-[#002d3b]">
-          {isDe ? "LinkedIn / Portfolio-URL (Optional)" : isAr ? "رابط لينكد إن / ملف الأعمال (اختياري)" : "LinkedIn / Portfolio URL (Optional)"}
+        <label className="flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-[#002d3b]">
+          <Linkedin className="w-3.5 h-3.5 text-[#009999]" />
+          <span>{isDe ? "LinkedIn / Portfolio" : isAr ? "لينكد إن / ملف الأعمال" : "LinkedIn / Portfolio"}</span>
+          <span className="text-slate-400 text-[10px] font-mono uppercase ml-1">({isDe ? "Optional" : "Optional"})</span>
         </label>
         <input
           type="url"
           name="linkedin"
           value={formData.linkedin}
           onChange={handleChange}
-          placeholder="https://linkedin.com/in/username"
-          className="w-full px-4 py-3 bg-[#f8fafc] border border-slate-300 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009999] transition-colors rounded-none"
+          placeholder="https://linkedin.com/in/username or https://github.com/..."
+          className="w-full px-3.5 py-2.5 bg-[#f8fafc] border border-slate-300 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009999] transition-colors rounded-none"
         />
       </div>
 
-      {/* Resume File Upload Box */}
+      {/* 8. CV Upload */}
       <div className="space-y-2">
-        <label className="block text-xs font-bold uppercase tracking-wider text-[#002d3b]">
-          {isDe ? "Lebenslauf / CV hochladen" : isAr ? "تحميل السيرة الذاتية" : "Upload CV / Resume"}{" "}
-          <span className="text-red-500">*</span>
+        <label className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[#002d3b]">
+          <div className="flex items-center gap-1">
+            <Upload className="w-3.5 h-3.5 text-[#009999]" />
+            <span>{isDe ? "Lebenslauf / CV hochladen" : isAr ? "تحميل السيرة الذاتية" : "CV Upload"}</span>
+            <span className="text-red-500">*</span>
+          </div>
+          <span className="text-[10px] font-mono text-slate-500 font-normal">PDF, DOC, DOCX (Max 10MB)</span>
         </label>
 
-        <div className="border-2 border-dashed border-slate-300 hover:border-[#009999] bg-[#f8fafc] p-6 transition-colors text-center relative">
+        <div className="border-2 border-dashed border-slate-300 hover:border-[#009999] bg-[#f8fafc] p-5 transition-colors text-center relative">
           <input
             ref={fileInputRef}
             type="file"
@@ -461,17 +495,17 @@ export default function CareerForm() {
               </button>
             </div>
           ) : (
-            <div className="space-y-2 pointer-events-none">
+            <div className="space-y-1.5 pointer-events-none">
               <div className="flex justify-center">
-                <div className="p-3 bg-white border border-slate-200 text-[#009999]">
-                  <Upload className="w-6 h-6" />
+                <div className="p-2.5 bg-white border border-slate-200 text-[#009999]">
+                  <Upload className="w-5 h-5" />
                 </div>
               </div>
-              <p className="text-sm font-bold text-[#002d3b]">
-                {isDe ? "Klicken oder Datei hierher ziehen, um Lebenslauf hochzuladen" : isAr ? "انقر أو اسحب لإرفاق سيرتك الذاتية" : "Click or drag & drop to upload your resume"}
+              <p className="text-xs sm:text-sm font-bold text-[#002d3b]">
+                {isDe ? "Klicken oder Datei hierher ziehen, um CV hochzuladen" : isAr ? "انقر أو اسحب لإرفاق سيرتك الذاتية" : "Click or drag & drop to upload CV"}
               </p>
-              <p className="text-xs text-slate-500">
-                {isDe ? "Unterstützte Formate: PDF, DOC, DOCX (Max. Größe: 10 MB)" : isAr ? "الصيغ المدعومة: PDF, DOC, DOCX (الحد الأقصى: 10 ميجابايت)" : "Supported formats: PDF, DOC, DOCX (Max size: 10MB)"}
+              <p className="text-[11px] text-slate-500">
+                {isDe ? "PDF, DOC, DOCX bis zu 10 MB" : "Supported: PDF, DOC, DOCX up to 10 MB"}
               </p>
             </div>
           )}
@@ -480,30 +514,32 @@ export default function CareerForm() {
         {errors.resume && <p className="text-xs text-red-600 font-medium">{errors.resume}</p>}
       </div>
 
-      {/* Cover Note / Candidate Statement */}
+      {/* 9. Cover Letter */}
       <div className="space-y-1.5">
-        <label className="block text-xs font-bold uppercase tracking-wider text-[#002d3b]">
-          {isDe ? "Zusammenfassung / Wichtigste Erfolge (Optional)" : isAr ? "ملخص المرشح / الإنجازات الرئيسية (اختياري)" : "Candidate Summary / Key Achievements (Optional)"}
+        <label className="flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-[#002d3b]">
+          <FileText className="w-3.5 h-3.5 text-[#009999]" />
+          <span>{isDe ? "Anschreiben / Cover Letter" : isAr ? "خطاب التقديم" : "Cover Letter"}</span>
+          <span className="text-slate-400 text-[10px] font-mono uppercase ml-1">({isDe ? "Optional" : "Optional"})</span>
         </label>
         <textarea
-          name="coverNote"
-          rows={4}
-          value={formData.coverNote}
+          name="coverLetter"
+          rows={3}
+          value={formData.coverLetter}
           onChange={handleChange}
           placeholder={
             isDe
-              ? "Beschreiben Sie kurz Ihre technischen Spezialgebiete, bemerkenswerte Erfolge und Ihre Motivation, bei TAKNISER ONE GLOBE einzusteigen..."
+              ? "Beschreiben Sie kurz Ihre wichtigsten Qualifikationen, Erfolge und Motivation..."
               : isAr
-              ? "وضح بإيجاز تخصصاتك الفنية وإنجازاتك ودوافعك للانضمام إلى تاكنيسر ون غلوب..."
-              : "Briefly highlight your technical specialties, notable engineering or commercial achievements, and what motivates you to join TAKNISER ONE GLOBE..."
+              ? "وضح بإيجاز أهم مؤهلاتك وإنجازاتك ودوافعك للانضمام..."
+              : "Introduce yourself, highlight key achievements, and explain why you want to join TAKNISER ONE GLOBE..."
           }
-          className="w-full px-4 py-3 bg-[#f8fafc] border border-slate-300 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009999] transition-colors rounded-none resize-y"
+          className="w-full px-3.5 py-2.5 bg-[#f8fafc] border border-slate-300 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#009999] transition-colors rounded-none resize-y"
         />
       </div>
 
-      {/* Consent Checkbox */}
-      <div className="space-y-1">
-        <label className="flex items-start gap-3 cursor-pointer">
+      {/* 10. Consent / Privacy Acceptance */}
+      <div className="space-y-1 pt-1">
+        <label className="flex items-start gap-2.5 cursor-pointer">
           <input
             type="checkbox"
             name="consent"
@@ -513,28 +549,28 @@ export default function CareerForm() {
           />
           <span className="text-xs text-slate-600 leading-relaxed">
             {isDe
-              ? "Ich stimme zu, dass die TAKNISER GmbH und ihre regionalen HR-Partner meine personenbezogenen Daten und meinen Lebenslauf für Karriere- und Beschäftigungsmöglichkeiten gemäß der Datenschutzerklärung verarbeiten. *"
+              ? "Ich stimme der Verarbeitung meiner personenbezogenen Daten und Bewerbungsunterlagen gemäß der TAKNISER Datenschutzrichtlinie für Stellenbesetzungsverfahren zu. *"
               : isAr
-              ? "أوافق على قيام تاكنيسر ذ.م.م والشركات التابعة للموارد البشرية بتخزين ومعالجة بياناتي الشخصية وسيرتي الذاتية لفرص العمل وفقاً لسياسة الخصوصية. *"
-              : "I consent to TAKNISER GmbH and its regional human resources affiliates storing and processing my personal data and resume for career and employment opportunities in accordance with the corporate Privacy Policy. *"}
+              ? "أوافق على معالجة وتخزين بياناتي الشخصية ومستندات التقديم الخاصة بي وفقاً لسياسة الخصوصية الخاصة بشركة تاكنيسر. *"
+              : "I accept the Privacy Policy and consent to TAKNISER GmbH and its regional entities processing my personal data and CV for employment evaluation. *"}
           </span>
         </label>
         {errors.consent && <p className="text-xs text-red-600 font-medium">{errors.consent}</p>}
       </div>
 
       {/* Submit Button */}
-      <div>
+      <div className="pt-2">
         <button
           type="submit"
           disabled={status === "loading"}
-          className="btn-siemens btn-siemens-primary w-full sm:w-auto px-8 py-3.5 flex items-center justify-center gap-2 text-xs font-bold tracking-wider uppercase disabled:opacity-50"
+          className="btn-siemens btn-siemens-primary w-full sm:w-auto px-8 py-3 flex items-center justify-center gap-2 text-xs font-bold tracking-wider uppercase disabled:opacity-50"
         >
           {status === "loading" ? (
-            <span>{isDe ? "Bewerbung wird übermittelt..." : isAr ? "جارٍ إرسال الطلب..." : "Transmitting Application..."}</span>
+            <span>{isDe ? "Bewerbung wird übermittelt..." : isAr ? "جارٍ إرسال الطلب..." : "Submitting Application..."}</span>
           ) : (
             <>
-              <span>{isDe ? "Bewerbung an Personalabteilung senden" : isAr ? "إرسال السيرة الذاتية للموارد البشرية" : "Submit Resume to HR"}</span>
-              <Send className="w-4 h-4" />
+              <span>{isDe ? "Bewerbung einreichen" : isAr ? "إرسال طلب التقديم" : "Submit Application"}</span>
+              <Send className="w-3.5 h-3.5" />
             </>
           )}
         </button>

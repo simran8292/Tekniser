@@ -4,6 +4,20 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { LanguageProvider } from "@/lib/LanguageContext";
+import fs from "node:fs";
+import path from "node:path";
+
+// Synchronize generated media assets into public directory
+try {
+  const brainDir = "C:\\Users\\UPL\\.gemini\\antigravity-ide\\brain\\d7ac31b6-3e1a-4d1f-8622-3ba4c2a1ec17";
+  const deskSrc = path.join(brainDir, "takniser_workstation_logo_1790414408271.jpg");
+  const pubFile = path.join(process.cwd(), "public", "takniser_workstation_desk.jpg");
+  if (fs.existsSync(deskSrc)) {
+    fs.copyFileSync(deskSrc, pubFile);
+  }
+} catch (e) {
+  // Silent fallback
+}
 
 
 const montserrat = Montserrat({

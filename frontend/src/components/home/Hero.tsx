@@ -19,7 +19,7 @@ export default function Hero() {
       description: t("s1-desc"),
       primaryCta: { text: t("s1-primary"), href: "/about" },
       secondaryCta: { text: t("s1-secondary"), href: "/global-network" },
-      bgImage: "/home_sec22.webp",
+      bgImage: "/officeimage2.png",
     },
     {
       id: "responsibility",
@@ -54,7 +54,7 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden bg-transparent">
-      {/* Background Images with Crossfade */}
+      {/* Background Images with Crossfade (Sharp, high-resolution rendering without scale blur) */}
       <div className="absolute inset-0 z-0">
         {slideData.map((s, index) => (
           <Image
@@ -62,15 +62,17 @@ export default function Hero() {
             src={s.bgImage}
             alt={s.title}
             fill
+            sizes="100vw"
+            quality={95}
             priority={index === 0}
-            className={`object-cover transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100 scale-105" : "opacity-0 scale-100"
+            className={`object-cover transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100" : "opacity-0"
               }`}
-            style={{ transitionProperty: "opacity, transform" }}
           />
         ))}
-        {/* Gradients to ensure text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#001822]/95 via-[#001822]/60 to-transparent z-1" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#001822]/90 via-[#001822]/40 to-transparent z-1 lg:hidden" />
+        {/* High-contrast directional scrim: dark on left for text readability, clear on right for corporate image clarity */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#001822]/95 via-[#001822]/70 via-40% to-[#001822]/20 to-85% z-1" />
+        <div className="absolute inset-0 bg-[#001822]/50 lg:hidden z-1" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#001822]/90 via-transparent to-[#001822]/30 z-1" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center lg:text-left transition-opacity duration-500">
@@ -78,16 +80,16 @@ export default function Hero() {
 
           {/* Left Column: Dynamic Content */}
           <div className="lg:col-span-7 space-y-5 text-left" key={slide.id}>
-            <div className="text-xs sm:text-sm font-normal text-[#009999] uppercase tracking-[0.18em] animate-fade-in-up">
+            <div className="text-xs sm:text-sm font-normal text-[#009999] uppercase tracking-[0.2em] drop-shadow-sm animate-fade-in-up">
               {slide.kicker}
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-normal leading-[1.15] uppercase animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-normal leading-[1.15] uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] animate-fade-in-up" style={{ animationDelay: '100ms' }}>
               {slide.title} <br className="hidden sm:inline" />
               <span className="text-[#009999]">{slide.highlight}</span>
             </h1>
 
-            <p className="text-sm sm:text-base text-slate-200 max-w-2xl font-light leading-relaxed animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+            <p className="text-sm sm:text-base text-slate-100 max-w-2xl font-light leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] animate-fade-in-up" style={{ animationDelay: '200ms' }}>
               {slide.description}
             </p>
 
@@ -118,8 +120,8 @@ export default function Hero() {
           {/* Right Column: Visual Showcase Card (Static branding) */}
           <div className="lg:col-span-5 relative hidden lg:block">
             <div className="relative bg-[#001822]/90 p-6 sm:p-8 border border-slate-800 space-y-6 rounded-none backdrop-blur-md">
-              <div className="relative w-full h-20 bg-[#001b24] px-6 py-3 flex items-center justify-center border border-slate-800 rounded-none">
-                <span className="font-sans font-black tracking-[0.04em] text-[#36b39c] text-2xl uppercase select-none">
+              <div className="relative w-full h-20 bg-[#001b24] px-6 py-3 flex items-center justify-center border border-slate-800 rounded-none shadow-inner">
+                <span className="font-sans font-black tracking-[0.06em] text-[#36b39c] text-2xl uppercase select-none drop-shadow-[0_0_12px_rgba(54,179,156,0.35)]">
                   TAKNISER
                 </span>
               </div>
