@@ -4,21 +4,6 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { LanguageProvider } from "@/lib/LanguageContext";
-import fs from "node:fs";
-import path from "node:path";
-
-// Synchronize generated media assets into public directory
-try {
-  const brainDir = "C:\\Users\\UPL\\.gemini\\antigravity-ide\\brain\\d7ac31b6-3e1a-4d1f-8622-3ba4c2a1ec17";
-  const deskSrc = path.join(brainDir, "takniser_workstation_logo_1790414408271.jpg");
-  const pubFile = path.join(process.cwd(), "public", "takniser_workstation_desk.jpg");
-  if (fs.existsSync(deskSrc)) {
-    fs.copyFileSync(deskSrc, pubFile);
-  }
-} catch (e) {
-  // Silent fallback
-}
-
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -42,16 +27,53 @@ export const metadata: Metadata = {
     template: "%s | TAKNISER ONE GLOBE",
   },
   description:
-    "TAKNISER ONE GLOBE is a global industrial, technology, manufacturing, sourcing, logistics and international trading conglomerate with 100+ years of German engineering heritage, operating in 190+ countries across 6 continents.",
+    "TAKNISER ONE GLOBE is a global industrial, technology, manufacturing, sourcing, logistics and international trading conglomerate with 100+ years of German engineering heritage, operating in 190+ countries across 6 continents through 30 Regional Headquarters.",
   keywords: [
-    "TAKNISER", "ONE GLOBE", "industrial conglomerate", "German engineering",
-    "global trading", "industrial manufacturing", "sourcing", "logistics",
-    "Vision 2046", "Hesse Germany", "EPC", "global supply chain",
+    "TAKNISER",
+    "TAKNISER ONE GLOBE",
+    "TAKNISER GmbH",
+    "takniser.com",
+    "industrial conglomerate",
+    "German engineering",
+    "global trading",
+    "industrial manufacturing",
+    "sourcing",
+    "logistics",
+    "Vision 2046",
+    "Hesse Germany",
+    "EPC",
+    "global supply chain",
+    "Space Economy",
+    "AgTech",
+    "Robotics AI",
   ],
-  authors: [{ name: "TAKNISER GmbH" }],
+  authors: [{ name: "TAKNISER GmbH", url: "https://takniser.com" }],
   creator: "TAKNISER GmbH",
   publisher: "TAKNISER ONE GLOBE",
-  robots: { index: true, follow: true },
+  formatDetection: {
+    email: true,
+    address: true,
+    telephone: true,
+  },
+  alternates: {
+    canonical: "https://takniser.com",
+    languages: {
+      "en-US": "https://takniser.com",
+      "de-DE": "https://takniser.com",
+      "ar-AE": "https://takniser.com",
+    },
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -60,37 +82,84 @@ export const metadata: Metadata = {
     title: "TAKNISER ONE GLOBE — Global Industrial, Technology & Trading Conglomerate",
     description:
       "100+ Years of German Engineering Heritage. Building the Future of Global Industry. Operating in 190+ countries through 30 Regional Headquarters across 6 continents.",
-    images: [{ url: "/brand/logo.png", width: 479, height: 163, alt: "TAKNISER ONE GLOBE Official Logo" }],
+    images: [{ url: "/LOGO.png", width: 800, height: 400, alt: "TAKNISER ONE GLOBE Official Identity" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "TAKNISER ONE GLOBE",
     description: "Global Industrial, Technology & Trading Conglomerate — 100+ Years German Engineering Heritage",
-    images: ["/brand/logo.png"],
+    images: ["/LOGO.png"],
   },
   icons: {
     icon: "/favicon.ico",
-    apple: "/brand/logo.png",
+    apple: "/LOGO.png",
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Corporation",
-  name: "TAKNISER ONE GLOBE",
-  legalName: "TAKNISER GmbH",
-  url: "https://takniser.com",
-  logo: "https://takniser.com/brand/logo.svg",
-  description:
-    "Global Industrial, Technology & Trading Conglomerate with 100+ years of German engineering heritage.",
-  foundingLocation: { "@type": "Place", name: "Hesse (Hessen), Germany" },
-  areaServed: "Worldwide",
-  numberOfEmployees: { "@type": "QuantitativeValue", description: "Global Operations" },
+  "@graph": [
+    {
+      "@type": "Corporation",
+      "@id": "https://takniser.com/#organization",
+      name: "TAKNISER ONE GLOBE",
+      legalName: "TAKNISER GmbH",
+      alternateName: ["TAKNISER", "TAKNISER 1Globe", "TAKNISER Group"],
+      url: "https://takniser.com",
+      logo: "https://takniser.com/LOGO.png",
+      image: "https://takniser.com/LOGO.png",
+      description:
+        "Global Industrial, Technology, Manufacturing, Sourcing, Logistics & Trading Conglomerate with 100+ years of German engineering heritage, operating across 190+ countries and 30 Regional Headquarters.",
+      foundingLocation: {
+        "@type": "Place",
+        name: "Hesse (Hessen), Germany",
+      },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Dillenburg",
+        addressRegion: "Hesse",
+        addressCountry: "Germany",
+      },
+      areaServed: "Worldwide",
+      knowsAbout: [
+        "Industrial Manufacturing",
+        "Space Economy",
+        "Mining & Critical Minerals",
+        "AgTech & Precision Farming",
+        "Lifecare & Health Systems",
+        "Lifestyle & Home Technologies",
+        "Industrial Robotics & AI Automation",
+        "Global Commodity Trading & Multimodal Logistics",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "corporate inquiries",
+          url: "https://takniser.com/contact",
+          availableLanguage: ["English", "German", "Arabic"],
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://takniser.com/#website",
+      url: "https://takniser.com",
+      name: "TAKNISER ONE GLOBE",
+      publisher: {
+        "@id": "https://takniser.com/#organization",
+      },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: "https://takniser.com/divisions?q={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de" className={`${montserrat.variable} ${cormorant.variable}`}>
+    <html lang="en" className={`${montserrat.variable} ${cormorant.variable}`}>
       <head>
         <script
           type="application/ld+json"
