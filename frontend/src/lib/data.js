@@ -4,9 +4,9 @@ exports.GLOBAL_NETWORK_LOCATIONS = exports.INDUSTRIES = exports.CAPABILITIES = e
 exports.CORPORATE_INFO = {
     name: "TAKNISER ONE GLOBE",
     legalName: "TAKNISER GmbH",
-    tagline: "100+ Years of German Engineering Heritage. Building the Future of Global Industry.",
+    tagline: "German Engineering Heritage. Building the Future of Global Industry.",
     foundingState: "Hesse (Hessen), Germany",
-    heritageYears: "100+",
+    heritageYears: "GERMAN",
     visionTargetYear: "2046",
     countriesServed: "190+",
     regionalHqs: "30",

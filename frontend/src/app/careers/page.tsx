@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Careers at TAKNISER — Global Engineering & Industrial Opportunities",
     description:
-      "Join 100+ years of German engineering excellence. Explore open positions in engineering, robotics, supply chain, international trade, and space economy.",
+      "Join German engineering excellence. Explore open positions in engineering, robotics, supply chain, international trade, and space economy.",
     images: [{ url: "/takniser_careers_hero.jpg", width: 1920, height: 1080, alt: "Careers at TAKNISER" }],
   },
 };

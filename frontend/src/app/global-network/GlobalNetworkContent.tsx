@@ -65,29 +65,29 @@ export default function GlobalNetworkContent() {
             alt="TAKNISER Global Logistics & Operations Network"
             fill
             priority
-            className="object-cover opacity-55 filter contrast-110 brightness-95 scale-105"
+            quality={95}
+            className="object-cover opacity-85 filter contrast-105 brightness-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/80 via-[#001822]/60 to-[#001822]/95" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,24,34,0.7)_90%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/75 via-[#001822]/50 to-[#001822]/80" />
         </div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-[#009999] text-[#009999] text-xs font-mono font-bold tracking-widest uppercase bg-[#002d3b]/70 backdrop-blur-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#009999]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-[#009999] text-[#00cccc] text-xs font-mono font-bold tracking-widest uppercase bg-[#001822]/85 backdrop-blur-md shadow-lg">
+            <Sparkles className="w-3.5 h-3.5 text-[#00cccc]" />
             <span>{isDe ? "GLOBALE OPERATIVE PRÄSENZ" : isAr ? "الانتشار العملياتي العالمي" : "Global Operational Presence"}</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)]">
             {isDe ? (
-              <>Globales <span className="text-[#009999]">Netzwerk</span></>
+              <>Globales <span className="text-[#00cccc] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">Netzwerk</span></>
             ) : isAr ? (
-              <>الشبكة <span className="text-[#009999]">العالمية</span></>
+              <>الشبكة <span className="text-[#00cccc] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">العالمية</span></>
             ) : (
-              <>Global <span className="text-[#009999]">Network</span></>
+              <>Global <span className="text-[#00cccc] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">Network</span></>
             )}
           </h1>
 
-          <p className="text-slate-200 text-sm sm:text-lg max-w-3xl mx-auto leading-relaxed font-normal">
+          <p className="text-slate-100 text-sm sm:text-lg max-w-3xl mx-auto leading-relaxed font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
             {isDe
               ? "Eine Welt. Ein Netzwerk. Eine Zukunft. — TAKNISER agiert über ein strategisch positioniertes weltweites Netzwerk aus 30 regionalen Hauptsitzen, Logistikhubs, Ingenieurzentren und Geschäftsstellen in über 190 Ländern."
               : isAr

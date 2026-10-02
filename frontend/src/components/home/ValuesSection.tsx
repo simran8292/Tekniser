@@ -26,7 +26,7 @@ export default function ValuesSection() {
             German Engineering <span className="text-[#009999]">Core Principles</span>
           </h2>
           <p className="text-slate-655 text-base sm:text-lg">
-            For over a century, TAKNISER has been guided by timeless values born in Hesse, Germany. We adhere firmly to <strong className="text-[#002d3b] font-bold">&quot;Qualität vor Quantität&quot;</strong> — Quality before Quantity.
+            For generations, TAKNISER has been guided by timeless values born in Hesse, Germany. We adhere firmly to <strong className="text-[#002d3b] font-bold">&quot;Qualität vor Quantität&quot;</strong> — Quality before Quantity.
           </p>
         </div>
 

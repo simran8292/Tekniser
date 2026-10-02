@@ -276,24 +276,24 @@ export default function CapabilitiesContent() {
             alt="Advanced Innovation and Robotics"
             fill
             priority
-            className="object-cover opacity-55 filter contrast-110 brightness-95 scale-105"
+            quality={95}
+            className="object-cover opacity-85 filter contrast-105 brightness-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/80 via-[#001822]/60 to-[#001822]/95" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,24,34,0.7)_90%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/75 via-[#001822]/50 to-[#001822]/80" />
         </div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-8">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-[#009999] text-[#009999] text-xs font-bold tracking-widest uppercase rounded-none bg-[#002d3b]/60 backdrop-blur-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#009999] animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-[#009999] text-[#00cccc] text-xs font-bold tracking-widest uppercase rounded-none bg-[#001822]/85 backdrop-blur-md shadow-lg">
+            <Sparkles className="w-3.5 h-3.5 text-[#00cccc] animate-pulse" />
             <span>{data.hero.badge}</span>
           </div>
 
           <div className="space-y-4">
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-tight text-white">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-tight text-white drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)]">
               {data.hero.title1} <br />
-              <span className="text-[#009999]">{data.hero.title2}</span>
+              <span className="text-[#00cccc] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">{data.hero.title2}</span>
             </h1>
-            <p className="text-sm sm:text-lg text-[#00cccc] font-semibold italic max-w-2xl mx-auto">
+            <p className="text-sm sm:text-lg text-[#00cccc] font-semibold italic max-w-2xl mx-auto drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
               {data.hero.sub}
             </p>
           </div>

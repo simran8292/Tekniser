@@ -46,9 +46,9 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slideData.length);
-    }, 6000);
+    }, 3000);
     return () => clearInterval(timer);
-  }, [slideData.length]);
+  }, [slideData.length, currentSlide]);
 
   const slide = slideData[currentSlide];
 
@@ -65,14 +65,14 @@ export default function Hero() {
             sizes="100vw"
             quality={95}
             priority={index === 0}
-            className={`object-cover transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100" : "opacity-0"
+            className={`object-cover transition-opacity duration-700 ease-in-out ${index === currentSlide ? "opacity-100" : "opacity-0"
               }`}
           />
         ))}
-        {/* High-contrast directional scrim: dark on left for text readability, clear on right for corporate image clarity */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#001822]/95 via-[#001822]/70 via-40% to-[#001822]/20 to-85% z-1" />
-        <div className="absolute inset-0 bg-[#001822]/50 lg:hidden z-1" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#001822]/90 via-transparent to-[#001822]/30 z-1" />
+        {/* High-contrast directional scrim: clear image visibility with text protection on left */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#001822]/85 via-[#001822]/55 via-45% to-[#001822]/15 to-85% z-1" />
+        <div className="absolute inset-0 bg-[#001822]/40 lg:hidden z-1" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#001822]/80 via-transparent to-[#001822]/20 z-1" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center lg:text-left transition-opacity duration-500">
@@ -80,16 +80,16 @@ export default function Hero() {
 
           {/* Left Column: Dynamic Content */}
           <div className="lg:col-span-7 space-y-5 text-left" key={slide.id}>
-            <div className="text-xs sm:text-sm font-normal text-[#009999] uppercase tracking-[0.2em] drop-shadow-sm animate-fade-in-up">
+            <div className="text-xs sm:text-sm font-normal text-[#00cccc] uppercase tracking-[0.2em] drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)] animate-fade-in-up">
               {slide.kicker}
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-normal leading-[1.15] uppercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-normal leading-[1.15] uppercase drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] animate-fade-in-up" style={{ animationDelay: '100ms' }}>
               {slide.title} <br className="hidden sm:inline" />
-              <span className="text-[#009999]">{slide.highlight}</span>
+              <span className="text-[#00cccc] drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">{slide.highlight}</span>
             </h1>
 
-            <p className="text-sm sm:text-base text-slate-100 max-w-2xl font-light leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+            <p className="text-sm sm:text-base text-slate-100 max-w-2xl font-light leading-relaxed drop-shadow-[0_2px_6px_rgba(0,0,0,0.95)] animate-fade-in-up" style={{ animationDelay: '200ms' }}>
               {slide.description}
             </p>
 

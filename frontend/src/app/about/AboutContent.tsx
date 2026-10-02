@@ -151,15 +151,15 @@ export default function AboutContent() {
             alt="German Engineering Heritage"
             fill
             priority
-            className="object-cover opacity-60 filter contrast-110 brightness-95 scale-105"
+            quality={95}
+            className="object-cover opacity-85 filter contrast-105 brightness-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/80 via-[#001822]/60 to-[#001822]/95" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,24,34,0.7)_90%)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/75 via-[#001822]/50 to-[#001822]/80" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-[#009999] text-[#009999] text-xs font-mono font-bold tracking-widest uppercase rounded-none bg-[#002d3b]/70 backdrop-blur-sm">
-            <Shield className="w-3.5 h-3.5 text-[#009999]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-[#009999] text-[#00cccc] text-xs font-mono font-bold tracking-widest uppercase rounded-none bg-[#001822]/85 backdrop-blur-md shadow-lg">
+            <Shield className="w-3.5 h-3.5 text-[#00cccc]" />
             <span>
               {isDe
                 ? "UNTERNEHMENSÜBERLIEFERUNG"
@@ -169,23 +169,23 @@ export default function AboutContent() {
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight uppercase leading-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)]">
             {isDe ? (
               <>
-                EIN JAHRHUNDERT <span className="text-[#009999]">DEUTSCHE TRADITION</span>
+                EIN JAHRHUNDERT <span className="text-[#00cccc] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">DEUTSCHE TRADITION</span>
               </>
             ) : isAr ? (
               <>
-                قرن من <span className="text-[#009999]">الإرث الألماني</span>
+                قرن من <span className="text-[#00cccc] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">الإرث الألماني</span>
               </>
             ) : (
               <>
-                A CENTURY OF <span className="text-[#009999]">GERMAN HERITAGE</span>
+                A CENTURY OF <span className="text-[#00cccc] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">GERMAN HERITAGE</span>
               </>
             )}
           </h1>
 
-          <p className="text-slate-200 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed font-normal">
+          <p className="text-slate-100 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
             {isDe
               ? "Seit über einem Jahrhundert verkörpert TAKNISER den beständigen Geist deutscher Ingenieurskunst – wo Präzision, Qualität, Zuverlässigkeit, Ingenieurskunst und Vertrauen definieren, wer wir sind."
               : isAr
@@ -290,7 +290,7 @@ export default function AboutContent() {
               {/* Rectangular Grids */}
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {[
-                  { label: isDe ? "Tradition" : isAr ? "التراث" : "Heritage", value: isDe ? "100+ Jahre" : isAr ? "+100 عام" : "100+ Years", icon: Landmark },
+                  { label: isDe ? "Tradition" : isAr ? "التراث" : "Heritage", value: isDe ? "Deutsche Exzellenz" : isAr ? "تميز ألماني" : "German Heritage", icon: Landmark },
                   { label: isDe ? "Ursprung" : isAr ? "المنشأ" : "Origin", value: isDe ? "Hessen, DE" : isAr ? "هسن، ألمانيا" : "Hesse, Germany", icon: Shield },
                   { label: isDe ? "Territorien" : isAr ? "الدول" : "Territories", value: "190+", icon: Globe },
                   { label: isDe ? "Regionale HQs" : isAr ? "المقرات الإقليمية" : "Regional HQs", value: "30+ RHQ", icon: Building2 },
@@ -333,10 +333,10 @@ export default function AboutContent() {
             </h2>
             <p className="text-slate-650 font-medium text-base sm:text-lg max-w-3xl mx-auto">
               {isDe
-                ? "Der Weg von TAKNISER über mehr als 100 Jahre – von deutschen Ingenieursfundamenten zu einem vernetzten globalen Industrie-Ökosystem."
+                ? "Der Weg von TAKNISER – von deutschen Ingenieursfundamenten zu einem vernetzten globalen Industrie-Ökosystem."
                 : isAr
-                ? "مسيرة تاكنيسر عبر أكثر من قرن من الزمان — من الأسس الهندسية الألمانية إلى منظومة صناعية عالمية متكاملة."
-                : "The TAKNISER corporate journey across more than 100 years — from German engineering foundations to a connected global industrial ecosystem."}
+                ? "مسيرة تاكنيسر — من الأسس الهندسية الألمانية إلى منظومة صناعية عالمية متكاملة."
+                : "The TAKNISER corporate journey — from German engineering foundations to a connected global industrial ecosystem."}
             </p>
           </div>
 

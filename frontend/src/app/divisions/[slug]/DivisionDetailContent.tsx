@@ -358,7 +358,7 @@ const UI_TEXT: Record<string, {
     productsServices: "Produkte & Dienstleistungen",
     countriesServed: "Belieferte Länder",
     productCategories: "Produktkategorien",
-    yearsHeritage: "Jahre Tradition",
+    yearsHeritage: "Deutsche Tradition",
   },
   en: {
     allDivisions: "All Business Divisions",
@@ -370,7 +370,7 @@ const UI_TEXT: Record<string, {
     productsServices: "Products & Services",
     countriesServed: "Countries Served",
     productCategories: "Product Categories",
-    yearsHeritage: "Years Heritage",
+    yearsHeritage: "German Heritage",
   },
   ar: {
     allDivisions: "جميع قطاعات الأعمال",
@@ -382,7 +382,7 @@ const UI_TEXT: Record<string, {
     productsServices: "المنتجات والخدمات",
     countriesServed: "دولة حول العالم",
     productCategories: "فئات المنتجات",
-    yearsHeritage: "عاماً من التراث",
+    yearsHeritage: "هندسة ألمانية",
   },
 };
 
@@ -433,30 +433,30 @@ export default function DivisionDetailContent({ slug }: { slug: string }) {
             alt={division.title}
             fill
             priority
-            className="object-cover opacity-55 filter contrast-110 brightness-95 scale-105"
+            quality={95}
+            className="object-cover opacity-85 filter contrast-105 brightness-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/80 via-[#001822]/60 to-[#001822]/95" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,24,34,0.7)_90%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/75 via-[#001822]/50 to-[#001822]/80" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <div className="flex items-center gap-3">
-                <div className="p-3 bg-[#002d3b] border border-slate-700 rounded-none text-[#009999]">
-                  <IconComponent className="w-8 h-8 text-[#009999]" />
+                <div className="p-3 bg-[#001822]/85 border border-[#009999] rounded-none text-[#00cccc] backdrop-blur-md shadow-lg">
+                  <IconComponent className="w-8 h-8 text-[#00cccc]" />
                 </div>
-                <span className="font-mono font-bold text-sm uppercase tracking-widest text-[#009999]">
+                <span className="font-mono font-bold text-sm uppercase tracking-widest text-[#00cccc] drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
                   {ui.strategicSector}
                 </span>
               </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight uppercase">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight uppercase drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)]">
                 {division.title}
               </h1>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">{division.tagline}</p>
+              <p className="text-sm sm:text-base text-slate-100 leading-relaxed font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">{division.tagline}</p>
               <Link
                 href="/contact"
-                className="btn-siemens btn-siemens-primary flex items-center justify-center gap-2 max-w-fit rounded-none font-bold text-sm uppercase tracking-wider"
+                className="btn-siemens btn-siemens-primary flex items-center justify-center gap-2 max-w-fit rounded-none font-bold text-sm uppercase tracking-wider shadow-lg"
               >
                 <span>{ui.requestInquiry}</span>
                 <ArrowRight className={`w-4 h-4 ${currentLanguage === 'ar' ? 'rotate-180' : ''}`} />
@@ -525,7 +525,7 @@ export default function DivisionDetailContent({ slug }: { slug: string }) {
             </div>
             <div className="bg-white border border-slate-200 rounded-none p-6 text-center shadow-none text-slate-800">
               <CheckCircle2 className="w-8 h-8 text-[#009999] mx-auto mb-3" />
-              <div className="text-2xl font-bold text-[#002d3b] font-mono">100+</div>
+              <div className="text-2xl font-bold text-[#002d3b] font-mono">GERMAN</div>
               <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold mt-1">{ui.yearsHeritage}</div>
             </div>
           </div>

@@ -86,15 +86,15 @@ export default function ContactContent() {
             alt="TAKNISER Corporate Operations"
             fill
             priority
-            className="object-cover opacity-55 filter contrast-110 brightness-95 scale-105"
+            quality={95}
+            className="object-cover opacity-85 filter contrast-105 brightness-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/80 via-[#001822]/60 to-[#001822]/95" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,24,34,0.7)_90%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/75 via-[#001822]/50 to-[#001822]/80" />
         </div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-[#009999] text-[#009999] text-xs font-mono font-bold tracking-widest uppercase bg-[#002d3b]/70 backdrop-blur-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#009999]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-[#009999] text-[#00cccc] text-xs font-mono font-bold tracking-widest uppercase bg-[#001822]/85 backdrop-blur-md shadow-lg">
+            <Sparkles className="w-3.5 h-3.5 text-[#00cccc]" />
             <span>
               {isDe
                 ? "PORTAL FÜR UNTERNEHMENSANFRAGEN"
@@ -104,23 +104,23 @@ export default function ContactContent() {
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)]">
             {isDe ? (
               <>
-                TAKNISER <span className="text-[#009999]">KONTAKTIEREN</span>
+                TAKNISER <span className="text-[#00cccc] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">KONTAKTIEREN</span>
               </>
             ) : isAr ? (
               <>
-                اتصل بـ <span className="text-[#009999]">تاكنيسر</span>
+                اتصل بـ <span className="text-[#00cccc] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">تاكنيسر</span>
               </>
             ) : (
               <>
-                Contact <span className="text-[#009999]">TAKNISER</span>
+                Contact <span className="text-[#00cccc] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">TAKNISER</span>
               </>
             )}
           </h1>
 
-          <p className="text-slate-200 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="text-slate-100 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
             {isDe
               ? "Ob Sie Hersteller, Behörde, EPC-Generalunternehmer, OEM oder institutioneller Einkäufer sind – unser weltweites Unternehmensteam steht bereit, Ihre Anfrage schnell und präzise zu bearbeiten."
               : isAr
@@ -137,9 +137,6 @@ export default function ContactContent() {
             </span>
             <span className="px-3 py-1 bg-[#002d3b] border border-slate-700 text-[#00cccc]">
               {isDe ? "Globale Karriere & Personalwesen" : isAr ? "الموارد البشرية والوظائف العالمية" : "Global Careers & HR Liaison"}
-            </span>
-            <span className="px-3 py-1 bg-[#002d3b] border border-slate-700 text-[#00cccc]">
-              {isDe ? "1–3 Tage Antwortgarantie" : isAr ? "التزام بالرد خلال 1-3 أيام" : "1–3 Days Response Commitment"}
             </span>
           </div>
         </div>

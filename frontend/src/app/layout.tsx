@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | TAKNISER ONE GLOBE",
   },
   description:
-    "TAKNISER ONE GLOBE is a global industrial, technology, manufacturing, sourcing, logistics and international trading conglomerate with 100+ years of German engineering heritage, operating in 190+ countries across 6 continents through 30 Regional Headquarters.",
+    "TAKNISER ONE GLOBE is a global industrial, technology, manufacturing, sourcing, logistics and international trading conglomerate with German engineering heritage, operating in 190+ countries across 6 continents through 30 Regional Headquarters.",
   keywords: [
     "TAKNISER",
     "TAKNISER ONE GLOBE",
@@ -81,13 +81,13 @@ export const metadata: Metadata = {
     siteName: "TAKNISER ONE GLOBE",
     title: "TAKNISER ONE GLOBE — Global Industrial, Technology & Trading Conglomerate",
     description:
-      "100+ Years of German Engineering Heritage. Building the Future of Global Industry. Operating in 190+ countries through 30 Regional Headquarters across 6 continents.",
+      "German Engineering Heritage. Building the Future of Global Industry. Operating in 190+ countries through 30 Regional Headquarters across 6 continents.",
     images: [{ url: "/LOGO.png", width: 800, height: 400, alt: "TAKNISER ONE GLOBE Official Identity" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "TAKNISER ONE GLOBE",
-    description: "Global Industrial, Technology & Trading Conglomerate — 100+ Years German Engineering Heritage",
+    description: "Global Industrial, Technology & Trading Conglomerate — German Engineering Heritage",
     images: ["/LOGO.png"],
   },
   icons: {
@@ -109,7 +109,7 @@ const jsonLd = {
       logo: "https://takniser.com/LOGO.png",
       image: "https://takniser.com/LOGO.png",
       description:
-        "Global Industrial, Technology, Manufacturing, Sourcing, Logistics & Trading Conglomerate with 100+ years of German engineering heritage, operating across 190+ countries and 30 Regional Headquarters.",
+        "Global Industrial, Technology, Manufacturing, Sourcing, Logistics & Trading Conglomerate with German engineering heritage, operating across 190+ countries and 30 Regional Headquarters.",
       foundingLocation: {
         "@type": "Place",
         name: "Hesse (Hessen), Germany",

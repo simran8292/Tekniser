@@ -169,36 +169,36 @@ export default function CareersContent() {
             alt="Careers at TAKNISER — Collaborative Engineering Campus"
             fill
             sizes="100vw"
-            className="object-cover object-[center_35%] filter contrast-[1.05] brightness-[0.82]"
+            quality={95}
+            className="object-cover object-[center_35%] filter contrast-105 brightness-100 opacity-90"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#000e1a] via-[#001822]/90 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#000e1a] via-transparent to-[#000e1a]/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/75 via-[#001822]/50 to-[#001822]/80" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12 relative z-10 w-full">
           <div className="max-w-3xl space-y-4 sm:space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#009999] text-[#00cccc] text-[11px] font-mono font-bold tracking-widest uppercase bg-[#002d3b]/80 backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-3 py-1 border border-[#009999] text-[#00cccc] text-[11px] font-mono font-bold tracking-widest uppercase bg-[#001822]/85 backdrop-blur-md shadow-lg">
               <Sparkles className="w-3 h-3 text-[#00cccc]" />
               <span>{isDe ? "KARRIERE BEI TAKNISER" : isAr ? "الوظائف في تاكنيسر" : "CAREERS AT TAKNISER"}</span>
             </div>
 
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)]">
               {isDe ? (
-                <>Gestalten Sie Ihre Zukunft über <span className="text-[#00cccc]">Industrien & Märkte</span></>
+                <>Gestalten Sie Ihre Zukunft über <span className="text-[#00cccc] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">Industrien & Märkte</span></>
               ) : isAr ? (
-                <>ابنِ مسيرتك المهنية عبر <span className="text-[#00cccc]">الصناعات والتكنولوجيا</span></>
+                <>ابنِ مسيرتك المهنية عبر <span className="text-[#00cccc] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">الصناعات والتكنولوجيا</span></>
               ) : (
-                <>Build Your Career Across <span className="text-[#00cccc]">Industries & Markets</span></>
+                <>Build Your Career Across <span className="text-[#00cccc] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">Industries & Markets</span></>
               )}
             </h1>
 
-            <p className="text-slate-200 text-xs sm:text-sm lg:text-base leading-relaxed max-w-2xl font-normal">
+            <p className="text-slate-100 text-xs sm:text-sm lg:text-base leading-relaxed max-w-2xl font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
               {isDe
-                ? "Werden Sie Teil eines globalen Technologie-, Industrie- und Handelskonglomerats mit über 100 Jahren deutscher Ingenieurstradition. Entdecken Sie weltweite Perspektiven in 190+ Ländern."
+                ? "Werden Sie Teil eines globalen Technologie-, Industrie- und Handelskonglomerats mit deutscher Ingenieurstradition. Entdecken Sie weltweite Perspektiven in 190+ Ländern."
                 : isAr
-                ? "انضم إلى تكتل صناعي وتكنولوجي وتجاري عالمي يستند إلى أكثر من 100 عام من التميز الهندسي الألماني. اكتشف فرصاً مهنية واعدة في أكثر من 190 دولة."
-                : "Join a global technology, manufacturing, and trading conglomerate with over 100 years of German engineering heritage. Discover world-class career pathways across 190+ countries and 30 Regional Headquarters."}
+                ? "انضم إلى تكتل صناعي وتكنولوجي وتجاري عالمي يستند إلى التميز الهندسي الألماني. اكتشف فرصاً مهنية واعدة في أكثر من 190 دولة."
+                : "Join a global technology, manufacturing, and trading conglomerate with German engineering heritage. Discover world-class career pathways across 190+ countries and 30 Regional Headquarters."}
             </p>
 
             {/* Quick CTAs */}
@@ -233,8 +233,8 @@ export default function CareersContent() {
                 <div className="text-[10px] sm:text-[11px] font-mono text-slate-300 uppercase mt-0.5">{isDe ? "Geschäftsbereiche" : "Core Divisions"}</div>
               </div>
               <div>
-                <div className="text-xl sm:text-2xl font-black text-[#00cccc] font-mono">100+</div>
-                <div className="text-[10px] sm:text-[11px] font-mono text-slate-300 uppercase mt-0.5">{isDe ? "Jahre Tradition" : "Years Heritage"}</div>
+                <div className="text-xl sm:text-2xl font-black text-[#00cccc] font-mono">GERMAN</div>
+                <div className="text-[10px] sm:text-[11px] font-mono text-slate-300 uppercase mt-0.5">{isDe ? "Ingenieurstradition" : "Engineering Heritage"}</div>
               </div>
             </div>
           </div>
@@ -275,8 +275,8 @@ export default function CareersContent() {
               </h3>
               <p className="text-xs sm:text-sm text-slate-650 leading-relaxed">
                 {isDe
-                  ? "Arbeiten Sie nach den bewährten Prinzipien von Präzision, Qualität, Zuverlässigkeit und Vertrauen, die seit über 100 Jahren in Hessen verankert sind."
-                  : "Work upon century-tested principles of Präzision, Qualität, Zuverlässigkeit, and Vertrauen originating from our historic Hesse headquarters."}
+                  ? "Arbeiten Sie nach den bewährten Prinzipien von Präzision, Qualität, Zuverlässigkeit und Vertrauen, die seit Generationen in Hessen verankert sind."
+                  : "Work upon proven principles of Präzision, Qualität, Zuverlässigkeit, and Vertrauen originating from our historic Hesse headquarters."}
               </p>
             </div>
 

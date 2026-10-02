@@ -200,7 +200,7 @@ async function generateDoc() {
                         spacing: { after: 400 },
                         children: [
                             new docx_1.TextRun({
-                                text: "100+ Years of German Engineering Heritage",
+                                text: "German Engineering Heritage",
                                 bold: true,
                                 color: "009999",
                                 size: 24,
@@ -247,7 +247,7 @@ async function generateDoc() {
                     createDivider(),
                     createSubSectionHeading("Hero Section"),
                     createParagraph("Heading: BUILDING THE FUTURE OF GLOBAL INDUSTRY"),
-                    createParagraph("Subheading: 100+ Years of German Engineering Heritage. Operating in 190+ Countries through 29 Regional Headquarters."),
+                    createParagraph("Subheading: German Engineering Heritage. Operating in 190+ Countries through 30 Regional Headquarters."),
                     createSubSectionHeading("Strategic Ambition / Vision 2046 Section"),
                     createParagraph("Label: Our Strategic Ambition"),
                     createParagraph("Heading: Vision 2046"),
@@ -264,16 +264,16 @@ async function generateDoc() {
                     createSubSectionHeading("Page Hero Section"),
                     createParagraph("Label: Corporate Heritage"),
                     createParagraph("Heading: About TAKNISER"),
-                    createParagraph("Description: For more than a century, TAKNISER has represented the enduring legacy of German engineering — built upon the timeless principles of Präzision, Qualität, Zuverlässigkeit, Ingenieurskunst, and Vertrauen."),
+                    createParagraph("Description: For generations, TAKNISER has represented the enduring legacy of German engineering — built upon the timeless principles of Präzision, Qualität, Zuverlässigkeit, Ingenieurskunst, and Vertrauen."),
                     createSubSectionHeading("Heritage Statement"),
                     createParagraph("Label: Hesse (Hessen), Germany — Early 20th Century"),
                     createParagraph("Heading: Where German Engineering Excellence Was Born"),
-                    createParagraph("Paragraph 1: The TAKNISER story began more than 100 years ago in the historic state of Hesse (Hessen), Germany, where generations of engineers built a reputation for uncompromising quality, technical expertise, and dependable industrial solutions."),
+                    createParagraph("Paragraph 1: The TAKNISER story began in the historic state of Hesse (Hessen), Germany, where generations of engineers built a reputation for uncompromising quality, technical expertise, and dependable industrial solutions."),
                     createParagraph("Paragraph 2: During one of Europe's most significant periods of industrial growth, TAKNISER specialized in the engineering, modernization, maintenance, and technical support of diesel power generation systems — ensuring uninterrupted power for factories, transportation networks, public infrastructure, and essential industries."),
                     createParagraph("Paragraph 3: From the very beginning, TAKNISER embraced the German philosophy of “Qualität vor Quantität” — Quality before Quantity. Every engineering solution reflected meticulous craftsmanship, disciplined execution, precision manufacturing, and an unwavering commitment to reliability."),
                     createParagraph("Quote Panel: “These values became more than engineering principles — they became the DNA of the TAKNISER brand.”", { italic: true }),
                     createSubSectionHeading("Corporate Timeline"),
-                    createParagraph("Heading: A Century of Industrial Evolution (The TAKNISER corporate journey across more than 100 years)"),
+                    createParagraph("Heading: A Century of Industrial Evolution (The TAKNISER corporate journey from German engineering foundations to a global ecosystem)"),
                     ...TIMELINE.flatMap((item) => [
                         new docx_1.Paragraph({
                             children: [

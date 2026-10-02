@@ -320,7 +320,7 @@ const ECOSYSTEM_DATA: Record<string, {
       stat1: "Kernsektoren",
       stat2: "Belieferte Länder",
       stat3: "Operative Einheiten",
-      stat4: "Jahre Tradition",
+      stat4: "Kontinente",
     },
     cta: {
       title1: "Partner unserer",
@@ -561,7 +561,7 @@ const ECOSYSTEM_DATA: Record<string, {
       stat1: "Core Sectors",
       stat2: "Countries Served",
       stat3: "Operating Entities",
-      stat4: "Years Heritage",
+      stat4: "Continents Covered",
     },
     cta: {
       title1: "Partner with Our",
@@ -802,7 +802,7 @@ const ECOSYSTEM_DATA: Record<string, {
       stat1: "قطاعات رئيسية",
       stat2: "دولة حول العالم",
       stat3: "كياناً تشغيلياً",
-      stat4: "عاماً من التراث",
+      stat4: "قارات حول العالم",
     },
     cta: {
       title1: "كن شريكاً مع",
@@ -831,23 +831,23 @@ export default function DivisionsContent() {
             alt="TAKNISER Core Divisions Platform"
             fill
             priority
-            className="object-cover opacity-55 filter contrast-110 brightness-95 scale-105"
+            quality={95}
+            className="object-cover opacity-85 filter contrast-105 brightness-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/80 via-[#001822]/60 to-[#001822]/95" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,24,34,0.7)_90%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/75 via-[#001822]/50 to-[#001822]/80" />
         </div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-[#009999] text-[#009999] text-xs font-mono font-bold tracking-widest uppercase bg-[#002d3b]/70 backdrop-blur-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#009999]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-[#009999] text-[#00cccc] text-xs font-mono font-bold tracking-widest uppercase bg-[#001822]/85 backdrop-blur-md shadow-lg">
+            <Sparkles className="w-3.5 h-3.5 text-[#00cccc]" />
             <span>{data.hero.badge}</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
-            {data.hero.title1} <span className="text-[#009999]">{data.hero.titleHighlight}</span>
+          <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)]">
+            {data.hero.title1} <span className="text-[#00cccc] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">{data.hero.titleHighlight}</span>
           </h1>
 
-          <p className="text-slate-200 text-sm sm:text-lg max-w-3xl mx-auto leading-relaxed font-normal">
+          <p className="text-slate-100 text-sm sm:text-lg max-w-3xl mx-auto leading-relaxed font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
             {data.hero.desc}
           </p>
 
@@ -856,7 +856,7 @@ export default function DivisionsContent() {
               <a
                 key={div.id}
                 href={`#${div.id}`}
-                className="px-3.5 py-1.5 text-xs font-semibold bg-[#002d3b]/80 border border-slate-700 text-slate-300 hover:text-white hover:border-[#009999] transition-all rounded-none"
+                className="px-3.5 py-1.5 text-xs font-semibold bg-[#001822]/85 border border-slate-700/80 text-slate-200 hover:text-white hover:border-[#00cccc] backdrop-blur-md shadow-md transition-all rounded-none"
               >
                 {div.title}
               </a>
@@ -1178,7 +1178,7 @@ export default function DivisionsContent() {
               <div className="text-xs text-slate-500 uppercase font-mono mt-1">{data.valueChain.stat3}</div>
             </div>
             <div className="p-4 bg-[#f8fafc] border border-slate-200 text-center">
-              <div className="text-2xl font-black text-[#002d3b]">100+</div>
+              <div className="text-2xl font-black text-[#002d3b]">6</div>
               <div className="text-xs text-slate-500 uppercase font-mono mt-1">{data.valueChain.stat4}</div>
             </div>
           </div>

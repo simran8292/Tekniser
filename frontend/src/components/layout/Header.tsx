@@ -36,7 +36,6 @@ export default function Header() {
     { name: t("industries"), href: "/industries" },
     { name: t("responsibility"), href: "/responsibility", hasDropdown: true, dropdownType: "responsibility" },
     { name: t("careers"), href: "/careers" },
-    { name: t("contact"), href: "/contact" },
   ];
 
   return (
