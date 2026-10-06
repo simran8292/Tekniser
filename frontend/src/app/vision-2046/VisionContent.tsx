@@ -104,7 +104,7 @@ const ROADMAP_PILLARS_DE = [
   {
     title: "EINE WELT – GEMEINSAME CHANCEN",
     desc: "Überwindung traditioneller Grenzen zwischen Märkten und Sektoren zur Erschließung neuer Möglichkeiten für Innovation, Investition und Wohlstand.",
-    image: "/vision_pillar_6.jpg",
+    image: "/vision_globe_opportunity.jpg",
   },
 ];
 
@@ -137,7 +137,7 @@ const ROADMAP_PILLARS_EN = [
   {
     title: "ONE GLOBE, SHARED OPPORTUNITY",
     desc: "Breaking down traditional boundaries between markets and industries to create new opportunities for collaboration, innovation, investment, and sustainable economic development.",
-    image: "/vision_pillar_6.jpg",
+    image: "/vision_globe_opportunity.jpg",
   },
 ];
 
@@ -170,7 +170,7 @@ const ROADMAP_PILLARS_AR = [
   {
     title: "عالم واحد، فرص مشتركة",
     desc: "تجاوز الحواجز التقليدية بين الأسواق والقطاعات لخلق فرص جديدة للتعاون والابتكار والاستثمار والتنمية الاقتصادية المستدامة.",
-    image: "/vision_pillar_6.jpg",
+    image: "/vision_globe_opportunity.jpg",
   },
 ];
 

@@ -120,13 +120,6 @@ export default function ContactContent() {
             )}
           </h1>
 
-          <p className="text-slate-100 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
-            {isDe
-              ? "Ob Sie Hersteller, Behörde, EPC-Generalunternehmer, OEM oder institutioneller Einkäufer sind – unser weltweites Unternehmensteam steht bereit, Ihre Anfrage schnell und präzise zu bearbeiten."
-              : isAr
-              ? "سواء كنت جهة تصنيع، هيئة حكومية، مقاول هندسة ومشتريات وبناء، أو مشترياً مؤسسياً — فإن فريقنا العالمي جاهز للرد على استفسارك بأعلى درجات الكفاءة."
-              : "Whether you are a manufacturer, government body, EPC contractor, OEM, or institutional buyer — our global corporate team is ready to respond to your inquiry."}
-          </p>
 
           <div className="flex flex-wrap justify-center gap-3 pt-2 text-xs font-mono text-slate-400">
             <span className="px-3 py-1 bg-[#002d3b] border border-slate-700 text-[#00cccc]">

@@ -13,8 +13,13 @@ import {
   Home,
   Bot,
   CheckCircle2,
+  Workflow,
+  ShieldCheck,
+  Sparkles,
+  ChevronRight,
 } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
+import { DIVISION_CATEGORIES_DATA, CategoryDetail } from "@/lib/divisionSectionsData";
 
 const divisionImages: Record<string, string> = {
   "space-economy": "/platform_space.jpg",
@@ -347,6 +352,12 @@ const UI_TEXT: Record<string, {
   countriesServed: string;
   productCategories: string;
   yearsHeritage: string;
+  capabilitiesSectionBadge: string;
+  capabilitiesSectionTitle: string;
+  capabilitiesSectionDesc: string;
+  processHeading: string;
+  keySpecsLabel: string;
+  inquireCategory: string;
 }> = {
   de: {
     allDivisions: "Alle Geschäftsbereiche",
@@ -359,6 +370,12 @@ const UI_TEXT: Record<string, {
     countriesServed: "Belieferte Länder",
     productCategories: "Produktkategorien",
     yearsHeritage: "Deutsche Tradition",
+    capabilitiesSectionBadge: "INGENIEURSARCHITEKTUR & LEISTUNGSSPEKTRUM",
+    capabilitiesSectionTitle: "Operative Vertikalen & Technische Prozesse",
+    capabilitiesSectionDesc: "Detaillierte Aufschlüsselung der Kernproduktlinien, technischen Spezifikationen und des mehrstufigen Qualitätslebenszyklus in unserem weltweiten Netzwerk.",
+    processHeading: "Ingenieurs- & Lieferprozess",
+    keySpecsLabel: "Wichtige technische Standards & Fähigkeiten",
+    inquireCategory: "Für diesen Bereich anfragen",
   },
   en: {
     allDivisions: "All Business Divisions",
@@ -371,6 +388,12 @@ const UI_TEXT: Record<string, {
     countriesServed: "Countries Served",
     productCategories: "Product Categories",
     yearsHeritage: "German Heritage",
+    capabilitiesSectionBadge: "ENGINEERING ARCHITECTURE & CAPABILITIES",
+    capabilitiesSectionTitle: "Operational Verticals & Technical Processes",
+    capabilitiesSectionDesc: "Detailed breakdown of core product lines, key engineering specifications, and the multi-stage quality lifecycle deployed across our global network.",
+    processHeading: "Engineering & Delivery Process",
+    keySpecsLabel: "Key Technical Standards & Capabilities",
+    inquireCategory: "Inquire for this Vertical",
   },
   ar: {
     allDivisions: "جميع قطاعات الأعمال",
@@ -383,6 +406,12 @@ const UI_TEXT: Record<string, {
     countriesServed: "دولة حول العالم",
     productCategories: "فئات المنتجات",
     yearsHeritage: "هندسة ألمانية",
+    capabilitiesSectionBadge: "الهندسة المعمارية والقدرات التشغيلية",
+    capabilitiesSectionTitle: "القطاعات التشغيلية والعمليات الفنية",
+    capabilitiesSectionDesc: "تفصيل شامل لخطوط الإنتاج الأساسية والمواصفات الهندسية ودورة الجودة متعددة المراحل المطبقة عبر شبكتنا العالمية.",
+    processHeading: "مسار الهندسة والتسليم",
+    keySpecsLabel: "المعايير الفنية والقدرات الرئيسية",
+    inquireCategory: "استفسر عن هذا القطاع",
   },
 };
 
@@ -411,6 +440,11 @@ export default function DivisionDetailContent({ slug }: { slug: string }) {
 
   const prevDivision = prevSlug ? divMap[prevSlug] : null;
   const nextDivision = nextSlug ? divMap[nextSlug] : null;
+
+  const categoryDetails: CategoryDetail[] =
+    DIVISION_CATEGORIES_DATA[currentLanguage]?.[slug] ||
+    DIVISION_CATEGORIES_DATA["en"]?.[slug] ||
+    [];
 
   return (
     <div className={`pt-24 min-h-screen bg-[#f4f5f6] text-slate-800 ${currentLanguage === 'ar' ? 'rtl text-right' : 'text-left'}`}>
@@ -489,16 +523,29 @@ export default function DivisionDetailContent({ slug }: { slug: string }) {
                 </div>
                 <p className="text-slate-650 text-sm leading-relaxed">{division.description}</p>
                 <div>
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-3">
-                    {ui.productsServices}
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center justify-between">
+                    <span>{ui.productsServices}</span>
+                    <span className="text-[9px] font-mono text-[#009999] lowercase">jump to section ↓</span>
                   </div>
-                  <ul className="space-y-2">
-                    {division.categories.map((cat) => (
-                      <li key={cat} className="flex items-center gap-2.5 text-sm text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-[#009999] shrink-0" />
-                        <span>{cat}</span>
-                      </li>
-                    ))}
+                  <ul className="space-y-1.5">
+                    {division.categories.map((cat, idx) => {
+                      const detail = categoryDetails[idx];
+                      const targetId = detail ? detail.id : `cat-${idx}`;
+                      return (
+                        <li key={cat}>
+                          <a
+                            href={`#${targetId}`}
+                            className="flex items-center justify-between p-1.5 px-2 rounded-none hover:bg-slate-100 transition-colors group"
+                          >
+                            <span className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700 group-hover:text-[#009999] font-medium transition-colors">
+                              <CheckCircle2 className="w-4 h-4 text-[#009999] shrink-0 group-hover:scale-110 transition-transform" />
+                              <span>{cat}</span>
+                            </span>
+                            <ArrowRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#009999] group-hover:translate-x-1 transition-all" />
+                          </a>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
@@ -531,6 +578,155 @@ export default function DivisionDetailContent({ slug }: { slug: string }) {
           </div>
         </div>
       </section>
+
+      {/* ─────────────────────────────────────────────────────────────
+          DEDICATED CATEGORY SECTIONS WITH CONTENT, IMAGES & PROCESS
+      ───────────────────────────────────────────────────────────── */}
+      {categoryDetails.length > 0 && (
+        <section className="py-20 lg:py-24 bg-white border-t border-slate-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Section Header */}
+            <div className="max-w-3xl mb-16 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#002d3b]/5 border border-[#009999]/30 text-[#009999] text-xs font-mono font-bold tracking-widest uppercase">
+                <Workflow className="w-3.5 h-3.5 text-[#009999]" />
+                <span>{ui.capabilitiesSectionBadge}</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#002d3b] tracking-tight uppercase leading-tight">
+                {division.title} — {ui.capabilitiesSectionTitle}
+              </h2>
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                {ui.capabilitiesSectionDesc}
+              </p>
+            </div>
+
+            {/* Category Cards Stack */}
+            <div className="space-y-20 lg:space-y-24">
+              {categoryDetails.map((cat, idx) => {
+                const isEven = idx % 2 === 0;
+                return (
+                  <div
+                    key={cat.id}
+                    id={cat.id}
+                    className="scroll-mt-28 bg-[#f8fafc] border border-slate-200 hover:border-[#009999]/50 transition-all duration-300 shadow-sm overflow-hidden"
+                  >
+                    {/* Top Header Strip */}
+                    <div className="bg-[#001822] text-white px-6 py-4 flex flex-wrap items-center justify-between gap-4 border-b border-slate-800">
+                      <div className="flex items-center gap-3">
+                        <span className="px-2.5 py-0.5 bg-[#009999] text-white font-mono font-bold text-xs uppercase tracking-wider">
+                          {String(idx + 1).padStart(2, "0")}
+                        </span>
+                        <span className="font-mono text-xs text-[#00cccc] uppercase tracking-widest font-semibold">
+                          {cat.badge}
+                        </span>
+                      </div>
+                      <span className="text-xs font-mono px-3 py-1 bg-[#002d3b] border border-slate-700 text-[#00cccc]">
+                        {cat.metricBadge}
+                      </span>
+                    </div>
+
+                    {/* Main Grid: Content + Image */}
+                    <div className="p-6 sm:p-10 lg:p-12">
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                        {/* Info Column */}
+                        <div className={`space-y-6 ${isEven ? "lg:col-span-7 lg:order-1" : "lg:col-span-7 lg:order-2"}`}>
+                          <div>
+                            <h3 className="text-2xl sm:text-3xl font-black text-[#002d3b] uppercase tracking-tight mb-2">
+                              {cat.title}
+                            </h3>
+                            <p className="text-xs sm:text-sm font-semibold text-[#009999] uppercase tracking-wider font-mono">
+                              {cat.badge}
+                            </p>
+                          </div>
+
+                          <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
+                            {cat.description}
+                          </p>
+
+                          {/* Key Technical Standards & Capabilities */}
+                          <div className="pt-2">
+                            <div className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 mb-3 flex items-center gap-1.5">
+                              <ShieldCheck className="w-4 h-4 text-[#009999]" />
+                              <span>{ui.keySpecsLabel}</span>
+                            </div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                              {cat.keyFeatures.map((feat, fIdx) => (
+                                <div
+                                  key={fIdx}
+                                  className="flex items-start gap-2 bg-white p-3 border border-slate-200 text-xs sm:text-[13px] text-slate-700 leading-normal"
+                                >
+                                  <CheckCircle2 className="w-4 h-4 text-[#009999] shrink-0 mt-0.5" />
+                                  <span>{feat}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Action CTA */}
+                          <div className="pt-4">
+                            <Link
+                              href={`/contact?interest=${encodeURIComponent(cat.title)}`}
+                              className="inline-flex items-center gap-2 px-6 py-3 bg-[#002d3b] hover:bg-[#009999] text-white transition-colors duration-200 text-xs font-bold uppercase tracking-wider group"
+                            >
+                              <span>{ui.inquireCategory}</span>
+                              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                          </div>
+                        </div>
+
+                        {/* Visual Image Column */}
+                        <div className={`relative min-h-[280px] sm:min-h-[340px] lg:h-[380px] overflow-hidden border border-slate-200 group ${isEven ? "lg:col-span-5 lg:order-2" : "lg:col-span-5 lg:order-1"}`}>
+                          <Image
+                            src={cat.image}
+                            alt={cat.title}
+                            fill
+                            sizes="(max-width: 1024px) 100vw, 40vw"
+                            className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#001822]/85 via-transparent to-transparent pointer-events-none" />
+                          <div className="absolute bottom-4 left-4 right-4 text-white">
+                            <div className="text-[11px] font-mono text-[#00cccc] uppercase tracking-wider font-bold">
+                              {cat.metricBadge}
+                            </div>
+                            <div className="text-sm font-bold uppercase tracking-tight">
+                              {cat.title}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Process Flow Strip */}
+                      <div className="mt-10 pt-8 border-t border-slate-200">
+                        <div className="flex items-center gap-2 mb-6">
+                          <Workflow className="w-4 h-4 text-[#009999]" />
+                          <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[#002d3b]">
+                            {ui.processHeading} — {cat.title}
+                          </h4>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                          {cat.process.map((pStep, pIdx) => (
+                            <div
+                              key={pIdx}
+                              className="relative bg-white p-5 border border-slate-200 hover:border-[#009999]/60 hover:shadow-sm transition-all duration-200 space-y-2 flex flex-col justify-between"
+                            >
+                              <h5 className="text-xs font-bold uppercase text-[#002d3b] tracking-tight leading-snug">
+                                {pStep.title}
+                              </h5>
+                              <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                                {pStep.desc}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Navigation between Divisions */}
       <section className="py-8 bg-white border-t border-slate-200 text-slate-800">

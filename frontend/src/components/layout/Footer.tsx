@@ -91,13 +91,13 @@ export default function Footer() {
 
             {/* Action Button */}
             <div className="pt-1">
-              <Link
-                href="/contact"
+              <a
+                href="mailto:hr@takniser.com"
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-3 bg-white hover:bg-[#002d3b] text-[#009999] hover:text-white transition-all duration-300 font-bold uppercase tracking-wider text-xs sm:text-[13px] rounded-none shadow-lg group"
               >
                 <span>{t("footer-contact-team")}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-              </Link>
+              </a>
             </div>
 
           </div>

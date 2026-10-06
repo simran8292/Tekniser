@@ -600,7 +600,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     // Footer Contact CTA
     "footer-ready": "Bauen Sie Ihre Zukunft mit TAKNISER",
     "footer-team-desc": "Unser weltweites Team aus Industriespezialisten, Ingenieuren und Beschaffungsexperten steht bereit, integrierte Lösungen für Ihre Anforderungen zu liefern.",
-    "footer-contact-team": "Unser Team kontaktieren",
+    "footer-contact-team": "HR-Team kontaktieren",
     "footer-corporate-tagline": "Deutsche Ingenieurstradition. Die Zukunft der globalen Industrie gestalten.",
     "footer-german-desc": "Gegründet auf den deutschen Grundsätzen Präzision, Qualität, Zuverlässigkeit, Ingenieurskunst und Vertrauen seit dem frühen 20. Jahrhundert in Hessen.",
     "footer-global-presence": "Globale Präsenz",
@@ -848,7 +848,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     // Footer Contact CTA
     "footer-ready": "Build Your Future with TAKNISER",
     "footer-team-desc": "Our global team of industrial specialists, engineers, and procurement experts are ready to deliver integrated solutions for your business needs.",
-    "footer-contact-team": "Contact Our Team",
+    "footer-contact-team": "Contact HR Team",
     "footer-corporate-tagline": "German Engineering Heritage. Building the Future of Global Industry.",
     "footer-german-desc": "Established upon German principles of Präzision, Qualität, Zuverlässigkeit, Ingenieurskunst, and Vertrauen since early 20th century Hesse.",
     "footer-global-presence": "Global Presence",
@@ -1096,7 +1096,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     // Footer Contact CTA
     "footer-ready": "ابنِ مستقبلك مع تاكنيسر",
     "footer-team-desc": "فريقنا العالمي من المتخصصين الصناعيين والمهندسين وخبراء المشتريات على أهبة الاستعداد لتقديم حلول متكاملة لمتطلبات عملك.",
-    "footer-contact-team": "اتصل بفريقنا",
+    "footer-contact-team": "تواصل مع فريق الموارد البشرية",
     "footer-corporate-tagline": "تميز الهندسة الألمانية. بناء مستقبل الصناعة العالمية.",
     "footer-german-desc": "تأسست وفقاً للمبادئ الألمانية المتمثلة في الدقة، والجودة، والموثوقية، والبراعة الهندسية، والثقة منذ أوائل القرن العشرين في ولاية هسن.",
     "footer-global-presence": "الانتشار العالمي",
@@ -1344,7 +1344,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     // Footer Contact CTA
     "footer-ready": "与 TAKNISER 共筑未来",
     "footer-team-desc": "我们的全球工业专家、工程师和采购专家团队随时准备为您的业务需求提供集成解决方案。",
-    "footer-contact-team": "联系我们的团队",
+    "footer-contact-team": "联系HR团队",
     "footer-corporate-tagline": "德国工程底蕴。塑造全球工业未来。",
     "footer-german-desc": "自20世纪初在黑森州成立以来，始终坚守德国精密、品质、可靠、工程造诣与信任的基石。",
     "footer-global-presence": "全球业务分布",
@@ -1436,7 +1436,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     // Footer Contact CTA
     "footer-ready": "Buduj swoją przyszłość z TAKNISER",
     "footer-team-desc": "Nasz globalny zespół specjalistów przemysłowych, inżynierów i ekspertów ds. zakupów jest gotowy dostarczyć zintegrowane rozwiązania dla Twoich potrzeb biznesowych.",
-    "footer-contact-team": "Skontaktuj się z naszym zespołem",
+    "footer-contact-team": "Skontaktuj się z zespołem HR",
     "footer-corporate-tagline": "Niemieckie dziedzictwo inżynieryjne. Budowanie przyszłości globalnego przemysłu.",
     "footer-german-desc": "Założona w oparciu o niemieckie zasady Präzision, Qualität, Zuverlässigkeit, Ingenieurskunst i Vertrauen od początku XX wieku w Hesji.",
     "footer-global-presence": "Globalna Obecność",
@@ -1528,7 +1528,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     // Footer Contact CTA
     "footer-ready": "TAKNISERと共に未来を築く",
     "footer-team-desc": "当社の産業スペシャリスト、エンジニア、調達専門家のグローバルチームが、お客様のビジネスニーズに合わせた統合ソリューションを提供する準備を整えています。",
-    "footer-contact-team": "チームにお問い合わせ",
+    "footer-contact-team": "HRチームにお問い合わせ",
     "footer-corporate-tagline": "ドイツエンジニアリングの伝統。グローバル産業の未来を築く。",
     "footer-german-desc": "20世紀初頭のヘッセンにおけるドイツの精密、品質、信頼性、エンジニアリングの粋、そして信頼の原則に基づいて設立されました。",
     "footer-global-presence": "グローバル展開",
@@ -1620,7 +1620,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     // Footer Contact CTA
     "footer-ready": "TAKNISER와 함께 미래를 구축하세요",
     "footer-team-desc": "당사의 글로벌 산업 전문가, 엔지니어 및 조달 전문가 팀은 귀사의 비즈니스 요구에 부합하는 통합 솔루션을 제공할 준비가 되어 있습니다.",
-    "footer-contact-team": "우리 팀에 문의하기",
+    "footer-contact-team": "HR 팀에 문의하기",
     "footer-corporate-tagline": "독일 엔지니어링 우수성. 글로벌 산업의 미래를 건설하다.",
     "footer-german-desc": "20세기 초 헤센에서 독일의 정밀성, 품질, 신뢰성, 엔지니어링 우수성 및 신뢰의 원칙을 바탕으로 설립되었습니다.",
     "footer-global-presence": "글로벌 입지",
