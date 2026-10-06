@@ -126,7 +126,7 @@ export const DIVISION_CATEGORIES_DATA: Record<string, Record<string, CategoryDet
         title: "Copper",
         badge: "Grade-A Electrolytic Cathodes & Rods",
         description: "TAKNISER supplies LME Grade-A 99.9935% electrolytic copper cathodes, continuous cast rods, and copper concentrates critical for international electric grid expansions, renewable energy stations, and EV drivetrains.",
-        image: "/platform_mining.jpg",
+        image: "/cat_minerals_copper.jpg",
         keyFeatures: [
           "LME registered Grade-A copper purity (Cu > 99.9935%)",
           "Direct smelter off-take agreements across South America & Africa",
@@ -146,7 +146,7 @@ export const DIVISION_CATEGORIES_DATA: Record<string, Record<string, CategoryDet
         title: "Lithium",
         badge: "Battery-Grade Carbonate & Hydroxide",
         description: "Refined battery-grade lithium carbonate (Li2CO3 ≥ 99.5%) and lithium hydroxide monohydrate (LiOH·H2O ≥ 56.5%) sourced from premier brine basins and hard-rock spodumene refineries worldwide.",
-        image: "/mining_quarry_platform.jpg",
+        image: "/cat_minerals_lithium.jpg",
         keyFeatures: [
           "Ultra-low magnetic impurity thresholds (<10 ppb)",
           "Battery-grade carbonate for LFP cells and hydroxide for high-nickel NMC",
@@ -206,7 +206,7 @@ export const DIVISION_CATEGORIES_DATA: Record<string, Record<string, CategoryDet
         title: "Aluminum",
         badge: "Low-Carbon Primary Ingots & Billets",
         description: "Hydro-powered low-carbon primary aluminum ingots, extrusion billets, and precision rolling slabs engineered for automotive light-weighting, aerospace fuselage structures, and modern architecture.",
-        image: "/about_conglomerate_hq.jpg",
+        image: "/cat_minerals_aluminum.jpg",
         keyFeatures: [
           "Certified low-carbon aluminum (< 4.0 kg CO2 per kg Al)",
           "Standard P1020A primary ingots (Al ≥ 99.70%)",
@@ -246,7 +246,7 @@ export const DIVISION_CATEGORIES_DATA: Record<string, Record<string, CategoryDet
         title: "Critical Mineral Trading",
         badge: "Global Risk Management & Multi-Commodity Off-take",
         description: "TAKNISER's trading desk provides physical commodity supply solutions, structured off-take contracts, price risk hedging, and strategic sovereign inventory management across all critical industrial minerals.",
-        image: "/platform_trading.jpg",
+        image: "/value_chain_hero_port.jpg",
         keyFeatures: [
           "Direct multi-year off-take agreements with Tier-1 mining operators",
           "LME and CME hedging to eliminate industrial price volatility",
@@ -329,7 +329,7 @@ export const DIVISION_CATEGORIES_DATA: Record<string, Record<string, CategoryDet
         title: "Seeds",
         badge: "Non-GMO Climate-Resilient Hybrid Genetics",
         description: "High-vigor hybrid and certified open-pollinated seed varieties optimized for high yield, drought tolerance, saline soil adaptability, and resistance to aggressive fungal and viral crop pathogens.",
-        image: "/mission_smart_factory.jpg",
+        image: "/cat_agtech_seeds.jpg",
         keyFeatures: [
           "Germination rate guaranteed above 95% under standard conditions",
           "Advanced polymer seed coating with biological fungicides and micro-nutrients",
@@ -349,7 +349,7 @@ export const DIVISION_CATEGORIES_DATA: Record<string, Record<string, CategoryDet
         title: "Agricultural Machinery",
         badge: "Autonomous GPS Tractors & Smart Harvesters",
         description: "High-horsepower tractors, precision seed drills, autonomous robotic weeders, and sensor-guided combine harvesters featuring RTK centimeter-level GPS navigation and automated yield monitoring.",
-        image: "/chain_card_6_truck.jpg",
+        image: "/cat_agtech_machinery.jpg",
         keyFeatures: [
           "RTK GPS auto-steering with ±2cm pass-to-pass accuracy",
           "Tier 4 Final / Stage V ultra-low emission turbocharged diesel engines",
@@ -369,7 +369,7 @@ export const DIVISION_CATEGORIES_DATA: Record<string, Record<string, CategoryDet
         title: "Food Processing",
         badge: "Turnkey Industrial Processing & Cold-Chain Lines",
         description: "Turnkey automated grain milling complexes, fruit and vegetable optical sorting lines, hygienic stainless steel pasteurization units, and robotic packaging systems meeting strict international food safety standards.",
-        image: "/about_logistics_port.jpg",
+        image: "/cat_agtech_food.jpg",
         keyFeatures: [
           "Food-grade AISI 304/316L stainless steel hygienic construction",
           "High-speed optical and NIR multi-spectral defect sorters",
@@ -412,7 +412,7 @@ export const DIVISION_CATEGORIES_DATA: Record<string, Record<string, CategoryDet
         title: "Hospital Equipment",
         badge: "Intensive Care Infrastructure & Operating Suites",
         description: "Intelligent ICU ventilator stations, motorized surgical tables, ceiling-mounted surgical pendants, and centralized medical gas pipeline infrastructure designed for continuous hospital critical-care duty.",
-        image: "/clean_corporate_hq.jpg",
+        image: "/cat_lifecare_hospital.jpg",
         keyFeatures: [
           "Heavy-load electro-hydraulic surgical tables with 450kg weight rating",
           "Modular ICU bed consoles with integrated dialysis & medical gas outlets",
@@ -432,7 +432,7 @@ export const DIVISION_CATEGORIES_DATA: Record<string, Record<string, CategoryDet
         title: "Pharmaceuticals",
         badge: "EU-GMP Active Ingredients & Sterile Injectables",
         description: "TAKNISER sources and distributes high-purity Active Pharmaceutical Ingredients (APIs), essential generic lyophilized injectables, and oncology formulations produced under stringent EU-GMP and US-FDA standards.",
-        image: "/takniser_workstation_desk.jpg",
+        image: "/cat_lifecare_pharma.jpg",
         keyFeatures: [
           "Full Certificate of Suitability (CEP) and Drug Master File (DMF) availability",
           "Aseptic cleanroom sterile fill-and-finish liquid injectables",
@@ -535,7 +535,7 @@ export const DIVISION_CATEGORIES_DATA: Record<string, Record<string, CategoryDet
         title: "Personal Care",
         badge: "Precision Grooming & Ultrasonic Haircare",
         description: "High-speed brushless digital motor hairdryers, acoustic sonic toothbrushes, and titanium foil electric shavers engineered with micron-level German blade tolerances.",
-        image: "/takniser_workstation_branded_v2.jpg",
+        image: "/engine_stage_4_connect.jpg",
         keyFeatures: [
           "110,000 RPM high-velocity digital brushless air motors",
           "40,000 vibrations/min acoustic sonic motors with pressure sensors",
@@ -555,7 +555,7 @@ export const DIVISION_CATEGORIES_DATA: Record<string, Record<string, CategoryDet
         title: "Wellness",
         badge: "Full-Spectrum Infrared & Circadian Bio-Lighting",
         description: "Full-spectrum infrared recovery saunas, medical-grade HEPA air decontamination towers, acoustic sound frequency loungers, and dynamic circadian lighting systems.",
-        image: "/chain_card_1_engineering.jpg",
+        image: "/impact_nature_clean.jpg",
         keyFeatures: [
           "Near, mid, and far infrared ceramic heating panels with zero EMF radiation",
           "H14 medical grade HEPA filtration capturing 99.995% of airborne particulates",
@@ -575,7 +575,7 @@ export const DIVISION_CATEGORIES_DATA: Record<string, Record<string, CategoryDet
         title: "Textiles",
         badge: "Performance Polymers & Technical Smart Fabrics",
         description: "Hydrophobic technical apparel membranes, flame-retardant industrial upholstery textiles, anti-microbial healthcare beddings, and conductive woven sensor fabrics.",
-        image: "/chain_card_7_warehouse.jpg",
+        image: "/cat_lifestyle_textiles.jpg",
         keyFeatures: [
           "20,000mm hydrostatic head waterproof rating with 20,000 g/m²/24h breathability",
           "Permanent inherent flame retardancy complying with DIN 4102 B1 standards",
@@ -618,7 +618,7 @@ export const DIVISION_CATEGORIES_DATA: Record<string, Record<string, CategoryDet
         title: "Warehouse Automation",
         badge: "High-Bay ASRS, Shuttles & Sortation Networks",
         description: "Turnkey Automated Storage and Retrieval Systems (ASRS), 4-directional pallet shuttles, high-speed shoe sorters, and intelligent vertical lift modules (VLM) delivering continuous 24/7 fulfillment throughput.",
-        image: "/platform_robotics.jpg",
+        image: "/cat_robotics_warehouse_asrs.jpg",
         keyFeatures: [
           "Vertical storage heights up to 45 meters maximizing cube utilization",
           "Pallet shuttle travel speeds up to 4.0 m/s with 1.5-ton payload capacity",
@@ -638,7 +638,7 @@ export const DIVISION_CATEGORIES_DATA: Record<string, Record<string, CategoryDet
         title: "AI Robotics",
         badge: "Vision-Guided Cobots & Autonomous Defect AI",
         description: "Collaborative robots (Cobots) equipped with 3D RGB-D vision and deep neural networks for adaptive random bin picking, autonomous weld seam tracking, and sub-millimeter visual surface quality inspection.",
-        image: "/mission_smart_factory.jpg",
+        image: "/engine_stage_5_experiment.jpg",
         keyFeatures: [
           "ISO/TS 15066 safety-rated power and force limiting (PFL) for fenceless collaboration",
           "Structured-light 3D cameras identifying complex shiny or entangled parts",
@@ -658,7 +658,7 @@ export const DIVISION_CATEGORIES_DATA: Record<string, Record<string, CategoryDet
         title: "AMRs (Autonomous Mobile Robots)",
         badge: "LiDAR SLAM Industrial Fleet Vehicles",
         description: "Natural feature navigation Autonomous Mobile Robots (AMRs), automated guided forklifts, and robotic tuggers moving heavy pallets and subassemblies through complex factory environments without floor markers.",
-        image: "/chain_card_6_truck.jpg",
+        image: "/cat_robotics_amr.jpg",
         keyFeatures: [
           "360° Safety LiDAR and 3D depth cameras providing Category 4 safety zones",
           "Autonomous dynamic path re-planning around unexpected obstacles and personnel",
@@ -701,7 +701,7 @@ export const DIVISION_CATEGORIES_DATA: Record<string, Record<string, CategoryDet
         title: "Energy",
         badge: "LNG, Refined Fuels & Green Hydrogen Certificates",
         description: "TAKNISER executes large-scale international physical energy commodity trading, chartered LNG carrier shipments, low-sulfur marine gasoil supply, and cross-border renewable green power purchase contracts.",
-        image: "/platform_trading.jpg",
+        image: "/cat_energy_qflex_lng.jpg",
         keyFeatures: [
           "Chartered Q-Flex and standard LNG vessel deliveries across Europe & Asia",
           "Low-sulfur marine fuels complying with IMO 2020 environmental standards",

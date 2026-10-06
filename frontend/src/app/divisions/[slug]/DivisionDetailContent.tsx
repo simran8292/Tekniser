@@ -28,7 +28,7 @@ const divisionImages: Record<string, string> = {
   "lifecare": "/platform_lifecare.jpg",
   "lifestyle": "/platform_lifestyle.jpg",
   "robotics": "/clean_robotics.jpg",
-  "global-trading": "/platform_trading.jpg",
+  "global-trading": "/value_chain_hero_port.jpg",
 };
 
 const iconMap: Record<string, React.ElementType> = {
@@ -554,31 +554,6 @@ export default function DivisionDetailContent({ slug }: { slug: string }) {
         </div>
       </section>
 
-      {/* Global Relevance */}
-      <section className="py-16 bg-[#f4f5f6] border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="bg-white border border-slate-200 rounded-none p-6 text-center shadow-none text-slate-800">
-              <Globe className="w-8 h-8 text-[#009999] mx-auto mb-3" />
-              <div className="text-2xl font-bold text-[#002d3b] font-mono">190+</div>
-              <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold mt-1">{ui.countriesServed}</div>
-            </div>
-            <div className="bg-white border border-slate-200 rounded-none p-6 text-center shadow-none text-slate-800">
-              <div className="mx-auto mb-3 p-2 bg-slate-50 border border-slate-200 rounded-none w-fit">
-                <IconComponent className="w-6 h-6 text-[#009999]" />
-              </div>
-              <div className="text-2xl font-bold text-[#002d3b] font-mono">{division.categories.length}</div>
-              <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold mt-1">{ui.productCategories}</div>
-            </div>
-            <div className="bg-white border border-slate-200 rounded-none p-6 text-center shadow-none text-slate-800">
-              <CheckCircle2 className="w-8 h-8 text-[#009999] mx-auto mb-3" />
-              <div className="text-2xl font-bold text-[#002d3b] font-mono">GERMAN</div>
-              <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold mt-1">{ui.yearsHeritage}</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ─────────────────────────────────────────────────────────────
           DEDICATED CATEGORY SECTIONS WITH CONTENT, IMAGES & PROCESS
       ───────────────────────────────────────────────────────────── */}
@@ -612,9 +587,6 @@ export default function DivisionDetailContent({ slug }: { slug: string }) {
                     {/* Top Header Strip */}
                     <div className="bg-[#001822] text-white px-6 py-4 flex flex-wrap items-center justify-between gap-4 border-b border-slate-800">
                       <div className="flex items-center gap-3">
-                        <span className="px-2.5 py-0.5 bg-[#009999] text-white font-mono font-bold text-xs uppercase tracking-wider">
-                          {String(idx + 1).padStart(2, "0")}
-                        </span>
                         <span className="font-mono text-xs text-[#00cccc] uppercase tracking-widest font-semibold">
                           {cat.badge}
                         </span>

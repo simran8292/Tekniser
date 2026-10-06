@@ -36,23 +36,55 @@ const CONTENT = {
     pillars: [
       {
         icon: Zap,
+        tag: "ENERGIEWENDE",
+        metric: "100% Regenerativ-Ziel",
         title: "Erneuerbare Energien & Effizienz",
-        desc: "Einsatz sauberer Energieträger und moderner Energieeffizienzsysteme in allen Fertigungs- und Betriebsanlagen.",
+        desc: "Beschleunigung der vollständigen industriellen Dekarbonisierung durch werkseigene Photovoltaikanlagen, windgestützte Micro-Grids und KI-gesteuerte Energiemanagementsysteme zur Reduzierung von Spitzenlasten.",
+        highlights: [
+          "Industrielle Solar-PV & Batteriespeicher (BESS)",
+          "ISO 50001 zertifiziertes Energiemanagement",
+          "Gebäudeautomation senkt HLK-Verbrauch um 35%",
+          "Grünstrom-Lieferverträge (PPAs) mit Tier-1-Versorgern",
+        ],
       },
       {
         icon: Recycle,
+        tag: "KREISLAUFWIRTSCHAFT",
+        metric: "92% Rückgewinnungsquote",
         title: "Zirkuläre Materialwirtschaft",
-        desc: "Förderung von Recyclingkreisläufen bei strategischen Industriemineralien, Metallen und technischen Kunststoffen.",
+        desc: "Aufbau geschlossener Rohstoffkreisläufe für kritische Industriemineralien, Lithium-Ionen-Batterierecycling, hochfesten Aluminiumschrott und Hochleistungspolymere zur Minimierung primärer Erzförderung.",
+        highlights: [
+          "Hydrometallurgisches Batterierecycling (>95% Li/Ni)",
+          "Abfallfreies Aluminium-Umschmelzen spart 95% Energie",
+          "Rezyklierte Kunststoffe nach EU REACH & RoHS",
+          "Digitale Produktpässe für transparente Rückverfolgbarkeit",
+        ],
       },
       {
         icon: Globe,
+        tag: "GRÜNE LOGISTIK",
+        metric: "IMO 2030 / 2050 Konform",
         title: "Grüne Handelskorridore",
-        desc: "Entwicklung emissionsarmer maritimer und intermodaler Transportrouten über weltweite Frachtknotenpunkte.",
+        desc: "Pionierarbeit bei emissionsarmen Seeschifffahrtsrouten und elektrifizierten multimodalen Schienenkorridoren, die europäische Industriezentren mit globalen Umschlagshäfen verbinden.",
+        highlights: [
+          "Gecharterte Bio-LNG- & Methanol-Containerschiffe",
+          "Verlagerung auf Schiene senkt Straßengüterverkehr um 45%",
+          "Smarte Routing-Algorithmen vermeiden Leerfahrten",
+          "Landstromversorgung (Cold Ironing) an Terminal-Piers",
+        ],
       },
       {
         icon: Shield,
+        tag: "BIODIVERSITÄT",
+        metric: "Net-Positive Ökobilanz",
         title: "Biodiversität & Naturschutz",
-        desc: "Schutz lokaler Ökosysteme und verantwortungsvolle Rohstoffgewinnung unter strengsten ökologischen Auflagen.",
+        desc: "Strenge Umweltauflagen, Zero-Deforestation-Richtlinien und Renaturierungsprogramme an allen Rohstoffgewinnungsstandorten, Logistikdrehkreuzen und Forschungszentren weltweit.",
+        highlights: [
+          "IRMA-zertifizierte verantwortungsvolle Rohstoffbeschaffung",
+          "Vollständiger Schutz von Grundwasser & Regenwäldern",
+          "Bodenrekultivierung und Aufforstungsprojekte",
+          "Satellitengestützte Biodiversitäts-Echtzeitüberwachung",
+        ],
       },
     ],
     ctaBack: "Zurück zu Verantwortung",
@@ -88,23 +120,55 @@ const CONTENT = {
     pillars: [
       {
         icon: Zap,
+        tag: "CLEAN POWER TRANSITION",
+        metric: "100% Renewable Off-Grid Target",
         title: "Renewable Energy & Efficiency",
-        desc: "Integration of clean power and advanced energy management across all operational and manufacturing facilities.",
+        desc: "Accelerating the complete decarbonization of industrial operations through on-site solar photovoltaic arrays, grid-tied wind micro-turbines, and AI-driven automated energy management systems reducing facility peak loads.",
+        highlights: [
+          "High-efficiency industrial solar PV & battery energy storage (BESS)",
+          "ISO 50001 certified energy management across manufacturing plants",
+          "Smart building automation reducing HVAC power consumption by 35%",
+          "Power Purchase Agreements (PPAs) with tier-1 green energy utilities",
+        ],
       },
       {
         icon: Recycle,
+        tag: "CLOSED-LOOP RECOVERY",
+        metric: "92% Recycled Metal Yield",
         title: "Circular Materials Economy",
-        desc: "Closed-loop recycling pathways for critical industrial minerals, metals, and engineering polymers.",
+        desc: "Pioneering closed-loop supply chains for critical industrial minerals, lithium-ion battery black mass, aerospace-grade aluminum scrap, and engineering polymers to eliminate virgin extraction dependence.",
+        highlights: [
+          "Hydrometallurgical battery cell recycling with >95% lithium & nickel recovery",
+          "Zero-waste industrial aluminum remelting delivering 95% energy savings",
+          "Recycled engineering polymers compliant with EU REACH & RoHS",
+          "Digital Material Passports tracking origin and recycling lifecycles",
+        ],
       },
       {
         icon: Globe,
+        tag: "DECARBONIZED LOGISTICS",
+        metric: "IMO 2030 / 2050 Aligned",
         title: "Green Trade Corridors",
-        desc: "Pioneering low-emission maritime and intermodal transport channels across strategic global hubs.",
+        desc: "Developing low-emission maritime shipping lanes and electrified multimodal freight corridors connecting European industrial hubs with key Asian and American distribution networks.",
+        highlights: [
+          "Chartered bio-LNG and dual-fuel methanol maritime container vessels",
+          "Rail-first intermodal overland routing reducing road freight by 45%",
+          "Optimized smart freight routing algorithms minimizing empty backhauls",
+          "Shore-to-ship cold ironing clean electricity at port terminals",
+        ],
       },
       {
         icon: Shield,
+        tag: "ECOSYSTEM STEWARDSHIP",
+        metric: "Net-Positive Biodiversity",
         title: "Biodiversity & Preservation",
-        desc: "Protecting sensitive ecosystems and upholding responsible mineral extraction practices globally.",
+        desc: "Implementing strict environmental safeguards, zero-deforestation mandates, and habitat restoration programs across all raw material extraction sites, logistics gateways, and corporate facilities.",
+        highlights: [
+          "IRMA (Initiative for Responsible Mining Assurance) certified operations",
+          "Zero-deforestation and water table conservation mandates",
+          "Comprehensive soil remediation and post-operational reforestation",
+          "Real-time acoustic and satellite biodiversity monitoring networks",
+        ],
       },
     ],
     ctaBack: "Back to Responsibility",
@@ -140,29 +204,68 @@ const CONTENT = {
     pillars: [
       {
         icon: Zap,
+        tag: "التحول نحو الطاقة النظيفة",
+        metric: "هدف 100% طاقة متجددة",
         title: "الطاقة المتجددة والكفاءة",
-        desc: "الاعتماد على مصادر الطاقة النظيفة وأنظمة الإدارة الذكية في منشآت الإنتاج.",
+        desc: "تسريع إزالة الكربون من العمليات الصناعية عبر محطات الطاقة الشمسية الميدانية، توربينات الرياح، وأنظمة إدارة الطاقة الذكية.",
+        highlights: [
+          "أنظمة طاقة شمسية صناعية مع بطاريات تخزين متقدمة (BESS)",
+          "إدارة الطاقة المعتمدة وفق معيار ISO 50001",
+          "خفض استهلاك أنظمة التكييف والتهوية بنسبة 35%",
+          "اتفاقيات شراء الطاقة المتجددة (PPAs) مع كبرى المرافق",
+        ],
       },
       {
         icon: Recycle,
+        tag: "الاقتصاد الدائري للمواد",
+        metric: "معدل استرجاع 92%",
         title: "اقتصاد المواد الدائري",
-        desc: "تطوير مسارات إعادة تدوير المعادن الاستراتيجية والمواد الهندسية.",
+        desc: "تطوير سلاسل إمداد مغلقة للمعادن الاستراتيجية، تدوير بطاريات الليثيوم، وإعادة صهر خردة الألمنيوم والبوليمرات الهندسية.",
+        highlights: [
+          "تدوير كيميائي مائي لبطاريات الليثيوم بنسبة استرداد >95%",
+          "إعادة صهر الألمنيوم دون نفايات وتوفير 95% من الطاقة",
+          "بوليمرات هندسية معاد تدويرها متوافقة مع لوائح EU REACH",
+          "جوازات سفر رقمية للمواد لتتبع سلاسل إعادة التدوير",
+        ],
       },
       {
         icon: Globe,
+        tag: "اللوجستيات منخفضة الكربون",
+        metric: "متوافق مع معايير IMO",
         title: "ممرات التجارة الخضراء",
-        desc: "تطوير مسارات نقل بحري وبري منخفضة الانبعاثات تربط أهم المراكز العالمية.",
+        desc: "تطوير خطوط شحن بحري وبري منخفضة الانبعاثات تربط المراكز الصناعية الأوروبية بموانئ التوزيع الاستراتيجية حول العالم.",
+        highlights: [
+          "سفن حاويات بحرية تعمل بالغاز الحيوي والميثانول المزدوج",
+          "الاعتماد على شبكات السكك الحديدية لتقليل النقل البري بنسبة 45%",
+          "خوارزميات ذكية لتحسين مسارات الشحن وتجنب الرحلات الفارغة",
+          "تزويد السفن بالطاقة الكهربائية النظيفة أثناء الرسو بالموانئ",
+        ],
       },
       {
         icon: Shield,
+        tag: "صون النظم البيئية",
+        metric: "توازن بيئي إيجابي",
         title: "حماية التنوع الحيوي",
-        desc: "حماية النظم البيئية الحيوية والتعدين المسؤول وفق أكثر المعايير البيئية صرامة.",
+        desc: "تطبيق ضوابط بيئية صارمة، ومنع إزالة الغابات، وبرامج إعادة تأهيل النظم البيئية في مواقع التعدين ومراكز اللوجستيات.",
+        highlights: [
+          "عمليات توريد معادن معتمدة وفق معايير مبادرة IRMA الدولية",
+          "حظر إزالة الغابات وحماية مصادر المياه الجوفية",
+          "معالجة متكاملة للتربة وبرامج إعادة تشجير شاملة",
+          "مراقبة آنية للتنوع البيولوجي باستخدام الأقمار الصناعية",
+        ],
       },
     ],
     ctaBack: "العودة إلى المسؤولية",
     ctaVision: "اكتشف رؤية 2046",
   },
 };
+
+const PILLAR_IMAGES = [
+  "/sustainable_earth_slide.jpg", // Renewable Energy & Efficiency
+  "/value_chain_hero_new.jpg",     // Circular Materials Economy
+  "/value_chain_hero_port.jpg",    // Green Trade Corridors
+  "/impact_nature_clean.jpg",      // Biodiversity & Preservation
+];
 
 export default function SustainableEarthContent() {
   const { currentLanguage } = useLanguage();
@@ -175,7 +278,7 @@ export default function SustainableEarthContent() {
       <section className="relative py-24 lg:py-32 bg-[#001822] text-white overflow-hidden border-b border-slate-800">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/about_logistics_port.jpg"
+            src="/susta_e.webp"
             alt="Sustainable Earth"
             fill
             priority
@@ -237,18 +340,74 @@ export default function SustainableEarthContent() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {c.pillars.map((item, idx) => {
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {c.pillars.map((item: any, idx: number) => {
             const Icon = item.icon;
             return (
-              <div key={idx} className="bg-white border border-slate-200 p-8 space-y-3 hover:border-[#009999] transition-all">
-                <Icon className="w-8 h-8 text-[#009999]" />
-                <h3 className="text-xl font-bold text-[#002d3b] uppercase tracking-tight">
-                  {item.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  {item.desc}
-                </p>
+              <div
+                key={idx}
+                className="bg-white border border-slate-200 flex flex-col justify-between hover:border-[#009999] hover:shadow-2xl transition-all duration-300 group overflow-hidden"
+              >
+                {/* Image Header */}
+                <div className="relative w-full h-56 sm:h-64 overflow-hidden border-b border-slate-200 bg-slate-900">
+                  <Image
+                    src={PILLAR_IMAGES[idx] || "/impact_nature_clean.jpg"}
+                    alt={item.title}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-slate-900/30 pointer-events-none" />
+                  
+                  {/* Floating Pill Tag */}
+                  <div className={`absolute top-4 ${isAr ? "right-4" : "left-4"} z-10`}>
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#00cccc] bg-[#001822]/90 px-3 py-1.5 border border-[#009999]/60 backdrop-blur-md shadow-md">
+                      {item.tag}
+                    </span>
+                  </div>
+
+                  {/* Top Opposite Icon */}
+                  <div className={`absolute top-4 ${isAr ? "left-4" : "right-4"} z-10 p-2.5 bg-[#001822]/90 border border-[#009999]/60 backdrop-blur-md text-[#00cccc] shadow-md`}>
+                    <Icon className="w-5 h-5 text-[#00cccc]" />
+                  </div>
+
+                  {/* Bottom Metric Badge */}
+                  <div className={`absolute bottom-4 ${isAr ? "right-4" : "left-4"} z-10`}>
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#00cccc] bg-[#002d3b]/95 px-3 py-1.5 border border-slate-700 shadow-sm">
+                      {item.metric}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content Body */}
+                <div className="p-6 sm:p-8 flex flex-col flex-1 justify-between space-y-6">
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-black text-[#002d3b] uppercase tracking-tight group-hover:text-[#009999] transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      {item.desc}
+                    </p>
+
+                    {/* Key Technical Standards / Strategic Initiatives */}
+                    <div className="pt-2 border-t border-slate-100 space-y-2.5">
+                      <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400">
+                        {isAr ? "المعايير والمبادرات الاستراتيجية" : currentLanguage === "de" ? "Wichtigste Initiativen & Standards" : "Key Standards & Strategic Initiatives"}
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        {item.highlights?.map((point: string, hIdx: number) => (
+                          <div
+                            key={hIdx}
+                            className="flex items-start gap-2 bg-[#f8fafc] p-2.5 border border-slate-200 text-xs text-slate-700 leading-normal"
+                          >
+                            <CheckCircle2 className="w-4 h-4 text-[#009999] shrink-0 mt-0.5" />
+                            <span>{point}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             );
           })}

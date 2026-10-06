@@ -195,7 +195,7 @@ const INDUSTRIES_DATA: Record<string, {
         tagline: "Wiederherstellen, was uns erhält.",
         desc: "Biodiversität, Ökosysteme, Wälder, Meere, gesunde Böden und naturpositive Technologien.",
         icon: Trees,
-        image: "/about_hesse_heritage.jpg",
+        image: "/impact_nature_clean.jpg",
       },
       {
         code: "10",
@@ -420,7 +420,7 @@ const INDUSTRIES_DATA: Record<string, {
         tagline: "Restore what sustains us.",
         desc: "Biodiversity, ecosystems, forests, oceans, soil and nature-positive technologies.",
         icon: Trees,
-        image: "/about_hesse_heritage.jpg",
+        image: "/impact_nature_clean.jpg",
       },
       {
         code: "10",
@@ -645,7 +645,7 @@ const INDUSTRIES_DATA: Record<string, {
         tagline: "استعادة ما يحفظ استمراريتنا.",
         desc: "التنوع البيولوجي، والغابات، والمحيطات، والتربة، والحلول الصديقة للبيئة.",
         icon: Trees,
-        image: "/about_hesse_heritage.jpg",
+        image: "/impact_nature_clean.jpg",
       },
       {
         code: "10",

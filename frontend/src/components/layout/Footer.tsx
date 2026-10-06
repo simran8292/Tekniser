@@ -92,7 +92,9 @@ export default function Footer() {
             {/* Action Button */}
             <div className="pt-1">
               <a
-                href="mailto:hr@takniser.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=hr@takniser.com&su=Inquiry%20-%20TAKNISER%20Career%20%26%20Talent%20Team&body=Dear%20TAKNISER%20HR%20Team%2C%0A%0A"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-3 bg-white hover:bg-[#002d3b] text-[#009999] hover:text-white transition-all duration-300 font-bold uppercase tracking-wider text-xs sm:text-[13px] rounded-none shadow-lg group"
               >
                 <span>{t("footer-contact-team")}</span>
@@ -138,7 +140,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: What We Do */}
+          {/* Column 2: Divisions */}
           <div className={currentLanguage === 'ar' ? 'text-right' : 'text-left'}>
             <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
               {t("what-we-do")}

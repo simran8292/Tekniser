@@ -148,11 +148,11 @@ export default function ResponsibilityContent() {
       <section className="relative py-24 lg:py-32 bg-[#001822] text-white overflow-hidden border-b border-slate-800">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/about_hesse_heritage.jpg"
+            src="/sustainable_earth_slide.jpg"
             alt="TAKNISER Corporate Responsibility"
             fill
             priority
-            quality={95}
+            quality={85}
             className="object-cover opacity-85 filter contrast-105 brightness-100"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/75 via-[#001822]/50 to-[#001822]/80" />
@@ -188,56 +188,90 @@ export default function ResponsibilityContent() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Family Card */}
-          <div className="bg-white border border-slate-200 p-8 sm:p-10 flex flex-col justify-between hover:border-[#009999] hover:shadow-xl transition-all group">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#009999] bg-[#009999]/10 px-3 py-1 border border-[#009999]/30">
+          <div className="bg-white border border-slate-200 flex flex-col justify-between hover:border-[#009999] hover:shadow-2xl transition-all duration-300 group overflow-hidden">
+            {/* Image Header */}
+            <div className="relative w-full h-60 sm:h-72 overflow-hidden border-b border-slate-200 bg-slate-900">
+              <Image
+                src="/takniser_global_team.jpg"
+                alt={c.familyTitle}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-slate-900/30 pointer-events-none" />
+              <div className="absolute top-4 left-4 z-10">
+                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#00cccc] bg-[#001822]/90 px-3 py-1.5 border border-[#009999]/60 backdrop-blur-md shadow-md">
                   {c.familyTag}
                 </span>
-                <HeartHandshake className="w-8 h-8 text-[#009999]" />
               </div>
-              <h3 className="text-2xl font-black text-[#002d3b] uppercase tracking-tight group-hover:text-[#009999] transition-colors">
-                {c.familyTitle}
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                {c.familyDesc}
-              </p>
+              <div className="absolute top-4 right-4 z-10 p-2.5 bg-[#001822]/90 border border-[#009999]/60 backdrop-blur-md text-[#00cccc] shadow-md">
+                <HeartHandshake className="w-5 h-5 text-[#00cccc]" />
+              </div>
             </div>
-            <div className="pt-8">
-              <Link
-                href="/responsibility/family"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#002d3b] text-white hover:bg-[#009999] transition-colors text-xs font-bold uppercase tracking-wider"
-              >
-                <span>{c.familyBtn}</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+
+            {/* Content Body */}
+            <div className="p-8 sm:p-10 flex flex-col flex-1 justify-between space-y-6">
+              <div className="space-y-3">
+                <h3 className="text-2xl font-black text-[#002d3b] uppercase tracking-tight group-hover:text-[#009999] transition-colors">
+                  {c.familyTitle}
+                </h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  {c.familyDesc}
+                </p>
+              </div>
+              <div className="pt-4 border-t border-slate-100">
+                <Link
+                  href="/responsibility/family"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#002d3b] text-white hover:bg-[#009999] transition-colors text-xs font-bold uppercase tracking-wider group/btn shadow-sm"
+                >
+                  <span>{c.familyBtn}</span>
+                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </div>
           </div>
 
           {/* Sustainable Earth Card */}
-          <div className="bg-white border border-slate-200 p-8 sm:p-10 flex flex-col justify-between hover:border-[#009999] hover:shadow-xl transition-all group">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#009999] bg-[#009999]/10 px-3 py-1 border border-[#009999]/30">
+          <div className="bg-white border border-slate-200 flex flex-col justify-between hover:border-[#009999] hover:shadow-2xl transition-all duration-300 group overflow-hidden">
+            {/* Image Header */}
+            <div className="relative w-full h-60 sm:h-72 overflow-hidden border-b border-slate-200 bg-slate-900">
+              <Image
+                src="/impact_nature_clean.jpg"
+                alt={c.earthTitle}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-slate-900/30 pointer-events-none" />
+              <div className="absolute top-4 left-4 z-10">
+                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#00cccc] bg-[#001822]/90 px-3 py-1.5 border border-[#009999]/60 backdrop-blur-md shadow-md">
                   {c.earthTag}
                 </span>
-                <Leaf className="w-8 h-8 text-[#009999]" />
               </div>
-              <h3 className="text-2xl font-black text-[#002d3b] uppercase tracking-tight group-hover:text-[#009999] transition-colors">
-                {c.earthTitle}
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                {c.earthDesc}
-              </p>
+              <div className="absolute top-4 right-4 z-10 p-2.5 bg-[#001822]/90 border border-[#009999]/60 backdrop-blur-md text-[#00cccc] shadow-md">
+                <Leaf className="w-5 h-5 text-[#00cccc]" />
+              </div>
             </div>
-            <div className="pt-8">
-              <Link
-                href="/responsibility/sustainable-earth"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#002d3b] text-white hover:bg-[#009999] transition-colors text-xs font-bold uppercase tracking-wider"
-              >
-                <span>{c.earthBtn}</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+
+            {/* Content Body */}
+            <div className="p-8 sm:p-10 flex flex-col flex-1 justify-between space-y-6">
+              <div className="space-y-3">
+                <h3 className="text-2xl font-black text-[#002d3b] uppercase tracking-tight group-hover:text-[#009999] transition-colors">
+                  {c.earthTitle}
+                </h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  {c.earthDesc}
+                </p>
+              </div>
+              <div className="pt-4 border-t border-slate-100">
+                <Link
+                  href="/responsibility/sustainable-earth"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#002d3b] text-white hover:bg-[#009999] transition-colors text-xs font-bold uppercase tracking-wider group/btn shadow-sm"
+                >
+                  <span>{c.earthBtn}</span>
+                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

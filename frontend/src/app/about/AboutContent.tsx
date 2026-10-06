@@ -9,7 +9,7 @@ const TIMELINE_DE = [
   {
     period: "Frühes 20. Jahrhundert",
     title: "Das deutsche Fundament",
-    image: "/about_hesse_heritage.jpg",
+    image: "/about_industrial_heritage.jpg",
     imageAlt: "Historische deutsche Werkstatt für Präzisionsmaschinenbau in Hessen",
     description:
       "Die Wurzeln von TAKNISER reichen über ein Jahrhundert zurück nach Hessen in eine prägende Ära der europäischen Industrialisierung. Aufgebaut auf den Werten Präzision, Zuverlässigkeit und Ingenieurskunst entwickelte TAKNISER Fachwissen in Diesel-Energieerzeugungssystemen zur Unterstützung von Fabriken, Verkehrsnetzen und öffentlicher Infrastruktur.",
@@ -52,7 +52,7 @@ const TIMELINE_EN = [
   {
     period: "Early 20th Century",
     title: "The German Foundation",
-    image: "/about_hesse_heritage.jpg",
+    image: "/about_industrial_heritage.jpg",
     imageAlt: "Historic German engineering and precision machinery workshop in Hesse",
     description:
       "The TAKNISER story traces its roots to Hesse (Hessen), Germany, during a defining era of European industrial transformation. Built upon the principles of precision, reliability, and engineering excellence, TAKNISER developed expertise in diesel power generation systems, supporting the continuous operation of factories, transportation networks, public infrastructure, and essential industries.",
@@ -95,7 +95,7 @@ const TIMELINE_AR = [
   {
     period: "أوائل القرن العشرين",
     title: "الأساس الهندسي الألماني",
-    image: "/about_hesse_heritage.jpg",
+    image: "/about_industrial_heritage.jpg",
     imageAlt: "ورشة هندسة ومعدات دقيقة تاريخية في هسن بألمانيا",
     description:
       "تعود جذور قصة تاكنيسر إلى هسن بألمانيا خلال حقبة مفصلية من التحول الصناعي الأوروبي. انطلاقاً من مبادئ الدقة والموثوقية والتميز الهندسي، طورت تاكنيسر خبرة عميقة في أنظمة توليد الطاقة بالديزل لدعم المصانع وشبكات النقل والبنية التحتية العامة.",
@@ -147,11 +147,11 @@ export default function AboutContent() {
       <section className="relative py-24 lg:py-28 overflow-hidden bg-[#001822] text-white border-b border-slate-800">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/about_hesse_heritage.jpg"
+            src="/about_hero_clean.jpg"
             alt="German Engineering Heritage"
             fill
             priority
-            quality={95}
+            quality={85}
             className="object-cover opacity-85 filter contrast-105 brightness-100"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#001822]/75 via-[#001822]/50 to-[#001822]/80" />
@@ -263,12 +263,12 @@ export default function AboutContent() {
             <div className="space-y-6">
               <div className="relative h-64 sm:h-72 w-full border border-slate-200 overflow-hidden shadow-sm">
                 <Image
-                  src="/about_hesse_heritage.jpg"
+                  src="/about_workshop_craft.jpg"
                   alt="Historic Hesse German precision engineering workshop"
                   fill
                   className="object-cover transition-transform duration-700 hover:scale-105"
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority
+                  quality={85}
                 />
                 <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#002d3b]/90 via-[#002d3b]/50 to-transparent p-4">
                   <span className="text-xs font-mono font-bold tracking-widest text-[#009999] uppercase">
