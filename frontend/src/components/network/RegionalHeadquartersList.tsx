@@ -8,6 +8,7 @@ import {
   Search,
   CheckCircle2,
   Globe2,
+  Mail,
 } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 
@@ -23,6 +24,7 @@ export interface NetworkHubItem {
   type: "HQ" | "RHQ" | "LOGISTICS HUB";
   contactPerson?: string;
   contactRole?: string;
+  email?: string;
 }
 
 export const NETWORK_HUBS: NetworkHubItem[] = [
@@ -350,6 +352,34 @@ const REGIONS = [
   "Oceania",
 ];
 
+const RHQ_EMAIL_MAP: Record<string, string> = {
+  "TAKNISER GMBH": "admin@takniser.com",
+  "TAKNISER AB": "info.sweden@takniser.com",
+  "TAKNISER MEYER BALTIQUE OÜ": "info.estonia@takniser.com",
+  "TAKNISER BERNARD LAURENT SARL": "info.france@takniser.com",
+  "TAKNISER VRIES BENELUX B.V.": "info.netherlands@takniser.com",
+  "TAKNISER VENETO INDUSTRIALE S.R.L.": "info.italia@takniser.com",
+  "TAKNISER VELASCO IBERIA S.L.": "info.spain@takniser.com",
+  "TAKNISER ROTHS UK LIMITED": "info.uk@takniser.com",
+  "TAKNISER ROTHS UK LTD": "info.uk@takniser.com",
+  "TAKNISER STERLING AMERICANA LLC": "info.usa@takniser.com",
+  "TAKNISER ORTEGA PANAMÁ S.A.": "info.panama@takniser.com",
+  "TAKNISER SANTOS AMAZONIA LTDA.": "info.brazil@takniser.com",
+  "TAKNISER PINAULT AOF LIMITED": "info.westafrica@takniser.com",
+  "TAKNISER MENARD KENYA LIMITED": "info.kenya@takniser.com",
+  "TAKNISER RATCLIFF SAVANNA (PTY) LIMITED": "info.southafrica@takniser.com",
+  "TAKNISER GMBH TRD L.L.C.": "info.uae@takniser.com",
+  "TAKNISER SARL E&ET FZCO": "info.jafza@takniser.com",
+  "TAKNISER HOFFMANN ARABIA LLC.": "info.saudiarabia@takniser.com",
+  "TAKNISER AB INDIA PRIVATE LIMITED": "info.india@takniser.com",
+  "TAKNISER MERLION SINGAPORE PTE. LTD.": "info.singapore@takniser.com",
+  "TAKNISER SHULIANG CHINA CO., LTD.": "info.china@takniser.com",
+  "TAKNISER SHĀNSHĀN HK LIMITED": "info.hongkong@takniser.com",
+  "TAKNISER TAKEMITSU JAPAN K.K.": "info.japan@takniser.com",
+  "TAKNISER SAHENK TURK A.Ş.": "info.turkiye@takniser.com",
+  "TAKNISER PALLMER PACIFIC PTY LTD": "info.australia@takniser.com",
+};
+
 export default function RegionalHeadquartersList() {
   const { currentLanguage } = useLanguage();
   const [selectedRegion, setSelectedRegion] = useState("All");
@@ -371,6 +401,7 @@ export default function RegionalHeadquartersList() {
       const matchesRegion =
         selectedRegion === "All" || hub.region === selectedRegion;
       const q = searchQuery.toLowerCase().trim();
+      const email = hub.email || RHQ_EMAIL_MAP[hub.name.toUpperCase()] || RHQ_EMAIL_MAP[hub.name] || "";
       const matchesSearch =
         !q ||
         hub.name.toLowerCase().includes(q) ||
@@ -378,7 +409,8 @@ export default function RegionalHeadquartersList() {
         (hub.city && hub.city.toLowerCase().includes(q)) ||
         (hub.coverage && hub.coverage.toLowerCase().includes(q)) ||
         hub.role.toLowerCase().includes(q) ||
-        hub.region.toLowerCase().includes(q);
+        hub.region.toLowerCase().includes(q) ||
+        email.toLowerCase().includes(q);
       return matchesRegion && matchesSearch;
     });
   }, [selectedRegion, searchQuery]);
@@ -516,12 +548,26 @@ export default function RegionalHeadquartersList() {
                 )}
               </div>
 
-              {/* Bottom Operational Status */}
-              <div className="pt-4 mt-5 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-400">
+              {/* Bottom Operational Status & Official Email */}
+              <div className="pt-4 mt-5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono text-slate-400">
                 <span className="flex items-center gap-1.5 text-emerald-700 font-semibold">
                   <CheckCircle2 className="w-3 h-3 text-emerald-600" />
                   {currentLanguage === 'de' ? 'Aktiver Betrieb' : currentLanguage === 'ar' ? 'تشغيل نشط ومستمر' : 'Active Operation'}
                 </span>
+
+                {(() => {
+                  const email = hub.email || RHQ_EMAIL_MAP[hub.name.toUpperCase()] || RHQ_EMAIL_MAP[hub.name];
+                  if (!email) return null;
+                  return (
+                    <a
+                      href={`mailto:${email}`}
+                      className="inline-flex items-center gap-1 text-xs font-mono font-bold text-[#009999] hover:text-[#002d3b] hover:underline"
+                    >
+                      <Mail className="w-3 h-3" />
+                      <span>{email}</span>
+                    </a>
+                  );
+                })()}
               </div>
             </div>
           );

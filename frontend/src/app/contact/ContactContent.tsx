@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import ContactForm from "@/components/forms/ContactForm";
 import CareerForm from "@/components/forms/CareerForm";
+import GlobalEmailDirectory from "@/components/directory/GlobalEmailDirectory";
 import { OFFICIAL_REGIONAL_ENTITIES } from "@/lib/data";
 import { useLanguage } from "@/lib/LanguageContext";
 
@@ -206,12 +207,12 @@ export default function ContactContent() {
                       <div className="text-slate-600 font-medium text-xs sm:text-sm">
                         mea@takniser.com • 6 Operating Hubs
                       </div>
-                      <div className="pt-1.5">
+                      <div className="pt-1.5 flex flex-wrap items-center gap-3">
                         <a
-                          href="#regional-directory"
+                          href="#email-directory"
                           className="inline-flex items-center gap-1 text-xs font-bold text-[#009999] hover:text-[#002d3b] transition-colors"
                         >
-                          <span>{isDe ? "6 regionale Einheiten ansehen" : isAr ? "عرض 6 كيانات تشغيلية إقليمية" : "View 6 Regional Operating Entities"}</span>
+                          <span>{isDe ? "Globales E-Mail-Verzeichnis (61 Kanäle)" : isAr ? "دليل البريد العالمي (61 قناة)" : "Global Email Directory (61 Channels)"}</span>
                           <ArrowRight className={`w-3 h-3 ${isAr ? "rotate-180" : ""}`} />
                         </a>
                       </div>
@@ -310,6 +311,15 @@ export default function ContactContent() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────────────────────
+          GLOBAL EMAIL DIRECTORY (ENTERPRISE MATRIX ORGANIZATION)
+      ───────────────────────────────────────────────────────────── */}
+      <section className="py-20 lg:py-24 bg-[#f8fafc] border-t border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <GlobalEmailDirectory />
         </div>
       </section>
 

@@ -139,6 +139,12 @@ export default function Header() {
                       {t("contact-hq")}
                     </Link>
                     <Link
+                      href="/directory"
+                      className="block px-4 py-2 hover:bg-[#002d3b] hover:text-[#36b39c] transition-colors font-medium"
+                    >
+                      {currentLanguage === "de" ? "E-Mail-Verzeichnis" : currentLanguage === "ar" ? "دليل البريد العالمي" : "Global Email Directory"}
+                    </Link>
+                    <Link
                       href="/global-network"
                       className="block px-4 py-2 hover:bg-[#002d3b] hover:text-[#36b39c] transition-colors font-medium"
                     >

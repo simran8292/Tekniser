@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/global-network`, priority: 0.8, changeFrequency: "weekly" as const },
     { url: `${base}/careers`, priority: 0.9, changeFrequency: "daily" as const },
     { url: `${base}/contact`, priority: 0.8, changeFrequency: "monthly" as const },
+    { url: `${base}/directory`, priority: 0.85, changeFrequency: "weekly" as const },
     { url: `${base}/privacy`, priority: 0.4, changeFrequency: "yearly" as const },
     { url: `${base}/terms`, priority: 0.4, changeFrequency: "yearly" as const },
   ];

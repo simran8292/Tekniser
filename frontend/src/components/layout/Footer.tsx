@@ -201,6 +201,12 @@ export default function Footer() {
                 </Link>
               </div>
               <div className={`flex items-center gap-2.5 ${currentLanguage === 'ar' ? 'flex-row-reverse' : ''}`}>
+                <Globe className="w-4 h-4 text-[#009999] shrink-0" />
+                <Link href="/directory" className="hover:text-[#009999] transition-colors text-xs">
+                  {currentLanguage === "de" ? "Globales E-Mail-Verzeichnis" : currentLanguage === "ar" ? "دليل البريد العالمي" : "Global Email Directory"}
+                </Link>
+              </div>
+              <div className={`flex items-center gap-2.5 ${currentLanguage === 'ar' ? 'flex-row-reverse' : ''}`}>
                 <Briefcase className="w-4 h-4 text-[#009999] shrink-0" />
                 <Link href="/careers" className="hover:text-[#009999] transition-colors text-xs">
                   {t("footer-careers")}

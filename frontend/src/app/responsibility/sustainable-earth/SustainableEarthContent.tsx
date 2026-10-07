@@ -263,7 +263,7 @@ const CONTENT = {
 const PILLAR_IMAGES = [
   "/sustainable_earth_slide.jpg", // Renewable Energy & Efficiency
   "/value_chain_hero_new.jpg",     // Circular Materials Economy
-  "/value_chain_hero_port.jpg",    // Green Trade Corridors
+  "/green_trade_port.jpg",         // Green Trade Corridors
   "/impact_nature_clean.jpg",      // Biodiversity & Preservation
 ];
 

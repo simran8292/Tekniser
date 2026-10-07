@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Sparkles, ShieldCheck } from "lucide-react";
+import { Sparkles, ShieldCheck, Mail } from "lucide-react";
 import GlobalMapPreview from "@/components/home/GlobalMapPreview";
 import RegionalHeadquartersList from "@/components/network/RegionalHeadquartersList";
 import { useLanguage } from "@/lib/LanguageContext";
@@ -119,7 +119,7 @@ export default function GlobalNetworkContent() {
       ───────────────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-24 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="border-b border-slate-300 pb-5 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div className="border-b border-slate-300 pb-5 flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
               <span className="text-xs font-mono font-bold text-[#009999] uppercase tracking-widest">
                 {isDe ? "STRATEGISCHE INFRASTRUKTUR" : isAr ? "البنية التحتية الاستراتيجية" : "STRATEGIC INFRASTRUCTURE"}
@@ -128,13 +128,15 @@ export default function GlobalNetworkContent() {
                 {isDe ? "Netzwerk der regionalen Hauptsitze" : isAr ? "شبكة المقرات الإقليمية" : "Regional Headquarters Network"}
               </h2>
             </div>
-            <p className="text-xs sm:text-sm text-slate-500 max-w-md text-left sm:text-right">
-              {isDe
-                ? "Erkunden Sie unsere regionalen Hauptsitze, maritimen Logistikzentren und Ingenieurhubs auf allen Hauptkontinenten."
-                : isAr
-                ? "استكشف مقراتنا الإقليمية العاملة ومراكز الخدمات اللوجستية البحرية والمراكز الهندسية عبر جميع القارات."
-                : "Explore our operating regional headquarters, maritime logistics centers, and engineering hubs across every major continent."}
-            </p>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+              <Link
+                href="/directory"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#002d3b] hover:bg-[#009999] text-white text-xs font-mono font-bold uppercase tracking-wider transition-colors border border-slate-700 hover:border-[#009999]"
+              >
+                <Mail className="w-3.5 h-3.5 text-[#00cccc]" />
+                <span>{isDe ? "E-Mail-Verzeichnis (61 Kanäle)" : isAr ? "دليل البريد (61 قناة)" : "Global Email Directory (61 Channels)"}</span>
+              </Link>
+            </div>
           </div>
 
           <RegionalHeadquartersList />
