@@ -553,6 +553,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "capabilities": "INNOVATION",
     "industries": "T1G AUSWIRKUNGEN",
     "responsibility": "VERANTWORTUNG",
+    "news-media": "PRESSE & MEDIEN",
     "careers": "KARRIERE",
     "contact": "KONTAKT",
 
@@ -801,6 +802,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "capabilities": "INNOVATION",
     "industries": "T1G IMPACTS",
     "responsibility": "RESPONSIBILITY",
+    "news-media": "NEWS & MEDIA",
     "careers": "CAREERS",
     "contact": "CONTACT",
 
@@ -1049,6 +1051,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "capabilities": "الابتكار",
     "industries": "الأثر",
     "responsibility": "المسؤولية",
+    "news-media": "الأخبار والإعلام",
     "careers": "الوظائف",
     "contact": "اتصل بنا",
 
@@ -1297,6 +1300,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "capabilities": "创新能力",
     "industries": "全球影响",
     "responsibility": "企业责任",
+    "news-media": "新闻与媒体",
     "careers": "招贤纳士",
     "contact": "联系我们",
 
@@ -1389,6 +1393,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "capabilities": "Innowacje",
     "industries": "Wpływ",
     "responsibility": "ODPOWIEDZIALNOŚĆ",
+    "news-media": "AKTUALNOŚCI I MEDIA",
     "careers": "KARIERA",
     "contact": "KONTAKT",
 
@@ -1481,6 +1486,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "capabilities": "イノベーション",
     "industries": "インパクト",
     "responsibility": "社会的責任",
+    "news-media": "ニュース＆メディア",
     "careers": "採用情報",
     "contact": "お問い合わせ",
 
@@ -1573,6 +1579,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "capabilities": "혁신 역량",
     "industries": "글로벌 영향",
     "responsibility": "사회적 책임",
+    "news-media": "뉴스 & 미디어",
     "careers": "채용정보",
     "contact": "문의하기",
 

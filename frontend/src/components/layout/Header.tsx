@@ -35,6 +35,7 @@ export default function Header() {
     { name: t("capabilities"), href: "/capabilities" },
     { name: t("industries"), href: "/industries" },
     { name: t("responsibility"), href: "/responsibility", hasDropdown: true, dropdownType: "responsibility" },
+    { name: t("news-media"), href: "/news-media" },
     { name: t("careers"), href: "/careers" },
   ];
 
@@ -179,7 +180,7 @@ export default function Header() {
               }`}
           >
             {/* Primary Nav links */}
-            <nav className="flex items-center space-x-7">
+            <nav className="flex items-center space-x-5 xl:space-x-7">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
 

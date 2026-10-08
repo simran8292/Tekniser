@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/responsibility/family`, priority: 0.8, changeFrequency: "monthly" as const },
     { url: `${base}/responsibility/sustainable-earth`, priority: 0.8, changeFrequency: "monthly" as const },
     { url: `${base}/global-network`, priority: 0.8, changeFrequency: "weekly" as const },
+    { url: `${base}/news-media`, priority: 0.9, changeFrequency: "daily" as const },
     { url: `${base}/careers`, priority: 0.9, changeFrequency: "daily" as const },
     { url: `${base}/contact`, priority: 0.8, changeFrequency: "monthly" as const },
     { url: `${base}/directory`, priority: 0.85, changeFrequency: "weekly" as const },

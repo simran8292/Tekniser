@@ -12,6 +12,7 @@ import {
   Lock,
   ArrowRight,
   Briefcase,
+  Newspaper,
 } from "lucide-react";
 import { BUSINESS_DIVISIONS } from "@/lib/data";
 import { useLanguage } from "@/lib/LanguageContext";
@@ -109,10 +110,10 @@ export default function Footer() {
       )}
 
       <div className="pt-16 pb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-12 border-b border-slate-800">
 
           {/* Column 1: Brand & German Heritage */}
-          <div className="lg:col-span-2 space-y-5">
+          <div className="lg:col-span-3 space-y-5">
             <Link href="/" className="inline-block">
               <span className="font-sans font-black tracking-[0.04em] text-white text-3xl uppercase select-none">
                 TAKNISER
@@ -141,7 +142,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Divisions */}
-          <div className={currentLanguage === 'ar' ? 'text-right' : 'text-left'}>
+          <div className={`lg:col-span-2 ${currentLanguage === 'ar' ? 'text-right' : 'text-left'}`}>
             <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
               {t("what-we-do")}
             </h3>
@@ -160,7 +161,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3: Platform & Capabilities */}
-          <div className={currentLanguage === 'ar' ? 'text-right' : 'text-left'}>
+          <div className={`lg:col-span-2 ${currentLanguage === 'ar' ? 'text-right' : 'text-left'}`}>
             <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
               {t("capabilities")}
             </h3>
@@ -175,7 +176,7 @@ export default function Footer() {
           </div>
 
           {/* Column 4: Global HQ & Corporate Info */}
-          <div className={currentLanguage === 'ar' ? 'text-right font-medium' : 'text-left font-normal'}>
+          <div className={`lg:col-span-3 ${currentLanguage === 'ar' ? 'text-right font-medium' : 'text-left font-normal'}`}>
             <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
               {t("footer-global-presence")}
             </h3>
@@ -207,6 +208,12 @@ export default function Footer() {
                 </Link>
               </div>
               <div className={`flex items-center gap-2.5 ${currentLanguage === 'ar' ? 'flex-row-reverse' : ''}`}>
+                <Newspaper className="w-4 h-4 text-[#009999] shrink-0" />
+                <Link href="/news-media" className="hover:text-[#009999] transition-colors text-xs">
+                  {currentLanguage === "de" ? "Presse & Medien" : currentLanguage === "ar" ? "الأخبار والإعلام" : "News & Media"}
+                </Link>
+              </div>
+              <div className={`flex items-center gap-2.5 ${currentLanguage === 'ar' ? 'flex-row-reverse' : ''}`}>
                 <Briefcase className="w-4 h-4 text-[#009999] shrink-0" />
                 <Link href="/careers" className="hover:text-[#009999] transition-colors text-xs">
                   {t("footer-careers")}
@@ -218,6 +225,101 @@ export default function Footer() {
                   {t("footer-admin-area")}
                 </Link>
               </div>
+            </div>
+          </div>
+
+          {/* Column 5: Social Media Icons (Aramco-inspired circular outline icons) */}
+          <div className={`lg:col-span-2 flex flex-col ${currentLanguage === 'ar' ? 'text-right items-start' : 'text-left items-start lg:items-end'}`}>
+            <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-4">
+              {currentLanguage === "de" ? "FOLGEN SIE UNS" : currentLanguage === "ar" ? "تواصل معنا" : "CONNECT WITH US"}
+            </h3>
+            <div className="grid grid-cols-2 gap-3.5 w-fit">
+              {/* X / Twitter */}
+              <a
+                href="https://x.com/takniser"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X (formerly Twitter)"
+                className="w-11 h-11 rounded-full border border-slate-600 hover:border-[#00cccc] text-slate-300 hover:text-white hover:bg-[#00cccc]/10 flex items-center justify-center transition-all duration-300 group shadow-sm"
+              >
+                <svg
+                  className="w-4 h-4 fill-current group-hover:scale-110 transition-transform duration-200"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </a>
+
+              {/* Facebook */}
+              <a
+                href="https://facebook.com/takniser"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="w-11 h-11 rounded-full border border-slate-600 hover:border-[#00cccc] text-slate-300 hover:text-white hover:bg-[#00cccc]/10 flex items-center justify-center transition-all duration-300 group shadow-sm"
+              >
+                <svg
+                  className="w-4 h-4 fill-current group-hover:scale-110 transition-transform duration-200"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.704 0-1.028.151-1.263.38-.268.263-.407.712-.407 1.503v2.097h4.032l-.634 3.667h-3.398v7.98z" />
+                </svg>
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href="https://linkedin.com/company/takniser"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-11 h-11 rounded-full border border-slate-600 hover:border-[#00cccc] text-slate-300 hover:text-white hover:bg-[#00cccc]/10 flex items-center justify-center transition-all duration-300 group shadow-sm"
+              >
+                <svg
+                  className="w-4 h-4 fill-current group-hover:scale-110 transition-transform duration-200"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+                </svg>
+              </a>
+
+              {/* Instagram */}
+              <a
+                href="https://instagram.com/takniser"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="w-11 h-11 rounded-full border border-slate-600 hover:border-[#00cccc] text-slate-300 hover:text-white hover:bg-[#00cccc]/10 flex items-center justify-center transition-all duration-300 group shadow-sm"
+              >
+                <svg
+                  className="w-4 h-4 fill-none stroke-current stroke-2 group-hover:scale-110 transition-transform duration-200"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </a>
+
+              {/* YouTube (col-start-2 to align under Instagram as shown in Aramco reference) */}
+              <a
+                href="https://youtube.com/@takniser"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="w-11 h-11 rounded-full border border-slate-600 hover:border-[#00cccc] text-slate-300 hover:text-white hover:bg-[#00cccc]/10 flex items-center justify-center transition-all duration-300 group shadow-sm col-start-2"
+              >
+                <svg
+                  className="w-4 h-4 fill-current group-hover:scale-110 transition-transform duration-200"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
