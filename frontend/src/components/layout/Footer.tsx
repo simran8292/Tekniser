@@ -34,11 +34,11 @@ export default function Footer() {
         {/* Background Image on Right Side */}
         <div className="absolute inset-0 lg:left-[36%] lg:inset-y-0 z-0">
           <Image
-            src="/takniser_workstation_branded_v2.jpg"
-            alt="TAKNISER Modern Engineering Workstation & Executive Desk"
+            src="/chain_card_1_engineering.jpg"
+            alt="Engineers collaborating on a CAD design"
             fill
             sizes="(max-width: 1024px) 100vw, 64vw"
-            className="object-cover object-[75%_center] lg:object-[72%_45%] filter contrast-[1.02] brightness-[0.98]"
+            className="object-cover object-[70%_center] lg:object-[65%_35%] filter contrast-[1.02] brightness-[0.98]"
             priority
           />
           {/* Gradient on mobile/tablet so text is 100% readable */}

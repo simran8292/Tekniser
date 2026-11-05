@@ -105,7 +105,6 @@ export const DIVISION_CATEGORIES_DATA: Record<string, Record<string, CategoryDet
         description: "Turnkey launch ground support equipment (GSE), cryogenic propellant fluid loading manifolds, launch umbilical disconnect systems, and multi-payload dispenser structures for orbital launch vehicles.",
         image: "/frontiers_explorer_summit.jpg",
         keyFeatures: [
-          "Cryogenic liquid oxygen (LOX) and methane (LCH4) transfer lines",
           "Zero-force quick-disconnect pneumatic umbilical systems",
           "Composite multi-satellite dispenser rings (ESPA class)",
           "Real-time telemetry and ground blast-attenuation dampers"
@@ -495,7 +494,7 @@ export const DIVISION_CATEGORIES_DATA: Record<string, Record<string, CategoryDet
         title: "Household Appliances",
         badge: "German-Engineered Premium Smart Kitchen Suites",
         description: "Energy-efficient induction hobs, multi-zone convection steam ovens, acoustic-dampened dishwashers, and inverter refrigeration systems combining German engineering tolerances with modern architectural elegance.",
-        image: "/platform_lifestyle.jpg",
+        image: "/cat_lifestyle_appliances.jpg",
         keyFeatures: [
           "A+++ European Energy Rating with brushless inverter compressor motors",
           "Precision capacitive glass touch interfaces with ambient LED illumination",
@@ -515,7 +514,7 @@ export const DIVISION_CATEGORIES_DATA: Record<string, Record<string, CategoryDet
         title: "Smart Home",
         badge: "Matter & Zigbee Connected Living Systems",
         description: "Unified Matter and Zigbee 3.0 residential gateways, biometric architectural door locks, smart climate thermostatic radiator valves, and integrated energy management sensors.",
-        image: "/home_sec22.webp",
+        image: "/cat_lifestyle_smart_home.jpg",
         keyFeatures: [
           "Matter-certified interoperability across Apple Home, Google Home, and Alexa",
           "Bank-grade AES-128 / TLS 1.3 encrypted local wireless mesh communication",

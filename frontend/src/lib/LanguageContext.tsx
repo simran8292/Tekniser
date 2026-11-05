@@ -758,6 +758,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "stat-countries": "Länder & Gebiete",
     "stat-continents": "Kontinente",
     "stat-logistics": "Logistikhubs",
+    "stat-lives": "Berührte Leben",
 
     // Home - Vision 2046
     "home-vision-kicker": "Unsere strategische Ambition",
@@ -1007,6 +1008,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "stat-countries": "Countries & Territories",
     "stat-continents": "Continents",
     "stat-logistics": "Logistics Hubs",
+    "stat-lives": "Lives Touched",
 
     // Home - Vision 2046
     "home-vision-kicker": "Our Strategic Ambition",
@@ -1257,6 +1259,7 @@ const DICTIONARY: Record<LanguageCode, Record<string, string>> = {
     "stat-countries": "الدول والأقاليم",
     "stat-continents": "القارات",
     "stat-logistics": "المراكز اللوجستية",
+    "stat-lives": "حياة لامسناها",
 
     // Home - Vision 2046
     "home-vision-kicker": "طموحنا الاستراتيجي",

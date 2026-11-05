@@ -36,6 +36,18 @@ const REGION_TRANSLATIONS: Record<string, Record<string, string>> = {
   },
 };
 
+// Convert a flag emoji (e.g. "🇩🇪") to an ISO code ("de") so a real flag image can be shown.
+// Emoji flags don't render on Windows, so we use flag images instead. HQ ("🌐") falls back to Germany.
+function flagCode(flag?: string): string {
+  const chars = [...(flag || "")];
+  if (chars.length === 2 && chars.every((c) => { const p = c.codePointAt(0) ?? 0; return p >= 0x1f1e6 && p <= 0x1f1ff; })) {
+    return chars.map((c) => String.fromCharCode((c.codePointAt(0) ?? 0) - 0x1f1e6 + 97)).join("");
+  }
+  return "de";
+}
+
+const flagUrl = (flag?: string) => `https://flagcdn.com/w40/${flagCode(flag)}.png`;
+
 export default function GlobalMapPreview() {
   const { t, currentLanguage } = useLanguage();
   const [activeRegion, setActiveRegion] = useState<string | null>(null);
@@ -181,6 +193,40 @@ export default function GlobalMapPreview() {
                       </g>
                     )}
 
+                    {/* Country flag on a pole above the building roof */}
+                    {(() => {
+                      const poleX = isHQ ? cx + 12 : cx + 8;
+                      const roofY = isHQ ? cy - 30 : cy - 19;
+                      const poleH = isHQ ? 14 : 10;
+                      const fw = isHQ ? 16 : 12;
+                      const fh = isHQ ? 11 : 8;
+                      return (
+                        <g className="pointer-events-none">
+                          <line x1={poleX} y1={roofY} x2={poleX} y2={roofY - poleH} stroke="#e2e8f0" strokeWidth={0.8} />
+                          <rect x={poleX} y={roofY - poleH} width={fw} height={fh} fill="#001822" stroke="#e2e8f0" strokeWidth={0.4} />
+                          <image href={flagUrl(loc.flag)} x={poleX} y={roofY - poleH} width={fw} height={fh} preserveAspectRatio="none" />
+                        </g>
+                      );
+                    })()}
+
+                    {/* TAKNISER brand label under the pin */}
+                    <text
+                      x={cx}
+                      y={cy + (isHQ ? 13 : 10)}
+                      textAnchor="middle"
+                      fontSize={isHQ ? 8 : 6}
+                      fontWeight={800}
+                      letterSpacing="0.06em"
+                      fill={isHQ ? "#36b39c" : "#ffffff"}
+                      stroke="#001822"
+                      strokeWidth={2}
+                      paintOrder="stroke"
+                      className="pointer-events-none select-none"
+                      style={{ fontFamily: "inherit" }}
+                    >
+                      TAKNISER
+                    </text>
+
                     {/* Base Pin Indicator Dot */}
                     <circle
                       cx={cx}
@@ -217,7 +263,8 @@ export default function GlobalMapPreview() {
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5 font-bold text-white text-xs mb-0.5">
-                    {tooltip.flag && <span className="text-sm leading-none">{tooltip.flag}</span>}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={flagUrl(tooltip.flag)} alt={tooltip.country || ""} className="w-5 h-3.5 object-cover border border-slate-600" />
                     <span>{tooltip.title}</span>
                   </div>
                   <div className="text-[11px] font-mono" style={{ color: REGION_COLORS[tooltip.region] || "#00cccc" }}>
@@ -235,13 +282,14 @@ export default function GlobalMapPreview() {
         </div>
 
         {/* Stats Row - Flat rectangular containers */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-10">
           {[
             { label: t("stat-ghq"), value: "1", color: "text-white" },
             { label: t("stat-rhq"), value: "30", color: "text-[#009999]" },
             { label: t("stat-countries"), value: "190+", color: "text-[#009999]" },
             { label: t("stat-continents"), value: "6", color: "text-white" },
             { label: t("stat-logistics"), value: "3+", color: "text-[#009999]" },
+            { label: t("stat-lives"), value: "30.2M+", color: "text-white" },
           ].map((stat) => (
             <div key={stat.label} className="bg-[#001822] border border-slate-800 rounded-none p-4 text-center shadow-none">
               <div className={`text-2xl sm:text-3xl font-bold ${stat.color} font-mono`}>

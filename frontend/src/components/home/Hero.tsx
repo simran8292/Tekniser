@@ -19,7 +19,7 @@ export default function Hero() {
       description: t("s1-desc"),
       primaryCta: { text: t("s1-primary"), href: "/about" },
       secondaryCta: { text: t("s1-secondary"), href: "/global-network" },
-      bgImage: "/officeimage2.png",
+      bgImage: "/hero_global_unity_diverse.jpg",
     },
     {
       id: "responsibility",
@@ -29,7 +29,7 @@ export default function Hero() {
       description: t("s2-desc"),
       primaryCta: { text: t("s2-primary"), href: "/responsibility" },
       secondaryCta: { text: t("s2-secondary"), href: "/responsibility/sustainable-earth" },
-      bgImage: "/sustainable_earth_slide.jpg",
+      bgImage: "/hero_sustainable_family_diverse.jpg",
     },
     {
       id: "what-we-do",
@@ -39,14 +39,14 @@ export default function Hero() {
       description: t("s3-desc"),
       primaryCta: { text: t("s3-primary"), href: "/divisions" },
       secondaryCta: { text: t("s3-secondary"), href: "/capabilities" },
-      bgImage: "/7core.webp",
+      bgImage: "/hero_global_lifestyle_diverse.jpg",
     }
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slideData.length);
-    }, 3000);
+    }, 4500);
     return () => clearInterval(timer);
   }, [slideData.length, currentSlide]);
 
@@ -70,9 +70,9 @@ export default function Hero() {
           />
         ))}
         {/* High-contrast directional scrim: clear image visibility with text protection on left */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#001822]/85 via-[#001822]/55 via-45% to-[#001822]/15 to-85% z-1" />
-        <div className="absolute inset-0 bg-[#001822]/40 lg:hidden z-1" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#001822]/80 via-transparent to-[#001822]/20 z-1" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#001822]/80 via-[#001822]/45 via-45% to-transparent to-85% z-1" />
+        <div className="absolute inset-0 bg-[#001822]/30 lg:hidden z-1" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#001822]/20 via-transparent to-[#001822]/10 z-1" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center lg:text-left transition-opacity duration-500">

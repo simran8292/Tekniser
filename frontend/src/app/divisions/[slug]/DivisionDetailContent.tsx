@@ -374,7 +374,7 @@ const UI_TEXT: Record<string, {
     capabilitiesSectionTitle: "Operative Vertikalen & Technische Prozesse",
     capabilitiesSectionDesc: "Detaillierte Aufschlüsselung der Kernproduktlinien, technischen Spezifikationen und des mehrstufigen Qualitätslebenszyklus in unserem weltweiten Netzwerk.",
     processHeading: "Ingenieurs- & Lieferprozess",
-    keySpecsLabel: "Wichtige technische Standards & Fähigkeiten",
+    keySpecsLabel: "Wichtige Fähigkeiten",
     inquireCategory: "Für diesen Bereich anfragen",
   },
   en: {
@@ -392,7 +392,7 @@ const UI_TEXT: Record<string, {
     capabilitiesSectionTitle: "Operational Verticals & Technical Processes",
     capabilitiesSectionDesc: "Detailed breakdown of core product lines, key engineering specifications, and the multi-stage quality lifecycle deployed across our global network.",
     processHeading: "Engineering & Delivery Process",
-    keySpecsLabel: "Key Technical Standards & Capabilities",
+    keySpecsLabel: "Key Capabilities",
     inquireCategory: "Inquire for this Vertical",
   },
   ar: {
@@ -410,7 +410,7 @@ const UI_TEXT: Record<string, {
     capabilitiesSectionTitle: "القطاعات التشغيلية والعمليات الفنية",
     capabilitiesSectionDesc: "تفصيل شامل لخطوط الإنتاج الأساسية والمواصفات الهندسية ودورة الجودة متعددة المراحل المطبقة عبر شبكتنا العالمية.",
     processHeading: "مسار الهندسة والتسليم",
-    keySpecsLabel: "المعايير الفنية والقدرات الرئيسية",
+    keySpecsLabel: "القدرات الرئيسية",
     inquireCategory: "استفسر عن هذا القطاع",
   },
 };
@@ -591,9 +591,6 @@ export default function DivisionDetailContent({ slug }: { slug: string }) {
                           {cat.badge}
                         </span>
                       </div>
-                      <span className="text-xs font-mono px-3 py-1 bg-[#002d3b] border border-slate-700 text-[#00cccc]">
-                        {cat.metricBadge}
-                      </span>
                     </div>
 
                     {/* Main Grid: Content + Image */}
@@ -656,9 +653,6 @@ export default function DivisionDetailContent({ slug }: { slug: string }) {
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-[#001822]/85 via-transparent to-transparent pointer-events-none" />
                           <div className="absolute bottom-4 left-4 right-4 text-white">
-                            <div className="text-[11px] font-mono text-[#00cccc] uppercase tracking-wider font-bold">
-                              {cat.metricBadge}
-                            </div>
                             <div className="text-sm font-bold uppercase tracking-tight">
                               {cat.title}
                             </div>
