@@ -184,7 +184,7 @@ export default function FamilyContent() {
                 <span>{currentLanguage === "de" ? "Regionale Hauptsitze" : currentLanguage === "ar" ? "المقرات الإقليمية" : "Regional Headquarters"}</span>
               </div>
               <div className="text-lg font-black text-[#002d3b]">30 Regional HQs</div>
-              <div className="text-xs text-slate-500">{currentLanguage === "de" ? "Vernetzt über 6 Kontinente" : currentLanguage === "ar" ? "مترابطة عبر 6 قارات" : "Interconnected across 6 continents"}</div>
+              <div className="text-xs text-slate-700">{currentLanguage === "de" ? "Vernetzt über 6 Kontinente" : currentLanguage === "ar" ? "مترابطة عبر 6 قارات" : "Interconnected across 6 continents"}</div>
             </div>
 
             <div className="space-y-1">
@@ -193,7 +193,7 @@ export default function FamilyContent() {
                 <span>{currentLanguage === "de" ? "Weltweite Reichweite" : currentLanguage === "ar" ? "الانتشار الدولي" : "Operating Reach"}</span>
               </div>
               <div className="text-lg font-black text-[#002d3b]">190+ Countries</div>
-              <div className="text-xs text-slate-500">{currentLanguage === "de" ? "Globale Wertschöpfungsketten" : currentLanguage === "ar" ? "سلاسل إمداد وصناعة متكاملة" : "Integrated global value chains"}</div>
+              <div className="text-xs text-slate-700">{currentLanguage === "de" ? "Globale Wertschöpfungsketten" : currentLanguage === "ar" ? "سلاسل إمداد وصناعة متكاملة" : "Integrated global value chains"}</div>
             </div>
 
             <div className="space-y-1">
@@ -202,7 +202,7 @@ export default function FamilyContent() {
                 <span>{currentLanguage === "de" ? "Gemeinschaft" : currentLanguage === "ar" ? "الكوادر البشرية" : "Unified Workforce"}</span>
               </div>
               <div className="text-lg font-black text-[#009999]">{currentLanguage === "de" ? "Eine weltweite Familie" : currentLanguage === "ar" ? "عائلة عالمية موحدة" : "One Worldwide Team"}</div>
-              <div className="text-xs text-slate-500">{currentLanguage === "de" ? "Deutsche Ingenieurskultur weltweit" : currentLanguage === "ar" ? "هندسة ألمانية بآفاق عالمية" : "Shared German engineering values"}</div>
+              <div className="text-xs text-slate-700">{currentLanguage === "de" ? "Deutsche Ingenieurskultur weltweit" : currentLanguage === "ar" ? "هندسة ألمانية بآفاق عالمية" : "Shared German engineering values"}</div>
             </div>
           </div>
         </div>

@@ -846,7 +846,7 @@ export default function NewsMediaContent() {
           {/* Hero Content */}
           <div className="lg:col-span-5 p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-white">
             <div className="space-y-4">
-              <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
+              <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-wider text-slate-700">
                 <span className="text-[#009999] font-bold">{FEATURED_HERO_NEWS.categoryLabel}</span>
                 <span>•</span>
                 <span className="flex items-center gap-1">
@@ -874,7 +874,7 @@ export default function NewsMediaContent() {
                 {FEATURED_HERO_NEWS.excerpt}
               </p>
 
-              <div className="text-xs text-slate-500 pt-1">
+              <div className="text-xs text-slate-700 pt-1">
                 <span className="font-semibold text-slate-700">{isDe ? "Standort:" : isAr ? "الموقع:" : "Dateline:"} </span>
                 {FEATURED_HERO_NEWS.location}
               </div>
@@ -890,7 +890,7 @@ export default function NewsMediaContent() {
                 <ArrowRight className="w-4 h-4" />
               </button>
 
-              <div className="flex items-center gap-2 text-xs text-slate-500">
+              <div className="flex items-center gap-2 text-xs text-slate-700">
                 <FileText className="w-4 h-4 text-[#009999]" />
                 <span>PDF ({FEATURED_HERO_NEWS.pdfSize})</span>
               </div>
@@ -971,7 +971,7 @@ export default function NewsMediaContent() {
 
         {/* News Grid (with rich photography on every card) */}
         {filteredNews.length === 0 ? (
-          <div className="bg-white border border-slate-200 p-12 text-center text-slate-500">
+          <div className="bg-white border border-slate-200 p-12 text-center text-slate-700">
             <Search className="w-8 h-8 text-slate-300 mx-auto mb-3" />
             <p className="font-semibold text-sm">No press releases found matching your search.</p>
             <button
@@ -1183,7 +1183,7 @@ export default function NewsMediaContent() {
                 </div>
 
                 <div className="p-6 sm:p-8 space-y-3">
-                  <div className="flex items-center gap-2 text-xs text-slate-500 font-medium">
+                  <div className="flex items-center gap-2 text-xs text-slate-700 font-medium">
                     <span>{story.date}</span>
                     <span>•</span>
                     <span>{story.readTime}</span>
@@ -1294,7 +1294,7 @@ export default function NewsMediaContent() {
                     <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed">
                       {photo.caption}
                     </p>
-                    <div className="text-[10.5px] text-slate-500 pt-1">
+                    <div className="text-[10.5px] text-slate-700 pt-1">
                       <span>{photo.location}</span>
                     </div>
                   </div>
@@ -1340,7 +1340,7 @@ export default function NewsMediaContent() {
                 : "Download official audited integrated annual reports, the Vision 2046 Centennial Blueprint, and technology whitepapers."}
             </p>
           </div>
-          <div className="text-xs text-slate-500">
+          <div className="text-xs text-slate-700">
             {isDe ? "Alle Dateien im barrierefreien PDF-Format" : isAr ? "جميع الملفات بتنسيق PDF عالي الجودة" : "High-Resolution Verified PDF Formats"}
           </div>
         </div>
@@ -1380,7 +1380,7 @@ export default function NewsMediaContent() {
                   </p>
                 </div>
 
-                <div className="flex items-center justify-between text-xs text-slate-500 pt-2 border-t border-slate-100">
+                <div className="flex items-center justify-between text-xs text-slate-700 pt-2 border-t border-slate-100">
                   <span>{pub.pages} {isDe ? "Seiten" : isAr ? "صفحة" : "Pages"}</span>
                   <span className="font-semibold text-slate-700">{pub.fileSize}</span>
                 </div>
@@ -1703,7 +1703,7 @@ export default function NewsMediaContent() {
             <button
               type="button"
               onClick={() => setSelectedNews(null)}
-              className="absolute top-4 right-4 p-2 text-slate-500 hover:text-black cursor-pointer"
+              className="absolute top-4 right-4 p-2 text-slate-700 hover:text-black cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
@@ -1715,7 +1715,7 @@ export default function NewsMediaContent() {
               <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#002d3b] leading-tight">
                 {selectedNews.title}
               </h3>
-              <div className="flex items-center gap-3 text-xs text-slate-500 pt-1">
+              <div className="flex items-center gap-3 text-xs text-slate-700 pt-1">
                 <span>{selectedNews.date}</span>
                 <span>•</span>
                 <span>{selectedNews.location}</span>

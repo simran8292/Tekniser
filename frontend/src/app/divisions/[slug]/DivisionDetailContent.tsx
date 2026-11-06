@@ -452,7 +452,7 @@ export default function DivisionDetailContent({ slug }: { slug: string }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 bg-[#f4f5f6]">
         <Link
           href="/divisions"
-          className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-[#009999] transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-slate-700 hover:text-[#009999] transition-colors"
         >
           <ArrowLeft className={`w-4 h-4 ${currentLanguage === 'ar' ? 'rotate-180' : ''}`} />
           <span>{ui.allDivisions}</span>
@@ -613,7 +613,7 @@ export default function DivisionDetailContent({ slug }: { slug: string }) {
 
                           {/* Key Technical Standards & Capabilities */}
                           <div className="pt-2">
-                            <div className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 mb-3 flex items-center gap-1.5">
+                            <div className="text-xs font-mono font-bold uppercase tracking-wider text-slate-700 mb-3 flex items-center gap-1.5">
                               <ShieldCheck className="w-4 h-4 text-[#009999]" />
                               <span>{ui.keySpecsLabel}</span>
                             </div>
@@ -701,7 +701,7 @@ export default function DivisionDetailContent({ slug }: { slug: string }) {
             {prevDivision && prevSlug ? (
               <Link
                 href={`/divisions/${prevSlug}`}
-                className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-[#009999] transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-slate-700 hover:text-[#009999] transition-colors"
               >
                 <ArrowLeft className={`w-4 h-4 ${currentLanguage === 'ar' ? 'rotate-180' : ''}`} />
                 <span>{prevDivision.title}</span>
@@ -716,7 +716,7 @@ export default function DivisionDetailContent({ slug }: { slug: string }) {
             {nextDivision && nextSlug ? (
               <Link
                 href={`/divisions/${nextSlug}`}
-                className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-[#009999] transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-slate-700 hover:text-[#009999] transition-colors"
               >
                 <span>{nextDivision.title}</span>
                 <ArrowRight className={`w-4 h-4 ${currentLanguage === 'ar' ? 'rotate-180' : ''}`} />

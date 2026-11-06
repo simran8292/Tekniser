@@ -47,7 +47,7 @@ export default function ValuesSection() {
               </div>
               <div>
                 <h3 className="text-xl font-extrabold text-[#002d3b] mb-1">{val.german}</h3>
-                <div className="text-xs font-bold text-slate-500 mb-2 uppercase tracking-wide">
+                <div className="text-xs font-bold text-slate-700 mb-2 uppercase tracking-wide">
                   {val.english}
                 </div>
                 <p className="text-sm text-slate-600 leading-relaxed">{val.desc}</p>

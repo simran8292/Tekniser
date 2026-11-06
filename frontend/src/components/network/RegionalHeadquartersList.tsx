@@ -433,7 +433,7 @@ export default function RegionalHeadquartersList() {
             />
           </div>
 
-          <div className="text-xs font-mono text-slate-500 self-center md:self-auto">
+          <div className="text-xs font-mono text-slate-700 self-center md:self-auto">
             {currentLanguage === 'de' ? (
               <>Zeige <span className="font-bold text-[#002d3b]">{filteredHubs.length}</span> von {NETWORK_HUBS.length} strategischen Hubs</>
             ) : currentLanguage === 'ar' ? (
@@ -543,7 +543,7 @@ export default function RegionalHeadquartersList() {
                   <div className="text-[11px] font-mono font-bold text-[#009999] bg-[#002d3b]/5 px-2.5 py-1 border border-[#009999]/20 inline-flex items-center gap-1.5">
                     <span>{currentLanguage === 'de' ? 'Geschäftsführung / Kontakt:' : currentLanguage === 'ar' ? 'الاتصال والقيادة:' : 'Executive Liaison:'}</span>
                     <span className="text-[#002d3b]">{hub.contactPerson}</span>
-                    <span className="text-slate-500 font-normal">({hub.contactRole})</span>
+                    <span className="text-slate-700 font-normal">({hub.contactRole})</span>
                   </div>
                 )}
               </div>
@@ -580,7 +580,7 @@ export default function RegionalHeadquartersList() {
           <div className="text-sm font-bold text-[#002d3b]">
             {currentLanguage === 'de' ? 'Keine regionalen Hubs gefunden' : currentLanguage === 'ar' ? 'لم يتم العثور على مراكز إقليمية' : 'No regional hubs found'}
           </div>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-slate-700">
             {currentLanguage === 'de' ? 'Passen Sie Ihre Suchanfrage oder den Regionsfilter an.' : currentLanguage === 'ar' ? 'يرجى تعديل مصطلح البحث أو تصفية المناطق.' : 'Try adjusting your search query or region filter.'}
           </p>
         </div>

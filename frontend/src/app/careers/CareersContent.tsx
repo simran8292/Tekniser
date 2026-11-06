@@ -655,7 +655,7 @@ export default function CareersContent() {
                     <span className="px-2.5 py-0.5 bg-slate-200 text-slate-700 font-semibold">
                       {job.type}
                     </span>
-                    <span className="text-slate-500 font-medium">
+                    <span className="text-slate-700 font-medium">
                       Exp: {job.experience}
                     </span>
                   </div>
@@ -700,7 +700,7 @@ export default function CareersContent() {
               <div>
                 <span className="text-xs font-mono font-bold text-[#009999] uppercase">{selectedJob.department}</span>
                 <h3 className="text-xl font-bold text-[#002d3b] uppercase mt-1">{selectedJob.title}</h3>
-                <div className="flex items-center gap-2 text-xs text-slate-500 font-mono mt-1">
+                <div className="flex items-center gap-2 text-xs text-slate-700 font-mono mt-1">
                   <span>{selectedJob.location}</span>
                   <span>•</span>
                   <span>{selectedJob.type}</span>
@@ -768,7 +768,7 @@ export default function CareersContent() {
                 <h3 className="text-xl sm:text-2xl font-black text-[#002d3b] uppercase tracking-tight">
                   {applyingJob.title}
                 </h3>
-                <div className="flex items-center gap-2 text-xs text-slate-500 font-mono mt-0.5">
+                <div className="flex items-center gap-2 text-xs text-slate-700 font-mono mt-0.5">
                   <MapPin className="w-3.5 h-3.5 text-[#009999]" />
                   <span>{applyingJob.location}</span>
                   <span>•</span>
@@ -901,7 +901,7 @@ export default function CareersContent() {
                 <Briefcase className="w-4 h-4" />
                 <span>{isDe ? "KANDIDATENPROFIL ERSTELLEN" : "CREATE CANDIDATE PROFILE"}</span>
               </div>
-              <div className="text-xs text-slate-500 mt-1">
+              <div className="text-xs text-slate-700 mt-1">
                 {isDe
                   ? "Zulässige Formate: PDF, DOC, DOCX (max. 10 MB). Ihre Daten werden gemäß DSGVO streng vertraulich behandelt."
                   : "Accepted file formats: PDF, DOC, DOCX (max 10MB). Data is processed with strict European GDPR confidentiality."}

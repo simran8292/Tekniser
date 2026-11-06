@@ -417,7 +417,7 @@ export default function ContactContent() {
               <div className="text-xs font-mono font-bold text-[#002d3b] uppercase tracking-wider">
                 {isDe ? "Offiziell registrierte Betriebsgesellschaften & Hubs" : isAr ? "الكيانات التشغيلية المسجلة رسمياً والمراكز الرئيسية" : "Official Registered Operating Entities & Physical Hubs"}
               </div>
-              <div className="text-xs font-mono text-slate-500">
+              <div className="text-xs font-mono text-slate-700">
                 {isDe ? "6 verifizierte Standorte" : isAr ? "6 مكاتب معتمدة" : "6 Verified Corporate Offices"}
               </div>
             </div>
@@ -456,7 +456,7 @@ export default function ContactContent() {
                       <div className="text-slate-700 font-medium leading-relaxed">
                         {entity.role}
                       </div>
-                      <div className="text-[11px] text-slate-500 font-mono">
+                      <div className="text-[11px] text-slate-700 font-mono">
                         <span className="font-semibold text-slate-700">{isDe ? "Bereich: " : isAr ? "النطاق: " : "Scope: "}</span>
                         {entity.divisionScope}
                       </div>

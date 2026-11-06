@@ -920,7 +920,7 @@ export default function DivisionsContent() {
                           &rarr;
                         </span>
                       </div>
-                      <p className="text-[11px] sm:text-xs text-slate-500 leading-relaxed mt-2.5">
+                      <p className="text-[11px] sm:text-xs text-slate-700 leading-relaxed mt-2.5">
                         {card.desc}
                       </p>
                     </a>
@@ -1007,7 +1007,7 @@ export default function DivisionsContent() {
                 {data.divisionsHeader.title}
               </h2>
             </div>
-            <p className="text-xs sm:text-sm text-slate-500 max-w-md">
+            <p className="text-xs sm:text-sm text-slate-700 max-w-md">
               {data.divisionsHeader.desc}
             </p>
           </div>
@@ -1167,19 +1167,19 @@ export default function DivisionsContent() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 max-w-3xl mx-auto text-left">
             <div className="p-4 bg-[#f8fafc] border border-slate-200 text-center">
               <div className="text-2xl font-black text-[#002d3b]">7</div>
-              <div className="text-xs text-slate-500 uppercase font-mono mt-1">{data.valueChain.stat1}</div>
+              <div className="text-xs text-slate-700 uppercase font-mono mt-1">{data.valueChain.stat1}</div>
             </div>
             <div className="p-4 bg-[#f8fafc] border border-slate-200 text-center">
               <div className="text-2xl font-black text-[#002d3b]">190+</div>
-              <div className="text-xs text-slate-500 uppercase font-mono mt-1">{data.valueChain.stat2}</div>
+              <div className="text-xs text-slate-700 uppercase font-mono mt-1">{data.valueChain.stat2}</div>
             </div>
             <div className="p-4 bg-[#f8fafc] border border-slate-200 text-center">
               <div className="text-2xl font-black text-[#002d3b]">30+</div>
-              <div className="text-xs text-slate-500 uppercase font-mono mt-1">{data.valueChain.stat3}</div>
+              <div className="text-xs text-slate-700 uppercase font-mono mt-1">{data.valueChain.stat3}</div>
             </div>
             <div className="p-4 bg-[#f8fafc] border border-slate-200 text-center">
               <div className="text-2xl font-black text-[#002d3b]">6</div>
-              <div className="text-xs text-slate-500 uppercase font-mono mt-1">{data.valueChain.stat4}</div>
+              <div className="text-xs text-slate-700 uppercase font-mono mt-1">{data.valueChain.stat4}</div>
             </div>
           </div>
         </div>

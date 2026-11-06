@@ -105,7 +105,7 @@ export default function ContactForm() {
         </div>
         <h2 className="text-2xl font-bold text-[#002d3b]">{isDe ? "Anfrage eingereicht" : "Inquiry Submitted"}</h2>
         <p className="text-slate-750 max-w-md mx-auto">{serverMessage}</p>
-        <p className="text-sm text-slate-500">
+        <p className="text-sm text-slate-700">
           {isDe
             ? "Unser Unternehmensvertreter wird Ihre Anfrage prüfen und sich in Kürze bei Ihnen melden. Verwenden Sie Ihre übermittelte E-Mail als Referenz."
             : "Our corporate representative will review your inquiry and respond shortly. Reference your submitted email for follow-up."}

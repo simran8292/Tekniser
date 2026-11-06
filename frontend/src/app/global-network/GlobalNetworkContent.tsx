@@ -180,7 +180,7 @@ export default function GlobalNetworkContent() {
                   </div>
                 </div>
 
-                <div className="pt-3 mt-3 border-t border-slate-200 text-[11px] text-slate-500 font-sans">
+                <div className="pt-3 mt-3 border-t border-slate-200 text-[11px] text-slate-700 font-sans">
                   {item.desc}
                 </div>
               </div>

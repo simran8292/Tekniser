@@ -170,7 +170,7 @@ export default function GlobalEmailDirectory() {
 
           {/* View Mode Toggle */}
           <div className="flex items-center gap-2 self-end md:self-auto">
-            <span className="text-xs font-mono text-slate-500 uppercase mr-1">
+            <span className="text-xs font-mono text-slate-700 uppercase mr-1">
               {isDe ? "Ansicht:" : isAr ? "العرض:" : "View:"}
             </span>
             <button
@@ -259,7 +259,7 @@ export default function GlobalEmailDirectory() {
           {(activeTab === "rhq" || activeTab === "all") && (
             <div className="flex items-center gap-1.5 text-xs">
               <Filter className="w-3 h-3 text-slate-400" />
-              <span className="font-mono text-slate-500 uppercase text-[11px]">
+              <span className="font-mono text-slate-700 uppercase text-[11px]">
                 {isDe ? "Region:" : isAr ? "القارة:" : "Region:"}
               </span>
               <select
@@ -280,7 +280,7 @@ export default function GlobalEmailDirectory() {
 
         {/* Search Results Summary */}
         {searchQuery && (
-          <div className="text-xs font-mono text-slate-500 pt-1">
+          <div className="text-xs font-mono text-slate-700 pt-1">
             {isDe ? "Gefundene Einträge:" : isAr ? "النتائج المطابقة:" : "Matching entries:"}{" "}
             <span className="font-bold text-[#002d3b]">{totalResultsCount}</span>
           </div>
@@ -338,7 +338,7 @@ export default function GlobalEmailDirectory() {
                           </div>
                         )}
                         {item.description && (
-                          <div className="text-[11px] text-slate-500 font-sans mt-0.5">
+                          <div className="text-[11px] text-slate-700 font-sans mt-0.5">
                             {item.description}
                           </div>
                         )}
@@ -395,7 +395,7 @@ export default function GlobalEmailDirectory() {
                     </div>
                   )}
                   {item.description && (
-                    <div className="text-xs text-slate-500 font-sans leading-snug">
+                    <div className="text-xs text-slate-700 font-sans leading-snug">
                       {item.description}
                     </div>
                   )}
@@ -472,7 +472,7 @@ export default function GlobalEmailDirectory() {
                         <div className="font-bold text-[#002d3b] text-sm">
                           {item.divisionName}
                         </div>
-                        <div className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">
+                        <div className="text-[10px] font-mono text-slate-700 uppercase tracking-wider">
                           {item.sector}
                         </div>
                       </td>
@@ -522,7 +522,7 @@ export default function GlobalEmailDirectory() {
                   <div className="font-bold text-[#002d3b] text-sm">
                     {item.divisionName}
                   </div>
-                  <div className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">
+                  <div className="text-[10px] font-mono text-slate-700 uppercase tracking-wider">
                     {item.sector}
                   </div>
                   <div className="pt-2 border-t border-slate-200 flex items-center justify-between">
@@ -662,7 +662,7 @@ export default function GlobalEmailDirectory() {
                   <div className="flex items-start justify-between gap-2 border-b border-slate-200 pb-2.5">
                     <div className="flex items-center gap-2">
                       <span className="text-xl">{item.flag}</span>
-                      <div className="font-mono text-xs font-bold text-slate-500 uppercase">
+                      <div className="font-mono text-xs font-bold text-slate-700 uppercase">
                         {item.continent}
                       </div>
                     </div>
@@ -722,7 +722,7 @@ export default function GlobalEmailDirectory() {
               : "Official Directory Data • TAKNISER Enterprise Matrix Utility"}
           </span>
         </div>
-        <div className="text-[11px] font-mono text-slate-500">
+        <div className="text-[11px] font-mono text-slate-700">
           Domain: <span className="text-[#002d3b] font-bold">@takniser.com</span>
         </div>
       </div>

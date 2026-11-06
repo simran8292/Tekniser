@@ -456,7 +456,7 @@ export default function CareerForm({ initialPosition = "", onSuccess, isModal = 
             <span>{isDe ? "Lebenslauf / CV hochladen" : isAr ? "تحميل السيرة الذاتية" : "CV Upload"}</span>
             <span className="text-red-500">*</span>
           </div>
-          <span className="text-[10px] font-mono text-slate-500 font-normal">PDF, DOC, DOCX (Max 10MB)</span>
+          <span className="text-[10px] font-mono text-slate-700 font-normal">PDF, DOC, DOCX (Max 10MB)</span>
         </label>
 
         <div className="border-2 border-dashed border-slate-300 hover:border-[#009999] bg-[#f8fafc] p-5 transition-colors text-center relative">
@@ -477,7 +477,7 @@ export default function CareerForm({ initialPosition = "", onSuccess, isModal = 
                 </div>
                 <div className="overflow-hidden">
                   <p className="text-xs font-bold text-[#002d3b] truncate">{selectedFile.name}</p>
-                  <p className="text-[10px] text-slate-500 font-mono">
+                  <p className="text-[10px] text-slate-700 font-mono">
                     {(selectedFile.size / 1024 / 1024).toFixed(2)} MB &bull; {isDe ? "Bereit zum Senden" : isAr ? "جاهز للإرسال" : "Ready to submit"}
                   </p>
                 </div>
@@ -504,7 +504,7 @@ export default function CareerForm({ initialPosition = "", onSuccess, isModal = 
               <p className="text-xs sm:text-sm font-bold text-[#002d3b]">
                 {isDe ? "Klicken oder Datei hierher ziehen, um CV hochzuladen" : isAr ? "انقر أو اسحب لإرفاق سيرتك الذاتية" : "Click or drag & drop to upload CV"}
               </p>
-              <p className="text-[11px] text-slate-500">
+              <p className="text-[11px] text-slate-700">
                 {isDe ? "PDF, DOC, DOCX bis zu 10 MB" : "Supported: PDF, DOC, DOCX up to 10 MB"}
               </p>
             </div>

@@ -127,7 +127,7 @@ export default function CapabilitiesSection() {
                         </h3>
 
                         {/* Description - Full visibility without clipping */}
-                        <p className="text-[10.5px] sm:text-[11px] text-slate-500 leading-relaxed">
+                        <p className="text-[10.5px] sm:text-[11px] text-slate-700 leading-relaxed">
                           {localizedDesc}
                         </p>
                       </div>

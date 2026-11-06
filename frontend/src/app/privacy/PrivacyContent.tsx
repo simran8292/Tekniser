@@ -230,7 +230,7 @@ export default function PrivacyContent() {
                 {data.sectionTitle}
               </h2>
             </div>
-            <span className="text-xs font-mono text-slate-500">
+            <span className="text-xs font-mono text-slate-700">
               {data.articleCount}
             </span>
           </div>

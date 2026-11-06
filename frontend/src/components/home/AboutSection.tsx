@@ -48,7 +48,7 @@ export default function AboutSection() {
               <h2 className="text-3xl sm:text-5xl font-black text-[#002d3b] uppercase tracking-tight leading-tight">
                 {t("century-of")} <span className="text-[#009999]">{t("legacy")}</span>
               </h2>
-              <p className="text-lg text-slate-500 font-light leading-relaxed tracking-wide">
+              <p className="text-lg text-slate-700 font-light leading-relaxed tracking-wide">
                 {t("footer-corporate-tagline")}
               </p>
             </div>
@@ -61,7 +61,7 @@ export default function AboutSection() {
                   </div>
                   <h3 className="font-semibold tracking-wide text-sm text-[#002d3b]">{t("global-hub")}</h3>
                 </div>
-                <p className={`text-sm text-slate-500 font-light ${currentLanguage === 'ar' ? 'mr-[52px]' : 'ml-[52px]'}`}>{t("footer-hq-location")}</p>
+                <p className={`text-sm text-slate-700 font-light ${currentLanguage === 'ar' ? 'mr-[52px]' : 'ml-[52px]'}`}>{t("footer-hq-location")}</p>
               </div>
               
               <div className="space-y-2">
@@ -71,7 +71,7 @@ export default function AboutSection() {
                   </div>
                   <h3 className="font-semibold tracking-wide text-sm text-[#002d3b]">{t("worldwide-reach")}</h3>
                 </div>
-                <p className={`text-sm text-slate-500 font-light ${currentLanguage === 'ar' ? 'mr-[52px]' : 'ml-[52px]'}`}>{t("operating-in-countries")}</p>
+                <p className={`text-sm text-slate-700 font-light ${currentLanguage === 'ar' ? 'mr-[52px]' : 'ml-[52px]'}`}>{t("operating-in-countries")}</p>
               </div>
             </div>
 

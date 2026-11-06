@@ -317,7 +317,7 @@ export default function SustainableEarthContent() {
                 <div className="text-xs font-bold uppercase tracking-wider text-[#002d3b]">
                   {item.label}
                 </div>
-                <div className="text-xs text-slate-500 leading-relaxed">
+                <div className="text-xs text-slate-700 leading-relaxed">
                   {item.desc}
                 </div>
               </div>
